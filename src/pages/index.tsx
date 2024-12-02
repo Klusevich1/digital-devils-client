@@ -43,17 +43,34 @@ const Home: React.FC<HomeProps> = ({ articles }) => {
 };
 
 export async function getStaticProps() {
-  const responseArticles = await fetch(
-    `https://backend.digitaldevils.by/articles/random?size=4`
-  );
-  const articles: Article[] = await responseArticles.json();
-
-  return {
-    props: {
-      articles,
-    },
-    revalidate: 24 * 60 * 60, // 1 день
-  };
-}
+    try {
+      const responseArticles = await fetch(
+        'https://backend.digitaldevils.by/articles/random?size=4'
+      );
+  
+      if (!responseArticles.ok) {
+        throw new Error(`Failed to fetch articles: ${responseArticles.statusText}`);
+      }
+  
+      const articles: Article[] = await responseArticles.json();
+  
+      return {
+        props: {
+          articles,
+        },
+        revalidate: 24 * 60 * 60, // 1 день
+      };
+    } catch (error) {
+      console.error('Error fetching articles:', error);
+  
+      // Возвращаем пустые данные для предотвращения сбоев сборки
+      return {
+        props: {
+          articles: [],
+        },
+        revalidate: 24 * 60 * 60, // 1 день
+      };
+    }
+  }
 
 export default Home;
