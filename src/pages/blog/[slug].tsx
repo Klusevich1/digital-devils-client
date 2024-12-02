@@ -64,7 +64,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
   }
 
   return (
-    <BasicLayout>
+    <BasicLayout children={undefined}>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="custom_container max-w-[1440px] mx-auto flex flex-col gap-[30px]">
         <div className="flex lg:flex-row flex-col-reverse lg:gap-[43px] gap-[20px] justify-between">
@@ -134,7 +134,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const response = await fetch(`http://localhost:3001/articles/all`);
+    const response = await fetch(`https://backend.digitaldevils.by/articles/all`);
     if (!response.ok) {
       throw new Error(`Failed to fetch articles. Status: ${response.status}`);
     }
@@ -175,7 +175,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   try {
     const responseArticle = await fetch(
-      `http://localhost:3001/articles/${slug}`
+      `https://backend.digitaldevils.by/articles/${slug}`
     );
     if (!responseArticle.ok) {
       throw new Error(
@@ -186,12 +186,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const article = await responseArticle.json();
 
     const responseArticles = await fetch(
-      `http://localhost:3001/articles/random?slug=${slug}&size=4`
+      `https://backend.digitaldevils.by/articles/random?slug=${slug}&size=4`
     );
     const articles: Article[] = await responseArticles.json();
 
     const responseRandom = await fetch(
-      `http://localhost:3001/articles/random?slug=${slug}&size=1`
+      `https://backend.digitaldevils.by/articles/random?slug=${slug}&size=1`
     );
     const randomArtData = await responseRandom.json();
     const randomArt = randomArtData[0];

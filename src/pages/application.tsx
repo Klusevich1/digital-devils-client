@@ -82,7 +82,7 @@ const Application = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3001/application", {
+      const response = await fetch("https://backend.digitaldevils.by/application", {
         method: "POST",
         body: formData,
       });

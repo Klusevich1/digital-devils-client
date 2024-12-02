@@ -44,7 +44,7 @@ const blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
     try {
       const nextPage = reset ? 1 : currentPage + 1; // Если это фильтрация, начинаем с первой страницы
       const response = await fetch(
-        `http://localhost:3001/articles?type=${typeText}&page=${nextPage}&limit=${limit}`
+        `https://backend.digitaldevils.by/articles?type=${typeText}&page=${nextPage}&limit=${limit}`
       );
 
       if (!response.ok) {
@@ -246,7 +246,7 @@ export async function getStaticProps() {
   try {
     const limit = 12;
     const response = await fetch(
-      "http://localhost:3001/articles?type=&page=1&limit=12"
+      "https://backend.digitaldevils.by/articles?type=&page=1&limit=12"
     );
     if (!response.ok) {
       throw new Error(`Failed to fetch articles: ${response.statusText}`);
