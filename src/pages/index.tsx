@@ -22,7 +22,7 @@ const Home: React.FC = () => {
     const fetchArticles = async () => {
       try {
         const response = await fetch(
-          'https://backend.digitaldevils.by/articles/random?size=4'
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/random?size=4`
         );
 
         if (!response.ok) {
@@ -32,8 +32,8 @@ const Home: React.FC = () => {
         const data: Article[] = await response.json();
         setArticles(data);
       } catch (err) {
-        console.error('Error fetching articles:', err);
-        setError('Failed to load articles');
+        console.error("Error fetching articles:", err);
+        setError("Failed to load articles");
       } finally {
         setLoading(false);
       }

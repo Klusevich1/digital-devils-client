@@ -135,7 +135,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const response = await fetch(
-      `https://backend.digitaldevils.by/articles/all`
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/all`
     );
     if (!response.ok) {
       throw new Error(`Failed to fetch articles. Status: ${response.status}`);
@@ -177,7 +177,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   try {
     const responseArticle = await fetch(
-      `https://backend.digitaldevils.by/articles/${slug}`
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/${slug}`
     );
     if (!responseArticle.ok) {
       throw new Error(
@@ -188,12 +188,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const article = await responseArticle.json();
 
     const responseArticles = await fetch(
-      `https://backend.digitaldevils.by/articles/random?slug=${slug}&size=4`
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/random?slug=${slug}&size=4`
     );
     const articles: Article[] = await responseArticles.json();
 
     const responseRandom = await fetch(
-      `https://backend.digitaldevils.by/articles/random?slug=${slug}&size=1`
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/random?slug=${slug}&size=1`
     );
     const randomArtData = await responseRandom.json();
     const randomArt = randomArtData[0];

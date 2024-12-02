@@ -82,10 +82,13 @@ const Application = () => {
     }
 
     try {
-      const response = await fetch("https://backend.digitaldevils.by/application", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Ошибка: ${response.statusText}`);
