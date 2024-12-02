@@ -1,11 +1,9 @@
+import React, { useEffect, useState } from "react";
 import OurApproachBlock from "@/components/OurApproachBlock";
 import MainBlockSecond from "@/components/MainBlockSecond";
-import React from "react";
 import MainBlockFourth from "@/components/MainBlockFourth";
 import MainBlockTenth from "@/components/MainBlockTenth";
 import CommentBlock from "@/components/CommentBlock";
-
-import avatar from "../../public/avatar-example.png";
 import MainBlockThird from "@/components/MainBlockThird";
 import { Article } from "@/types/AricleProps";
 import MainBlockNinth from "@/components/MainBlockNinth";
@@ -15,11 +13,35 @@ import OurTeamBlock from "@/components/OurTeamBlock";
 import BasicLayout from "@/layouts/BasicLayout";
 import SEO from "@/components/SEO";
 
-interface HomeProps {
-  articles: Article[];
-}
+const Home: React.FC = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
-const Home: React.FC<HomeProps> = ({ articles }) => {
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch(
+          'https://backend.digitaldevils.by/articles/random?size=4'
+        );
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch articles: ${response.statusText}`);
+        }
+
+        const data: Article[] = await response.json();
+        setArticles(data);
+      } catch (err) {
+        console.error('Error fetching articles:', err);
+        setError('Failed to load articles');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
   return (
     <>
       <SEO
@@ -35,42 +57,17 @@ const Home: React.FC<HomeProps> = ({ articles }) => {
         <OurTeamBlock />
         <CommentBlock />
         <OurApproachBlock />
-        <MainBlockNinth articles={articles} title="Блог" />
+        {loading ? (
+          <p>Loading articles...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          <MainBlockNinth articles={articles} title="Блог" />
+        )}
         <MainBlockTenth />
       </BasicLayout>
     </>
   );
 };
-
-export async function getStaticProps() {
-    try {
-      const responseArticles = await fetch(
-        'https://backend.digitaldevils.by/articles/random?size=4'
-      );
-  
-      if (!responseArticles.ok) {
-        throw new Error(`Failed to fetch articles: ${responseArticles.statusText}`);
-      }
-  
-      const articles: Article[] = await responseArticles.json();
-  
-      return {
-        props: {
-          articles,
-        },
-        revalidate: 24 * 60 * 60, // 1 день
-      };
-    } catch (error) {
-      console.error('Error fetching articles:', error);
-  
-      // Возвращаем пустые данные для предотвращения сбоев сборки
-      return {
-        props: {
-          articles: [],
-        },
-        revalidate: 24 * 60 * 60, // 1 день
-      };
-    }
-  }
 
 export default Home;
