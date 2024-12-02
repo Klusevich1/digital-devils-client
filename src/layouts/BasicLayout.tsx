@@ -3,7 +3,11 @@ import Footer from "../components/Footer";
 import React from "react";
 import FooterLogo from "@/components/FooterLogo";
 
-const BasicLayout = ({ children }: { children: React.ReactNode }) => {
+interface BasicLayoutProps {
+  children: React.ReactNode;
+}
+
+const BasicLayout: React.FC<BasicLayoutProps> = ({ children }) => {
   return (
     <>
       <Header />

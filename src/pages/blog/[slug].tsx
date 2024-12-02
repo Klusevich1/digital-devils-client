@@ -64,7 +64,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
   }
 
   return (
-    <BasicLayout children={undefined}>
+    <BasicLayout>
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="custom_container max-w-[1440px] mx-auto flex flex-col gap-[30px]">
         <div className="flex lg:flex-row flex-col-reverse lg:gap-[43px] gap-[20px] justify-between">
@@ -134,7 +134,9 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const response = await fetch(`https://backend.digitaldevils.by/articles/all`);
+    const response = await fetch(
+      `https://backend.digitaldevils.by/articles/all`
+    );
     if (!response.ok) {
       throw new Error(`Failed to fetch articles. Status: ${response.status}`);
     }
