@@ -22,9 +22,19 @@ const HeaderLogo: React.FC = () => {
                   <video
                     loop
                     muted
-                    className="w-full h-full duration-300 hover:scale-105 sm:rounded-[40px]  shadow-lg object-cover"
-                    onMouseEnter={(e) => e.currentTarget.play()}
-                    onMouseLeave={(e) => e.currentTarget.pause()}
+                    playsInline
+                    autoPlay
+                    className="w-full h-full duration-300 hover:scale-105 sm:rounded-[40px] shadow-lg object-cover"
+                    onMouseEnter={(e) => {
+                      if (!/Mobi|Android/i.test(navigator.userAgent)) {
+                        e.currentTarget.play();
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!/Mobi|Android/i.test(navigator.userAgent)) {
+                        e.currentTarget.pause();
+                      }
+                    }}
                   >
                     <source src="/main2.mp4" type="video/mp4" />
                     Ваш браузер не поддерживает видео.

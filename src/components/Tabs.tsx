@@ -37,8 +37,8 @@ const Tabs: React.FC<TabsProps> = ({ arr, title }) => {
 
     return (
         <div className="space-y-4">
-            <div className="flex xl:items-end justify-between xl:flex-row flex-col mb-[30px] ">
-                <h1 className="text-[60px] lg:text-[75px] font-bold">{title}</h1>
+            <div className="flex xl:items-end justify-between xl:flex-row flex-col mb-[30px] gap-[30px]">
+                <h1 className="text-[32px] md:text-[60px] font-bold">{title}</h1>
                 <div className="flex pb-2 flex-wrap gap-[15px]">
                     {arr.map((tab, index) => (
                         <button

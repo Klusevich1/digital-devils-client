@@ -17,9 +17,9 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
             {items.map((item, index) => (
                 <div
                     key={index}
-                    className="lg:grid flex flex-col lg:grid-cols-[3fr,7fr,1fr] border-b py-4"
+                    className={`lg:grid flex flex-col lg:grid-cols-[3fr,7fr,1fr] border-b py-4 ${index === 0 ? 'border-t' : ''}`}
                 >
-                    <h1 className="max-w-[340px] w-full text-[24px] md:text-[32px] font-bold">
+                    <h1 className="max-w-fit mb-[10px] w-full text-[24px] md:text-[32px] font-bold">
                         {item.title}
                     </h1>
 

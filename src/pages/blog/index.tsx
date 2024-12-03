@@ -76,7 +76,7 @@ const blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="custom_container max-w-[1440px] mx-auto">
         <div className="flex md:flex-row flex-col md:items-end gap-[30px] justify-between sm:mb-[40px] mb-[30px]">
-          <h2 className="text-[60px] lg:text-[75px] font-bold">Блог</h2>
+          <h2 className="text-[32px] md:text-[60px] font-bold">Блог</h2>
           <ul className="list-none flex flex-row flex-wrap gap-[15px]">
             <li
               className={`${

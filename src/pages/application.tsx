@@ -117,7 +117,7 @@ const Application = () => {
             <>
               <div className="flex justify-between lg:flex-row flex-col min-h-[50vh]">
                 <div className="max-w-[530px]">
-                  <h1 className="font-bold text-[28px] md:text-[36px] lg:text-[48px] xl:text-[60px]">
+                  <h1 className="font-bold text-[28px] md:text-[32px] lg:text-[48px] xl:text-[60px]">
                     Есть идея для проекта?
                   </h1>
                   <p className="text-[18px] md:text-[22px] mt-[20px] mb-[30px]">
@@ -146,7 +146,7 @@ const Application = () => {
                         id="name"
                         type="text"
                         {...register("name")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                       />
                       {errors.name && (
                         <p className="text-red text-xs">
@@ -167,7 +167,7 @@ const Application = () => {
                         id="phone"
                         type="tel"
                         {...register("phone")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                       />
                       {errors.phone && (
                         <p className="text-red text-xs">
@@ -188,7 +188,7 @@ const Application = () => {
                         id="email"
                         type="email"
                         {...register("email")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                       />
                       {errors.email && (
                         <p className="text-red text-xs">
@@ -209,7 +209,7 @@ const Application = () => {
                         id="company"
                         type="text"
                         {...register("company")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                       />
                       {errors.company && (
                         <p className="text-red text-xs">
@@ -271,7 +271,7 @@ const Application = () => {
                         <textarea
                           id="help"
                           {...register("help")}
-                          className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
+                          className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                           rows={1}
                         />
                         {errors.help && (

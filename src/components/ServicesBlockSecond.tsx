@@ -159,6 +159,7 @@ const ServicesBlockSecond: React.FC = () => {
                   <Image
                     src={selectedService.image}
                     alt={selectedService.title}
+                    priority
                     className="w-auto max-h-[400px] h-auto mb-[30px]"
                   />
                   <h2 className="w-full text-custom_yellow text-[22px] font-medium mb-[10px]">

@@ -59,7 +59,7 @@ const OurApproachBlock: React.FC = () => {
     return (
         <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px]" children={
             <>
-                <h1 className="font-bold text-[32px] md:text-[48px] mb-[30px] xl:text-[60px]">Наш подход</h1>
+                <h1 className="font-bold text-[32px] md:text-[60px] mb-[30px] xl:text-[60px]">Наш подход</h1>
                 <ListComponent data={data} />
             </>
         } />
