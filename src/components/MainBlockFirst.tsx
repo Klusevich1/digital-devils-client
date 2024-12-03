@@ -40,6 +40,7 @@ const MainBlockFirst: React.FC = () => {
                     autoPlay
                     loop
                     muted
+                    playsInline
                     className="rounded-[0px] sm:rounded-[40px] mt-[60px] w-full shadow-lg"
                 >
                     <source src="/main.mp4" type="video/mp4" />
