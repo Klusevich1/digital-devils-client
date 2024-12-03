@@ -54,6 +54,7 @@ const services = [
 const ServicesBlockSecond: React.FC = () => {
   const [selectedService, setSelectedService] = useState(services[0]);
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     const calculateMobile = () => {
@@ -65,6 +66,9 @@ const ServicesBlockSecond: React.FC = () => {
     };
     calculateMobile();
     window.addEventListener("resize", calculateMobile); // Обновляем при изменении размера окна
+    setTimeout(() => {
+      setIsLoaded(true)
+    }, 300);
     return () => {
       window.removeEventListener("resize", calculateMobile); // Убираем обработчик
     };
@@ -80,7 +84,7 @@ const ServicesBlockSecond: React.FC = () => {
           </h1>
 
           <div
-            className={`${!isMobile ? "hidden" : "flex"} flex-col md:gap-[60px] gap-[40px]`}
+            className={`${!isMobile ? "hidden" : "flex"} ${!isLoaded ? "opacity-0" : "opacity-100"} flex-col md:gap-[60px] gap-[40px] transition-all duration-300`}
           >
             {services.map((service) => (
               <div key={service.id} className="flex flex-col items-center">
@@ -104,7 +108,7 @@ const ServicesBlockSecond: React.FC = () => {
           <div
             className={`${
               isMobile ? "hidden" : "flex"
-            } justify-between flex-row bg-black text-white transition-all duration-300`}
+            } ${!isLoaded ? "opacity-0" : "opacity-100"} justify-between flex-row bg-black text-white transition-all duration-300`}
           >
             {/* Левая колонка с заголовками */}
             <div className="lg:w-[40%]">

@@ -69,7 +69,7 @@ const Tabs: React.FC<TabsProps> = ({ arr, title }) => {
                         <a
                             href={item.link}
                             key={index}
-                            className="flex flex-col lg:grid grid-cols-[30%,62%] w-full mb-[40px] gap-[70px]"
+                            className="flex flex-col items-center lg:grid grid-cols-[30%,62%] w-full mb-[40px] md:gap-[70px] gap-[20px]"
                         >
                             <div className="overflow-hidden inline-flex rounded-[40px] w-full min-w-[300px] min-h-[300px] max-w-auto max-h-auto md:max-w-[417px] md:max-h-[371px]">
                                 <Image
