@@ -146,7 +146,7 @@ const Application = () => {
                         id="name"
                         type="text"
                         {...register("name")}
-                        className="mt-1 block w-full p-2 border-b"
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
                       />
                       {errors.name && (
                         <p className="text-red text-xs">
@@ -167,7 +167,7 @@ const Application = () => {
                         id="phone"
                         type="tel"
                         {...register("phone")}
-                        className="mt-1 block w-full p-2 border-b"
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
                       />
                       {errors.phone && (
                         <p className="text-red text-xs">
@@ -188,7 +188,7 @@ const Application = () => {
                         id="email"
                         type="email"
                         {...register("email")}
-                        className="mt-1 block w-full p-2 border-b"
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
                       />
                       {errors.email && (
                         <p className="text-red text-xs">
@@ -209,7 +209,7 @@ const Application = () => {
                         id="company"
                         type="text"
                         {...register("company")}
-                        className="mt-1 block w-full p-2 border-b"
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
                       />
                       {errors.company && (
                         <p className="text-red text-xs">
@@ -271,7 +271,7 @@ const Application = () => {
                         <textarea
                           id="help"
                           {...register("help")}
-                          className="mt-1 block w-full p-2 border-b"
+                          className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all "
                           rows={1}
                         />
                         {errors.help && (

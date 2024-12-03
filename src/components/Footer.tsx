@@ -134,7 +134,7 @@ const Footer: React.FC = () => {
                 id="name"
                 type="text"
                 {...register("name")}
-                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent"
+                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none"
               />
               {errors.name && (
                 <p className="text-red text-xs">{errors.name.message}</p>
@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
                 id="phone"
                 type="tel"
                 {...register("phone")}
-                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent"
+                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none"
               />
               {errors.phone && (
                 <p className="text-red text-xs">{errors.phone.message}</p>
@@ -167,7 +167,7 @@ const Footer: React.FC = () => {
                 id="email"
                 type="email"
                 {...register("email")}
-                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent"
+                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none"
               />
               {errors.email && (
                 <p className="text-red text-xs">{errors.email.message}</p>
@@ -182,7 +182,7 @@ const Footer: React.FC = () => {
                 id="company"
                 type="text"
                 {...register("company")}
-                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent"
+                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none"
               />
               {errors.company && (
                 <p className="text-red text-xs">{errors.company.message}</p>
@@ -234,7 +234,7 @@ const Footer: React.FC = () => {
               <textarea
                 id="help"
                 {...register("help")}
-                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent"
+                className="mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none"
                 rows={1}
               />
               {errors.help && (
