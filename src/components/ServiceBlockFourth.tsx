@@ -26,8 +26,8 @@ const ServiceBlockFourth: React.FC = () => {
     return (
         <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px] py-[50px] bg-black text-white" children={
             <>
-                <h1 className="font-bold text-[32px] md:text-[60px] max-w-[1100px] ">Работаем со всеми современными
-                    технологиями</h1>
+                <h2 className="font-bold text-[32px] md:text-[60px] max-w-[1100px] ">Работаем со всеми современными
+                    технологиями</h2>
                 <div className="flex flex-wrap justify-around gap-[15px]">
                     {services.map((service, index) => (
                         <ServiceCard

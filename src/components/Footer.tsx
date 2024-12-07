@@ -87,10 +87,13 @@ const Footer: React.FC = () => {
     }
 
     try {
-      const response = await fetch("https://backend.digitaldevils.by/application", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://backend.digitaldevils.by/application",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Ошибка: ${response.statusText}`);
@@ -109,15 +112,15 @@ const Footer: React.FC = () => {
     <section className="text-white flex flex-col justify-center items-center self-stretch bg-neutral-900 sm:px-[60px] px-[20px]">
       <div className="flex flex-wrap gap-10 justify-between items-start max-w-full min-h-[358px] w-[1320px] sm:py-[60px] py-[40px]">
         <header className="flex flex-col min-w-[240px] text-neutral-50 w-[530px] max-md:max-w-full">
-          <h1 className="sm:text-6xl text-[28px] font-bold leading-[75px] max-md:max-w-full max-md:leading-[56px]">
+          <h2 className="sm:text-6xl text-[28px] font-bold leading-[75px] max-md:max-w-full max-md:leading-[56px]">
             Есть идея для проекта?
-          </h1>
+          </h2>
           <p className="mt-5 sm:text-2xl text-[18px] font-medium max-md:max-w-full">
             Расскажите нам о своем проекте и мы воплотим его в жизнь. Заполните
             форму или отправьте письмо на адрес:
           </p>
           <p className="sm:mt-8 mt-5 sm:text-2xl text-[22px] font-bold max-md:max-w-full">
-            dgtldevils@gmail.com
+            <a href="mailto:edgtldevils@gmail.com">dgtldevils@gmail.com</a>
           </p>
         </header>
         <form
@@ -200,26 +203,25 @@ const Footer: React.FC = () => {
             </label>
             <div className="mt-2 flex flex-wrap gap-[15px] text-black">
               {services.map((service) => {
-                  const selectedServices = watch("services") || [];
-                  const isChecked = selectedServices.includes(service);
-                  return (
-                    <label
-                      key={service}
-                      className={`transition-all duration-300 flex items-center gap-2 ${
-                        isChecked ? "bg-blue_main text-white" : "bg-black_5"
-                      } px-[10px] py-[10.5px] rounded-full cursor-pointer`}
-                    >
-                      <input
-                        type="checkbox"
-                        value={service}
-                        {...register("services")}
-                        className="form-checkbox hidden"
-                      />
-                      <span>{service}</span>
-                    </label>
-                  );
-                }
-              )}
+                const selectedServices = watch("services") || [];
+                const isChecked = selectedServices.includes(service);
+                return (
+                  <label
+                    key={service}
+                    className={`transition-all duration-300 flex items-center gap-2 ${
+                      isChecked ? "bg-blue_main text-white" : "bg-black_5"
+                    } px-[10px] py-[10.5px] rounded-full cursor-pointer`}
+                  >
+                    <input
+                      type="checkbox"
+                      value={service}
+                      {...register("services")}
+                      className="form-checkbox hidden"
+                    />
+                    <span>{service}</span>
+                  </label>
+                );
+              })}
             </div>
             {errors.services && (
               <p className="text-red text-xs">{errors.services.message}</p>
@@ -266,21 +268,26 @@ const Footer: React.FC = () => {
         <div className="flex justify-between gap-[20px] flex-wrap flex-col sm:flex-row ">
           <FooterLogo />
           <div className="flex flex-col gap-[20px] sm:gap-2.5">
-            <span className="text-[18px] lg:text-[28px] font-bold text-white">
-              +375 29 634 21 90
-            </span>
+            <a href="tel:+375296342190">
+              <span className="text-[18px] lg:text-[28px] font-bold text-white">
+                +375 29 634 21 90
+              </span>
+            </a>
             <div className="flex flex-row gap-2.5">
               <Image src={Inst} width={32} height={32} alt="Instagram Logo" />
               <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
             </div>
           </div>
           <div>
-            <span className="text-[18px] lg:text-[28px] font-bold text-white">
-              dgtldevils@gmail.com
-            </span>
+            <a href="mailto:edgtldevils@gmail.com">
+              <span className="text-[18px] lg:text-[28px] font-bold text-white">
+                dgtldevils@gmail.com
+              </span>
+            </a>
           </div>
           <a
             href="/application"
+            rel="nofollow"
             className="mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]"
           >
             Обсудить проект

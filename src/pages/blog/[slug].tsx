@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { useEffect } from "react";
 import BasicLayout from "../../layouts/BasicLayout";
@@ -13,6 +11,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import MainBlockNinth from "@/components/MainBlockNinth";
 import { useRouter } from "next/router";
 import NotFound from "../404";
+import SEO, { ListItem } from "@/components/SEO";
 
 interface ArticlePageProps {
   article: Article;
@@ -63,72 +62,102 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
     return <NotFound />;
   }
 
+  const breadcrumbsSchema: ListItem[] = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://digitaldevils.by",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Блог",
+      item: "https://digitaldevils.by/blog",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: article.title,
+      item: `https://digitaldevils.by${router.asPath}`,
+    },
+  ];
+
   return (
-    <BasicLayout>
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="custom_container max-w-[1440px] mx-auto flex flex-col gap-[30px]">
-        <div className="flex lg:flex-row flex-col-reverse lg:gap-[43px] gap-[20px] justify-between">
-          <div className="lg:w-[40%]">
-            <Image
-              src={article.image}
-              alt={article.title}
-              width={527}
-              height={339}
-              priority
-              className="w-[100%] lg:h-[339px] lg:w-[527px] rounded-[40px] object-cover"
-            />
-          </div>
-          <div className="flex-1">
-            <div className="flex flex-row items-center gap-[30px]">
-              <a href={"/blog"}>
-                <span className="flex flex-row items-center gap-[5px] p-[10px] bg-black_5 rounded-[20px] text-[16px] font-medium">
-                  <GoArrowLeft width={22} height={22} /> Все статьи
-                </span>
-              </a>
-              <span className="sm:block hidden w-fit px-[10px] py-[6px] border-blue_main rounded-[14px] border-[1px] text-[14px] font-medium">
-                {article.type}
-              </span>
-              <span className="lg:text-[16px] text-[14px] font-medium text-black_80">
-                {article.date}
-              </span>
-              <span className="lg:text-[16px] text-[14px] font-medium text-black_80">
-                {article.readingTime}
-              </span>
+    <>
+      <SEO 
+        title="Сама статья"
+        description="Описание самой статьи"
+        canonical={`https://digitaldevils.by${router.asPath}`}
+        breadcrumbsSchema={breadcrumbsSchema}
+        article={article}
+      />
+      <BasicLayout>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <div className="custom_container max-w-[1440px] mx-auto flex flex-col gap-[30px]">
+          <div className="flex lg:flex-row flex-col-reverse lg:gap-[43px] gap-[20px] justify-between">
+            <div className="lg:w-[40%]">
+              <Image
+                src={article.image}
+                alt={article.title}
+                width={527}
+                height={339}
+                priority
+                className="w-[100%] lg:h-[339px] lg:w-[527px] rounded-[40px] object-cover"
+              />
             </div>
-            <p className="md:text-[40px] text-[32px] font-bold lg:my-[30px] my-[20px]">
-              {article.title}
-            </p>
-            <div className="flex flex-row items-center gap-[20px]">
-              {article.author?.image ? (
-                <Image
-                  className="rounded-full"
-                  width={60}
-                  height={60}
-                  src={article.author?.image}
-                  alt={article.author?.name}
-                />
-              ) : (
-                <MdOutlinePhotoCamera />
-              )}
-              <div className="flex flex-col gap-[5px]">
-                <span className="text-[18px] font-medium">
-                  {article.author?.name}
+            <div className="flex-1">
+              <div className="flex flex-row items-center gap-[30px]">
+                <a href={"/blog"}>
+                  <span className="flex flex-row items-center gap-[5px] p-[10px] bg-black_5 rounded-[20px] text-[16px] font-medium">
+                    <GoArrowLeft width={22} height={22} /> Все статьи
+                  </span>
+                </a>
+                <span className="sm:block hidden w-fit px-[10px] py-[6px] border-blue_main rounded-[14px] border-[1px] text-[14px] font-medium">
+                  {article.type}
                 </span>
-                <span className="text-[16px] font-medium text-black_80">
-                  {article.author?.position}
+                <span className="lg:text-[16px] text-[14px] font-medium text-black_80">
+                  {article.date}
+                </span>
+                <span className="lg:text-[16px] text-[14px] font-medium text-black_80">
+                  {article.readingTime}
                 </span>
               </div>
+              <p className="md:text-[40px] text-[32px] font-bold lg:my-[30px] my-[20px]">
+                {article.title}
+              </p>
+              <div className="flex flex-row items-center gap-[20px]">
+                {article.author?.image ? (
+                  <Image
+                    className="rounded-full"
+                    width={60}
+                    height={60}
+                    src={article.author?.image}
+                    alt={article.author?.name}
+                  />
+                ) : (
+                  <MdOutlinePhotoCamera />
+                )}
+                <div className="flex flex-col gap-[5px]">
+                  <span className="text-[18px] font-medium">
+                    {article.author?.name}
+                  </span>
+                  <span className="text-[16px] font-medium text-black_80">
+                    {article.author?.position}
+                  </span>
+                </div>
+              </div>
+              <span className="sm:hidden block w-fit px-[10px] py-[6px] border-blue_main rounded-[14px] border-[1px] text-[14px] font-medium mt-[20px]">
+                {article.type}
+              </span>
             </div>
-            <span className="sm:hidden block w-fit px-[10px] py-[6px] border-blue_main rounded-[14px] border-[1px] text-[14px] font-medium mt-[20px]">
-              {article.type}
-            </span>
           </div>
+          <ArticleList article={article} />
+          <ArticleBody article={article} />
         </div>
-        <ArticleList article={article} />
-        <ArticleBody article={article} />
-      </div>
-      <MainBlockNinth articles={articles} title="Читайте также" />
-    </BasicLayout>
+        <MainBlockNinth articles={articles} title="Читайте также" />
+      </BasicLayout>
+    </>
   );
 };
 
@@ -145,7 +174,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     if (!articles || articles.length === 0) {
       console.error("No articles found for generating paths.");
-      return { paths: [], fallback: "blocking" };
+      return { paths: [], fallback: false };
     }
 
     const paths = articles.map((article) => ({
@@ -154,13 +183,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return {
       paths,
-      fallback: "blocking",
+      fallback: false,
     };
   } catch (error) {
     console.error("Error fetching articles for paths:", error);
     return {
       paths: [],
-      fallback: "blocking", // Или false, если вы хотите явно показывать 404
+      fallback: false, // Или false, если вы хотите явно показывать 404
     };
   }
 };
@@ -210,7 +239,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
         articles,
         randomArt,
       },
-      revalidate: 24 * 60 * 60,
     };
   } catch (error) {
     console.error("Error fetching article or related data:", error);

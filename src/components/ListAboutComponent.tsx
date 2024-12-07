@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosArrowRoundDown } from 'react-icons/io';
+import {GoArrowDown} from "react-icons/go";
 
 interface Item {
     title: string;
@@ -27,7 +28,7 @@ const ListAboutComponent: React.FC<ListAboutComponentProps> = ({ data }) => {
                         <button
                             className="min-w-[40px] min-h-[40px] size-[40px] flex items-center justify-center border-blue_20 border-[1px] rounded-full"
                         >
-                            <IoIosArrowRoundDown
+                            <GoArrowDown
                                 className={`text-[24px] duration-300 transform transition-transform ${
                                     activeIndex === index ? 'rotate-180' : ''
                                 }`}

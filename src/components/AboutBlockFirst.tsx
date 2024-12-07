@@ -13,7 +13,7 @@ const AboutBlockFirst = () => {
                 <div className="flex flex-col justify-center max-w-[450px] xl:max-w-[639px]">
                     <h1 className="text-[40px] sm:text-[60px] 2xl:text-[80px] font-bold leading-[0.94] mb-[20px]">
                         Digital Devils – лидеры разработки
-                        <span className="text-blue_main ">e-commerce</span>
+                        <span className="text-blue_main "><br></br> e-commerce</span>
                     </h1>
                 </div>
                 <div className="flex-1 relative">

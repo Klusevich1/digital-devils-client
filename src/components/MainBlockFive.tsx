@@ -12,9 +12,9 @@ const HeaderLogo: React.FC = () => {
       styles="mt-[50px] sm:mt-[60px]"
       children={
         <div className="mb-[50px] sm:mb-[60px] w-full">
-          <h1 className="text-[32px] mb-[30px] lg:text-[60px] font-bold">
+          <h2 className="text-[32px] mb-[30px] lg:text-[60px] font-bold">
             Кейсы
-          </h1>
+          </h2>
           <div className="flex flex-col xl:flex-row justify-self-center md:gap-[40px] items-center  w-full ">
             <div className="flex gap-[10px] md:gap-[40px] xl:gap-0 flex-col md:flex-row xl:flex-col justify-around w-full xl:max-w-[418px]">
               <div className="w-full flex-col flex justify-center mb-[40px]">
@@ -53,9 +53,9 @@ const HeaderLogo: React.FC = () => {
                     alt={"portfolio1"}
                   />
                 </div>
-                <h3 className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
+                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
                   Giftstree
-                </h3>
+                </p>
               </div>
             </div>
             <div className="flex flex-col gap-[40px] md:gap-[55px] w-full">
@@ -68,9 +68,9 @@ const HeaderLogo: React.FC = () => {
                       alt={"portfolio1"}
                     />
                   </div>
-                  <h1 className="mt-[20px] font-bold md:text-[28px] text-[20px]">
+                  <p className="mt-[20px] font-bold md:text-[28px] text-[20px]">
                     Keel Market LLP
-                  </h1>
+                  </p>
                 </div>
                 <div className="w-full">
                   <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full xl:max-w-[417px] max-h-[371px]">
@@ -80,9 +80,9 @@ const HeaderLogo: React.FC = () => {
                       alt={"portfolio1"}
                     />
                   </div>
-                  <h1 className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
+                  <p className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
                     SEO
-                  </h1>
+                  </p>
                 </div>
               </div>
               <div className="xl:max-w-[870px]">
@@ -93,9 +93,9 @@ const HeaderLogo: React.FC = () => {
                     alt={"portfolio1"}
                   />
                 </div>
-                <h1 className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
+                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
                   TopTyre
-                </h1>
+                </p>
               </div>
             </div>
           </div>

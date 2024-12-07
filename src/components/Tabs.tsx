@@ -79,7 +79,7 @@ const Tabs: React.FC<TabsProps> = ({ arr, title }) => {
                                 />
                             </div>
                             <div className="sm:text-[24px] text-[18px]">
-                                <h1 className="mb-[20px] font-bold text-[20px] sm:text-[28px]">{item.title}</h1>
+                                <h2 className="mb-[20px] font-bold text-[20px] sm:text-[28px]">{item.title}</h2>
                                 <p>{item.description}</p>
                                 <p className="my-[5px]">
                                     <span className="font-bold">Технологии: </span>

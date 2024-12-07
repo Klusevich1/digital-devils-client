@@ -66,7 +66,7 @@ const MainBlockTenth: React.FC = () => {
     return (
         <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px] mb-[50px] sm:mb-[60px] " children={
             <>
-                <h1 className="text-[32px] md:text-[60px] mb-[30px] font-semibold">Вопрос & ответ</h1>
+                <h2 className="text-[32px] md:text-[60px] mb-[30px] font-semibold">Вопрос & ответ</h2>
                 {data.map((item, index) => (
                     <AccordionItem key={index} title={item.title} description={item.description} />
                 ))}

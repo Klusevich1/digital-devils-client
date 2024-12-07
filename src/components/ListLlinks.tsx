@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa6';
+import {GoArrowRight} from "react-icons/go";
 
 interface Item {
     title: string;
@@ -19,9 +20,9 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
                     key={index}
                     className={`lg:grid flex flex-col lg:grid-cols-[3fr,7fr,1fr] border-b py-4 ${index === 0 ? 'border-t' : ''}`}
                 >
-                    <h1 className="max-w-fit mb-[10px] w-full text-[24px] md:text-[32px] font-bold">
+                    <h3 className="max-w-fit mb-[10px] w-full text-[24px] md:text-[32px] font-bold">
                         {item.title}
-                    </h1>
+                    </h3>
 
                     <div className="max-w-[750px] w-full">
                         <p className="text-[18px] md:text-[22px]">{item.description}</p>
@@ -40,7 +41,7 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
                     <div className="max-w-full lg:max-w-[80px] justify-end w-full">
                         <button
                             className="hidden lg:flex ms-[10px] size-[70px] border-[1px] rounded-full items-center justify-center hover:bg-blue_main transition-all hover:text-white duration-300">
-                            <FaArrowRight className="size-[32px]" />
+                            <GoArrowRight className="size-[32px]" />
                         </button>
                         <button
                             className="w-full h-[50px] mt-[20px] text-[18px] bg-blue_main text-white lg:hidden block rounded-full">

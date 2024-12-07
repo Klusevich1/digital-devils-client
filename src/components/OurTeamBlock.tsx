@@ -45,7 +45,7 @@ const OurTeamBlock: React.FC = () => {
         <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px]" children={
             <>
                 <div className="container mx-auto">
-                    <h1 className="text-[32px] lg:text-[48px] 2xl:text-[60px] font-bold ">Наша команда</h1>
+                    <h2 className="text-[32px] lg:text-[48px] 2xl:text-[60px] font-bold ">Наша команда</h2>
                     <p className="my-[30px] text-[22px]">Анализируем, проектируем, разрабатываем сайты, сервисы и мобильные приложения для бизнеса под любой бюджет.</p>
                     <TeamSlider members={teamMembers} />
                 </div>

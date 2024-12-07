@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import React, { useState } from "react";
 import BasicLayout from "../../layouts/BasicLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -8,6 +6,7 @@ import { Article } from "@/types/AricleProps";
 import Image from "next/image";
 import NotFound from "../404";
 import { useRouter } from "next/router";
+import SEO, { ListItem } from "@/components/SEO";
 
 interface BlogProps {
   initialArticles: Article[];
@@ -20,7 +19,7 @@ const breadcrumbs = [
   { name: "Блог", link: "/blog" },
 ];
 
-const blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
+const Blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
   const [articles, setArticles] = useState<Article[]>(initialArticles);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -71,174 +70,197 @@ const blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
     return <NotFound />;
   }
 
+  const breadcrumbsSchema: ListItem[] = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://digitaldevils.by",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Блог",
+      item: "https://digitaldevils.by/blog",
+    },
+  ];
+
   return (
-    <BasicLayout>
-      <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="custom_container max-w-[1440px] mx-auto">
-        <div className="flex md:flex-row flex-col md:items-end gap-[30px] justify-between sm:mb-[40px] mb-[30px]">
-          <h2 className="text-[32px] md:text-[60px] font-bold">Блог</h2>
-          <ul className="list-none flex flex-row flex-wrap gap-[15px]">
-            <li
-              className={`${
-                activeTab === "Дизайн"
-                  ? "bg-blue_main text-white hover:text-white"
-                  : "hover:text-blue_main"
-              } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
-              onClick={() => handleFilterClick("Дизайн")}
-            >
-              Дизайн
-            </li>
-            <li
-              className={`${
-                activeTab === "Разработка"
-                  ? "bg-blue_main text-white hover:text-white"
-                  : "hover:text-blue_main"
-              } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
-              onClick={() => handleFilterClick("Разработка")}
-            >
-              Разработка
-            </li>
-            <li
-              className={`${
-                activeTab === "Исследования"
-                  ? "bg-blue_main text-white hover:text-white"
-                  : "hover:text-blue_main"
-              } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
-              onClick={() => handleFilterClick("Исследования")}
-            >
-              Исследования
-            </li>
-            <li
-              className={`${
-                activeTab === "Motion"
-                  ? "bg-blue_main text-white hover:text-white"
-                  : "hover:text-blue_main"
-              } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
-              onClick={() => handleFilterClick("Motion")}
-            >
-              Motion
-            </li>
-            <li
-              className={`${
-                activeTab === "SEO"
-                  ? "bg-blue_main text-white hover:text-white"
-                  : "hover:text-blue_main"
-              } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
-              onClick={() => handleFilterClick("SEO")}
-            >
-              SEO
-            </li>
-          </ul>
-        </div>
-        <div
-          className={`min-h-[70vh] pb-[50px] grid gap-x-[40px] gap-y-[30px]
+    <>
+      <SEO
+        title="Статьи"
+        description="Статьи описание"
+        canonical="https://digitaldevils.by/blog"
+        breadcrumbsSchema={breadcrumbsSchema}
+      />
+      <BasicLayout>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <div className="custom_container max-w-[1440px] mx-auto">
+          <div className="flex md:flex-row flex-col md:items-end gap-[30px] justify-between sm:mb-[40px] mb-[30px]">
+            <h1 className="text-[32px] md:text-[60px] font-bold">Блог</h1>
+            <ul className="list-none flex flex-row flex-wrap gap-[15px]">
+              <li
+                className={`${
+                  activeTab === "Дизайн"
+                    ? "bg-blue_main text-white hover:text-white"
+                    : "hover:text-blue_main"
+                } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
+                onClick={() => handleFilterClick("Дизайн")}
+              >
+                Дизайн
+              </li>
+              <li
+                className={`${
+                  activeTab === "Разработка"
+                    ? "bg-blue_main text-white hover:text-white"
+                    : "hover:text-blue_main"
+                } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
+                onClick={() => handleFilterClick("Разработка")}
+              >
+                Разработка
+              </li>
+              <li
+                className={`${
+                  activeTab === "Исследования"
+                    ? "bg-blue_main text-white hover:text-white"
+                    : "hover:text-blue_main"
+                } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
+                onClick={() => handleFilterClick("Исследования")}
+              >
+                Исследования
+              </li>
+              <li
+                className={`${
+                  activeTab === "Motion"
+                    ? "bg-blue_main text-white hover:text-white"
+                    : "hover:text-blue_main"
+                } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
+                onClick={() => handleFilterClick("Motion")}
+              >
+                Motion
+              </li>
+              <li
+                className={`${
+                  activeTab === "SEO"
+                    ? "bg-blue_main text-white hover:text-white"
+                    : "hover:text-blue_main"
+                } h-fit text-[16px] font-medium bg-black_5 px-[10px] py-[11px] rounded-[20px] cursor-pointer transition-all`}
+                onClick={() => handleFilterClick("SEO")}
+              >
+                SEO
+              </li>
+            </ul>
+          </div>
+          <div
+            className={`min-h-[70vh] pb-[50px] grid gap-x-[40px] gap-y-[30px]
         sm:grid-cols-[repeat(auto-fit,_minmax(413px,_1fr))] grid-cols-[repeat(auto-fit,_minmax(340px,_1fr))] transition-opacity duration-200 ${
           isFiltered ? "opacity-0" : "opacity-100"
         }`}
-        >
-          {!isLoading && articles.length === 0 ? (
-            <p>Данного типа статьи не найдены</p>
-          ) : (
-            articles.map((art, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <ArticleCard art={art} />
-              </div>
-            ))
+          >
+            {!isLoading && articles.length === 0 ? (
+              <p>Данного типа статьи не найдены</p>
+            ) : (
+              articles.map((art, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <ArticleCard art={art} />
+                </div>
+              ))
+            )}
+          </div>
+
+          {currentPage < totalPagesLoad && articles.length > 0 && (
+            <div className="flex justify-center mb-[60px] sm:mb-[50px]">
+              <button
+                onClick={() => loadMoreArticles(activeTab)}
+                className="min-w-[227px] flex flex-row items-center justify-center gap-[10px] py-3 px-10 text-black border-[1px] border-solid border-back rounded-[30px] hover:bg-blue_main hover:text-white transition-all"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`transition-all duration-0 ${
+                      isLoading && "animate-spin"
+                    }`}
+                  >
+                    <path
+                      d="M15.1047 1.19189V4.74389H11.5527"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M0.895754 14.8079L0.895754 11.2559L4.44775 11.2559"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M0.600098 7.99985C0.600098 6.43713 1.09482 4.91451 2.01337 3.65024C2.93192 2.38597 4.22713 1.44494 5.71337 0.962035C7.19962 0.479126 8.80058 0.479126 10.2868 0.962036C11.7731 1.44495 13.0683 2.38597 13.9868 3.65025"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M15.3999 8C15.3999 9.56273 14.9052 11.0853 13.9866 12.3496C13.0681 13.6139 11.7729 14.5549 10.2866 15.0378C8.80039 15.5207 7.19942 15.5207 5.71318 15.0378C4.22694 14.5549 2.93173 13.6139 2.01318 12.3496"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className={`transition-all duration-0 ${
+                      isLoading && "animate-spin"
+                    }`}
+                  >
+                    <path
+                      d="M15.1047 1.19189V4.74389H11.5527"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M0.895754 14.8079L0.895754 11.2559L4.44775 11.2559"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M0.600098 7.99985C0.600098 6.43713 1.09482 4.91451 2.01337 3.65024C2.93192 2.38597 4.22713 1.44494 5.71337 0.962035C7.19962 0.479126 8.80058 0.479126 10.2868 0.962036C11.7731 1.44495 13.0683 2.38597 13.9868 3.65025"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M15.3999 8C15.3999 9.56273 14.9052 11.0853 13.9866 12.3496C13.0681 13.6139 11.7729 14.5549 10.2866 15.0378C8.80039 15.5207 7.19942 15.5207 5.71318 15.0378C4.22694 14.5549 2.93173 13.6139 2.01318 12.3496"
+                      stroke="currentColor"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                )}
+                <span className="text-[18px] font-medium transition-all duration-0">
+                  Показать ещё
+                </span>
+              </button>
+            </div>
           )}
         </div>
-
-        {currentPage < totalPagesLoad && articles.length > 0 && (
-          <div className="flex justify-center mb-[60px] sm:mb-[50px]">
-            <button
-              onClick={() => loadMoreArticles(activeTab)}
-              className="min-w-[227px] flex flex-row items-center justify-center gap-[10px] py-3 px-10 text-black border-[1px] border-solid border-back rounded-[30px] hover:bg-blue_main hover:text-white transition-all"
-              disabled={isLoading}
-            >
-              {isLoading ? (
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`transition-all duration-0 ${
-                    isLoading && "animate-spin"
-                  }`}
-                >
-                  <path
-                    d="M15.1047 1.19189V4.74389H11.5527"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M0.895754 14.8079L0.895754 11.2559L4.44775 11.2559"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M0.600098 7.99985C0.600098 6.43713 1.09482 4.91451 2.01337 3.65024C2.93192 2.38597 4.22713 1.44494 5.71337 0.962035C7.19962 0.479126 8.80058 0.479126 10.2868 0.962036C11.7731 1.44495 13.0683 2.38597 13.9868 3.65025"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M15.3999 8C15.3999 9.56273 14.9052 11.0853 13.9866 12.3496C13.0681 13.6139 11.7729 14.5549 10.2866 15.0378C8.80039 15.5207 7.19942 15.5207 5.71318 15.0378C4.22694 14.5549 2.93173 13.6139 2.01318 12.3496"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`transition-all duration-0 ${
-                    isLoading && "animate-spin"
-                  }`}
-                >
-                  <path
-                    d="M15.1047 1.19189V4.74389H11.5527"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M0.895754 14.8079L0.895754 11.2559L4.44775 11.2559"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M0.600098 7.99985C0.600098 6.43713 1.09482 4.91451 2.01337 3.65024C2.93192 2.38597 4.22713 1.44494 5.71337 0.962035C7.19962 0.479126 8.80058 0.479126 10.2868 0.962036C11.7731 1.44495 13.0683 2.38597 13.9868 3.65025"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M15.3999 8C15.3999 9.56273 14.9052 11.0853 13.9866 12.3496C13.0681 13.6139 11.7729 14.5549 10.2866 15.0378C8.80039 15.5207 7.19942 15.5207 5.71318 15.0378C4.22694 14.5549 2.93173 13.6139 2.01318 12.3496"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              )}
-              <span className="text-[18px] font-medium transition-all duration-0">
-                Показать ещё
-              </span>
-            </button>
-          </div>
-        )}
-      </div>
-    </BasicLayout>
+      </BasicLayout>
+    </>
   );
 };
 
@@ -260,7 +282,6 @@ export async function getStaticProps() {
         totalPages: Math.ceil(data.total / limit), // Общее количество страниц
         limit,
       },
-      revalidate: 24 * 60 * 60, // Обновление раз в сутки
     };
   } catch (error) {
     console.error("Error fetching articles:", error);
@@ -274,4 +295,4 @@ export async function getStaticProps() {
   }
 }
 
-export default blog;
+export default Blog;

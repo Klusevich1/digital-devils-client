@@ -76,12 +76,12 @@ const ServicesBlockSecond: React.FC = () => {
 
   return (
     <StandardMarginsLayout
-      styles="lg:h-[880px] h-auto mt-[50px] sm:mt-[60px] text-white bg-black sm:py-[60px] py-[50px] overflow-hidden"
+      styles="h-auto mt-[50px] sm:mt-[60px] text-white bg-black sm:py-[60px] py-[50px] overflow-hidden transition-all duration-300"
       children={
         <>
-          <h1 className="w-full font-bold text-[32px] lg:text-[60px] mb-[30px]">
+          <h2 className="w-full font-bold text-[32px] lg:text-[60px] mb-[30px]">
             Услуги
-          </h1>
+          </h2>
 
           <div
             className={`${!isMobile ? "hidden" : "flex"} ${!isLoaded ? "opacity-0" : "opacity-100"} flex-col md:gap-[60px] gap-[40px] transition-all duration-300`}

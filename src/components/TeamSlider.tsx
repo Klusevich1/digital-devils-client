@@ -5,6 +5,7 @@ import React, { useRef } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { Navigation } from 'swiper/modules';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
+import {GoArrowLeft, GoArrowRight} from "react-icons/go";
 
 
 interface TeamMember {
@@ -53,13 +54,13 @@ const TeamSlider: React.FC<TeamSliderProps> = ({ members }) => {
                     onClick={() => swiperRef.current?.slidePrev()}
                     className=""
                 >
-                    <FaArrowLeft className="size-[32px]" />
+                    <GoArrowLeft className="size-[32px]" />
                 </button>
                 <button
                     onClick={() => swiperRef.current?.slideNext()}
                     className=""
                 >
-                    <FaArrowRight className="size-[32px]" />
+                    <GoArrowRight className="size-[32px]" />
                 </button>
             </div>
         </div>

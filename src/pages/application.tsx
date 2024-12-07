@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -8,7 +6,7 @@ import { LayoutWithSmallFooter } from "@/layouts/LayoutWithSmallFooter";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaPaperclip } from "react-icons/fa6";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
-import SEO from "@/components/SEO";
+import SEO, { ListItem } from "@/components/SEO";
 
 const formSchema = z.object({
   name: z
@@ -103,19 +101,36 @@ const Application = () => {
     }
   };
 
+  const breadcrumbsSchema: ListItem[] = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://digitaldevils.by",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Оставить заявку",
+      item: "https://digitaldevils.by/application",
+    },
+  ];
+
   return (
     <>
       <SEO
         title="Онлайн-заявка на разработку | Digital Devils"
         description="Оставьте онлайн-заявку, чтобы быстро связаться с нашей командой. Расскажите о своем проекте или задаче, и мы предложим лучшее решение. Заполните форму, мы свяжемся с вами в ближайшее время для обсуждения всех деталей!"
+        canonical="https://digitaldevils.by/application"
+        breadcrumbsSchema={breadcrumbsSchema}
       />
       <LayoutWithSmallFooter>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <StandardMarginsLayout
-          styles="pt-0 pb-[50px] lg:py-[50px]"
+          styles="pt-0 pb-[50px] lg:pb-[50px]"
           children={
             <>
-              <div className="flex justify-between lg:flex-row flex-col min-h-[50vh]">
+              <div className="flex justify-between lg:flex-row flex-col">
                 <div className="max-w-[530px]">
                   <h1 className="font-bold text-[28px] md:text-[32px] lg:text-[48px] xl:text-[60px]">
                     Есть идея для проекта?
@@ -124,9 +139,11 @@ const Application = () => {
                     Расскажите нам о своем проекте и мы воплотим его в жизнь.
                     Заполните форму или отправьте письмо на e-mail:
                   </p>
-                  <h2 className="font-bold text-[22px] md:text-[24px]">
-                    digitaldevils@gmail.com
-                  </h2>
+                  <a href="malito:dgtldevils@gmail.com">
+                    <h2 className="font-bold text-[22px] md:text-[24px]">
+                      dgtldevils@gmail.com
+                    </h2>
+                  </a>
                 </div>
 
                 <form
@@ -299,7 +316,7 @@ const Application = () => {
                     </div>
                     <button
                       type="submit"
-                      className="mt-6 w-full max-w-[227px] bg-blue-600 text-white py-2 rounded-full hover:bg-blue_main"
+                      className="mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]"
                     >
                       Обсудить проект
                     </button>

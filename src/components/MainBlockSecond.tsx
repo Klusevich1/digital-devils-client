@@ -43,11 +43,11 @@ const MainBlockSecond: React.FC = () => {
     return (
         <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px]" children={
             <>
-                <h1 className="text-[28px] lg:text-[48px] xl:text-[60px] font-bold">Digital Devils - слаженная команда
+                <h2 className="text-[28px] lg:text-[48px] xl:text-[60px] font-bold">Digital Devils - слаженная команда
                     профессионалов, готовых воплотить
-                    в реальность ваши идеи</h1>
+                    в реальность ваши идеи</h2>
                 <p className="text-[22px] max-w-[920px] mt-[30px]">Индивидуально подходим к созданию сайтов и работе над
-                    каждым проектом. Внедряем актуальные IT решения, уделяем максимум внимания дизайну и юзабилити.
+                    каждым проектом.<br></br> Внедряем актуальные IT решения, уделяем максимум внимания дизайну и юзабилити.<br></br>
                     Грамотная SEO оптимизация уже на этапе разработки.</p>
 
                 <SliderComponent data={data} />

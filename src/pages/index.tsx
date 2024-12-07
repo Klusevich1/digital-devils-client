@@ -11,7 +11,7 @@ import MainBlockFirst from "@/components/MainBlockFirst";
 import MainBlockFive from "@/components/MainBlockFive";
 import OurTeamBlock from "@/components/OurTeamBlock";
 import BasicLayout from "@/layouts/BasicLayout";
-import SEO from "@/components/SEO";
+import SEO, { ListItem } from "@/components/SEO";
 
 const Home: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -47,6 +47,9 @@ const Home: React.FC = () => {
       <SEO
         title="Разработка сайтов в Минске | Создание сайтов под ключ"
         description="Создаем профессиональные сайты, которые выделяют ваш бизнес среди конкурентов. Стильный дизайн, передовые технологии и адаптивность — ваши клиенты оценят каждый клик. Доверяйте разработку экспертам и получите сайт, который работает на ваш успех!"
+        canonical="https://digitaldevils.by"
+        productSchema={true}
+        faqSchema={true}
       />
       <BasicLayout>
         <MainBlockFirst />

@@ -12,4 +12,5 @@ export interface Article {
   readingTime: string;
   author: TeamMemberProps;
   paragraphs: Paragraph[];
+  publishedDate: string;
 }

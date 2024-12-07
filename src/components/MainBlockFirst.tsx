@@ -23,7 +23,7 @@ const MainBlockFirst: React.FC = () => {
                             <GoArrowUpRight />
                         </div>
                     </a>
-                    <div className="grid grid-cols-1 md:grid-cols-2 justify-between 2xl:flex">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] justify-between lg:flex">
                         <SmallMainBlockCard title="10 из 10"
                                             description="наших проектов выполняются в оговорённый срок" />
                         <SmallMainBlockCard title="5+"

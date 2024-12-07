@@ -33,7 +33,7 @@ const AboutBlockFourth = () => {
     return (
         <StandardMarginsLayout styles="sm:py-[60px] py-[50px]" children={
             <>
-                <h1 className="md:text-6xl text-[32px] font-bold mb-[30px]">Принципы работы</h1>
+                <h2 className="md:text-6xl text-[32px] font-bold mb-[30px]">Принципы работы</h2>
                 <ListAboutComponent data={data} />
             </>
         } />
