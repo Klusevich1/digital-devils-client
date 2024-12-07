@@ -81,11 +81,6 @@ const CommentBlock: React.FC = () => {
                                             <p className="max-h-auto overflow-hidden cursor-pointer text-[18px] xl:text-[28px]">
                                                 {review.reviewText}
                                             </p>
-                                            <button
-                                                className="text-[18px] border-b hover:text-blue-600 duration-300 hover:border-b-blue-600 mt-[20px]"
-                                            >
-                                                Весь отзыв
-                                            </button>
                                         </div>
                                     </div>
                                 </SwiperSlide>

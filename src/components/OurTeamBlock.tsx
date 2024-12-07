@@ -20,14 +20,14 @@ const OurTeamBlock: React.FC = () => {
             position: 'Frontend-разработчик',
         },
         {
+            imageUrl: person4,
+            name: 'Алексей',
+            position: 'Backend-разработчик',
+        },
+        {
             imageUrl: person3,
             name: 'Егор',
             position: 'CEO',
-        },
-        {
-            imageUrl: person4,
-            name: 'Алексей',
-            position: 'Designer',
         },
         {
             imageUrl: person5,
