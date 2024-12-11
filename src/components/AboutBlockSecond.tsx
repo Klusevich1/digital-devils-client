@@ -5,7 +5,7 @@ import StandardMarginsLayout from '@/layouts/StandardMarginsLayout';
 
 const AboutBlockSecond = () => {
     return (
-        <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px]" children={
+        <StandardMarginsLayout styles="" children={
             <>
                 <h2 className="md:text-[40px] text-[28px] font-bold md:mb-[30px] mb-[20px]">
                     Мы — надежная IT-компания, специализирующаяся на полном цикле разработки программного обеспечения

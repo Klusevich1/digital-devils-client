@@ -5,9 +5,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import StandardMarginsLayout from '@/layouts/StandardMarginsLayout';
-import avatar from '../../public/avatar-example.png';
+import avatar1 from '../../public/avatar-example.png';
+import avatar2 from '../../public/avatar2.jpg';
+import avatar3 from '../../public/avatar3.jpg';
 import { Navigation, Pagination } from 'swiper/modules';
-import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 import {GoArrowLeft, GoArrowRight} from "react-icons/go";
 
 interface Review {
@@ -19,19 +20,19 @@ interface Review {
 
 const reviewsData = [
     {
-        avatar: avatar,
+        avatar: avatar1,
         name: 'Олег Симаков',
         jobTitle: 'Заместитель директора по маркетингу и продажам “TopTyre”',
         reviewText: 'Ребята проделали огромную работу по созданию сайта с нуля. Очень понравился отлаженный буквально до автоматизма процесс взаимодействия: от обсуждения деталей и нюансов заказа до верстки и передачи готового ресурса владельцу. Дизайнеры очень креативные, клиента понимают буквально с полуслова. Используют адаптивные технологии, уделяют внимание безопасности. В отличие от многих других веб-студий в Минске не гнут цену за свои услуги.',
     },
     {
-        avatar: avatar,
+        avatar: avatar2,
         name: 'Мария Петрова',
         jobTitle: 'Разработчик',
         reviewText: 'Изначально обратился в это агентство за консультацией по аудиту и анализу юзабилити. На все вопросы ответили абсолютно бесплатно, предложили несколько вариантов будущего сотрудничества. В итоге мною было принято решение не реанимировать существующий лендинг, а заказать создание нового сайта. При обсуждении менеджеры все разложили по полочкам, объяснили в чем отличия разных видов CMS и важности продвижения. Специалисты отлично разбираются в своем деле. Советую.',
     },
     {
-        avatar: avatar,
+        avatar: avatar3,
         name: 'Александр Смирнов',
         jobTitle: 'Дизайнер',
         reviewText: 'Заказывала создание интернет-магазина с нуля на WordPress с возможностью оплаты через сайт, каталогом товаров, интеграцией с нашей CRM-системой, блогом, обратной связью, онлайн-чатом и приемом заявок. Разделом с информацией о бренде и контактами. Да, было непросто, но команда агентства справилась со всеми запросами. Сайт получился очень красивым. Корректно работает на ПК и мобильных устройствах. Думаю, что в дальнейшем, при развитии и масштабировании бизнеса понадобятся дополнительные доработки, поэтому обязательно буду обращаться к вам еще.',
@@ -39,7 +40,7 @@ const reviewsData = [
 ];
 
 const CommentBlock: React.FC = () => {
-    const swiperRef = useRef<any>(null);
+    const swiperComRef = useRef<any>(null);
 
     return (
         <StandardMarginsLayout
@@ -51,11 +52,11 @@ const CommentBlock: React.FC = () => {
                             spaceBetween={30}
                             slidesPerView={1}
                             grabCursor={true}
-                            onSwiper={(swiper) => (swiperRef.current = swiper)}
+                            onSwiper={(swiper) => (swiperComRef.current = swiper)}
                             modules={[Navigation, Pagination]}
                             navigation={{
-                                prevEl: '.swiper-button-prev',
-                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev-comm',
+                                nextEl: '.swiper-button-next-comm',
                             }}
                             pagination={{
                                 clickable: true,
@@ -92,14 +93,14 @@ const CommentBlock: React.FC = () => {
 
                         <div className="lg:flex hidden justify-end my-4 w-[160px]">
                             <button
-                                className="swiper-button-prev me-3 bg-back rounded-full w-[70px]"
+                                className="swiper-button-prev-comm me-3 bg-back rounded-full w-[70px]"
                                 style={{ bottom: 0, top: 'auto', width: 70, height: 70 }}
                             >
                                 <GoArrowLeft className="text-[32px] text-white" style={{ width: 32, height: 32 }} />
                             </button>
                             <button
-                                className="swiper-button-next bg-back rounded-full"
-                                style={{ left: 100, bottom: 0, top: 'auto', width: 70, height: 70 }}
+                                className="swiper-button-next-comm bg-back rounded-full"
+                                style={{ left: '100px', bottom: 0, top: 'auto', width: 70, height: 70 }}
                             >
                                 <GoArrowRight className="text-[32px] text-white" style={{ width: 32, height: 32 }} />
                             </button>

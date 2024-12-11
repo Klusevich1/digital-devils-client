@@ -88,8 +88,8 @@ const Blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
   return (
     <>
       <SEO
-        title="Статьи"
-        description="Статьи описание"
+        title="Блог компании Digital Devils | Лидер IT-решений"
+        description="Новости и статьи компании Digital Devils. Мы создаем веб-сайты, мобильные приложения и комплексные системы, помогая бизнесу достигать амбициозных целей. Наш подход сочетает креативность, передовые технологии и полную вовлеченность в успех каждого клиента."
         canonical="https://digitaldevils.by/blog"
         breadcrumbsSchema={breadcrumbsSchema}
       />

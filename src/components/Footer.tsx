@@ -274,8 +274,12 @@ const Footer: React.FC = () => {
               </span>
             </a>
             <div className="flex flex-row gap-2.5">
-              <Image src={Inst} width={32} height={32} alt="Instagram Logo" />
-              <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
+              <a href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
+                <Image src={Inst} width={32} height={32} alt="Instagram Logo" />
+              </a>
+              <a href="https://t.me/devilsmanager">
+                <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
+              </a>
             </div>
           </div>
           <div>
@@ -316,7 +320,7 @@ const Footer: React.FC = () => {
           </li>
           <li>
             <a className="no-underline" href="/">
-              Политика конфеденциальности
+              Политика конфиденциальности
             </a>
           </li>
         </ul>

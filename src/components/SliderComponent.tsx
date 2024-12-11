@@ -1,12 +1,13 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules'; // Импорт модуля Navigation
-import 'swiper/css';
-import 'swiper/css/navigation';
-import Image, { StaticImageData } from 'next/image';
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
-import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
-import {GoArrowLeft, GoArrowRight} from "react-icons/go";
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules"; // Импорт модуля Navigation
+import "swiper/css";
+import "swiper/css/navigation";
+import Image, { StaticImageData } from "next/image";
+import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
+import { IoArrowBack, IoArrowForward } from "react-icons/io5";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { IKImage } from "imagekitio-next";
 
 // Типы для входных данных
 interface SliderItem {
@@ -14,7 +15,7 @@ interface SliderItem {
   description: string;
   technologies: string[];
   works: string[];
-  imageSrc: StaticImageData;
+  imageSrc: string;
 }
 
 // Компонент слайда
@@ -25,14 +26,29 @@ const Slide: React.FC<SliderItem> = ({
   works,
   imageSrc,
 }) => {
+  const [imageLoading, setImageLoading] = useState<boolean>(true)
+  const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setImageLoading(false)
+    }, 100);
+  }, [])
+
   return (
     <div className="flex flex-col md:flex-row w-full gap-8">
       <div className="w-full md:w-1/2">
-        <Image
-          src={imageSrc}
-          alt={title}
-          className="w-full h-auto object-cover rounded-lg"
-        />
+        <div className={`${imageLoading ? 'opacity-0' : 'opacity-100'} transition-all`}>
+          <IKImage
+            urlEndpoint={urlEndpoint}
+            path={imageSrc}
+            width={830}
+            height={515}
+            alt={title}
+            className="w-full h-auto object-cover rounded-lg"
+            transformation={[{ quality: "95" }]}
+          />
+        </div>
       </div>
       <div className="w-full md:w-1/2 flex flex-col ">
         <h3 className="text-[22px] lg:text-[24px] xl:text-[28px] font-bold mb-[20px]">
@@ -65,28 +81,33 @@ const Slide: React.FC<SliderItem> = ({
 
 // Основной компонент слайдера
 const SliderComponent: React.FC<{ data: SliderItem[] }> = ({ data }) => {
-    return (
-        <div className="relative w-full">
-            {/* Навигационные стрелки */}
-            <div className="flex justify-end my-4">
-                <button className="swiper-button-prev me-3" style={{ position: 'inherit' }}>
-                    <GoArrowLeft className="text-[32px] text-black" />
-                </button>
-                <button className="swiper-button-next" style={{position: "inherit"}}>
-                    <GoArrowRight className="text-[32px] text-black" />
-                </button>
-            </div>
+  const swiperProjRef = useRef<any>(null);
+  return (
+    <div className="relative w-full">
+      {/* Навигационные стрелки */}
+      <div className="flex justify-end my-4">
+        <button
+          className="swiper-button-prev me-3"
+          style={{ position: "inherit" }}
+        >
+          <GoArrowLeft className="text-[32px] text-black" />
+        </button>
+        <button className="swiper-button-next" style={{ position: "inherit" }}>
+          <GoArrowRight className="text-[32px] text-black" />
+        </button>
+      </div>
 
       {/* Слайдер */}
       <Swiper
         modules={[Navigation]} // Подключение модуля Navigation
         spaceBetween={50}
         slidesPerView={1}
+        grabCursor={true}
+        onSwiper={(swiper) => (swiperProjRef.current = swiper)}
         navigation={{
           prevEl: ".swiper-button-prev", // Связывание кнопки "назад"
           nextEl: ".swiper-button-next", // Связывание кнопки "вперед"
         }}
-        loop={true}
         className="swiper-container"
       >
         {data.map((slide, index) => (

@@ -12,6 +12,7 @@ import MainBlockFive from "@/components/MainBlockFive";
 import OurTeamBlock from "@/components/OurTeamBlock";
 import BasicLayout from "@/layouts/BasicLayout";
 import SEO, { ListItem } from "@/components/SEO";
+import TextSeoBlock from "@/components/TextSeoBlock";
 
 const Home: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -57,11 +58,12 @@ const Home: React.FC = () => {
         <MainBlockThird />
         <MainBlockFourth />
         <MainBlockFive />
+        <TextSeoBlock />
         <OurTeamBlock />
         <CommentBlock />
         <OurApproachBlock />
         {loading ? (
-          <p>Loading articles...</p>
+          <p className="text-[24px] font-medium mt-[30px] custom_container max-w-[1440px] mx-auto animate-bounce">Loading articles...</p>
         ) : error ? (
           <p>{error}</p>
         ) : (

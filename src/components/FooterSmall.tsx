@@ -19,15 +19,20 @@ const FooterSmall: React.FC = () => {
               </span>
             </a>
             <div className="flex flex-row gap-2.5">
-              <Image src={Inst} width={32} height={32} alt="Instagram Logo" />
-              <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
+              <a href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
+                <Image src={Inst} width={32} height={32} alt="Instagram Logo" />
+              </a>
+              <a href="https://t.me/devilsmanager">
+                <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
+              </a>
             </div>
           </div>
           <div>
-            <a href="malito:gtldevils@gmail.com"></a>
-            <span className="text-[18px] lg:text-[28px] font-bold text-white">
-              dgtldevils@gmail.com
-            </span>
+            <a href="malito:gtldevils@gmail.com">
+              <span className="text-[18px] lg:text-[28px] font-bold text-white">
+                dgtldevils@gmail.com
+              </span>
+            </a>
           </div>
           <a
             href="/application"
@@ -59,7 +64,7 @@ const FooterSmall: React.FC = () => {
           </li>
           <li>
             <a className="no-underline" href="/">
-              Политика конфеденциальности
+              Политика конфиденциальности
             </a>
           </li>
         </ul>

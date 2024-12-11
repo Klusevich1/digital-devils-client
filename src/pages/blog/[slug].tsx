@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import BasicLayout from "../../layouts/BasicLayout";
 import Image from "next/image";
 import { GoArrowLeft } from "react-icons/go";
@@ -12,6 +12,7 @@ import MainBlockNinth from "@/components/MainBlockNinth";
 import { useRouter } from "next/router";
 import NotFound from "../404";
 import SEO, { ListItem } from "@/components/SEO";
+import { IKImage } from "imagekitio-next";
 
 interface ArticlePageProps {
   article: Article;
@@ -29,6 +30,14 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
     { name: "Блог", link: "/blog" },
     { name: "Статья", link: `/blog/${article.slug}` },
   ];
+  const [imageLoading, setImageLoading] = useState<boolean>(true);
+  const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setImageLoading(false);
+    }, 100);
+  }, []);
 
   useEffect(() => {
     const linkArticleDiv = document.getElementById("link-article");
@@ -85,7 +94,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Сама статья"
         description="Описание самой статьи"
         canonical={`https://digitaldevils.by${router.asPath}`}
@@ -96,14 +105,23 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <div className="custom_container max-w-[1440px] mx-auto flex flex-col gap-[30px]">
           <div className="flex lg:flex-row flex-col-reverse lg:gap-[43px] gap-[20px] justify-between">
-            <div className="lg:w-[40%]">
-              <Image
+            <div className={`lg:w-[40%] ${imageLoading ? "opacity-0" : "opacity-100"} transition-all`}>
+              {/* <Image
                 src={article.image}
                 alt={article.title}
                 width={527}
                 height={339}
                 priority
                 className="w-[100%] lg:h-[339px] lg:w-[527px] rounded-[40px] object-cover"
+              /> */}
+              <IKImage
+                urlEndpoint={urlEndpoint}
+                path={article.image}
+                width={527}
+                height={339}
+                alt={article.title}
+                className="w-[100%] lg:h-[339px] lg:w-[527px] rounded-[40px] object-cover"
+                transformation={[{ quality: "95" }]}
               />
             </div>
             <div className="flex-1">

@@ -45,11 +45,11 @@ const Header: React.FC = () => {
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
           } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-end items-center hidden md:flex`}
         >
-          <a href="#" className="flex items-center">
+          <a href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6" className="flex items-center outline-none">
             <Image src={Inst} className="size-[28px]" alt="Instagram Logo" />
             <span className="ms-[5px] text-black">instagram</span>
           </a>
-          <a href="#" className="flex items-center ms-[20px]">
+          <a href="https://t.me/devilsmanager" className="flex items-center ms-[20px] outline-none">
             <Image src={Tg} className="size-[28px]" alt="Telegram Logo" />
             <span className="ms-[5px] text-black">telegram</span>
           </a>
@@ -66,7 +66,7 @@ const Header: React.FC = () => {
               : "translate-y-0"
           }`}
         >
-          <div className="mx-auto max-w-[1440px] px:[20px] md:px:[30px] xl:px-[45px] 2xl:px-[60px] w-full flex items-center justify-between ">
+          <div className="mx-auto max-w-[1440px] w-full flex items-center justify-between ">
             <HeaderLogo />
             <nav className="hidden lg:flex space-x-8 items-center">
               <a
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
               </a>
               <a
                 href="/about"
-                className="text-black font-medium transition-all duration-300 hover:text-blue-600"
+                className="text-black font-medium transition-all duration-300 hover:text-blue-600 text-nowrap"
               >
                 О нас
               </a>
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
               <a
                 href="/application"
                 rel="nofollow"
-                className="bg-blue_main w-[227px] rounded-3xl text-white px-4 py-2 text-center hover:bg-blue-700"
+                className="bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[227px] text-white px-[39px] w-full text-[18px]  hover:bg-blue-700 mx-8 "
               >
                 Обсудить проект
               </a>
@@ -163,7 +163,7 @@ const Header: React.FC = () => {
                 ></span>
               </button>
             </div>
-            <nav className="flex mx-8 flex-col items-start space-y-8 mt-8 mb-[20px]">
+            <nav className="flex mx-8 flex-col items-start space-y-8 mt-8 mb-[30px]">
               <a
                 href="/services"
                 className="text-black font-bold transition-all duration-300 hover:text-blue-600"
@@ -198,7 +198,7 @@ const Header: React.FC = () => {
             <a
               href="/application"
               rel="nofollow"
-              className="bg-blue_main  text-center rounded-full w-[227px] text-white px-4 py-2 hover:bg-blue-700 mx-8 "
+              className="bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[279px] text-white px-[65px] w-full text-[18px]  hover:bg-blue-700 mx-8 "
             >
               Обсудить проект
             </a>

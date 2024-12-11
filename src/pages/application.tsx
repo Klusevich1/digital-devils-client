@@ -139,10 +139,11 @@ const Application = () => {
                     Расскажите нам о своем проекте и мы воплотим его в жизнь.
                     Заполните форму или отправьте письмо на e-mail:
                   </p>
-                  <a href="malito:dgtldevils@gmail.com">
-                    <h2 className="font-bold text-[22px] md:text-[24px]">
-                      dgtldevils@gmail.com
-                    </h2>
+                  <a
+                    href="malito:dgtldevils@gmail.com"
+                    className="font-bold text-[22px] md:text-[24px]"
+                  >
+                    dgtldevils@gmail.com
                   </a>
                 </div>
 

@@ -40,9 +40,9 @@ const HeaderLogo: React.FC = () => {
                     Ваш браузер не поддерживает видео.
                   </video>
                 </div>
-                <h3 className="mt-[20px] font-bold md:text-[28px] text-[20px]">
+                <p className="mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
                   Motion-дизайн
-                </h3>
+                </p>
               </div>
 
               <div className="w-full md:mb-0 mb-[40px]">
@@ -53,7 +53,7 @@ const HeaderLogo: React.FC = () => {
                     alt={"portfolio1"}
                   />
                 </div>
-                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
+                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
                   Giftstree
                 </p>
               </div>
@@ -68,7 +68,7 @@ const HeaderLogo: React.FC = () => {
                       alt={"portfolio1"}
                     />
                   </div>
-                  <p className="mt-[20px] font-bold md:text-[28px] text-[20px]">
+                  <p className="mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
                     Keel Market LLP
                   </p>
                 </div>
@@ -80,7 +80,7 @@ const HeaderLogo: React.FC = () => {
                       alt={"portfolio1"}
                     />
                   </div>
-                  <p className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
+                  <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
                     SEO
                   </p>
                 </div>
@@ -93,7 +93,7 @@ const HeaderLogo: React.FC = () => {
                     alt={"portfolio1"}
                   />
                 </div>
-                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px]">
+                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
                   TopTyre
                 </p>
               </div>

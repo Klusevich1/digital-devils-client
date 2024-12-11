@@ -25,12 +25,12 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
                     </h3>
 
                     <div className="max-w-[750px] w-full">
-                        <p className="text-[18px] md:text-[22px]">{item.description}</p>
+                        <p className="text-[18px] md:text-[22px] font-medium">{item.description}</p>
                         <div className="flex mt-2 flex-wrap">
                             {item.badges.map((badge, idx) => (
                                 <span
                                     key={idx}
-                                    className="mb-3 me-3 border px-3 py-1 text-[16px] md:text-[18px] rounded-full text-gray-700 border-gray-300"
+                                    className="mb-3 me-3 border px-[20px] py-[10px] text-[18px] md:text-[22px] font-medium rounded-full text-black border-blue_main"
                                 >
                                     {badge}
                                 </span>

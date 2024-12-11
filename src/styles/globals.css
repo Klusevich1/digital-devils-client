@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Oi&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Oi&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +21,8 @@ html {
   scroll-behavior: smooth;
 }
 
-h1, h2 {
+h1,
+h2 {
   line-height: 1;
 }
 
@@ -60,10 +61,36 @@ body {
 .swiper-button-next::before,
 .swiper-button-prev::before,
 .swiper-button-next::after,
-.swiper-button-prev::after {
+.swiper-button-prev::after,
+.swiper-button-next-comm::before,
+.swiper-button-prev-comm::before,
+.swiper-button-next-comm::after,
+.swiper-button-prev-comm::after {
   content: "" !important;
   color: black;
   font-size: 32px !important;
+}
+
+.swiper-button-prev-comm,
+.swiper-button-next-comm {
+  position: absolute;
+  top: var(--swiper-navigation-top-offset, 50%);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: var(--swiper-navigation-sides-offset, 10px);
+  right: auto;
+}
+
+.swiper-button-next-comm.swiper-button-disabled, .swiper-button-prev-comm.swiper-button-disabled {
+  opacity: .35;
+  cursor: auto;
+  pointer-events: none;
 }
 
 .comment-block .swiper-pagination-bullet-active,
