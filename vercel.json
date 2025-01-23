@@ -5,5 +5,54 @@
       "src": "package.json",
       "use": "@vercel/next"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/$",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)/$",
+      "destination": "/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(index|default|home|test)(\\.(php|html|xhtml|htm|xml))?",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)\\.(php|htm|html|xml|xhtml)",
+      "destination": "/$1",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(index|default|home|test)(\\.(php|html|xhtml|htm|xml))?",
+      "destination": "/404.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/404.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    },
+    {
+      "src": "/(.*)",
+      "status": 500,
+      "dest": "/500.html"
+    },
+    {
+      "src": "/(.*)",
+      "status": 503,
+      "dest": "/503.html"
+    }
   ]
 }
