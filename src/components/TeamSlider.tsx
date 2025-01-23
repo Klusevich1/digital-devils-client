@@ -9,7 +9,7 @@ import {GoArrowLeft, GoArrowRight} from "react-icons/go";
 
 
 interface TeamMember {
-    imageUrl: StaticImageData;
+    imageUrl: string;
     name: string;
     position: string;
 }
