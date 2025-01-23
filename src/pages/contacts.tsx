@@ -1,8 +1,6 @@
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import React from "react";
-import Inst from "../../public/inst.svg";
-import Tg from "../../public/tg.svg";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BasicLayout from "../layouts/BasicLayout";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
@@ -43,34 +41,31 @@ const contacts = () => {
           styles="pb-[50px]"
           children={
             <div className="flex flex-col ">
-              {/*min-h-[40vh]*/}
-              <h1 className="sm:text-6xl text-[32px] font-bold">
-                Контакты<br></br>
-                Digital Devils<br></br>
-                <a href="tel:+375296342190">
-                  <span className="sm:text-2xl text-[22px] font-bold">
-                    +375 29 634 21 90
-                  </span>
-                </a>
-                <a href="mailto:edgtldevils@gmail.com">
-                  <span className="sm:text-2xl text-[22px] font-bold">
-                    <br></br>
-                    dgtldevils@gmail.com
-                  </span>
-                </a>
+              <h1 className="sm:text-[60px] text-[32px] font-bold md:max-w-[400px] max-w-[230px] mb-[30px] leading-[1.2]">
+                Контакты Digital Devils
               </h1>
+              <a href="tel:+375296342190">
+                <span className="sm:text-[24px] text-[22px] font-bold mb-[10px]">
+                  +375 29 634 21 90
+                </span>
+              </a>
+              <a href="mailto:edgtldevils@gmail.com">
+                <span className="sm:text-[24px] text-[22px] font-bold">
+                  dgtldevils@gmail.com
+                </span>
+              </a>
 
               <div className="flex flex-row gap-2.5 mt-[20px]">
-                <a href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
+                <a target="_blank" rel="nofollow" href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
                   <Image
-                    src={Inst}
+                    src="/resources/inst.svg"
                     width={32}
                     height={32}
                     alt="Instagram Logo"
                   />
                 </a>
-                <a href="https://t.me/devilsmanager">
-                  <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
+                <a target="_blank" rel="nofollow" href="https://t.me/devilsmanager">
+                  <Image src="/resources/tg.svg" width={32} height={32} alt="Telegram Logo" />
                 </a>
               </div>
             </div>

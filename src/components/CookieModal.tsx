@@ -75,7 +75,7 @@ const CookieModal = () => {
         <div className={`md:w-[640px] w-[100%] md:rounded-[30px] bg-white md:p-[30px] md:me-[46px] md:mb-[19px]  p-[20px] transition-all ${!isModalOpen ? 'opacity-0' : 'opacity-100'}`}>
           {isSettings ? (
             <>
-              <div className="md:h-[380px] h-auto overflow-y-scroll">
+              <div className="md:h-[380px] h-[40vh] overflow-y-scroll">
                 <div className="pb-[15px]">
                   <p className="text-[22px] font-bold mb-[5px]">
                     Настройка файлов cookie
@@ -146,7 +146,7 @@ const CookieModal = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row md:gap-0 gap-[20px] justify-between">
+              <div className="flex md:flex-row flex-col md:gap-0 gap-[20px] justify-between">
                 <button
                   className={`flex items-center justify-center bg-[#5D7DFF] text-center text-[18px] font-medium rounded-[30px] md:w-[184px] w-full text-white px-4 md:py-[15px] py-[12px] transition-all`}
                   // onClick={() => setIsSettings(false)}
@@ -186,7 +186,7 @@ const CookieModal = () => {
                 </span>
                 .
               </p>
-              <div className="flex flex-row md:gap-0 gap-[20px] justify-between mt-[20px]">
+              <div className="flex md:flex-row flex-col md:gap-0 gap-[20px] justify-between mt-[20px]">
                 <button
                   className={`flex items-center justify-center bg-black_5 text-center text-[18px] font-medium rounded-[30px] md:w-[184px] w-full text-black px-4 md:py-[15px] py-[12px] hover:text-blue-700 transition-all`}
                   onClick={() => setIsSettings(true)}

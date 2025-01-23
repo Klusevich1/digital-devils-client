@@ -15,7 +15,7 @@ export default {
         custom_yellow: "#FAD171",
         customGray: '#222222',
         black: "#171717",
-        white: "#FFFFFF",
+        white: "#FAFAFA",
         back: "#2B2B2B",
         red: "#E80000",
 

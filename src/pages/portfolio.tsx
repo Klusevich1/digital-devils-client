@@ -2,12 +2,6 @@ import React from "react";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import BasicLayout from "@/layouts/BasicLayout";
 import Tabs from "@/components/Tabs";
-import partfolio1 from "../../public/portfolio1.png";
-import partfolio2 from "../../public/portfolio2.png";
-import partfolio3 from "../../public/portfolio3.png";
-import partfolio4 from "../../public/portfolio4.png";
-import partfolio5 from "../../public/portfolio5.png";
-import partfolio6 from "../../public/portfolio6.png";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 import SEO, { ListItem } from "@/components/SEO";
 
@@ -20,37 +14,37 @@ const Portfolio = () => {
   const all = [
     {
       title: "Разработка интернет-магазина шин",
-      imagePath: partfolio2,
+      imagePath: "/resources/portfolio2.png",
       link: "#",
       category: "Интернет-магазин",
       description:
         "Спроектировали и разработали полноценный интернет-магазин с эксклюзивным дизайном. Разработку провели по принципам SEO Driven Development.",
-      technologies: ["CMS Wordpress", "WooCommerce", "IP GeoAPI"],
-      typesOfWork: ["UX/UI", "backend", "frontend"],
+      technologies: ['Next.js', 'TypeScript', 'Nest.js', 'MongoDB'],
+      typesOfWork: ['UX/UI', 'Backend', 'Frontend'],
     },
     {
-      title: "Разработка лендинга Keel Market PLL",
-      imagePath: partfolio1,
+      title: "Разработка лендинга Keel Market LLP",
+      imagePath: "/resources/portfolio1.png",
       link: "#",
       category: "Лендинг",
       description:
         "Проект включал полный цикл веб-разработки: от концепции и дизайна до реализации и тестирования. Используя Agile-методологию, внедрили основные функции лендинга, проводя регулярные тестирования и собирая обратную связь от клиентов.",
-      technologies: ["CMS Wordpress", "WooCommerce", "IP GeoAPI"],
-      typesOfWork: ["UX/UI", "backend", "frontend"],
+      technologies: ['React', 'TypeScript', 'Express.js'],
+      typesOfWork: ['UX/UI', 'Backend', 'Frontend'],
     },
     {
       title: "Motion-дизайн",
-      imagePath: partfolio3,
+      imagePath: "/resources/portfolio3.png",
       link: "#",
       category: "Моушен",
       description:
         "Создали 30-секундный видео-контент, который включал анимационные элементы и кейс-стадии, показывающие проделанную работу",
       technologies: ["Adobe After Effects", "Sketch и Figma", "CSS-анимации"],
-      typesOfWork: ["motion-дизайн"],
+      typesOfWork: ["Motion-дизайн"],
     },
     {
       title: "SEO-продвижение сайта по ремонту квартир",
-      imagePath: partfolio5,
+      imagePath: "/resources/portfolio5.png",
       link: "#",
       category: "SEO",
       description:
@@ -60,7 +54,7 @@ const Portfolio = () => {
     },
     {
       title: "Motion-дизайн",
-      imagePath: partfolio4,
+      imagePath: "/resources/portfolio4.png",
       link: "#",
       category: "Моушен",
       description:
@@ -70,7 +64,7 @@ const Portfolio = () => {
     },
     {
       title: "Создание сайта для компании Giftstree",
-      imagePath: partfolio6,
+      imagePath: "/resources/portfolio6.png",
       link: "#",
       category: "Приложения",
       description:

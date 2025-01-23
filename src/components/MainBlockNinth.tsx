@@ -34,7 +34,7 @@ const MainBlockNinth: React.FC<MainBlockNinthProps> = ({ articles, title }) => {
             </h2>
             <div
                 className="grid gap-x-[40px] gap-y-[30px]
-        sm:grid-cols-[repeat(auto-fit,_minmax(413px,_1fr))] grid-cols-[repeat(auto-fit,_minmax(340px,_1fr))]"
+        sm:grid-cols-[repeat(auto-fit,_minmax(413px,_1fr))] grid-cols-1"
             >
                 {visibleArticles.map((art, index) => (
                     <div key={index} className=" flex flex-col items-center">

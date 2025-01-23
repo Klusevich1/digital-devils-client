@@ -1,9 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import About2 from "../../public/About2.png";
 import { FaRegFolderOpen } from "react-icons/fa";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
-import { IKImage } from "imagekitio-next";
 
 const AboutBlockFirst = () => {
   const [imageLoading, setImageLoading] = useState<boolean>(true);
@@ -48,20 +46,13 @@ const AboutBlockFirst = () => {
               </div>
             </a>
             <div className={`${imageLoading ? 'opacity-0' : 'opacity-100'} transition-all`}>
-              {/* <Image
-                src={About2}
-                alt="Intersect"
-                priority
-                quality={100}
-                className=""
-              /> */}
-              <IKImage
-                urlEndpoint={urlEndpoint}
-                path="/About2.png"
+              <Image
+                src='/resources/About2.png'
+                alt="About"
                 width={1200}
                 height={1050}
-                alt="Intersect"
-                transformation={[{ quality: "95" }]}
+                priority
+                quality={100}
               />
             </div>
           </div>

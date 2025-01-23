@@ -3,8 +3,6 @@ import FormField from "@/components/FormField";
 import DiscussButton from "@/components/DiscussButton";
 import FooterLogo from "@/components/FooterLogo";
 import Image from "next/image";
-import Inst from "../../public/inst.svg";
-import Tg from "../../public/tg.svg";
 
 const FooterSmall: React.FC = () => {
   return (
@@ -19,11 +17,11 @@ const FooterSmall: React.FC = () => {
               </span>
             </a>
             <div className="flex flex-row gap-2.5">
-              <a href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
-                <Image src={Inst} width={32} height={32} alt="Instagram Logo" />
+              <a target="_blank" rel="nofollow" href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
+                <Image src="/resources/inst.svg" width={32} height={32} alt="Instagram Logo" />
               </a>
-              <a href="https://t.me/devilsmanager">
-                <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
+              <a target="_blank" rel="nofollow" href="https://t.me/devilsmanager">
+                <Image src="/resources/inst.svg" width={32} height={32} alt="Telegram Logo" />
               </a>
             </div>
           </div>
@@ -43,29 +41,29 @@ const FooterSmall: React.FC = () => {
         </div>
         <ul className="flex flex-row sm:gap-12 gap-x-[40px] gap-y-[20px] text-white text-[18px] font-medium flex-wrap">
           <li>
-            <a className="no-underline" href="/">
+            {/* <a className="no-underline" href="/"> */}
               Разработка сайтов
-            </a>
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
+            {/* <a className="no-underline" href="/"> */}
               WEB-дизайн
-            </a>
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
+            {/* <a className="no-underline" href="/"> */}
               SEO продвижение
-            </a>
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
+            {/* <a className="no-underline" href="/"> */}
               Мобильная разработка
-            </a>
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
+            {/* <a className="no-underline" href="/"> */}
               Политика конфиденциальности
-            </a>
+            {/* </a> */}
           </li>
         </ul>
       </div>

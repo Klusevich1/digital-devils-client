@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import Graph from '../../public/graph.png';
 import StandardMarginsLayout from '@/layouts/StandardMarginsLayout';
 
 const AboutBlockSecond = () => {
@@ -15,7 +14,7 @@ const AboutBlockSecond = () => {
                       Предлагаем комплексные решения, которые полностью соответствуют вашим бизнес-задачам и требованиям, обеспечивая эффективную реализацию проектов любой сложности
                     </span>
                     <Image
-                        src={Graph}
+                        src={'/resources/graph.png'}
                         alt="Graph"
                         width={625}
                         height={625}

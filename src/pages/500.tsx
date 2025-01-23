@@ -8,7 +8,7 @@ const InternalServerError = () => {
             <StandardMarginsLayout children={
                 <div className="flex w-full text-center items-center justify-center flex-col h-[53.7vh]">
                     <h1 className="text-[18px] md:text-[32px] font-bold">Мы уже работаем над устранением проблемы</h1>
-                    <h1 className="text-[60px] lg:text-[120px] xl:text-[160px] font-bold">500</h1>
+                    <h2 className="text-[60px] lg:text-[120px] xl:text-[160px] font-bold">500</h2>
                     <p className="text-[16px] md:text-[24px]">Попробуйте обновить страницу через некоторое время либо
                         вернуться на главную</p>
                     <h2 className="text-[16px] md:text-[24px] font-bold">Извините за временные неудобства</h2>

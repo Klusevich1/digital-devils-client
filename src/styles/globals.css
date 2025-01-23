@@ -4,13 +4,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fafafa;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
+    --background: #fafafa;
     --foreground: #171717;
     /*--background: #0a0a0a;*/
     /*--foreground: #ededed;*/
@@ -23,7 +23,7 @@ html {
 
 h1,
 h2 {
-  line-height: 1;
+  line-height: normal;
 }
 
 body {
@@ -100,4 +100,37 @@ body {
 .comment-block .swiper-pagination-bullet-active {
   transform: scale(1.4);
   transition-duration: 0.5s;
+}
+
+.team-block .swiper-pagination-bullet-active,
+.team-block .swiper-pagination-bullet {
+  background-color: black !important;
+}
+.team-block .swiper-pagination-bullet-active {
+  transform: scale(1.4);
+  transition-duration: 0.5s;
+}
+
+/* Обычный стиль кнопки */
+.submit-button {
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+/* Стиль кнопки во время загрузки */
+.submit-button.loading {
+  cursor: not-allowed;
+  animation: fade 1.5s infinite;
+}
+
+/* Анимация затемнения и высветления */
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }

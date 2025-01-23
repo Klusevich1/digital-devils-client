@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://digitaldevils.by/
+
+# Sitemaps
+Sitemap: https://digitaldevils.by/sitemap.xml

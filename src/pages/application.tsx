@@ -1,5 +1,5 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useEffect, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LayoutWithSmallFooter } from "@/layouts/LayoutWithSmallFooter";
@@ -7,6 +7,10 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { FaPaperclip } from "react-icons/fa6";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 import SEO, { ListItem } from "@/components/SEO";
+import { IMaskInput } from "react-imask";
+import { RxCross2 } from "react-icons/rx";
+import { useRouter } from "next/router";
+import SuccessSubmitModal from "@/components/SuccessSubmitModal";
 
 const formSchema = z.object({
   name: z
@@ -15,8 +19,11 @@ const formSchema = z.object({
     .max(50, "Имя слишком длинное"),
   phone: z
     .string()
-    .min(10, "Введите правильный номер телефона")
-    .max(15, "Номер телефона слишком длинный"),
+    .min(1, "Поле с номером телефона должно быть заполнено")
+    .regex(
+      /^\+375 \([1-9][1-9]\) \d{3}-\d{2}-\d{2}$/,
+      "Введите номер в формате: +375 (29) 333-33-33"
+    ),
   email: z.string().email("Введите правильный E-mail"),
   company: z
     .string()
@@ -47,41 +54,66 @@ const breadcrumbs = [
 const Application = () => {
   const {
     register,
+    control,
     handleSubmit,
     setValue,
+    reset,
+    setError,
+    clearErrors,
     formState: { errors },
     watch,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      company: "",
+      services: [],
+      help: "",
+    },
   });
   const services: Array<
     "Веб-разработка" | "Мобильное приложение" | "Дизайн" | "Motion" | "SEO"
   > = ["Веб-разработка", "Мобильное приложение", "Дизайн", "Motion", "SEO"];
 
+  const router = useRouter();
+  const [congratulations, setCongratulations] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [isDataSend, setIsDataSend] = useState<boolean>(false);
+
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
-      setValue("file", event.target.files[0]);
+      setSelectedFile(event.target.files[0]); // Устанавливаем файл в состояние
     }
   };
 
+  const removeFile = () => {
+    setSelectedFile(null); // Удаляем файл из состояния
+  };
+
   const onSubmit = async (data: FormData) => {
+    setLoading(true);
     const formData = new FormData();
 
-    formData.append("name", data.name);
-    formData.append("phone", data.phone);
-    formData.append("email", data.email);
+    formData.append("name", data.name || "");
+    formData.append("phone", data.phone || "");
+    formData.append("email", data.email || "");
     if (data.company) formData.append("company", data.company);
     formData.append("help", data.help || "");
 
     data.services.forEach((service) => formData.append("services[]", service));
 
-    if (data.file) {
-      formData.append("file", data.file);
+    if (selectedFile) {
+      formData.append("file", selectedFile);
     }
 
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
+        // `http://localhost:3001/application`,
         {
           method: "POST",
           body: formData,
@@ -92,12 +124,22 @@ const Application = () => {
         throw new Error(`Ошибка: ${response.statusText}`);
       }
 
-      const result = await response.json();
-      console.log("Успешно отправлено:", result);
-      alert("Заявка успешно отправлена!");
+      reset({
+        name: "",
+        phone: "",
+        email: "",
+        company: "",
+        services: [],
+        help: "",
+      });
+      setSelectedFile(null);
+      setCongratulations("Ваша заявка успешно отправлена!");
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
-      alert("Не удалось отправить заявку. Попробуйте позже.");
+      setCongratulations("Не удалось отправить заявку. Попробуйте позже.");
+    } finally {
+      setIsDataSend(true)
+      setLoading(false);
     }
   };
 
@@ -114,7 +156,7 @@ const Application = () => {
       name: "Оставить заявку",
       item: "https://digitaldevils.by/application",
     },
-  ];
+  ]
 
   return (
     <>
@@ -152,7 +194,7 @@ const Application = () => {
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <div className="md:grid flex flex-col md:grid-cols-2 gap-4">
-                    <div>
+                    <div className="relative">
                       <label
                         htmlFor="name"
                         className="block text-sm font-medium"
@@ -164,16 +206,16 @@ const Application = () => {
                         id="name"
                         type="text"
                         {...register("name")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none bg-white focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                       />
                       {errors.name && (
-                        <p className="text-red text-xs">
+                        <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                           {errors.name.message}
                         </p>
                       )}
                     </div>
 
-                    <div>
+                    <div className="relative">
                       <label
                         htmlFor="phone"
                         className="block text-sm font-medium"
@@ -181,20 +223,71 @@ const Application = () => {
                         Телефон
                         <span> *</span>
                       </label>
-                      <input
-                        id="phone"
-                        type="tel"
-                        {...register("phone")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
+                      {/* <Controller
+                        name="phone"
+                        control={control}
+                        defaultValue=""
+                        render={({
+                          field: { onChange, onBlur, value, ref },
+                        }) => (
+                          <MaskedInput
+                            mask={[
+                              "+",
+                              "3",
+                              "7",
+                              "5",
+                              " ",
+                              "(",
+                              /[2-4]/,
+                              /\d/,
+                              ")",
+                              " ",
+                              /\d/,
+                              /\d/,
+                              /\d/,
+                              "-",
+                              /\d/,
+                              /\d/,
+                              "-",
+                              /\d/,
+                              /\d/,
+                            ]}
+                            onBlur={onBlur}
+                            onChange={onChange}
+                            value={value}
+                            ref={ref}
+                            placeholder="+375 (29) 333-33-33"
+                            className="h-[43px] mt-1 block w-full p-2 border-b outline-none bg-white focus:border-black_80 focus:border-b-2 transition-all rounded-none"
+                          />
+                        )}
+                      /> */}
+                      <Controller
+                        name="phone"
+                        control={control}
+                        defaultValue=""
+                        render={({
+                          field: { onChange, onBlur, value, ref },
+                        }) => (
+                          <IMaskInput
+                            mask="+375 (00) 000-00-00"
+                            onBlur={onBlur}
+                            onAccept={onChange}
+                            value={value}
+                            inputRef={ref}
+                            defaultValue="+375"
+                            placeholder="+375 (29) 333-33-33"
+                            className="h-[43px] mt-1 block w-full p-2 border-b outline-none bg-white focus:border-black_80 focus:border-b-2 transition-all rounded-none"
+                          />
+                        )}
                       />
-                      {errors.phone && (
-                        <p className="text-red text-xs">
+                      {errors.phone && congratulations.length < 1 && (
+                        <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                           {errors.phone.message}
                         </p>
                       )}
                     </div>
 
-                    <div>
+                    <div className="relative">
                       <label
                         htmlFor="email"
                         className="block text-sm font-medium"
@@ -206,16 +299,16 @@ const Application = () => {
                         id="email"
                         type="email"
                         {...register("email")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none bg-white focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                       />
                       {errors.email && (
-                        <p className="text-red text-xs">
+                        <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                           {errors.email.message}
                         </p>
                       )}
                     </div>
 
-                    <div>
+                    <div className="relative">
                       <label
                         htmlFor="company"
                         className="block text-sm font-medium"
@@ -227,10 +320,10 @@ const Application = () => {
                         id="company"
                         type="text"
                         {...register("company")}
-                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
+                        className="h-[43px] mt-1 block w-full p-2 border-b outline-none bg-white focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                       />
                       {errors.company && (
-                        <p className="text-red text-xs">
+                        <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                           {errors.company.message}
                         </p>
                       )}
@@ -244,7 +337,7 @@ const Application = () => {
                         Выберите услуги
                         <span> *</span>
                       </label>
-                      <div className="mt-2 flex flex-wrap gap-2">
+                      <div className="relative mt-2 flex flex-wrap gap-2">
                         {services.map((service) => {
                           const selectedServices = watch("services") || [];
                           const isChecked = selectedServices.includes(service);
@@ -269,7 +362,7 @@ const Application = () => {
                         })}
                       </div>
                       {errors.services && (
-                        <p className="text-red text-xs">
+                        <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                           {errors.services.message ==
                           "Expected array, received boolean"
                             ? "Выберите хотя бы одну услугу"
@@ -279,7 +372,7 @@ const Application = () => {
                     </div>
 
                     <div className="flex flex-col justify-between sm:flex-row col-span-2 w-full">
-                      <div className="w-full sm:max-w-[400px] pe-3">
+                      <div className="relative w-full sm:max-w-[400px] pe-3">
                         <label
                           htmlFor="help"
                           className="block text-sm font-medium"
@@ -289,41 +382,59 @@ const Application = () => {
                         <textarea
                           id="help"
                           {...register("help")}
-                          className="h-[43px] mt-1 block w-full p-2 border-b outline-none focus:border-black_80 focus:border-b-2 transition-all rounded-none"
+                          className="h-[43px] mt-1 block w-full p-2 border-b outline-none bg-white focus:border-black_80 focus:border-b-2 transition-all rounded-none"
                           rows={1}
                         />
                         {errors.help && (
-                          <p className="text-red text-xs">
+                          <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                             {errors.help.message}
                           </p>
                         )}
                       </div>
 
                       <div className="w-full sm:mt-0 mt-2 h-full text-center sm:text-left items-end flex max-w-full sm:max-w-[200px]">
-                        <label
-                          htmlFor="file"
-                          className="max-h-[50px] w-full inline-flex justify-center sm:justify-start items-center gap-2 cursor-pointer border border-black_80 rounded-full px-5 py-2 text-gray-700 hover:bg-gray-100"
-                        >
-                          <FaPaperclip className="text-gray-600" />
-                          <span>Прикрепить файл</span>
-                          <input
-                            id="file"
-                            type="file"
-                            onChange={onFileChange}
-                            className="hidden"
-                          />
-                        </label>
+                        {!selectedFile ? (
+                          <label
+                            htmlFor="file"
+                            className="max-h-[50px] w-full inline-flex justify-center sm:justify-start items-center gap-2 cursor-pointer border border-black_80 rounded-full px-5 py-2 text-gray-700 hover:bg-gray-100"
+                          >
+                            <FaPaperclip className="text-gray-600" />
+                            <span className="w-full">Прикрепить файл</span>
+                            <input
+                              id="file"
+                              type="file"
+                              onChange={onFileChange}
+                              className="hidden"
+                            />
+                          </label>
+                        ) : (
+                          <div className="flex items-center gap-2 border border-black_80 rounded-full px-5 py-2 text-gray-700">
+                            <span className="w-full">{selectedFile.name}</span>
+                            <RxCross2
+                              type="button"
+                              onClick={removeFile}
+                              size={20}
+                              className="text-red-600 hover:text-red-800 cursor-pointer"
+                            />
+                          </div>
+                        )}
                       </div>
                     </div>
                     <button
                       type="submit"
-                      className="mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]"
+                      className={`submit-button ${
+                        loading ? "loading" : ""
+                      } mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]`}
                     >
-                      Обсудить проект
+                      {loading ? "Отправка..." : "Обсудить проект"}
                     </button>
                   </div>
+                  {congratulations.length > 0 && (
+                    <p className="text-[18px] mt-[10px]">{congratulations}</p>
+                  )}
                 </form>
               </div>
+              <SuccessSubmitModal congratulations={congratulations} isDataSend={isDataSend}/>
             </>
           }
         />

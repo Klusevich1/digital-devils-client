@@ -1,19 +1,20 @@
-import React from "react";
+import React, {FC} from "react";
 import Image from "next/image";
-import partfolio1 from "../../public/portfolio1.png";
-import partfolio5 from "../../public/portfolio5.png";
-import partfolio6 from "../../public/portfolio6.png";
-import toptyre from "../../public/slide1.png";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 
-const HeaderLogo: React.FC = () => {
+type OnlineStoreProps = {
+  title?: string;
+  margin?: string;
+};
+
+const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
   return (
     <StandardMarginsLayout
-      styles="mt-[50px] sm:mt-[60px]"
+      styles={margin ?? "pb-[50px] md:pb-[60px]"}
       children={
-        <div className="mb-[50px] sm:mb-[60px] w-full">
+        <div className="w-full">
           <h2 className="text-[32px] mb-[30px] lg:text-[60px] font-bold">
-            Кейсы
+            {title}
           </h2>
           <div className="flex flex-col xl:flex-row justify-self-center md:gap-[40px] items-center  w-full ">
             <div className="flex gap-[10px] md:gap-[40px] xl:gap-0 flex-col md:flex-row xl:flex-col justify-around w-full xl:max-w-[418px]">
@@ -36,7 +37,7 @@ const HeaderLogo: React.FC = () => {
                       }
                     }}
                   >
-                    <source src="/main2.mp4" type="video/mp4" />
+                    <source src="/resources/main2.mp4" type="video/mp4" />
                     Ваш браузер не поддерживает видео.
                   </video>
                 </div>
@@ -49,8 +50,10 @@ const HeaderLogo: React.FC = () => {
                 <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full h-[500px] xl:max-w-[417px] xl:max-h-[371px]">
                   <Image
                     className="w-full h-full object-cover duration-300 hover:scale-105"
-                    src={partfolio6}
-                    alt={"portfolio1"}
+                    src="/resources/portfolio6.png"
+                    width={417}
+                    height={371}
+                    alt={"Portfolio"}
                   />
                 </div>
                 <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
@@ -64,8 +67,10 @@ const HeaderLogo: React.FC = () => {
                   <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full xl:max-w-[417px] max-h-[371px]">
                     <Image
                       className="w-full h-full object-cover duration-300 hover:scale-105"
-                      src={partfolio1}
-                      alt={"portfolio1"}
+                      src="/resources/portfolio1.png"
+                      width={400}
+                      height={350}
+                      alt={"Portfolio"}
                     />
                   </div>
                   <p className="mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
@@ -76,8 +81,10 @@ const HeaderLogo: React.FC = () => {
                   <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full xl:max-w-[417px] max-h-[371px]">
                     <Image
                       className="w-full h-full object-cover duration-300 hover:scale-105"
-                      src={partfolio5}
-                      alt={"portfolio1"}
+                      src="/resources/portfolio5.png"
+                      width={400}
+                      height={350}
+                      alt={"Portfolio"}
                     />
                   </div>
                   <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
@@ -89,8 +96,10 @@ const HeaderLogo: React.FC = () => {
                 <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] max-w-full w-full">
                   <Image
                     className="w-full h-full object-cover duration-300 hover:scale-105"
-                    src={toptyre}
-                    alt={"portfolio1"}
+                    src="/resources/slide1.png"
+                    width={830}
+                    height={516}
+                    alt={"Portfolio"}
                   />
                 </div>
                 <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">

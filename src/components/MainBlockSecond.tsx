@@ -5,13 +5,13 @@ import SliderComponent from '@/components/SliderComponent';
 const data = [
     {
         title: 'Разработка интернет-магазина TopTyre',
-        description: 'Спроектировали онлайн-магазин с эксклюзивным дизайном, ориентированным на целевую аудиторию бренда - автовладельцев из Минска и Беларуси. Добавили каталог товаров и услуг. Провели интеграцию сайтас 1С Битрикс. ПП',
+        description: 'Спроектировали онлайн-магазин с эксклюзивным дизайном, ориентированным на целевую аудиторию бренда - автовладельцев из Минска и Беларуси. Добавили каталог товаров и услуг. Провели интеграцию сайтас 1С Битрикс.',
         technologies: ['Next.js', 'TypeScript', 'Nest.js', 'MongoDB'],
         works: ['UX/UI', 'Backend', 'Frontend'],
         imageSrc: "./slide1.png",
     },
     {
-        title: 'Разработка Landing Page Keel Market PLL',
+        title: 'Разработка Landing Page Keel Market LLP',
         description: 'Проект включал полный цикл WEB-разработки: от концепции и дизайна сайта до реализации. Используя Agile-методологию, внедрили основные функции лендинга, проводя регулярные тестирования и собирая обратную связь от клиентов.',
         technologies: ['React', 'TypeScript', 'Express.js'],
         works: ['UX/UI', 'Backend', 'Frontend'],

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Inst from "../../public/inst.svg";
-import Tg from "../../public/tg.svg";
 import HeaderLogo from "@/components/HeaderLogo";
 
 const Header: React.FC = () => {
@@ -45,12 +43,12 @@ const Header: React.FC = () => {
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
           } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-end items-center hidden md:flex`}
         >
-          <a href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6" className="flex items-center outline-none">
-            <Image src={Inst} className="size-[28px]" alt="Instagram Logo" />
+          <a target="_blank" rel="nofollow" href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6" className="flex items-center outline-none">
+            <Image src="/resources/inst.svg" width={28} height={28} className="size-[28px]" alt="Instagram Logo" />
             <span className="ms-[5px] text-black">instagram</span>
           </a>
-          <a href="https://t.me/devilsmanager" className="flex items-center ms-[20px] outline-none">
-            <Image src={Tg} className="size-[28px]" alt="Telegram Logo" />
+          <a target="_blank" rel="nofollow" href="https://t.me/devilsmanager" className="flex items-center ms-[20px] outline-none">
+            <Image src="/resources/tg.svg" width={28} height={28} className="size-[28px]" alt="Telegram Logo" />
             <span className="ms-[5px] text-black">telegram</span>
           </a>
           <a href="tel:+375296342190">
@@ -83,7 +81,7 @@ const Header: React.FC = () => {
               </a>
               <a
                 href="/about"
-                className="text-black font-medium transition-all duration-300 hover:text-blue-600 text-nowrap"
+                className="text-black font-medium transition-all duration-300 hover:text-blue-600 whitespace-nowrap"
               >
                 О нас
               </a>

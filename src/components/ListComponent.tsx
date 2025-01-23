@@ -75,7 +75,7 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
                 />
               </button>
             </div>
-            <h3 className="ml-4 font-bold lg:text-[32px] text-[26px] lg:max-w-[413px] max-w-[300px] w-full">
+            <h3 className="ml-4 font-bold lg:text-[28px] text-[26px] lg:max-w-[413px] max-w-[300px] w-full">
               {item.title}
             </h3>
             <div
@@ -103,7 +103,7 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
                 : "max-h-0 opacity-0"
             }`}
           >
-            <div className="p-2">
+            <div>
               {item.text.map((paragraph, i) => (
                 <p
                   key={i}

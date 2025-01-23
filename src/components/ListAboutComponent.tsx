@@ -34,7 +34,7 @@ const ListAboutComponent: React.FC<ListAboutComponentProps> = ({ data }) => {
                                 }`}
                             />
                         </button>
-                        <span className="ml-4 text-lg font-semibold">{item.title}</span>
+                        <span className="ml-4 text-[24px] font-semibold">{item.title}</span>
                     </div>
                     <div
                         className={`w-full md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
@@ -43,13 +43,13 @@ const ListAboutComponent: React.FC<ListAboutComponentProps> = ({ data }) => {
                                 : 'max-h-0 opacity-0'
                         }`}
                     >
-                        <div className="p-2">
+                        <div className="p-2 text-[18px]">
                             {item.text}
                         </div>
                     </div>
                     <div className="hidden md:flex flex-row justify-between ">
-                        <h2 className="text-[32px] font-bold w-2/5">{item.title}</h2>
-                        <span className="text-[24px] font-medium justify-end w-1/2">
+                        <h2 className="md:text-[28px] text-[24px] font-bold w-2/5">{item.title}</h2>
+                        <span className="text-[18px] font-medium justify-end w-1/2">
                 {item.text}
             </span>
                     </div>

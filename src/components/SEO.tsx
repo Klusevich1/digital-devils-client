@@ -1,12 +1,11 @@
 import { FC } from "react";
 import Head from "next/head";
-import logo from "../../public/logo-header.svg";
 import { Article } from "@/types/AricleProps";
 
 type SEOProps = {
   title: string;
   description: string;
-  canonical: string;
+  canonical?: string;
   breadcrumbsSchema?: ListItem[];
   productSchema?: boolean;
   faqSchema?: boolean;
@@ -34,7 +33,6 @@ const SEO: FC<SEOProps> = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta charSet="UTF-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link rel="icon" href="/favicon.ico" />
       <link rel="canonical" href={canonical} />
@@ -46,7 +44,7 @@ const SEO: FC<SEOProps> = ({
             "@type": "Organization",
             name: "DigitalDevils",
             url: "https://digitaldevils.by",
-            logo: logo,
+            logo: '/resources/logo-header.png',
           }),
         }}
       />
@@ -69,7 +67,7 @@ const SEO: FC<SEOProps> = ({
               "@context": "https://schema.org/",
               "@type": "Product",
               name: "Разработка сайтов",
-              image: logo,
+              image: '/resources/logo-header.png',
               offers: {
                 "@type": "Offer",
                 url: "https://digitaldevils.by",
@@ -160,7 +158,7 @@ const SEO: FC<SEOProps> = ({
                 name: "DigitalDevils",
                 logo: {
                   "@type": "ImageObject",
-                  url: logo,
+                  url: '/resources/logo-header.png',
                 },
               },
               datePublished: article.publishedDate,

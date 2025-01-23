@@ -28,7 +28,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             <p className="text-[18px]">
               {stack.map((tech, index) => (
                 <React.Fragment key={index}>
-                  {index > 0 && <span className="text-yellow-400"> / </span>}
+                  {index > 0 && <span className="text-custom_yellow text-[16px] font-medium">/</span>}
                   <span>{tech}</span>
                 </React.Fragment>
               ))}

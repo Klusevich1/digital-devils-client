@@ -4,10 +4,7 @@ import { Navigation } from "swiper/modules"; // Импорт модуля Naviga
 import "swiper/css";
 import "swiper/css/navigation";
 import Image, { StaticImageData } from "next/image";
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
-import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
-import { IKImage } from "imagekitio-next";
 
 // Типы для входных данных
 interface SliderItem {
@@ -26,19 +23,22 @@ const Slide: React.FC<SliderItem> = ({
   works,
   imageSrc,
 }) => {
-  const [imageLoading, setImageLoading] = useState<boolean>(true)
-  const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setImageLoading(false)
-    }, 100);
-  }, [])
-
   return (
     <div className="flex flex-col md:flex-row w-full gap-8">
       <div className="w-full md:w-1/2">
-        <div className={`${imageLoading ? 'opacity-0' : 'opacity-100'} transition-all`}>
+        <Image
+          src={`/resources/${imageSrc}`}
+          alt={title}
+          width={830}
+          height={515}
+          className="w-full h-auto object-cover rounded-lg"
+        />
+        {/* <div
+          className={`${
+            imageLoading ? "opacity-0" : "opacity-100"
+          } transition-all`}
+        >
+          <Image src={imageSrc} width={} />
           <IKImage
             urlEndpoint={urlEndpoint}
             path={imageSrc}
@@ -48,7 +48,7 @@ const Slide: React.FC<SliderItem> = ({
             className="w-full h-auto object-cover rounded-lg"
             transformation={[{ quality: "95" }]}
           />
-        </div>
+        </div> */}
       </div>
       <div className="w-full md:w-1/2 flex flex-col ">
         <h3 className="text-[22px] lg:text-[24px] xl:text-[28px] font-bold mb-[20px]">
@@ -67,7 +67,7 @@ const Slide: React.FC<SliderItem> = ({
         <a
           href="/application"
           rel="nofollow"
-          className="px-[30px] py-[10px] lg:max-w-72 mt-[20px] flex justify-center items-center  bg-blue_main rounded-full text-white"
+          className="px-[30px] py-[10px] lg:max-w-72 mt-[20px] flex justify-center items-center  bg-blue_main rounded-full text-white border border-white hover:bg-white hover:text-blue_main hover:border-blue_main transition-all duration-100"
         >
           <span className="me-[10px] text-[22px] md:text-[24]">
             Хочу так же
@@ -112,7 +112,7 @@ const SliderComponent: React.FC<{ data: SliderItem[] }> = ({ data }) => {
       >
         {data.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Slide {...slide} />
+            <Slide {...slide} key={index} />
           </SwiperSlide>
         ))}
       </Swiper>

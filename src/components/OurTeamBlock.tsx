@@ -1,50 +1,40 @@
 import React from 'react';
 import TeamSlider from '@/components/TeamSlider';
-import avatar from '../../public/AvatarTeamSlider.png';
-import person2 from '../../public/person2.png';
-import person3 from '../../public/person3.png';
-import person4 from '../../public/person4.png';
-import person5 from '../../public/person5.png';
 import StandardMarginsLayout from '@/layouts/StandardMarginsLayout';
 
 const OurTeamBlock: React.FC = () => {
     const teamMembers = [
         {
-            imageUrl: avatar,
+            imageUrl: "/resources/AvatarTeamSlider.png",
             name: 'Елизавета',
             position: 'UX/UI дизайнер',
         },
         {
-            imageUrl: person2,
+            imageUrl: "/resources/person2.png",
             name: 'Егор',
             position: 'Frontend-разработчик',
         },
         {
-            imageUrl: person4,
+            imageUrl: "/resources/person4.png",
             name: 'Алексей',
             position: 'Backend-разработчик',
         },
         {
-            imageUrl: person3,
+            imageUrl: "/resources/person3.png",
             name: 'Егор',
             position: 'CEO',
         },
         {
-            imageUrl: person5,
+            imageUrl: "/resources/person5.png",
             name: 'Юлия',
             position: 'Motion-дизайнер',
-        },
-        {
-            imageUrl: avatar,
-            name: 'Елизавета',
-            position: 'UX/UI дизайнер',
-        },
+        }
     ];
 
     return (
         <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px]" children={
             <>
-                <div className="container">
+                <div>
                     <h2 className="text-[32px] lg:text-[48px] 2xl:text-[60px] font-bold ">Команда которая реализует ваши идеи</h2>
                     <p className="my-[30px] text-[22px]">Анализируем, проектируем, разрабатываем сайты, сервисы и мобильные приложения для бизнеса под любой бюджет.</p>
                     <TeamSlider members={teamMembers} />

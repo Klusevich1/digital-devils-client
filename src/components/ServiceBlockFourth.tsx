@@ -8,7 +8,7 @@ const ServiceBlockFourth: React.FC = () => {
             title: 'Frontend-разработка',
             description: 'Разрабатываем современный SPA с использованием серверного рендеринга на базе React-фреймворков, обеспечивая надежную типизацию через TypeScript. Серверная часть реализуется на Node.js с применением Express.js, что гарантирует высокую производительность и гибкость. Для seamless интеграции frontend и backend используем RESTful API, обеспечивая надежное взаимодействие компонентов и масштабируемость ваших приложений.',
             stackName: "Стэк Frontend’a",
-            stack: ['CSS', 'HTML', 'React Redux', 'Typescript'],
+            stack: ['HTML', 'CSS', 'React', 'Next.js', 'Typescript'],
         },
         {
             title: 'Backend-разработка',

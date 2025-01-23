@@ -1,23 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import DiscussButton from "./DiscussButton";
-import Inst from "../../public/inst.svg";
-import Tg from "../../public/tg.svg";
 import Image from "next/image";
 import FooterLogo from "./FooterLogo";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FaPaperclip } from "react-icons/fa6";
+import { IMaskInput } from "react-imask";
+import { RxCross2 } from "react-icons/rx";
 
 const formSchema = z.object({
   name: z
     .string()
     .min(2, "Имя должно содержать хотя бы 2 символа")
     .max(50, "Имя слишком длинное"),
-  phone: z
-    .string()
-    .min(10, "Введите правильный номер телефона")
-    .max(15, "Номер телефона слишком длинный"),
+  phone: z.string().min(1, "Поле с номером телефона должно быть заполнено"),
+  // .regex(
+  //   /^\+375 \([1-9][1-9]\) \d{3}-\d{2}-\d{2}$/,
+  //   "Введите номер телефона в формате: +375 (29) 333-33-33"
+  // ),
   email: z.string().email("Введите правильный E-mail"),
   company: z
     .string()
@@ -43,52 +44,65 @@ type FormData = z.infer<typeof formSchema>;
 const Footer: React.FC = () => {
   const {
     register,
+    control,
     handleSubmit,
     setValue,
+    reset,
+    clearErrors,
     formState: { errors },
     watch,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      company: "",
+      services: [],
+      help: "",
+    },
   });
 
-  type ServiceType =
-    | "Веб-разработка"
-    | "Мобильное приложение"
-    | "Дизайн"
-    | "Motion"
-    | "SEO";
+  const services: Array<
+    "Веб-разработка" | "Мобильное приложение" | "Дизайн" | "Motion" | "SEO"
+  > = ["Веб-разработка", "Мобильное приложение", "Дизайн", "Motion", "SEO"];
 
-  const services: ServiceType[] = [
-    "Веб-разработка",
-    "Мобильное приложение",
-    "Дизайн",
-    "Motion",
-    "SEO",
-  ];
+  const [congratulations, setCongratulations] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
-      setValue("file", event.target.files[0]);
+      setSelectedFile(event.target.files[0]); // Устанавливаем файл в состояние
     }
   };
 
+  const removeFile = () => {
+    setSelectedFile(null); // Удаляем файл из состояния
+  };
+
   const onSubmit = async (data: FormData) => {
+    setLoading(true);
+    clearErrors();
     const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("phone", data.phone);
-    formData.append("email", data.email);
+
+    formData.append("name", data.name || "");
+    formData.append("phone", data.phone || "");
+    formData.append("email", data.email || "");
     if (data.company) formData.append("company", data.company);
     formData.append("help", data.help || "");
 
     data.services.forEach((service) => formData.append("services[]", service));
 
-    if (data.file) {
-      formData.append("file", data.file);
+    if (selectedFile) {
+      formData.append("file", selectedFile);
     }
 
     try {
       const response = await fetch(
-        "https://backend.digitaldevils.by/application",
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
+        // `http://localhost:3001/application`,
         {
           method: "POST",
           body: formData,
@@ -99,12 +113,23 @@ const Footer: React.FC = () => {
         throw new Error(`Ошибка: ${response.statusText}`);
       }
 
-      const result = await response.json();
-      console.log("Успешно отправлено:", result);
-      alert("Заявка успешно отправлена!");
+      reset({
+        name: "",
+        phone: "",
+        email: "",
+        company: "",
+        services: [],
+        help: "",
+      });
+      errors.phone?.message === "";
+      setSelectedFile(null);
+
+      setCongratulations("Ваша заявка успешно отправлена!");
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
-      alert("Не удалось отправить заявку. Попробуйте позже.");
+      setCongratulations("Не удалось отправить заявку. Попробуйте позже.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -128,7 +153,7 @@ const Footer: React.FC = () => {
           className="flex flex-col md:gap-[30px] gap-[20px] font-medium min-w-[240px] w-[641px] md:max-w-full"
         >
           <div className="flex flex-wrap gap-10 items-center w-full md:max-w-full">
-            <div className="md:max-w-[300px] w-full">
+            <div className="relative md:max-w-[300px] w-full">
               <label htmlFor="name" className="block text-sm font-medium">
                 Имя
                 <span> *</span>
@@ -140,28 +165,42 @@ const Footer: React.FC = () => {
                 className="h-[43px] mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none rounded-none focus:border-b-2 focus:border-white transition-all"
               />
               {errors.name && (
-                <p className="text-red text-xs">{errors.name.message}</p>
+                <p className="absolute bottom-[-18px] left-0 text-red text-xs">
+                  {errors.name.message}
+                </p>
               )}
             </div>
-            <div className="md:max-w-[300px] w-full">
+            <div className="relative md:max-w-[300px] w-full">
               <label htmlFor="phone" className="block text-sm font-medium">
                 Телефон
                 <span> *</span>
               </label>
-              <input
-                id="phone"
-                type="tel"
-                {...register("phone")}
-                className="h-[43px] mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none rounded-none focus:border-b-2 focus:border-white transition-all"
+              <Controller
+                name="phone"
+                control={control}
+                defaultValue=""
+                render={({ field: { onChange, onBlur, value, ref } }) => (
+                  <IMaskInput
+                    mask="+375 (00) 000-00-00"
+                    onBlur={onBlur}
+                    onAccept={onChange}
+                    value={value}
+                    inputRef={ref}
+                    placeholder="+375 (29) 333-33-33"
+                    className="h-[43px] mt-1 block w-full p-2 border-b placeholder:text-gray-500 border-black_10 outline-none bg-transparent ocus:border-white focus:border-b-2 transition-all rounded-none"
+                  />
+                )}
               />
               {errors.phone && (
-                <p className="text-red text-xs">{errors.phone.message}</p>
+                <p className="absolute bottom-[-18px] left-0 text-red text-xs">
+                  {errors.phone.message}
+                </p>
               )}
             </div>
           </div>
 
           <div className="flex flex-wrap gap-10 items-center w-full max-md:max-w-full">
-            <div className="md:max-w-[300px] w-full">
+            <div className="relative md:max-w-[300px] w-full">
               <label htmlFor="email" className="block text-sm font-medium">
                 E-mail
                 <span> *</span>
@@ -173,10 +212,12 @@ const Footer: React.FC = () => {
                 className="h-[43px] mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none rounded-none focus:border-b-2 focus:border-white transition-all"
               />
               {errors.email && (
-                <p className="text-red text-xs">{errors.email.message}</p>
+                <p className="absolute bottom-[-18px] left-0 text-red text-xs">
+                  {errors.email.message}
+                </p>
               )}
             </div>
-            <div className="md:max-w-[300px] w-full">
+            <div className="relative md:max-w-[300px] w-full">
               <label htmlFor="company" className="block text-sm font-medium">
                 Компания
                 <span> *</span>
@@ -188,12 +229,14 @@ const Footer: React.FC = () => {
                 className="h-[43px] mt-1 block w-full p-2 border-b border-black_10 bg-transparent outline-none rounded-none focus:border-b-2 focus:border-white transition-all"
               />
               {errors.company && (
-                <p className="text-red text-xs">{errors.company.message}</p>
+                <p className="absolute bottom-[-18px] left-0 text-red text-xs">
+                  {errors.company.message}
+                </p>
               )}
             </div>
           </div>
 
-          <div className="col-span-2  mt-4">
+          <div className="relative col-span-2  mt-4">
             <label
               htmlFor="services"
               className="block text-[18px] font-medium mb-[15px]"
@@ -224,12 +267,16 @@ const Footer: React.FC = () => {
               })}
             </div>
             {errors.services && (
-              <p className="text-red text-xs">{errors.services.message}</p>
+              <p className="absolute bottom-[-18px] left-0 text-red text-xs">
+                {errors.services.message == "Expected array, received boolean"
+                  ? "Выберите хотя бы одну услугу"
+                  : errors.services.message}
+              </p>
             )}
           </div>
 
           <div className="flex flex-col items-end justify-between sm:flex-row col-span-2 w-full text-white">
-            <div className="w-full sm:max-w-[400px] pe-3">
+            <div className="relative w-full sm:max-w-[400px] pe-3">
               <label htmlFor="help" className="block text-[18px] font-medium">
                 Чем мы можем вам помочь?
               </label>
@@ -240,28 +287,51 @@ const Footer: React.FC = () => {
                 rows={1}
               />
               {errors.help && (
-                <p className="text-red text-xs">{errors.help.message}</p>
+                <p className="absolute bottom-[-18px] left-0 text-red text-xs">
+                  {errors.help.message}
+                </p>
               )}
             </div>
 
             <div className="w-full sm:mt-0 mt-4 h-full text-center sm:text-left items-end flex max-w-full sm:max-w-[210px]">
-              <label
-                htmlFor="file"
-                className="text-white max-h-[50px] w-full inline-flex justify-center sm:justify-start items-center gap-2 cursor-pointer border border-white rounded-full px-5 py-2 hover:bg-gray-100"
-              >
-                <FaPaperclip className="text-white" />
-                <span>Прикрепить файл</span>
-                <input
-                  id="file"
-                  type="file"
-                  onChange={onFileChange}
-                  className="hidden"
-                />
-              </label>
+              {!selectedFile ? (
+                <label
+                  htmlFor="file"
+                  className="group max-h-[50px] w-full inline-flex justify-center sm:justify-start items-center gap-2 cursor-pointer border border-white rounded-full px-5 py-2 text-white hover:bg-white hover:text-gray-900"
+                >
+                  <FaPaperclip className="group-hover:text-gray-900 text-white" />
+                  <span className="w-full">Прикрепить файл</span>
+                  <input
+                    id="file"
+                    type="file"
+                    onChange={onFileChange}
+                    className="hidden"
+                  />
+                </label>
+              ) : (
+                <div className="flex items-center gap-2 border border-white rounded-full px-5 py-2 text-white">
+                  <span className="w-full">{selectedFile.name}</span>
+                  <RxCross2
+                    type="button"
+                    onClick={removeFile}
+                    size={20}
+                    className="text-red-600 hover:text-red-800 cursor-pointer"
+                  />
+                </div>
+              )}
             </div>
           </div>
-
-          <DiscussButton />
+          <button
+            type="submit"
+            className={`submit-button ${
+              loading ? "loading" : ""
+            } mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]`}
+          >
+            {loading ? "Отправка..." : "Обсудить проект"}
+          </button>
+          {congratulations.length > 0 && (
+            <p className="text-[18px] mt-[10px]">{congratulations}</p>
+          )}
         </form>
       </div>
       <div className="w-[1320px] max-w-full flex flex-col sm:py-[60px] py-[40px] sm:gap-[60px] gap-[40px]">
@@ -274,11 +344,19 @@ const Footer: React.FC = () => {
               </span>
             </a>
             <div className="flex flex-row gap-2.5">
-              <a href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
-                <Image src={Inst} width={32} height={32} alt="Instagram Logo" />
+              <a
+                target="_blank"
+                rel="nofollow"
+                href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
+              >
+                <Image src="/resources/inst.svg" width={32} height={32} alt="Instagram Logo" />
               </a>
-              <a href="https://t.me/devilsmanager">
-                <Image src={Tg} width={32} height={32} alt="Telegram Logo" />
+              <a
+                target="_blank"
+                rel="nofollow"
+                href="https://t.me/devilsmanager"
+              >
+                <Image src="/resources/tg.svg" width={32} height={32} alt="Telegram Logo" />
               </a>
             </div>
           </div>
@@ -299,29 +377,29 @@ const Footer: React.FC = () => {
         </div>
         <ul className="flex flex-row sm:gap-12 gap-x-[40px] gap-y-[20px] text-white text-[18px] font-medium flex-wrap">
           <li>
-            <a className="no-underline" href="/">
-              Разработка сайтов
-            </a>
+            {/* <a className="no-underline" href="/"> */}
+            Разработка сайтов
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
-              WEB-дизайн
-            </a>
+            {/* <a className="no-underline" href="/"> */}
+            WEB-дизайн
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
-              SEO продвижение
-            </a>
+            {/* <a className="no-underline" href="/"> */}
+            SEO продвижение
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
-              Мобильная разработка
-            </a>
+            {/* <a className="no-underline" href="/"> */}
+            Мобильная разработка
+            {/* </a> */}
           </li>
           <li>
-            <a className="no-underline" href="/">
-              Политика конфиденциальности
-            </a>
+            {/* <a className="no-underline" href="/"> */}
+            Политика конфиденциальности
+            {/* </a> */}
           </li>
         </ul>
       </div>
