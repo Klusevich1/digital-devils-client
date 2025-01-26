@@ -113,7 +113,6 @@ const Application = () => {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
-        // `http://localhost:3001/application`,
         {
           method: "POST",
           body: formData,
@@ -172,7 +171,7 @@ const Application = () => {
           styles="pt-0 pb-[50px] lg:pb-[50px]"
           children={
             <>
-              <div className="flex justify-between lg:flex-row flex-col">
+              <div className="flex justify-between lg:flex-row flex-col gap-10">
                 <div className="max-w-[530px]">
                   <h1 className="font-bold text-[28px] md:text-[32px] lg:text-[48px] xl:text-[60px]">
                     Есть идея для проекта?
@@ -190,14 +189,14 @@ const Application = () => {
                 </div>
 
                 <form
-                  className="max-w-[641px] w-full mt-8"
+                  className="flex flex-col md:gap-[30px] gap-[20px] font-medium min-w-[240px] lg:w-[641px] max-w-none w-full md:max-w-full"
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <div className="md:grid flex flex-col md:grid-cols-2 gap-4">
-                    <div className="relative">
+                    <div className="relative lg:max-w-[300px] w-full">
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium"
+                        className="block text-[18px] font-medium"
                       >
                         Имя
                         <span> *</span>
@@ -215,10 +214,10 @@ const Application = () => {
                       )}
                     </div>
 
-                    <div className="relative">
+                    <div className="relative lg:max-w-[300px] w-full">
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium"
+                        className="block text-[18px] font-medium"
                       >
                         Телефон
                         <span> *</span>
@@ -287,10 +286,10 @@ const Application = () => {
                       )}
                     </div>
 
-                    <div className="relative">
+                    <div className="relative lg:max-w-[300px] w-full">
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium"
+                        className="block text-[18px] font-medium"
                       >
                         E-mail
                         <span> *</span>
@@ -308,10 +307,10 @@ const Application = () => {
                       )}
                     </div>
 
-                    <div className="relative">
+                    <div className="relative lg:max-w-[300px] w-full">
                       <label
                         htmlFor="company"
-                        className="block text-sm font-medium"
+                        className="block text-[18px] font-medium"
                       >
                         Компания
                         <span> *</span>
@@ -329,10 +328,10 @@ const Application = () => {
                       )}
                     </div>
 
-                    <div className="col-span-2">
+                    <div className="relative col-span-2  mt-4">
                       <label
                         htmlFor="services"
-                        className="block text-sm font-medium"
+                        className="block text-[18px] font-medium"
                       >
                         Выберите услуги
                         <span> *</span>
@@ -372,10 +371,10 @@ const Application = () => {
                     </div>
 
                     <div className="flex flex-col justify-between sm:flex-row col-span-2 w-full">
-                      <div className="relative w-full sm:max-w-[400px] pe-3">
+                      <div className="relative w-full lg:max-w-[400px] pe-3">
                         <label
                           htmlFor="help"
-                          className="block text-sm font-medium"
+                          className="block text-[18px] font-medium"
                         >
                           Чем мы можем вам помочь?
                         </label>
@@ -392,14 +391,14 @@ const Application = () => {
                         )}
                       </div>
 
-                      <div className="w-full sm:mt-0 mt-2 h-full text-center sm:text-left items-end flex max-w-full sm:max-w-[200px]">
+                      <div className="w-full md:mt-0 mt-[30px] h-full text-center sm:text-left items-end flex max-w-full sm:max-w-[218px]">
                         {!selectedFile ? (
                           <label
                             htmlFor="file"
-                            className="max-h-[50px] w-full inline-flex justify-center sm:justify-start items-center gap-2 cursor-pointer border border-black_80 rounded-full px-5 py-2 text-gray-700 hover:bg-gray-100"
+                            className="max-h-[50px] w-[218px] inline-flex justify-center sm:justify-start items-center gap-2 cursor-pointer border border-black_80 rounded-full px-5 py-[12px] text-gray-700 hover:bg-gray-100"
                           >
                             <FaPaperclip className="text-gray-600" />
-                            <span className="w-full">Прикрепить файл</span>
+                            <span className="text-[18px] w-full">Прикрепить файл</span>
                             <input
                               id="file"
                               type="file"
@@ -408,8 +407,8 @@ const Application = () => {
                             />
                           </label>
                         ) : (
-                          <div className="flex items-center gap-2 border border-black_80 rounded-full px-5 py-2 text-gray-700">
-                            <span className="w-full">{selectedFile.name}</span>
+                          <div className="flex items-center w-full gap-2 border border-black_80 rounded-full px-5 py-[12px] text-gray-700">
+                            <span className="text-[18px] w-full">{selectedFile.name}</span>
                             <RxCross2
                               type="button"
                               onClick={removeFile}
@@ -424,7 +423,7 @@ const Application = () => {
                       type="submit"
                       className={`submit-button ${
                         loading ? "loading" : ""
-                      } mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]`}
+                      } mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white`}
                     >
                       {loading ? "Отправка..." : "Обсудить проект"}
                     </button>

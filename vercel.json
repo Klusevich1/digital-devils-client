@@ -1,58 +1,63 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
   "redirects": [
     {
-      "source": "/blog/$",
-      "destination": "/blog",
-      "permanent": true
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml",
+      "statusCode": 200
+    },
+    {
+      "source": "/404.html",
+      "destination": "/404",
+      "statusCode": 200
+    },
+    {
+      "source": "/500.html",
+      "destination": "/500",
+      "statusCode": 200
+    },
+    {
+      "source": "/:path*.:ext(php|htm|html|xhtml|xml)",
+      "destination": "/:path*",
+      "statusCode": 302
+    },
+    {
+      "source": "/(.*)//(.*)",
+      "destination": "/$1/$2",
+      "statusCode": 302
     },
     {
       "source": "/(.*)/$",
       "destination": "/$1",
-      "permanent": true
+      "statusCode": 302
     },
     {
-      "source": "/(index|default|home|test)(\\.(php|html|xhtml|htm|xml))?",
+      "source": "/index:ext(php|html|xhtml|htm|xml)?",
       "destination": "/",
-      "permanent": true
+      "statusCode": 302
     },
     {
-      "source": "/(.*)\\.(php|htm|html|xml|xhtml)",
-      "destination": "/$1",
-      "permanent": true
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.vercel-test-redirects-inky.vercel.app"
+        }
+      ],
+      "destination": "https://vercel-test-redirects-inky.vercel.app/:path*",
+      "permanent": false
+    },
+    {
+      "source": "/:path*", 
+      "has": [
+        {
+          "type": "host",
+          "value": "www.vercel-test-redirects-inky.vercel.app"
+        }
+      ],
+      "destination": "https://vercel-test-redirects-inky.vercel.app/:path*",
+      "statusCode": 301
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/(index|default|home|test)(\\.(php|html|xhtml|htm|xml))?",
-      "destination": "/404.html"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/404.html"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/404.html"
-    },
-    {
-      "src": "/(.*)",
-      "status": 500,
-      "dest": "/500.html"
-    },
-    {
-      "src": "/(.*)",
-      "status": 503,
-      "dest": "/503.html"
-    }
+    
   ]
 }

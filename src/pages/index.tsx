@@ -92,29 +92,29 @@ const Home: React.FC = () => {
     },
   ];
 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/random?size=4`
-        );
+  // useEffect(() => {
+  //   const fetchArticles = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/random?size=4`
+  //       );
 
-        if (!response.ok) {
-          console.error(`Failed to fetch articles: ${response.statusText}`);
-        }
+  //       if (!response.ok) {
+  //         console.error(`Failed to fetch articles: ${response.statusText}`);
+  //       }
 
-        const data: Article[] = await response.json();
-        setArticles(data);
-      } catch (err) {
-        console.error("Error fetching articles:", err);
-        setError("Failed to load articles");
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       const data: Article[] = await response.json();
+  //       setArticles(data);
+  //     } catch (err) {
+  //       console.error("Error fetching articles:", err);
+  //       setError("Failed to load articles");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchArticles();
-  }, []);
+  //   fetchArticles();
+  // }, []);
 
   return (
     <>

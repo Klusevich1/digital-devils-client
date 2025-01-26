@@ -43,7 +43,7 @@ const ArticleCard: React.FC<ArticleProps> = ({ art }) => {
           {art.type}
         </span>
         {/* <a href={`/blog/${art.slug}`}> */}
-          <p className="lg:text-[22px] text-[18px] font-bold">{art.title}</p>
+          <p className="lg:text-[18px] text-[18px] font-bold">{art.title}</p>
         {/* </a> */}
         <div className="flex flex-row gap-[20px]">
           <span className="text-[#7C7C7C] text-[14px] font-medium">

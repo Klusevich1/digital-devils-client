@@ -12,20 +12,6 @@ const SuccessSubmitModal: React.FC<SuccessSubmitModalProps> = ({
   congratulations,
   isDataSend
 }) => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [isSettings, setIsSettings] = useState<boolean>(false);
-  const [necessaryCookie, setNecessaryCookie] = useState<boolean>(true);
-  const [staticCookie, setStaticCookie] = useState<boolean>(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      const consent = getCookie("cookieConsent");
-      if (consent !== "true") {
-        setIsModalOpen(true);
-        document.body.style.overflow = "hidden";
-      }
-    }, 5000);
-  }, []);
 
   const router = useRouter();
 
@@ -42,7 +28,7 @@ const SuccessSubmitModal: React.FC<SuccessSubmitModalProps> = ({
         }`}
       >
         <div
-          className={`md:w-[400px] w-[100%] md:rounded-[30px] bg-white md:p-[30px] transition-all ${
+          className={`md:w-[400px] w-[350px] md:rounded-[30px] rounded-[25px] bg-white md:p-[30px] p-[25px] transition-all ${
             !isDataSend ? "opacity-0" : "opacity-100"
           }`}
         >

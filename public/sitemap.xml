@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://digitaldevils.by</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/about</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/application</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/b2b</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/blog</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/card-website</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/contacts</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/corporate-website</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/information-site</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/landing</loc><lastmod>2025-01-21T16:38:05.236Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/marketplace</loc><lastmod>2025-01-21T16:38:05.237Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/online-store</loc><lastmod>2025-01-21T16:38:05.237Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/portal</loc><lastmod>2025-01-21T16:38:05.237Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/portfolio</loc><lastmod>2025-01-21T16:38:05.237Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/services</loc><lastmod>2025-01-21T16:38:05.237Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitaldevils.by/website-catalog</loc><lastmod>2025-01-21T16:38:05.237Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap><loc>https://digitaldevils.by/sitemap-0.xml</loc></sitemap>
+</sitemapindex>
