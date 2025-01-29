@@ -24,7 +24,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       >
         <h2 className="text-[18px] md:text-[22px] font-bold">{title}</h2>
         <IoIosArrowDown
-          className={`transform transition-transform ${
+          className={`md:size-[32px] size-[24px] md:min-w-[32px] min-w-[24px] transform transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
         />

@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
     "Веб-разработка" | "Мобильное приложение" | "Дизайн" | "Motion" | "SEO"
   > = ["Веб-разработка", "Мобильное приложение", "Дизайн", "Motion", "SEO"];
 
-  const [congratulations, setCongratulations] = useState<string>("");
+  const [congratulations, setCongratulations] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [isDataSend, setIsDataSend] = useState<boolean>(false);
 
@@ -122,10 +122,10 @@ const Footer: React.FC = () => {
         help: "",
       });
       setSelectedFile(null);
-      setCongratulations("Ваша заявка успешно отправлена!");
+      setCongratulations(true);
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
-      setCongratulations("Не удалось отправить заявку. Попробуйте позже.");
+      setCongratulations(false);
     } finally {
       setIsDataSend(true);
       setLoading(false);
@@ -134,8 +134,8 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <section className="text-white flex flex-col justify-center items-center self-stretch bg-neutral-900 md:px-[45px] px-[20px] max-w-[1440px]">
-        <div className="flex flex-col lg:flex-row gap-10 justify-between items-start max-w-full min-h-[358px] w-full md:py-[60px] py-[40px]">
+      <section className="text-white flex flex-col justify-center items-center self-stretch bg-neutral-900">
+        <div className="flex flex-col lg:flex-row gap-10 justify-between items-start max-w-[1440px] custom_container min-h-[358px] w-full md:py-[60px] py-[40px]">
           <div className="max-w-[530px]">
             <h2 className="font-bold text-[28px] md:text-[32px] lg:text-[48px] xl:text-[60px]">
               Есть идея для проекта?
@@ -195,7 +195,7 @@ const Footer: React.FC = () => {
                     />
                   )}
                 />
-                {errors.phone && congratulations.length < 1 && (
+                {errors.phone && !congratulations && (
                   <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                     {errors.phone.message}
                   </p>
@@ -341,10 +341,6 @@ const Footer: React.FC = () => {
                 {loading ? "Отправка..." : "Обсудить проект"}
               </button>
             </div>
-
-            {congratulations.length > 0 && (
-              <p className="text-[18px] mt-[10px]">{congratulations}</p>
-            )}
           </form>
         </div>
         <div className="w-[1320px] max-w-full flex flex-col sm:py-[60px] py-[40px] sm:gap-[60px] gap-[40px]">

@@ -78,7 +78,7 @@ const Application = () => {
   > = ["Веб-разработка", "Мобильное приложение", "Дизайн", "Motion", "SEO"];
 
   const router = useRouter();
-  const [congratulations, setCongratulations] = useState<string>("");
+  const [congratulations, setCongratulations] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [isDataSend, setIsDataSend] = useState<boolean>(false);
 
@@ -112,7 +112,8 @@ const Application = () => {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
+        // `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
+        `http://localhost:3001/application`,
         {
           method: "POST",
           body: formData,
@@ -132,10 +133,10 @@ const Application = () => {
         help: "",
       });
       setSelectedFile(null);
-      setCongratulations("Ваша заявка успешно отправлена!");
+      setCongratulations(true);
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
-      setCongratulations("Не удалось отправить заявку. Попробуйте позже.");
+      setCongratulations(false);
     } finally {
       setIsDataSend(true)
       setLoading(false);
@@ -279,7 +280,7 @@ const Application = () => {
                           />
                         )}
                       />
-                      {errors.phone && congratulations.length < 1 && (
+                      {errors.phone && !congratulations && (
                         <p className="absolute bottom-[-18px] left-0 text-red text-xs">
                           {errors.phone.message}
                         </p>
@@ -428,9 +429,6 @@ const Application = () => {
                       {loading ? "Отправка..." : "Обсудить проект"}
                     </button>
                   </div>
-                  {congratulations.length > 0 && (
-                    <p className="text-[18px] mt-[10px]">{congratulations}</p>
-                  )}
                 </form>
               </div>
               <SuccessSubmitModal congratulations={congratulations} isDataSend={isDataSend}/>
