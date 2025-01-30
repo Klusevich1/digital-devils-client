@@ -140,8 +140,8 @@ const Application = () => {
     } finally {
       setTimeout(() => {
         setIsDataSend(true);
+        setLoading(false);
       }, 500);
-      setLoading(false);
     }
   };
 

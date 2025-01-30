@@ -27,7 +27,7 @@ const SuccessSubmitModal: React.FC<SuccessSubmitModalProps> = ({
         }`}
       >
         <div
-          className={`md:w-[450px] sm:w-full bg-white p-[20px] transition-all ${
+          className={`md:w-[450px] sm:w-full bg-white p-[20px] md:m-0 m-[20px] transition-all ${
             !isDataSend ? "opacity-0" : "opacity-100"
           }`}
         >
