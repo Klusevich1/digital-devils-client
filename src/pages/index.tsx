@@ -96,8 +96,7 @@ const Home: React.FC = () => {
     const fetchArticles = async () => {
       try {
         const response = await fetch(
-          // `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/random?size=4`
-          `http://localhost:3001/articles/random?size=4`
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/articles/random?size=4`
         );
 
         if (!response.ok) {

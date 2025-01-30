@@ -112,8 +112,7 @@ const Application = () => {
 
     try {
       const response = await fetch(
-        // `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
-        `http://localhost:3001/application`,
+        `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
         {
           method: "POST",
           body: formData,
