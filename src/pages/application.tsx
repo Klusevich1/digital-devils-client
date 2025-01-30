@@ -138,7 +138,9 @@ const Application = () => {
       console.error("Ошибка при отправке данных:", error);
       setCongratulations(false);
     } finally {
-      setIsDataSend(true);
+      setTimeout(() => {
+        setIsDataSend(true);
+      }, 500);
       setLoading(false);
     }
   };

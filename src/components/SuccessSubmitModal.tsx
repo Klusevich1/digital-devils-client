@@ -38,7 +38,7 @@ const SuccessSubmitModal: React.FC<SuccessSubmitModalProps> = ({
               className="text-black_80 cursor-pointer"
             />
           </div>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center ">
             {congratulations ? (
               <>
                 <img
