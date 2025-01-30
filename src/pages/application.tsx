@@ -77,7 +77,6 @@ const Application = () => {
     "Веб-разработка" | "Мобильное приложение" | "Дизайн" | "Motion" | "SEO"
   > = ["Веб-разработка", "Мобильное приложение", "Дизайн", "Motion", "SEO"];
 
-  const router = useRouter();
   const [congratulations, setCongratulations] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [isDataSend, setIsDataSend] = useState<boolean>(false);
@@ -120,7 +119,10 @@ const Application = () => {
       );
 
       if (!response.ok) {
+        setCongratulations(false);
         throw new Error(`Ошибка: ${response.statusText}`);
+      } else {
+        setCongratulations(true);
       }
 
       reset({
@@ -132,12 +134,11 @@ const Application = () => {
         help: "",
       });
       setSelectedFile(null);
-      setCongratulations(true);
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
       setCongratulations(false);
     } finally {
-      setIsDataSend(true)
+      setIsDataSend(true);
       setLoading(false);
     }
   };
@@ -155,7 +156,7 @@ const Application = () => {
       name: "Оставить заявку",
       item: "https://digitaldevils.by/application",
     },
-  ]
+  ];
 
   return (
     <>
@@ -398,7 +399,9 @@ const Application = () => {
                             className="max-h-[50px] w-[218px] inline-flex justify-center sm:justify-start items-center gap-2 cursor-pointer border border-black_80 rounded-full px-5 py-[12px] text-gray-700 hover:bg-gray-100"
                           >
                             <FaPaperclip className="text-gray-600" />
-                            <span className="text-[18px] w-full">Прикрепить файл</span>
+                            <span className="text-[18px] w-full">
+                              Прикрепить файл
+                            </span>
                             <input
                               id="file"
                               type="file"
@@ -408,7 +411,9 @@ const Application = () => {
                           </label>
                         ) : (
                           <div className="flex items-center w-full gap-2 border border-black_80 rounded-full px-5 py-[12px] text-gray-700">
-                            <span className="text-[18px] w-full">{selectedFile.name}</span>
+                            <span className="text-[18px] w-full">
+                              {selectedFile.name}
+                            </span>
                             <RxCross2
                               type="button"
                               onClick={removeFile}
@@ -430,7 +435,10 @@ const Application = () => {
                   </div>
                 </form>
               </div>
-              <SuccessSubmitModal congratulations={congratulations} isDataSend={isDataSend}/>
+              <SuccessSubmitModal
+                congratulations={congratulations}
+                isDataSend={isDataSend}
+              />
             </>
           }
         />
