@@ -2,35 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-display: swap; 
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../pages/fonts/manrope-v15-latin-regular.woff2') format('woff2');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../pages/fonts/manrope-v15-latin-500.woff2') format('woff2');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../pages/fonts/manrope-v15-latin-600.woff2') format('woff2');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../pages/fonts/manrope-v15-latin-700.woff2') format('woff2');
-}
-
 :root {
   --background: #fafafa;
   --foreground: #171717;
@@ -57,6 +28,7 @@ h2 {
 body {
   color: var(--foreground);
   background: var(--background);
+  font-family: "Manrope", sans-serif;
 }
 
 .custom_container {

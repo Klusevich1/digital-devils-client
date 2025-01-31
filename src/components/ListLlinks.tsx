@@ -31,7 +31,7 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
           </h3>
 
           <div className="max-w-[800px] w-full">
-            <p className="text-[18px] md:text-[22px] font-medium">
+            <p className="text-[18px] font-medium">
               {item.description}
             </p>
             <div className="flex mt-2 flex-wrap">
