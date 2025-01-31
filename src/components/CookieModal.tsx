@@ -9,9 +9,25 @@ const CookieModal = () => {
   const [necessaryCookie, setNecessaryCookie] = useState<boolean>(true);
   const [staticCookie, setStaticCookie] = useState<boolean>(true);
 
-  const router = useRouter();
+  const [viewportHeight, setViewportHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.visualViewport) {
+      const updateViewportHeight = () => {
+        window.visualViewport && setViewportHeight(window.visualViewport.height);
+      };
+
+      updateViewportHeight(); // Установить начальное значение
+      window.visualViewport.addEventListener("resize", updateViewportHeight);
+
+      return () => {
+        window.visualViewport?.removeEventListener("resize", updateViewportHeight);
+      };
+    }
+  }, []);
 
   const closeModal = (answ: string) => {
+    setIsModalOpen(false);
     document.body.style.overflow = "auto";
     setCookie("cookieConsent", true, { maxAge: 60 * 60 * 24 * 365 });
     setCookie("acceptCookiesRules", answ, { maxAge: 60 * 60 * 24 * 365 });
@@ -26,10 +42,11 @@ const CookieModal = () => {
       });
       setCookie("staticCookie", false, { maxAge: 60 * 60 * 24 * 365 });
     }
-    router.reload();
+    // router.reload();
   };
 
   const acceptCookieSettings = (necessaryC: boolean, staticC: boolean) => {
+    setIsModalOpen(false);
     setCookie("necessaryCookie", necessaryC, { maxAge: 60 * 60 * 24 * 365 });
     setCookie("staticCookie", staticC, { maxAge: 60 * 60 * 24 * 365 });
     setCookie("cookieConsent", true, { maxAge: 60 * 60 * 24 * 365 });
@@ -38,7 +55,7 @@ const CookieModal = () => {
     } else {
       setCookie("acceptCookiesRules", "agree", { maxAge: 60 * 60 * 24 * 365 });
     }
-    router.reload();
+    // router.reload();
   };
 
   const backReset = () => {
@@ -72,7 +89,14 @@ const CookieModal = () => {
           !isModalOpen ? "opacity-0 hidden" : "opacity-100 visible"
         }`}
       >
-        <div className={`md:w-[640px] w-[100%] md:rounded-[30px] bg-white md:p-[30px] md:me-[46px] md:mb-[19px]  p-[20px] transition-all ${!isModalOpen ? 'opacity-0' : 'opacity-100'}`}>
+        <div
+          className={`md:w-[640px] w-[100%] md:rounded-[30px] bg-white md:p-[30px] md:me-[46px] md:mb-[19px]  p-[20px] transition-all ${
+            !isModalOpen ? "opacity-0" : "opacity-100"
+          }`}
+          style={{
+            bottom: viewportHeight ? window.innerHeight - viewportHeight : "auto",
+          }}
+        >
           {isSettings ? (
             <>
               <div className="md:h-[380px] h-[40vh] overflow-y-scroll">

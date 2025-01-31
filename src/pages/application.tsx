@@ -437,10 +437,12 @@ const Application = () => {
                   </div>
                 </form>
               </div>
-              <SuccessSubmitModal
-                congratulations={congratulations}
-                isDataSend={isDataSend}
-              />
+              {isDataSend && (
+                <SuccessSubmitModal
+                  congratulations={congratulations}
+                  isDataSend={isDataSend}
+                />
+              )}
             </>
           }
         />

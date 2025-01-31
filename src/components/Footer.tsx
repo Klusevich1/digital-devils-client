@@ -321,7 +321,9 @@ const Footer: React.FC = () => {
                     </label>
                   ) : (
                     <div className="w-full flex items-center gap-2 border border-white rounded-full px-5 py-[12px] text-white">
-                      <span className="text-[18px] w-full">{selectedFile.name}</span>
+                      <span className="text-[18px] w-full">
+                        {selectedFile.name}
+                      </span>
                       <RxCross2
                         type="button"
                         onClick={removeFile}
@@ -343,7 +345,7 @@ const Footer: React.FC = () => {
             </div>
           </form>
         </div>
-        <div className="w-[1320px] max-w-full flex flex-col sm:py-[60px] py-[40px] sm:gap-[60px] gap-[40px]">
+        <div className="w-[1320px] max-w-full flex flex-col sm:py-[60px] py-[40px] sm:gap-[60px] gap-[40px] custom_container">
           <div className="flex justify-between gap-[20px] flex-wrap flex-col sm:flex-row ">
             <FooterLogo />
             <div className="flex flex-col gap-[20px] sm:gap-2.5">
@@ -422,7 +424,7 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
-        <div className="w-[1320px] max-w-full text-[14px] text-black_40 pb-[50px]">
+        <div className="w-[1320px] max-w-full text-[14px] text-black_40 pb-[50px] custom_container">
           <p>
             Наши сайты можно встретить во всех городах Беларуси: Барановичи,
             Барань, Белоозерск, Белыничи, Береза, Березино, Березовка,
@@ -447,10 +449,12 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </section>
-      <SuccessSubmitModal
-        congratulations={congratulations}
-        isDataSend={isDataSend}
-      />
+      {isDataSend && (
+        <SuccessSubmitModal
+          congratulations={congratulations}
+          isDataSend={isDataSend}
+        />
+      )}
     </>
   );
 };
