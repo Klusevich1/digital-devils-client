@@ -1,14 +1,22 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html lang="ru">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+          rel="stylesheet"
+        />
         <meta name="yandex-verification" content="8a71da99f472c773" />
-        <script
+        <Script
           type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
@@ -40,11 +48,23 @@ export default function Document() {
           name="google-site-verification"
           content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
         />
-        <script
+        <Script
+          id="loadCSS"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var link = document.createElement("link");
+              link.rel = "stylesheet";
+              link.href = "/styles/global.css";
+              document.head.appendChild(link);
+            `,
+          }}
+        />
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
-        ></script>
-        <script
+        />
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
