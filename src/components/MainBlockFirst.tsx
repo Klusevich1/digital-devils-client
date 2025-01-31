@@ -52,7 +52,7 @@ const MainBlockFirst: React.FC = () => {
           </>
         }
       />
-      {/* <div className="w-full mx-auto max-w-[1440px] sm:px-[45px] px-[0px]">
+      <div className="w-full mx-auto max-w-[1440px] sm:px-[45px] px-[0px]">
         <video
           autoPlay
           loop
@@ -63,7 +63,7 @@ const MainBlockFirst: React.FC = () => {
           <source src="/resources/main.mp4" type="video/mp4" />
           Ваш браузер не поддерживает видео.
         </video>
-      </div> */}
+      </div>
     </>
   );
 };
