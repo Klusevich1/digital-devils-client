@@ -4,7 +4,9 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
-        {/* <meta charSet="UTF-8" /> */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
         <meta name="yandex-verification" content="8a71da99f472c773" />
         <script
           type="text/javascript"
