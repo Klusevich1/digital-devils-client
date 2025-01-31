@@ -20,7 +20,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
             <div className="flex gap-[10px] md:gap-[40px] xl:gap-0 flex-col md:flex-row xl:flex-col justify-around w-full xl:max-w-[418px]">
               <div className="w-full flex-col flex justify-center mb-[40px]">
                 <div className="w-full h-[500px] xl:max-w-[417px] xl:h-[545px] overflow-hidden inline-flex rounded-[40px]">
-                  <video
+                  {/* <video
                     loop
                     muted
                     playsInline
@@ -39,7 +39,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                   >
                     <source src="/resources/main2.mp4" type="video/mp4" />
                     Ваш браузер не поддерживает видео.
-                  </video>
+                  </video> */}
                 </div>
                 <p className="mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
                   Motion-дизайн
