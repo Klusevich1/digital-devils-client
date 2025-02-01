@@ -81,7 +81,7 @@ const FooterSmall: React.FC = () => {
           <li>
             <a
               href="/personal_privacy.pdf"
-              download="personal_privacy.pdf"
+              target="_blank"
               className="no-underline"
             >
               Политика конфиденциальности
