@@ -82,6 +82,8 @@ const Application = () => {
   const [isDataSend, setIsDataSend] = useState<boolean>(false);
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [agreeForMailing, setAgreeForMailing] = useState<boolean>(true);
+  const [agreePolicy, setAgreePolicy] = useState<boolean>(true);
 
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -102,6 +104,11 @@ const Application = () => {
     formData.append("email", data.email || "");
     if (data.company) formData.append("company", data.company);
     formData.append("help", data.help || "");
+    formData.append("agreePolicy", agreePolicy ? "Согласен" : "Не согласен");
+    formData.append(
+      "agreeForMailing",
+      agreeForMailing ? "Согласен" : "Не согласен"
+    );
 
     data.services.forEach((service) => formData.append("services[]", service));
 
@@ -143,6 +150,14 @@ const Application = () => {
         setLoading(false);
       }, 500);
     }
+  };
+
+  const handlePolicyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAgreePolicy(event.target.checked);
+  };
+
+  const handleMailingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAgreeForMailing(event.target.checked);
   };
 
   const breadcrumbsSchema: ListItem[] = [
@@ -225,44 +240,6 @@ const Application = () => {
                         Телефон
                         <span> *</span>
                       </label>
-                      {/* <Controller
-                        name="phone"
-                        control={control}
-                        defaultValue=""
-                        render={({
-                          field: { onChange, onBlur, value, ref },
-                        }) => (
-                          <MaskedInput
-                            mask={[
-                              "+",
-                              "3",
-                              "7",
-                              "5",
-                              " ",
-                              "(",
-                              /[2-4]/,
-                              /\d/,
-                              ")",
-                              " ",
-                              /\d/,
-                              /\d/,
-                              /\d/,
-                              "-",
-                              /\d/,
-                              /\d/,
-                              "-",
-                              /\d/,
-                              /\d/,
-                            ]}
-                            onBlur={onBlur}
-                            onChange={onChange}
-                            value={value}
-                            ref={ref}
-                            placeholder="+375 (29) 333-33-33"
-                            className="h-[43px] mt-1 block w-full p-2 border-b outline-none bg-white focus:border-black_80 focus:border-b-2 transition-all rounded-none"
-                          />
-                        )}
-                      /> */}
                       <Controller
                         name="phone"
                         control={control}
@@ -426,15 +403,66 @@ const Application = () => {
                         )}
                       </div>
                     </div>
-                    <button
-                      type="submit"
-                      className={`submit-button ${
-                        loading ? "loading" : ""
-                      } mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white`}
-                    >
-                      {loading ? "Отправка..." : "Обсудить проект"}
-                    </button>
                   </div>
+                  <div className="flex flex-col gap-[10px]">
+                    <h4 className="text-[16px] font-medium">
+                      Согласие на обработку персональных данных
+                    </h4>
+                    <div className="flex flex-row items-start">
+                      <input
+                        type="checkbox"
+                        className="custom-checkbox color-black"
+                        id="agreePolicy"
+                        name="agreePolicy"
+                        checked={agreePolicy}
+                        onChange={handlePolicyChange}
+                      />
+                      <label
+                        htmlFor="agreePolicy"
+                        className="text-[14px] font-medium"
+                      >
+                        <p>
+                          Я уведомлен(а), что мои персональные данные, указанные
+                          в настоящей анкете, будут обработаны оператором в
+                          соответствии с{" "}
+                          <a
+                            href="/personal_privacy.pdf"
+                            download="personal_privacy.pdf"
+                            className="underline"
+                          >
+                            Политикой оператора в отношении обработки
+                            персональных данных.
+                          </a>
+                        </p>
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        className="custom-checkbox color-black"
+                        id="agreeForMailing"
+                        name="agreeForMailing"
+                        value="yes"
+                        checked={agreeForMailing}
+                        onChange={handleMailingChange}
+                      />
+                      <label
+                        htmlFor="agreeForMailing"
+                        className="text-[14px] font-medium"
+                      >
+                        Даю согласие на получение рассылок и рекламных
+                        материалов
+                      </label>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    className={`submit-button ${
+                      loading ? "loading" : ""
+                    } mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white`}
+                  >
+                    {loading ? "Отправка..." : "Обсудить проект"}
+                  </button>
                 </form>
               </div>
               {isDataSend && (

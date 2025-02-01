@@ -73,6 +73,8 @@ const Footer: React.FC = () => {
   const [isDataSend, setIsDataSend] = useState<boolean>(false);
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [agreeForMailing, setAgreeForMailing] = useState<boolean>(true);
+  const [agreePolicy, setAgreePolicy] = useState<boolean>(true);
 
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -100,6 +102,11 @@ const Footer: React.FC = () => {
       formData.append("file", selectedFile);
     }
 
+    formData.append("agreePolicy", agreePolicy ? "Согласен" : "Не согласен");
+    formData.append(
+      "agreeForMailing",
+      agreeForMailing ? "Согласен" : "Не согласен"
+    );
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/application`,
@@ -130,6 +137,14 @@ const Footer: React.FC = () => {
       setIsDataSend(true);
       setLoading(false);
     }
+  };
+
+  const handlePolicyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAgreePolicy(event.target.checked);
+  };
+
+  const handleMailingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setAgreeForMailing(event.target.checked);
   };
 
   return (
@@ -334,15 +349,65 @@ const Footer: React.FC = () => {
                   )}
                 </div>
               </div>
-              <button
-                type="submit"
-                className={`submit-button ${
-                  loading ? "loading" : ""
-                } mt-2 px-[39px] py-[12px] w-full md:w-[227px] text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white`}
-              >
-                {loading ? "Отправка..." : "Обсудить проект"}
-              </button>
             </div>
+            <div className="flex flex-col gap-[10px]">
+              <h4 className="text-[16px] font-medium">
+                Согласие на обработку персональных данных
+              </h4>
+              <div className="flex flex-row items-start">
+                <input
+                  type="checkbox"
+                  className="custom-checkbox"
+                  id="agreePolicy"
+                  name="agreePolicy"
+                  checked={agreePolicy}
+                  onChange={handlePolicyChange}
+                />
+                <label
+                  htmlFor="agreePolicy"
+                  className="text-[14px] font-medium"
+                >
+                  <p>
+                    Я уведомлен(а), что мои персональные данные, указанные в
+                    настоящей анкете, будут обработаны оператором в соответствии
+                    с {' '}
+                    <a
+                      href="/personal_privacy.pdf"
+                      download="personal_privacy.pdf"
+                      className="underline"
+                    >
+                      Политикой оператора в отношении обработки персональных
+                      данных.
+                    </a>
+                  </p>
+                </label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  className="custom-checkbox"
+                  id="agreeForMailing"
+                  name="agreeForMailing"
+                  value="yes"
+                  checked={agreeForMailing}
+                  onChange={handleMailingChange}
+                />
+                <label
+                  htmlFor="agreeForMailing"
+                  className="text-[14px] font-medium"
+                >
+                  Даю согласие на получение рассылок и рекламных материалов
+                </label>
+              </div>
+            </div>
+            <button
+              type="submit"
+              className={`submit-button ${
+                loading ? "loading" : ""
+              } mt-2 px-[39px] py-[12px] w-full md:w-[227px] text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white`}
+            >
+              {loading ? "Отправка..." : "Обсудить проект"}
+            </button>
           </form>
         </div>
         <div className="w-full max-w-full flex flex-col sm:py-[60px] py-[40px] sm:gap-[60px] gap-[40px] custom_container">
