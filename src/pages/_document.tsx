@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -14,17 +14,7 @@ export default function Document() {
         <link
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
           rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-          rel="stylesheet"
-        />
+        /> */}
         <meta name="yandex-verification" content="8a71da99f472c773" />
         <Script
           type="text/javascript"
@@ -60,6 +50,7 @@ export default function Document() {
         />
         <Script
           id="loadCSS"
+          async
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -75,6 +66,7 @@ export default function Document() {
           src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
         />
         <Script
+          async
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
