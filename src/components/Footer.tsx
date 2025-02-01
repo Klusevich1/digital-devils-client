@@ -371,14 +371,12 @@ const Footer: React.FC = () => {
                     Я уведомлен(а), что мои персональные данные, указанные в
                     настоящей анкете, будут обработаны оператором в соответствии
                     с {' '}
-                    <a
-                      href="/personal_privacy.pdf"
-                      download="personal_privacy.pdf"
+                    <span
                       className="underline"
                     >
                       Политикой оператора в отношении обработки персональных
                       данных.
-                    </a>
+                    </span>
                   </p>
                 </label>
               </div>
@@ -483,9 +481,13 @@ const Footer: React.FC = () => {
               {/* </a> */}
             </li>
             <li>
-              {/* <a className="no-underline" href="/"> */}
-              Политика конфиденциальности
-              {/* </a> */}
+              <a
+                href="/personal_privacy.pdf"
+                download="personal_privacy.pdf"
+                className="no-underline"
+              >
+                Политика конфиденциальности
+              </a>
             </li>
           </ul>
         </div>

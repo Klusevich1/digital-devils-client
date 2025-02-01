@@ -17,11 +17,29 @@ const FooterSmall: React.FC = () => {
               </span>
             </a>
             <div className="flex flex-row gap-2.5">
-              <a target="_blank" rel="nofollow" href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
-                <Image src="/resources/inst.svg" width={32} height={32} alt="Instagram Logo" />
+              <a
+                target="_blank"
+                rel="nofollow"
+                href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
+              >
+                <Image
+                  src="/resources/inst.svg"
+                  width={32}
+                  height={32}
+                  alt="Instagram Logo"
+                />
               </a>
-              <a target="_blank" rel="nofollow" href="https://t.me/devilsmanager">
-                <Image src="/resources/inst.svg" width={32} height={32} alt="Telegram Logo" />
+              <a
+                target="_blank"
+                rel="nofollow"
+                href="https://t.me/devilsmanager"
+              >
+                <Image
+                  src="/resources/inst.svg"
+                  width={32}
+                  height={32}
+                  alt="Telegram Logo"
+                />
               </a>
             </div>
           </div>
@@ -42,28 +60,32 @@ const FooterSmall: React.FC = () => {
         <ul className="flex flex-row sm:gap-12 gap-x-[40px] gap-y-[20px] text-white text-[18px] font-medium flex-wrap">
           <li>
             {/* <a className="no-underline" href="/"> */}
-              Разработка сайтов
+            Разработка сайтов
             {/* </a> */}
           </li>
           <li>
             {/* <a className="no-underline" href="/"> */}
-              WEB-дизайн
+            WEB-дизайн
             {/* </a> */}
           </li>
           <li>
             {/* <a className="no-underline" href="/"> */}
-              SEO продвижение
+            SEO продвижение
             {/* </a> */}
           </li>
           <li>
             {/* <a className="no-underline" href="/"> */}
-              Мобильная разработка
+            Мобильная разработка
             {/* </a> */}
           </li>
           <li>
-            {/* <a className="no-underline" href="/"> */}
+            <a
+              href="/personal_privacy.pdf"
+              download="personal_privacy.pdf"
+              className="no-underline"
+            >
               Политика конфиденциальности
-            {/* </a> */}
+            </a>
           </li>
         </ul>
       </div>

@@ -425,14 +425,12 @@ const Application = () => {
                           Я уведомлен(а), что мои персональные данные, указанные
                           в настоящей анкете, будут обработаны оператором в
                           соответствии с{" "}
-                          <a
-                            href="/personal_privacy.pdf"
-                            download="personal_privacy.pdf"
+                          <span
                             className="underline"
                           >
                             Политикой оператора в отношении обработки
                             персональных данных.
-                          </a>
+                          </span>
                         </p>
                       </label>
                     </div>
