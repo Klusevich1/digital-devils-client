@@ -82,7 +82,7 @@ export default function Document() {
             __html: `
               var link = document.createElement("link");
               link.rel = "stylesheet";
-              link.href = "/styles/global.css";
+              link.href = "/styles/globals.css";
               document.head.appendChild(link);
             `,
           }}
