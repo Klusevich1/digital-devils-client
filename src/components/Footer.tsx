@@ -160,7 +160,7 @@ const Footer: React.FC = () => {
               Заполните форму или отправьте письмо на адрес:
             </p>
             <p className="font-bold text-[22px] md:text-[24px]">
-              <a href="mailto:edgtldevils@gmail.com">dgtldevils@gmail.com</a>
+              <a href="mailto:info@digitaldevils.by">info@digitaldevils.by</a>
             </p>
           </div>
           <form
@@ -447,9 +447,9 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <div>
-              <a href="mailto:edgtldevils@gmail.com">
+              <a href="mailto:info@digitaldevils.by">
                 <span className="text-[18px] lg:text-[28px] font-bold text-white">
-                  dgtldevils@gmail.com
+                  info@digitaldevils.by
                 </span>
               </a>
             </div>

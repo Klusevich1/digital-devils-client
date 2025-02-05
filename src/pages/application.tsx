@@ -200,10 +200,10 @@ const Application = () => {
                     Заполните форму или отправьте письмо на e-mail:
                   </p>
                   <a
-                    href="malito:dgtldevils@gmail.com"
+                    href="malito:info@digitaldevils.by"
                     className="font-bold text-[22px] md:text-[24px]"
                   >
-                    dgtldevils@gmail.com
+                    info@digitaldevils.by
                   </a>
                 </div>
 

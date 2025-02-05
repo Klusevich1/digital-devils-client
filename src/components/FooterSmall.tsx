@@ -44,9 +44,9 @@ const FooterSmall: React.FC = () => {
             </div>
           </div>
           <div>
-            <a href="malito:gtldevils@gmail.com">
+            <a href="malito:info@digitaldevils.by">
               <span className="text-[18px] lg:text-[28px] font-bold text-white">
-                dgtldevils@gmail.com
+                info@digitaldevils.by
               </span>
             </a>
           </div>

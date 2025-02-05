@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="preload" href="https://digitaldevils.by/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="https://digitaldevils.by/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="https://digitaldevils.by/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="https://digitaldevils.by/fonts/xn7gYHE41ni1AdIRggexSg.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" as="video" href="https://digitaldevils.by/resources/main.mp4"></link>
         <link rel="preload" as="video" href="https://digitaldevils.by/resources/main2.mp4"></link>

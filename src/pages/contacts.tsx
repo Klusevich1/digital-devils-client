@@ -49,14 +49,18 @@ const contacts = () => {
                   +375 29 634 21 90
                 </span>
               </a>
-              <a href="mailto:edgtldevils@gmail.com">
+              <a href="mailto:info@digitaldevils.by">
                 <span className="sm:text-[24px] text-[22px] font-bold">
-                  dgtldevils@gmail.com
+                  info@digitaldevils.by
                 </span>
               </a>
 
               <div className="flex flex-row gap-2.5 mt-[20px]">
-                <a target="_blank" rel="nofollow" href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6">
+                <a
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
+                >
                   <Image
                     src="/resources/inst.svg"
                     width={32}
@@ -64,8 +68,17 @@ const contacts = () => {
                     alt="Instagram Logo"
                   />
                 </a>
-                <a target="_blank" rel="nofollow" href="https://t.me/devilsmanager">
-                  <Image src="/resources/tg.svg" width={32} height={32} alt="Telegram Logo" />
+                <a
+                  target="_blank"
+                  rel="nofollow"
+                  href="https://t.me/devilsmanager"
+                >
+                  <Image
+                    src="/resources/tg.svg"
+                    width={32}
+                    height={32}
+                    alt="Telegram Logo"
+                  />
                 </a>
               </div>
             </div>
