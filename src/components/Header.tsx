@@ -191,7 +191,7 @@ const Header: React.FC = () => {
                                             <ul className="min-w-[400px] space-y-2.5 w-1/3">
                                                 <li>
                                                     <a
-                                                        href="/services/"
+                                                        href="/services"
                                                         className="hover:text-blue-600 flex items-center duration-300"
                                                         onMouseOver={() => setDopServiceIndex(1)}
                                                         onMouseOut={(e) => {
@@ -207,7 +207,7 @@ const Header: React.FC = () => {
                                                 </li>
                                                 <li>
                                                     <a
-                                                        href="/services/"
+                                                        href="/services"
                                                         className="hover:text-blue-600 flex items-center duration-300"
                                                         // onMouseOver={() => setDopServiceIndex(2)}
                                                         // onMouseOut={(e) => {
@@ -224,7 +224,7 @@ const Header: React.FC = () => {
                                                 </li>
                                                 <li>
                                                     <a
-                                                        href="/services/"
+                                                        href="/services"
                                                         className="hover:text-blue-600 flex items-center duration-300"
                                                         // onMouseOver={() => setDopServiceIndex(3)}
                                                         // onMouseOut={(e) => {
@@ -241,7 +241,7 @@ const Header: React.FC = () => {
                                                 </li>
                                                 <li>
                                                     <a
-                                                        href="/services/"
+                                                        href="/services"
                                                         className="hover:text-blue-600 flex items-center duration-300"
                                                     >
                                                         <span className="text-[24px] font-medium me-1">Motion-дизайн</span>
@@ -250,7 +250,7 @@ const Header: React.FC = () => {
                                                 </li>
                                                 <li>
                                                     <a
-                                                        href="/services/"
+                                                        href="/services"
                                                         className="hover:text-blue-600 flex items-center duration-300"
                                                     >
                                                         <span className="text-[24px] font-medium me-1">SEO</span>
@@ -259,7 +259,7 @@ const Header: React.FC = () => {
                                                 </li>
                                                 <li>
                                                     <a
-                                                        href="/services/"
+                                                        href="/services"
                                                         className="hover:text-blue-600 flex items-center duration-300"
                                                     >
                                                         <span className="text-[24px] font-medium me-1">Дизайн</span>

@@ -2,6 +2,8 @@ import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
 export default function Document() {
+  const isProduction = process.env.NODE_ENV === "production";
+
   return (
     <Html lang="ru">
       <Head>
@@ -15,11 +17,13 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
           rel="stylesheet"
         /> */}
-        <meta name="yandex-verification" content="8a71da99f472c773" />
-        <Script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
+        {isProduction && (
+          <>
+            <meta name="yandex-verification" content="8a71da99f472c773" />
+            <Script
+              type="text/javascript"
+              dangerouslySetInnerHTML={{
+                __html: `
               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
               m[i].l=1*new Date();
               for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
@@ -33,21 +37,43 @@ export default function Document() {
                   webvisor:true
               });
             `,
-          }}
-        />
-        <noscript>
-          <div>
-            <img
-              src="https://mc.yandex.ru/watch/99204054"
-              style={{ position: "absolute", left: "-9999px" }}
-              alt=""
+              }}
             />
-          </div>
-        </noscript>
-        <meta
-          name="google-site-verification"
-          content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
-        />
+            <noscript>
+              <div>
+                <img
+                  src="https://mc.yandex.ru/watch/99204054"
+                  style={{ position: "absolute", left: "-9999px" }}
+                  alt=""
+                />
+              </div>
+            </noscript>
+          </>
+        )}
+
+        {isProduction && (
+          <>
+            <meta
+              name="google-site-verification"
+              content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
+            />
+            <Script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
+            />
+            <Script
+              async
+              dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-K8P2PGLXKZ');
+              `,
+              }}
+            />
+          </>
+        )}
         <Script
           id="loadCSS"
           async
@@ -58,21 +84,6 @@ export default function Document() {
               link.rel = "stylesheet";
               link.href = "/styles/global.css";
               document.head.appendChild(link);
-            `,
-          }}
-        />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
-        />
-        <Script
-          async
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-K8P2PGLXKZ');
             `,
           }}
         />
