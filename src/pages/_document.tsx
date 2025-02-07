@@ -20,7 +20,7 @@ export default function Document() {
         {isProduction && (
           <>
             <meta name="yandex-verification" content="8a71da99f472c773" />
-            <Script
+            <script
               type="text/javascript"
               dangerouslySetInnerHTML={{
                 __html: `
@@ -57,11 +57,11 @@ export default function Document() {
               name="google-site-verification"
               content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
             />
-            <Script
+            <script
               async
               src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
             />
-            <Script
+            <script
               async
               dangerouslySetInnerHTML={{
                 __html: `
