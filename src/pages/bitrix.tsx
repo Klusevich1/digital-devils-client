@@ -128,7 +128,7 @@ const bitrix = () => {
                             />
                             <div className="w-full flex justify-end absolute bottom-[15px] right-5 lg:right-3">
                                 <a
-                                    href="https://www.myvis.ru/?srsltid=AfmBOoquvbRv_NUZUR6cOYVL2OjamMyDgOFUZe3Fq7kK1QmImKB5S6iL"
+                                    href="https://legstom.ru/"
                                     rel="nofollow"
                                     target="_blank"
                                     className="max-h-[50px] max-w-[138px] px-[30px] py-[9px] lg:py-[10px] lg:px-[40px] w-fit mt-[20px] flex justify-center items-center bg-[#FAFAFA] rounded-full text-white"
