@@ -16,6 +16,7 @@
     "framer-motion": "^11.12.0",
     "imagekitio-next": "^1.0.1",
     "locomotive-scroll": "^4.1.4",
+    "lucide-react": "^0.475.0",
     "mini-css-extract-plugin": "^2.9.2",
     "next": "15.0.3",
     "next-sitemap": "^4.2.3",

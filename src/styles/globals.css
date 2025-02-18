@@ -3,28 +3,31 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 200 800;
   font-display: swap;
-  src: url('../fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2') format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  src: url("../fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
 }
 @font-face {
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 200 800;
   font-display: swap;
-  src: url('../fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2') format('woff2');
+  src: url("../fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2") format("woff2");
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 @font-face {
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 200 800;
   font-display: swap;
-  src: url('../fonts/xn7gYHE41ni1AdIRggexSg.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("../fonts/xn7gYHE41ni1AdIRggexSg.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 :root {
   --background: #fafafa;
@@ -79,6 +82,10 @@ body {
     padding-left: 60px;
     padding-right: 60px;
   }
+  .tilda-slider .custom_container {
+    padding-left: 60px;
+    padding-right: 0 !important;
+  }
 }
 
 .swiper-button-next::before,
@@ -110,10 +117,21 @@ body {
   right: auto;
 }
 
-.swiper-button-next-comm.swiper-button-disabled, .swiper-button-prev-comm.swiper-button-disabled {
-  opacity: .35;
+.swiper-button-next-comm.swiper-button-disabled,
+.swiper-button-prev-comm.swiper-button-disabled {
+  opacity: 0.35;
   cursor: auto;
   pointer-events: none;
+}
+
+.tilda-slider .swiper-button-prev,
+.tilda-slider .swiper-button-next {
+  position: inherit !important;
+}
+.custom-shadow-swiper-slide {
+  -webkit-box-shadow: 0px 0px 8px 4px rgba(34, 60, 80, 0.08);
+  -moz-box-shadow: 0px 0px 8px 4px rgba(34, 60, 80, 0.08);
+  box-shadow: 0px 0px 8px 4px rgba(34, 60, 80, 0.08);
 }
 
 .comment-block .swiper-pagination-bullet-active,
@@ -158,43 +176,89 @@ body {
   }
 }
 
-.custom-checkbox {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-}
-
-.custom-checkbox + label {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: start;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.custom-checkbox + label::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: 1px solid #fafafa;
-  margin-right: 10px;
+.bg_approach_block {
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
+  position: relative;
+  width: 494px;
+  height: 243px;
+  top: -75px;
+  left: -70px;
+}
+.bg_approach_dark {
+  background-image: url("./../../public/resources/approach_dark.png");
+}
+.bg_approach_green {
+  background-image: url("./../../public/resources/approach_green.png");
+}
+.bg_approach_light_green {
+  background-image: url("./../../public/resources/approach_light_green.png");
 }
 
-.custom-checkbox.color-black + label::before {
-  border: 1px solid #171717;
+/** {*/
+/*  border: 1px solid red;*/
+/*}*/
+
+@media (max-width: 640px) {
+  .bg_approach_block {
+    width: 341px;
+    height: 205px;
+    top: -70px;
+    left: -30px;
+  }
+  .bg_approach_dark {
+    background-image: url("./../../public/resources/approach_dark_small.png");
+  }
+  .bg_approach_green {
+    background-image: url("./../../public/resources/approach_green_small.png");
+  }
+  .bg_approach_light_green {
+    background-image: url("./../../public/resources/approach_light_green_small.png");
+  }
 }
 
-.custom-checkbox:checked + label::before {
-  background-image: url('/resources/checked.svg');
-}
+@media (min-width: 850px) {
+  .swiper-slide {
+    margin-right: 39px !important;
+  }
 
-.custom-checkbox.color-black:checked + label::before {
-  background-image: url('/resources/checked-black.svg');
+  .custom-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .custom-checkbox + label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: start;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .custom-checkbox + label::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #fafafa;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  .custom-checkbox.color-black + label::before {
+    border: 1px solid #171717;
+  }
+
+  .custom-checkbox:checked + label::before {
+    background-image: url("/resources/checked.svg");
+  }
+
+  .custom-checkbox.color-black:checked + label::before {
+    background-image: url("/resources/checked-black.svg");
+  }
 }

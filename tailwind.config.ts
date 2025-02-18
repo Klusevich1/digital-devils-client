@@ -34,6 +34,9 @@ export default {
         blue_20: "#345CFF33",
         blue_10: "#345CFF1A",
       },
+      screens: {
+        'xlg': '1080px',
+      },
     },
   },
   plugins: [],

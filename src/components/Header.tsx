@@ -4,6 +4,7 @@ import HeaderLogo from "@/components/HeaderLogo";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { LuMenu } from "react-icons/lu";
+import { useRouter } from "next/router";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +12,8 @@ const Header: React.FC = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [dopServiceIndex, setDopServiceIndex] = useState<number>(0);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [dopMobileServicesOpenIndex, setDopMobileServicesOpenIndex] =
-    useState<number>(0);
+  const [dopMobileServicesOpenIndex, setDopMobileServicesOpenIndex] = useState<number>(0);
+  const router = useRouter();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -60,15 +61,13 @@ const Header: React.FC = () => {
     },
     {
       services: [
-        { name: "2 Корпоротивные сайты", href: "corporate-website" },
-        { name: "2 Интернет-магазин", href: "online-store" },
-        { name: "2 Landing page", href: "landing" },
-        { name: "2 B2B сайты", href: "b2b" },
-        { name: "2 Сайт -визитка", href: "card-website" },
-        { name: "2 Портал", href: "portal" },
-        { name: "2 Сайт-каталог", href: "website-catalog" },
-        { name: "2 Информационный сайт", href: "information-site" },
-        { name: "2 Маркетплейс", href: "marketplace" },
+        { name: "Tilda", href: "tilda" },
+        { name: "Wordpress", href: "wordpress" },
+        { name: "Joomla", href: "joomla" },
+        { name: "1C Битрикс", href: "bitrix" },
+        { name: "Django", href: "django" },
+        { name: "Opencart", href: "opencart" },
+        { name: "Laravel", href: "laravel" },
       ],
     },
     {
@@ -125,6 +124,14 @@ const Header: React.FC = () => {
     },
   ];
 
+  const handleDropdowmBlock = () => {
+    if (isMobileServicesOpen) {
+      router.push("/services");
+    } else {
+      setIsMobileServicesOpen(true);
+    }
+  };
+  
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 bg-white">
@@ -178,7 +185,7 @@ const Header: React.FC = () => {
         >
           <div className="services-dropdown mx-auto max-w-[1440px] w-full flex items-center justify-between ">
             <HeaderLogo />
-            <nav className="hidden lg:flex space-x-8 items-center">
+            <nav className="hidden xlg:flex space-x-8 items-center">
               <div
                 className="relative"
                 onMouseOver={() => setIsServicesOpen(true)}
@@ -235,13 +242,13 @@ const Header: React.FC = () => {
                           <a
                             href="/services"
                             className="hover:text-blue-600 flex items-center duration-300"
-                            // onMouseOver={() => setDopServiceIndex(2)}
-                            // onMouseOut={(e) => {
-                            //     const relatedTarget = e.relatedTarget as HTMLElement;
-                            //     if (!relatedTarget || !relatedTarget.closest(".dop-services-dropdown")) {
-                            //         setDopServiceIndex(0);
-                            //     }
-                            // }}
+                            onMouseOver={() => setDopServiceIndex(2)}
+                            onMouseOut={(e) => {
+                                const relatedTarget = e.relatedTarget as HTMLElement;
+                                if (!relatedTarget || !relatedTarget.closest(".dop-services-dropdown")) {
+                                    setDopServiceIndex(0);
+                                }
+                            }}
                           >
                             <span className="text-[24px] font-medium me-1">
                               CMS
@@ -378,13 +385,13 @@ const Header: React.FC = () => {
             <a
               href="/application"
               rel="nofollow"
-              className="hidden lg:block bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[227px] text-white px-[39px] w-full text-[18px]  hover:bg-blue-700 mx-8 "
+              className="hidden xlg:block bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[227px] text-white px-[39px] w-full text-[18px]  hover:bg-blue-700 mx-8 "
             >
               Обсудить проект
             </a>
           </div>
           <button
-            className="lg:hidden flex-col items-end flex text-gray-700 focus:outline-none"
+            className="xlg:hidden flex-col items-end flex text-gray-700 focus:outline-none"
             onClick={toggleMenu}
           >
             <span
@@ -464,7 +471,7 @@ const Header: React.FC = () => {
                     className={`size-[22px] me-[5px] duration-500 ${
                       !isMobileServicesOpen
                         ? "translate-x-[-29px] opacity-0"
-                        : "translate-x-[0px] opacity-100"
+                        : "translate-x-[0px] opacity-100 text-blue-600"
                     }`}
                   />
                   <LuMenu
@@ -477,8 +484,8 @@ const Header: React.FC = () => {
                   />
                 </div>
                 <button
-                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="text-black font-medium transition-all duration-300 hover:text-blue-600 text-[22px]"
+                  onClick={handleDropdowmBlock}
+                  className={`text-black font-medium transition-all duration-300 ${isMobileServicesOpen ? 'text-blue-600' : ''} text-[22px]`}
                 >
                   Услуги
                 </button>
@@ -486,25 +493,10 @@ const Header: React.FC = () => {
               {isMobileServicesOpen ? (
                 <ul className="text-[22px] font-medium ">
                   <li
-                    className={`mb-[20px] flex items-center cursor-pointer duration-300 hover:text-blue_main
-                                            ${
-                                              dopMobileServicesOpenIndex === 0
-                                                ? "translate-x-[-29px]"
-                                                : "translate-x-[0px]"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !== 0
-                                                ? "translate-y-[-65px]"
-                                                : "translate-y-0"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !==
-                                                0 &&
-                                              dopMobileServicesOpenIndex !== 1
-                                                ? "hidden"
-                                                : "block"
-                                            }
-                                        `}
+                    className={`mb-[20px] flex items-center cursor-pointer duration-300
+                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
+                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
+                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 1 ? "hidden" : "block"}`}
                     onClick={() =>
                       dopMobileServicesOpenIndex === 1
                         ? setDopMobileServicesOpenIndex(0)
@@ -529,28 +521,15 @@ const Header: React.FC = () => {
                     />
                   </li>
                   <li
-                    className={`mb-[20px] flex items-center cursor-pointer duration-300 hover:text-blue_main 
-                                            ${
-                                              dopMobileServicesOpenIndex === 0
-                                                ? "translate-x-[-29px]"
-                                                : "translate-x-[0px]"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !== 0
-                                                ? "translate-y-[-65px]"
-                                                : "translate-y-0"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !==
-                                                0 &&
-                                              dopMobileServicesOpenIndex !== 2
-                                                ? "hidden"
-                                                : "block"
-                                            }`}
-                    // onClick={() =>
-                    //     dopMobileServicesOpenIndex === 2 ?
-                    //         setDopMobileServicesOpenIndex(0) :
-                    //         setDopMobileServicesOpenIndex(2)}
+                    className={`mb-[20px] flex items-center cursor-pointer duration-300
+                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
+                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
+                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 2 ? "hidden" : "block"}`}
+
+                    onClick={() =>
+                        dopMobileServicesOpenIndex === 2 ?
+                            setDopMobileServicesOpenIndex(0) :
+                            setDopMobileServicesOpenIndex(2)}
                   >
                     <GoArrowLeft
                       onClick={() => setDopMobileServicesOpenIndex(0)}
@@ -570,24 +549,10 @@ const Header: React.FC = () => {
                     />
                   </li>
                   <li
-                    className={`mb-[20px] flex items-center cursor-pointer duration-300 hover:text-blue_main
-                                            ${
-                                              dopMobileServicesOpenIndex === 0
-                                                ? "translate-x-[-29px]"
-                                                : "translate-x-[0px]"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !== 0
-                                                ? "translate-y-[-65px]"
-                                                : "translate-y-0"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !==
-                                                0 &&
-                                              dopMobileServicesOpenIndex !== 3
-                                                ? "hidden"
-                                                : "block"
-                                            }`}
+                    className={`mb-[20px] flex items-center cursor-pointer duration-300
+                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
+                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
+                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 3 ? "hidden" : "block"}`}
                     // onClick={() =>
                     //     dopMobileServicesOpenIndex === 3 ?
                     //         setDopMobileServicesOpenIndex(0) :
@@ -611,24 +576,10 @@ const Header: React.FC = () => {
                     />
                   </li>
                   <li
-                    className={`mb-[20px] flex items-center cursor-pointer duration-300 hover:text-blue_main
-                                            ${
-                                              dopMobileServicesOpenIndex === 0
-                                                ? "translate-x-[-29px]"
-                                                : "translate-x-[0px]"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !== 0
-                                                ? "translate-y-[-65px]"
-                                                : "translate-y-0"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !==
-                                                0 &&
-                                              dopMobileServicesOpenIndex !== 4
-                                                ? "hidden"
-                                                : "block"
-                                            }`}
+                    className={`mb-[20px] flex items-center cursor-pointer duration-300
+                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
+                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
+                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 4 ? "hidden" : "block"}`}
                     // onClick={() =>
                     //     dopMobileServicesOpenIndex === 4 ?
                     //         setDopMobileServicesOpenIndex(0) :
@@ -652,24 +603,10 @@ const Header: React.FC = () => {
                     />
                   </li>
                   <li
-                    className={`mb-[20px] flex items-center cursor-pointer duration-300 hover:text-blue_main
-                                            ${
-                                              dopMobileServicesOpenIndex === 0
-                                                ? "translate-x-[-29px]"
-                                                : "translate-x-[0px]"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !== 0
-                                                ? "translate-y-[-65px]"
-                                                : "translate-y-0"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !==
-                                                0 &&
-                                              dopMobileServicesOpenIndex !== 5
-                                                ? "hidden"
-                                                : "block"
-                                            }`}
+                    className={`mb-[20px] flex items-center cursor-pointer duration-300
+                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
+                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
+                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 5 ? "hidden" : "block"}`}
                     // onClick={() =>
                     //     dopMobileServicesOpenIndex === 5 ?
                     //         setDopMobileServicesOpenIndex(0) :
@@ -693,24 +630,10 @@ const Header: React.FC = () => {
                     />
                   </li>
                   <li
-                    className={`mb-[20px] flex items-center cursor-pointer duration-300 hover:text-blue_main
-                                            ${
-                                              dopMobileServicesOpenIndex === 0
-                                                ? "translate-x-[-29px]"
-                                                : "translate-x-[0px]"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !== 0
-                                                ? "translate-y-[-65px]"
-                                                : "translate-y-0"
-                                            }
-                                            ${
-                                              dopMobileServicesOpenIndex !==
-                                                0 &&
-                                              dopMobileServicesOpenIndex !== 6
-                                                ? "hidden"
-                                                : "block"
-                                            }`}
+                    className={`mb-[20px] flex items-center cursor-pointer duration-300
+                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
+                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
+                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 6 ? "hidden" : "block"}`}
                     // onClick={() =>
                     //     dopMobileServicesOpenIndex === 6 ?
                     //         setDopMobileServicesOpenIndex(0) :

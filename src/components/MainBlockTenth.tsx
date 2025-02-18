@@ -9,11 +9,12 @@ export interface DataItem {
 
 interface MainBlockTenthProps {
     data: DataItem[]
+    isOnlyBottomPadding?: boolean;
 }
 
-const MainBlockTenth: React.FC<MainBlockTenthProps> = ({data}) => {
+const MainBlockTenth: React.FC<MainBlockTenthProps> = ({data, isOnlyBottomPadding = true}) => {
     return (
-        <StandardMarginsLayout styles="pb-[50px] md:pb-[60px]" children={
+        <StandardMarginsLayout styles={isOnlyBottomPadding ? "pb-[50px] md:pb-[60px]" : "py-[50px] md:py-[60px]"} children={
             <>
                 <h2 className="text-[32px] md:text-[60px] mb-[30px] font-bold">Вопрос & ответ</h2>
                 {data.map((item, index) => (
