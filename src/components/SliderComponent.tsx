@@ -23,6 +23,9 @@ const Slide: React.FC<SliderItem> = ({
   works,
   imageSrc,
 }) => {
+  const technologiesHTML = technologies
+    .map((tech) => `<span class="technology">${tech}</span>`)
+    .join(" · ");
   return (
     <div className="flex flex-col md:flex-row w-full gap-8">
       <div className="w-full md:w-1/2">
@@ -54,12 +57,13 @@ const Slide: React.FC<SliderItem> = ({
         <h3 className="text-[22px] lg:text-[24px] xl:text-[28px] font-bold mb-[20px]">
           {title}
         </h3>
-        <p className="text-[18px] lg:text-[20px] mb-[5px] xl:text-[24px]">
-          {description}
-        </p>
+        <p
+          className="text-[18px] lg:text-[20px] mb-[5px] xl:text-[24px]"
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></p>
         <p className="text-[18px] mb-[5px] lg:text-[20px] xl:text-[24px]">
           <span className="font-bold">Технологии:</span>{" "}
-          {technologies.join(" · ")}
+          <span dangerouslySetInnerHTML={{__html: technologiesHTML}}></span>
         </p>
         <p className="text-[18px] lg:text-[20px] xl:text-[24px]">
           <span className="font-bold">Виды работ:</span> {works.join(" · ")}

@@ -16,8 +16,8 @@ const WideBlockWithImage: React.FC<WideBlockWithImageProps> = ({title, text_1, t
                 <>
                     <h1 className="mb-[30px] font-bold text-[32px] lg:text-[60px]">{title}</h1>
                     <div className="flex flex-col md:flex-row justify-between gap-[20px]">
-                        <p className="text-[22px] font-bold  md:max-w-[640px]">{text_1}</p>
-                        <p className="text-[18px] font-medium  md:max-w-[640px]">{text_2}</p>
+                        <p className="text-[22px] font-bold  md:max-w-[640px]" dangerouslySetInnerHTML={{__html: text_1}}></p>
+                        <p className="text-[18px] font-medium  md:max-w-[640px]" dangerouslySetInnerHTML={{__html: text_2}}></p>
                     </div>
                 </>
             }/>

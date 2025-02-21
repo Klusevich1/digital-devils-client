@@ -9,8 +9,8 @@ type DarkBigImageBlockProps = {
   smallTitle?: string;
   smallTitle1?: string;
   smallTitle2?: string;
-  text1: ReactNode;
-  text2: ReactNode;
+  text1: string;
+  text2: string;
   imagePath: string | StaticImageData;
   widthImage: number;
   heightImage: number
@@ -65,8 +65,7 @@ export const DarkBigImageBlock: FC<DarkBigImageBlockProps> = ({
                     {smallTitle2}
                   </h3>
                 )}
-                <p className="md:text-[18px] text-[16px] font-medium">
-                  {text2}
+                <p className="md:text-[18px] text-[16px] font-medium" dangerouslySetInnerHTML={{ __html: text2 }}>
                 </p>
                 <div className="lg:hidden flex justify-center">
                   <Image

@@ -27,7 +27,7 @@ const TechnologiesTitleBlock: React.FC<TechnologiesTitleBlockProps> = ({
                             </p>
                         </div>
                         <div className="flex flex-col lg:flex-row w-full items-center justify-between">
-                            <a className="order-2 lg:order-1 flex transition-all lg:w-fit w-full mt-[20px] lg:mt-0" href="/application">
+                            <a className="order-2 lg:order-1 flex transition-all lg:w-fit w-full mt-[20px] lg:mt-0" href="/application" rel="nofollow">
                                 <div className={`lg:w-[319px] w-full lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center rounded-full text-white`}
                                     style={{backgroundColor: buttonColor}}>
                                     {buttonText}

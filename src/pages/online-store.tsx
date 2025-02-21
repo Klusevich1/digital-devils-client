@@ -120,7 +120,7 @@ const OnlineStore = () => {
           bigTitle="Только эффективные решения"
           smallTitle="Соблюдаем сроки, оказываем помощь в продвижении, осуществляем техническую поддержку"
           text1="90% интернет-пользователей не менее одного раза в год совершают покупки в интернете. Собственный онлайн магазин для компании - это возможность не просто увеличить продажи, а стать для клиентов любимым и узнаваемым брендом, собрать вокруг себя лояльное комьюнити."
-          text2=" Команда разработчиков Digital Devils готова создать продающий сайт с современным дизайном, удобной товарной выгрузкой, эффективной обратной связью и необходимыми для стабильной работы интеграциями."
+          text2=" Команда разработчиков Digital Devils готова <a href='https://digitaldevils.by/' class='no-underline text-blue_main'>создать продающий сайт</a> с современным дизайном, удобной товарной выгрузкой, эффективной обратной связью и необходимыми для стабильной работы интеграциями."
           imagePath="/resources/online-store-1.png"
           widthImage={476}
           heightImage={374}
@@ -229,7 +229,7 @@ const OnlineStore = () => {
           }
           smallText=""
           smallTitle="Управление сайтом"
-          badges={[{ name: "1C-Битрикс" }, { name: "WordPress" }]}
+          badges={[{ name: "1C-Битрикс", link: 'https://digitaldevils.by/bitrix' }, { name: "Tilda", link: 'https://digitaldevils.by/tilda' }]}
           margin="pb-[50px] md:pb-[60px]"
           imagePath="/resources/online_store_fast_tech.png"
           isRevert={false}

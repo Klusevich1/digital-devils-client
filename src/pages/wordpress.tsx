@@ -99,7 +99,7 @@ const wordpress = () => {
                             <h1 className="mb-[30px] font-bold text-[32px] lg:text-[60px]">Преимущеcтва CMS Wordpress</h1>
                             <div className="flex flex-col flex-wrap md:flex-row justify-between gap-[20px]">
                                 {[
-                                    "Процесс создания лендингов, визиток, каталогов и магазинов отработан до мелочей",
+                                    "Процесс создания <a href='https://digitaldevils.by/landing' class='no-underline text-blue_main'>лендингов</a>, <a href='https://digitaldevils.by/card-website' class='no-underline text-blue_main'>визиток</a>, <a href='https://digitaldevils.by/website-catalog' class='no-underline text-blue_main'>каталогов</a> и <a href='https://digitaldevils.by/online-store' class='no-underline text-blue_main'>магазинов</a> отработан до мелочей",
                                     "Пользователям доступна обширная библиотека плагинов для расширения функционала проекта",
                                     "Простая и удобная панель управления, понятная даже для человека без опыта использования CMS",
                                     "Выгодная цена реализации проектов любой сложности и формата под ключ",
@@ -108,7 +108,7 @@ const wordpress = () => {
                                 ].map((item, idx) => (
                                     <div className="flex items-start lg:max-w-[413px]" key={idx}>
                                         <Image src={'/resources/Vector_wordpress.svg'} alt={"+"} width={17} height={15} />
-                                        <p className="text-[18px] lg:text-[22px] ms-[10px] font-bold lg:max-w-[640px]">{item}</p>
+                                        <p className="text-[18px] lg:text-[22px] ms-[10px] font-bold lg:max-w-[640px]" dangerouslySetInnerHTML={{__html: item}}></p>
                                     </div>
                                 ))}
                             </div>
@@ -122,8 +122,8 @@ const wordpress = () => {
                         {title: "Учитываем все детали", description: "Прежде чем приступить к разработке, мы анализируем целевую аудиторию, исследуем бизнес заказчика, оцениваем конкурентов, для подбора наиболее эффективных технологий, шаблонов, дизайна. "},
                         {title: "Ориентированы на результат", description: "Для нас важно качество, а не количество. Стараемся сосредоточиться на реализации каждого проекта, уделить максимум внимания планированию структуры и страниц будущем веб-ресурса. "},
                         {title: "Всегда на связи и не оставляем без поддержки", description: "Оперативно реагируем на обращения клиентов, предоставляем консультацию и гарантийную поддержку в течение нескольких месяцев после размещения сайта на хостинге и его запуска. Добавляем плагины, выполняем интеграции. "},
-                        {title: "Удобный и индивидуальный дизайн", description: "Знаем, как создать нешаблонный информационный или корпоративный сайт, креативную визитку. При создании дизайна ориентируемся на фирменный стиль и пожелания заказчика, актуальные тренды. "},
-                        {title: "Выполняем заказы под ключ", description: "Команды Digital Devils - это высококлассные специалисты, которым можно заказать практически любые услуги по разработке и запуску сайтов на WordPress, программированию, интернет-маркетингу и SEO-продвижению."},
+                        {title: "Удобный и индивидуальный дизайн", description: "Знаем, как создать нешаблонный <a href='https://digitaldevils.by/information-site' class='no-underline text-blue_main'>информационный</a> или <a href='https://digitaldevils.by/corporate-website' class='no-underline text-blue_main'>корпоративный сайт</a>, <a href='https://digitaldevils.by/card-website' class='no-underline text-blue_main'>креативную визитку</a>. При создании дизайна ориентируемся на фирменный стиль и пожелания заказчика, актуальные тренды. "},
+                        {title: "Выполняем заказы под ключ", description: "Команды Digital Devils - это высококлассные специалисты, которым можно заказать практически любые <a href='https://digitaldevils.by/' class='no-underline text-blue_main'>услуги по разработке и запуску сайтов</a> на WordPress, программированию, интернет-маркетингу и SEO-продвижению."},
                     ]}
                     firstBlock={
                         <div className="relative h-full lg:max-w-[753px] block lg:min-w-[422px] lg:mb-0 lg:me-[30px]">

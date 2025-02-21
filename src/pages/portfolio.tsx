@@ -18,7 +18,7 @@ const Portfolio = () => {
       link: "#",
       category: "Интернет-магазин",
       description:
-        "Спроектировали и разработали полноценный интернет-магазин с эксклюзивным дизайном. Разработку провели по принципам SEO Driven Development.",
+        "Спроектировали и <a href='https://digitaldevils.by/online-store' class='no-underline text-blue_main'>разработали полноценный интернет-магазин</a> с эксклюзивным дизайном. Разработку провели по принципам SEO Driven Development.",
       technologies: ['Next.js', 'TypeScript', 'Nest.js', 'MongoDB'],
       typesOfWork: ['UX/UI', 'Backend', 'Frontend'],
     },
@@ -28,7 +28,7 @@ const Portfolio = () => {
       link: "#",
       category: "Лендинг",
       description:
-        "Проект включал полный цикл веб-разработки: от концепции и дизайна до реализации и тестирования. Используя Agile-методологию, внедрили основные функции лендинга, проводя регулярные тестирования и собирая обратную связь от клиентов.",
+        "Проект включал полный цикл веб-разработки: от концепции и дизайна до реализации и тестирования. Используя Agile-методологию, внедрили основные функции <a href='https://digitaldevils.by/landing' class='no-underline text-blue_main'>лендинга</a>, проводя регулярные тестирования и собирая обратную связь от клиентов.",
       technologies: ['React', 'TypeScript', 'Express.js'],
       typesOfWork: ['UX/UI', 'Backend', 'Frontend'],
     },

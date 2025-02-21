@@ -375,6 +375,7 @@ const Footer: React.FC = () => {
                       href="/personal_privacy.pdf"
                       target="_blank"
                       className="underline"
+                      rel="nofollow"
                     >
                       Политикой оператора в отношении обработки персональных
                       данных.
@@ -463,9 +464,9 @@ const Footer: React.FC = () => {
           </div>
           <ul className="flex flex-row sm:gap-12 gap-x-[40px] gap-y-[20px] text-white text-[18px] font-medium flex-wrap">
             <li>
-              {/* <a className="no-underline" href="/"> */}
-              Разработка сайтов
-              {/* </a> */}
+              <a className="no-underline" href="/">
+                Разработка сайтов
+              </a>
             </li>
             <li>
               {/* <a className="no-underline" href="/"> */}
@@ -487,6 +488,7 @@ const Footer: React.FC = () => {
                 href="/personal_privacy.pdf"
                 target="_blank"
                 className="no-underline"
+                rel="nofollow"
               >
                 Политика конфиденциальности
               </a>

@@ -203,7 +203,7 @@ const informationSite = () => {
                 <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
                 <p className="text-[18px] ms-[20px] font-medium">
                   Наши специалисты работают со всеми современными фреймворками:
-                  Laravel, Vue/Nuxt.js, Yii, React/Next.js, React Native, что
+                  <a href='https://digitaldevils.by/laravel' className='no-underline text-blue_main'>Laravel</a>, Vue/Nuxt.js, Yii, React/Next.js, React Native, что
                   обеспечивает высокую скорость разработки и надежность готового
                   продукта.
                 </p>
@@ -211,8 +211,8 @@ const informationSite = () => {
               <div className="flex items-start mb-[10px]">
                 <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
                 <p className="text-[18px] ms-[20px] font-medium">
-                  Используем популярные платные и бесплатные движки: 1С-Битрикс,
-                  WordPress, OpenCart, Joomla, MODX
+                  Используем популярные платные и бесплатные движки: <a href='https://digitaldevils.by/bitrix' className='no-underline text-blue_main'>1С-Битрикс</a>,
+                  <a href='https://digitaldevils.by/wordpress' className='no-underline text-blue_main'>WordPress</a>, <a href='https://digitaldevils.by/opencart' className='no-underline text-blue_main'>OpenCart</a>, <a href='https://digitaldevils.by/joomla' className='no-underline text-blue_main'>Joomla</a>, MODX
                 </p>
               </div>
               <div className="flex items-start mb-[10px]">

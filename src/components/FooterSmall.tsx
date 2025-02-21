@@ -52,6 +52,7 @@ const FooterSmall: React.FC = () => {
           </div>
           <a
             href="/application"
+            rel="nofollow"
             className="mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]"
           >
             Обсудить проект
@@ -59,9 +60,9 @@ const FooterSmall: React.FC = () => {
         </div>
         <ul className="flex flex-row sm:gap-12 gap-x-[40px] gap-y-[20px] text-white text-[18px] font-medium flex-wrap">
           <li>
-            {/* <a className="no-underline" href="/"> */}
-            Разработка сайтов
-            {/* </a> */}
+            <a className="no-underline" href="/">
+              Разработка сайтов
+            </a>
           </li>
           <li>
             {/* <a className="no-underline" href="/"> */}
@@ -83,6 +84,7 @@ const FooterSmall: React.FC = () => {
               href="/personal_privacy.pdf"
               target="_blank"
               className="no-underline"
+              rel="nofollow"
             >
               Политика конфиденциальности
             </a>

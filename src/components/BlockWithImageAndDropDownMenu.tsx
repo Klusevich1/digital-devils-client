@@ -5,7 +5,7 @@ import {BsPlusCircle} from "react-icons/bs";
 
 interface DataItem {
     title: string;
-    description: ReactNode;
+    description: string;
 }
 
 interface BlockWithImageAndDropDownMenuProps {
@@ -39,7 +39,7 @@ const BlockWithImageAndDropDownMenu: React.FC<BlockWithImageAndDropDownMenuProps
 
 const AccordionItem: React.FC<{
     title: string;
-    description: ReactNode;
+    description: string;
     borderColor: string;
     padding: string
 }> = ({title, description, borderColor, padding }) => {
@@ -70,7 +70,7 @@ const AccordionItem: React.FC<{
                     maxHeight: isOpen ? "600px" : "0",
                 }}
             >
-                <div className="text-[16px] md:text-[18px]">{description}</div>
+                <div className="text-[16px] md:text-[18px]" dangerouslySetInnerHTML={{__html: description}}></div>
             </div>
         </div>
     );

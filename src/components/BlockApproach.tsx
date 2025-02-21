@@ -77,12 +77,10 @@ const BlockApproach: React.FC<BlockApproachProps> = ({
           </h1>
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="w-full lg:max-w-[640px]">
-              <p className="text-[22px] font-bold mb-[10px]">{leftBlock_p1}</p>
-              <p className="text-[16px] lg:text-[18px] font-medium mb-[10px]">
-                {leftBlock_p2}
+              <p className="text-[22px] font-bold mb-[10px]" dangerouslySetInnerHTML={{__html: leftBlock_p1}}></p>
+              <p className="text-[16px] lg:text-[18px] font-medium mb-[10px]" dangerouslySetInnerHTML={{__html: leftBlock_p2}}>
               </p>
-              <p className="text-[16px] lg:text-[18px] font-medium mb-[10px]">
-                {leftBlock_p3}
+              <p className="text-[16px] lg:text-[18px] font-medium mb-[10px]" dangerouslySetInnerHTML={{__html: leftBlock_p3}}>
               </p>
               <div className="hidden lg:flex justify-end">
                 <Image src={ARROW} width={112} height={9} alt={arrowColor} />
@@ -136,13 +134,12 @@ const BlockApproach: React.FC<BlockApproachProps> = ({
                   </p>
                   <ul>
                     {rightBlockList.map((item, idx) => (
-                      <li key={idx} className="text-[16px] font-medium">
-                        {item}
+                      <li key={idx} className="text-[16px] font-medium" dangerouslySetInnerHTML={{__html: item}}>
                       </li>
                     ))}
                   </ul>
                   <div className="flex justify-center mt-[20px]">
-                    <a className="flex" href="/application">
+                    <a className="flex" href="/application" rel="nofollow">
                       <div
                         className={`font-medium text-[16px] lg:text-[18px] py-[12.5px] px-[73px] text-nowrap md:px-[20px] text-center rounded-full text-white`}
                         style={{ backgroundColor: buttonColor }}

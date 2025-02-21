@@ -169,7 +169,7 @@ const opencart = () => {
                                 оптимизацию, хостинг, техническую поддержку и сопровождение.
                             </p>
                             <p className="text-[16px] lg:text-[18px]">
-                                Ваш интернет-магазин и электронный каталог будут соответствовать всем актуальным трендам и стандартам. Создаем сайты под ключ для бизнеса любого масштаба в Минске и
+                                Ваш <a href='https://digitaldevils.by/online-store' className='no-underline text-blue_main'>интернет-магазин</a> и <a href='https://digitaldevils.by/website-catalog' className='no-underline text-blue_main'>электронный каталог</a> будут соответствовать всем актуальным трендам и стандартам. <a href='https://digitaldevils.by/' className='no-underline text-blue_main'>Создаем сайты под ключ</a> для бизнеса любого масштаба в Минске и
                                 Беларуси.
                             </p>
                         </>

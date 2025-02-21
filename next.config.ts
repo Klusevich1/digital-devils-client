@@ -3,6 +3,19 @@ import { Configuration } from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/_next/image",
+        headers: [
+          {
+            key: "Content-Disposition",
+            value: "inline",
+          },
+        ],
+      },
+    ];
+  },
   webpack: (config: Configuration, { isServer }: { isServer: boolean }) => {
     if (!isServer) {
       console.log("Fixing CSS and JS filenames for Tailwind CSS.");

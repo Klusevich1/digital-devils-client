@@ -81,7 +81,7 @@ const bitrix = () => {
                 />
                 <WideBlockWithImage
                     title="Создаем только продающие сайты"
-                    text_1="1С-Битрикс - одна из самых популярных CMS систем в Минске и Беларуси, которая отлично подходит для создания практически любых сайтов: корпоративные порталы, информационные ресурсы, интернет-магазины, каталоги, визитки."
+                    text_1="1С-Битрикс - одна из самых популярных CMS систем в Минске и Беларуси, которая отлично подходит для создания практически любых сайтов: <a href='https://digitaldevils.by/corporate-website' class='no-underline text-blue_main'>корпоративные порталы</a>, <a href='https://digitaldevils.by/information-site' class='no-underline text-blue_main'>информационные ресурсы</a>, <a href='https://digitaldevils.by/online-store' class='no-underline text-blue_main'>интернет-магазины</a>, <a href='https://digitaldevils.by/website-catalog' class='no-underline text-blue_main'>каталоги</a>, <a href='https://digitaldevils.by/card-website' class='no-underline text-blue_main'>визитки</a>."
                     text_2="Аттестованные bitrix-разработчики Digital Devils, знают, как найти и подобрать инструменты и технологии для решения даже самых сложных и нестандартных задач бизнеса. Создадим продающий сайт с нуля. Добавим функции, выполним интеграции и доработку уже существующих ресурсов. Настроим платформу для удобного управления, SEO-продвижения и активных продаж."
                 />
                 <StandardMarginsLayout
@@ -128,7 +128,7 @@ const bitrix = () => {
                             />
                             <div className="w-full flex justify-end absolute bottom-[15px] right-5 lg:right-3">
                                 <a
-                                    href="https://legstom.ru/"
+                                    href="https://www.myvis.ru/?srsltid=AfmBOoquvbRv_NUZUR6cOYVL2OjamMyDgOFUZe3Fq7kK1QmImKB5S6iL"
                                     rel="nofollow"
                                     target="_blank"
                                     className="max-h-[50px] max-w-[138px] px-[30px] py-[9px] lg:py-[10px] lg:px-[40px] w-fit mt-[20px] flex justify-center items-center bg-[#FAFAFA] rounded-full text-white"

@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
-  { name: "Landing page", link: "/landing" },
+  { name: "Landing page", link: "/corporate-website" },
 ];
 
 const breadcrumbsSchema: ListItem[] = [
@@ -57,11 +57,12 @@ const corporateWebsite = () => {
       ),
     },
     {
-      title:
-        "Сколько времени нужно на создание корпоративного сайта с нуля?",
+      title: "Сколько времени нужно на создание корпоративного сайта с нуля?",
       description: (
         <p className="text-[18px] ">
-          В среднем разработка интернет-ресурса под ключ занимает от 1,5 до 3 месяцев, в зависимости от сложности дизайна, интерфейса и функционала площадки.
+          В среднем разработка интернет-ресурса под ключ занимает от 1,5 до 3
+          месяцев, в зависимости от сложности дизайна, интерфейса и функционала
+          площадки.
         </p>
       ),
     },
@@ -127,7 +128,12 @@ const corporateWebsite = () => {
           text={
             <>
               <div className="flex items-start mb-[10px]">
-                <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
+                <Image
+                  src="/resources/arrow_custom.svg"
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
                 <div className="ms-[20px] max-w-[646px]">
                   <h2 className="font-medium text-[22px] mb-[5px]">
                     Информационное присутствие фирмы в интернете
@@ -140,7 +146,12 @@ const corporateWebsite = () => {
                 </div>
               </div>
               <div className="flex items-start mb-[10px]">
-                <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
+                <Image
+                  src="/resources/arrow_custom.svg"
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
                 <div className="ms-[20px] max-w-[646px]">
                   <h2 className="font-medium text-[22px] mb-[5px]">
                     Улучшение репутации и повышение узнаваемости бренда
@@ -156,7 +167,12 @@ const corporateWebsite = () => {
                 </div>
               </div>
               <div className="flex items-start mb-[10px]">
-                <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
+                <Image
+                  src="/resources/arrow_custom.svg"
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
                 <div className="ms-[20px] max-w-[646px]">
                   <h2 className="font-medium text-[22px] mb-[5px]">
                     Продажа товаров и услуг
@@ -252,8 +268,28 @@ const corporateWebsite = () => {
           text={
             <p className="font-bold text-[18px] mb-[30px] max-w-[817px]">
               Закажите создание корпоративного сайта компании на удобной для вас
-              CMS: 1C-Битрикс, WordPress, ModX, Opencart и т.д. Создание
-              веб-ресурса с нуля выполняется в несколько этапов.
+              CMS:{" "}
+              <a
+                href="https://digitaldevils.by/bitrix"
+                className="no-underline text-blue_main"
+              >
+                1C-Битрикс
+              </a>
+              ,{" "}
+              <a
+                href="https://digitaldevils.by/wordpress"
+                className="no-underline text-blue_main"
+              >
+                WordPress
+              </a>
+              , ModX,
+              <a
+                href="https://digitaldevils.by/opencart"
+                className="no-underline text-blue_main"
+              >
+                Opencart
+              </a>{" "}
+              и т.д. Создание веб-ресурса с нуля выполняется в несколько этапов.
             </p>
           }
           margin="py-[50px] md:py-[60px]"
@@ -273,8 +309,34 @@ const corporateWebsite = () => {
               </h2>
               <p className="text-[18px] font-medium mb-[10px]">
                 Успешно применяем современные фреймворки, популярные CMS с
-                открытым исходным кодом (1С-Битрикс, Laravel, Wordpress, ModX,
-                Opencart и др) для реализации корпоративных проектов с различной
+                открытым исходным кодом (
+                <a
+                  href="https://digitaldevils.by/tilda"
+                  className="no-underline text-blue_main"
+                >
+                  Tilda
+                </a>
+                ,{" "}
+                <a
+                  href="https://digitaldevils.by/laravel"
+                  className="no-underline text-blue_main"
+                >
+                  Laravel
+                </a>
+                ,{" "}
+                <a
+                  href="https://digitaldevils.by/wordpress"
+                  className="no-underline text-blue_main"
+                >
+                  Wordpress
+                </a>
+                ,{" "}
+                <a
+                  href="https://digitaldevils.by/django"
+                  className="no-underline text-blue_main"
+                >
+                  Django
+                </a> и др) для реализации корпоративных проектов с различной
                 функциональной сложностью. Профессиональный и комплексный подход
                 в сочетании с инновационными технологиями позволяет нам
                 создавать удобные и практичные интерфейсы, которые на 100%

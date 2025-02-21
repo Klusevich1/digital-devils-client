@@ -127,7 +127,7 @@ const tilda = () => {
                                         <p className="text-[16px] lg:text-[18px] font-medium">среднее количество запускаемых нами сайтов на Tilda в месяц</p>
                                     </div>
                                     <p className="text-[16px] lg:text-[18px] font-medium mt-[25px]">
-                                        Разработаем по вашему запросу лендинг, электронный каталог, интернет-магазин, корпоративную визитку.
+                                        Разработаем по вашему запросу <a href='https://digitaldevils.by/landing' className='no-underline text-blue_main'>лендинг</a>, <a href='https://digitaldevils.by/website-catalog' className='no-underline text-blue_main'>электронный каталог</a>, <a href='https://digitaldevils.by/online-store' className='no-underline text-blue_main'>интернет-магазин</a>, <a href='https://digitaldevils.by/corporate-website' className='no-underline text-blue_main'>корпоративную визитку</a>.
                                     </p>
                                     <p className="text-[16px] lg:text-[18px] font-medium mt-[10px]">
                                         Наши сайты быстро индексируются, имеют продуманный интерфейс.
@@ -243,7 +243,7 @@ const tilda = () => {
                     leftBlock_p3="Под каждый заказ мы формируем собственную команду, которая движется вперед в строгом соответствии с согласованным графиком работ и планом действий."
                     rightBlockTitle="Прозрачные цены"
                     rightBlockPrice="400$"
-                    rightBlockList={["Разработка сайта под ключ", "Правки", "Гайд пользования сайтом"]}
+                    rightBlockList={["<a href='https://digitaldevils.by/' class='no-underline'>Разработка сайта под ключ</a>", "Правки", "Гайд пользования сайтом"]}
                     rightBlockImage={'/resources/tilda.svg'}
                     buttonColor="#EA6021"
                     arrowColor="orange"

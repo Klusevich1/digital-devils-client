@@ -154,7 +154,7 @@ const websiteCatalog = () => {
           smallText=""
           smallTitle=""
           margin="pb-[50px] md:pb-[60px]"
-          badges={[]}
+          badges={[{ name: "Wordpress", link: 'https://digitaldevils.by/wordpress' }, { name: "Joomla", link: 'https://digitaldevils.by/joomla' }, { name: "1С Битрикс", link: 'https://digitaldevils.by/bitrix' }]}
           imagePath="/resources/website_catalog_image2.png"
           isRevert={false}
         />
@@ -233,7 +233,7 @@ const websiteCatalog = () => {
           title="Выбери подход, который нужен бизнесу"
           text1={
             <p className="text-[22px] mb-[20px] font-bold">
-              Разработка сайтов каталогов - одно из основных направлений
+              <a href='https://digitaldevils.by/wordpress' className='no-underline text-blue_main'>Разработка сайтов</a> каталогов - одно из основных направлений
               деятельности нашей студии. Своим клиентам в Минске и других
               городах Беларуси мы предлагаем:
             </p>

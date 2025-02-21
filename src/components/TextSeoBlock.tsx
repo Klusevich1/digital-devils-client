@@ -11,9 +11,8 @@ const TextSeoBlock = () => {
             Digital Devils - это ваш надежный партнер, понимающий потребности
             онлайн-бизнеса, имеющий опыт успешного взаимодействия с сотнями
             клиентов и авторскими технологиями создания и продвижения
-            веб-ресурсов любой сложности и функционалом: от простейших промо
-            лендингов и визиток для стартапов до полноценных интернет-магазинов
-            и маркетплейсов мирового масштаба.
+            веб-ресурсов любой сложности и функционалом: от простейших промо <a href='https://digitaldevils.by/landing' className='no-underline text-blue_main'>
+            лендингов</a> и <a href='https://digitaldevils.by/card-website' className='no-underline text-blue_main'>визиток</a> для стартапов до полноценных <a href='https://digitaldevils.by/online-store' className='no-underline text-blue_main'>интернет-магазинов</a> и <a href='https://digitaldevils.by/marketplace' className='no-underline text-blue_main'>маркетплейсов</a> мирового масштаба.
           </p>
           <p className="md:text-[24px] text-[18px] font-medium text-black">
             Профессионально и творчески подходим к решению поставленных задач.

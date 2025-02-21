@@ -31,8 +31,7 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
           </h3>
 
           <div className="max-w-[800px] w-full">
-            <p className="text-[18px] font-medium">
-              {item.description}
+            <p className="text-[18px] font-medium" dangerouslySetInnerHTML={{__html: item.description}}>
             </p>
             <div className="flex mt-2 flex-wrap">
               {item.id === 1 || item.id === 2

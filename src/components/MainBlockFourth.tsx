@@ -10,7 +10,7 @@ const MainBlockFourth: React.FC = () => {
                 <p className="text-[18px] max-w-[764px] md:text-[24px] mb-[20px]">Вас бесплатно проконсультирует
                     web-разработчик со
                     стажем работы 5 лет</p>
-                <a className="order-3 flex transition-all md:m-0 mt-[20px]" href="/application">
+                <a className="order-3 flex transition-all md:m-0 mt-[20px]" href="/application" rel="nofollow">
                     <div
                         className="lg:w-[319px] w-[301px] lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
                         Бесплатная консультация

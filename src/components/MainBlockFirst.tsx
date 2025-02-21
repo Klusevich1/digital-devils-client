@@ -23,6 +23,7 @@ const MainBlockFirst: React.FC = () => {
             <a
               className="order-3 flex transition-all mt-[30px] mb-[40px]"
               href="/application"
+              rel="nofollow"
             >
               <div className="lg:w-[319px] w-[301px] lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
                 Бесплатная консультация

@@ -52,7 +52,7 @@ const Header: React.FC = () => {
         { name: "Интернет-магазин", href: "online-store" },
         { name: "Landing page", href: "landing" },
         { name: "B2B сайты", href: "b2b" },
-        { name: "Сайт -визитка", href: "card-website" },
+        { name: "Сайт-визитка", href: "card-website" },
         { name: "Портал", href: "portal" },
         { name: "Сайт-каталог", href: "website-catalog" },
         { name: "Информационный сайт", href: "information-site" },
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
         { name: "3 Интернет-магазин", href: "online-store" },
         { name: "3 Landing page", href: "landing" },
         { name: "3 B2B сайты", href: "b2b" },
-        { name: "3 Сайт -визитка", href: "card-website" },
+        { name: "3 Сайт-визитка", href: "card-website" },
         { name: "3 Портал", href: "portal" },
         { name: "3 Сайт-каталог", href: "website-catalog" },
         { name: "3 Информационный сайт", href: "information-site" },
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
         { name: "4 Интернет-магазин", href: "online-store" },
         { name: "4 Landing page", href: "landing" },
         { name: "4 B2B сайты", href: "b2b" },
-        { name: "4 Сайт -визитка", href: "card-website" },
+        { name: "4 Сайт-визитка", href: "card-website" },
         { name: "4 Портал", href: "portal" },
         { name: "4 Сайт-каталог", href: "website-catalog" },
         { name: "4 Информационный сайт", href: "information-site" },
@@ -102,7 +102,7 @@ const Header: React.FC = () => {
         { name: "5 Интернет-магазин", href: "online-store" },
         { name: "5 Landing page", href: "landing" },
         { name: "5 B2B сайты", href: "b2b" },
-        { name: "5 Сайт -визитка", href: "card-website" },
+        { name: "5 Сайт-визитка", href: "card-website" },
         { name: "5 Портал", href: "portal" },
         { name: "5 Сайт-каталог", href: "website-catalog" },
         { name: "5 Информационный сайт", href: "information-site" },
@@ -115,7 +115,7 @@ const Header: React.FC = () => {
         { name: "6 Интернет-магазин", href: "online-store" },
         { name: "6 Landing page", href: "landing" },
         { name: "6 B2B сайты", href: "b2b" },
-        { name: "6 Сайт -визитка", href: "card-website" },
+        { name: "6 Сайт-визитка", href: "card-website" },
         { name: "6 Портал", href: "portal" },
         { name: "6 Сайт-каталог", href: "website-catalog" },
         { name: "6 Информационный сайт", href: "information-site" },
@@ -134,7 +134,7 @@ const Header: React.FC = () => {
   
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-white">
+      <header className={`fixed top-0 left-0 w-full z-50 ${isSticky ? 'bg-transparent' : 'bg-white'}`}>
         <div
           className={`transition-transform bg-white duration-300 ${
             isSticky ? "translate-y-[-48px]" : "translate-y-0"

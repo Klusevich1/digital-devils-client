@@ -38,7 +38,7 @@ export default function Slider({slides}: SliderProps) {
             >
                 {slides.map((slide, idx) => (
                     <SwiperSlide key={idx} >
-                        <Link href={slide.href} >
+                        <Link href={slide.href} rel="nofollow">
                             <div className="p-2">
                                 <div className="relative w-full xl:w-[527px] py-[24px] px-[24.5px] custom-shadow-swiper-slide rounded-[40px] overflow-hidden">
                                     <Image src={slide.image} width={477} height={192} alt={slide.title} className="w-full xl:max-w-[477px] object-cover"/>

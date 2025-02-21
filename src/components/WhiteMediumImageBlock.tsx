@@ -9,7 +9,7 @@ type DarkBigImageBlockProps = {
   text: ReactNode;
   smallText: string;
   smallTitle: string;
-  badges: { name: string }[];
+  badges: { name: string, link?: string }[];
   imagePath: string | StaticImageData;
   margin: string;
   isRevert: boolean;
@@ -63,16 +63,17 @@ export const WhiteMediumImageBlock: FC<DarkBigImageBlockProps> = ({
                     {smallTitle}
                   </h3>
                 )}
-                <div className="flex flex-wrap w-full">
-                  {badges.map((_, i) => (
-                    <div
-                      key={i}
-                      className="rounded-full border-blue_main border-[1px] me-[10px] mb-[10px]  px-[20px] py-[10px]"
-                    >
-                      <p>{_.name}</p>
+                {badges && (
+                    <div className="flex flex-wrap w-full mt-[15px]">
+                      {badges.map((badge, idx) => (
+                        <a key={idx} href={badge.link}>
+                          <p className="mb-[5px] me-[15px] border px-[20px] py-[10px] text-[18px] font-medium rounded-full text-black border-blue_main hover:bg-blue_main hover:text-white transition-all duration-100">
+                            {badge.name}
+                          </p>
+                        </a>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  )}
               </div>
 
               <div className="hidden lg:flex justify-center max-w-1/2 md:w-1/2">

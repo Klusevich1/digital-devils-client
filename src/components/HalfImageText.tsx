@@ -41,7 +41,7 @@ const HalfImageText: React.FC<HalfImageBlockProps> = ({title, smallTitle, descri
                             </div>
                             {description}
                             <a className="flex lg:w-auto w-full"
-                               href="/application">
+                               href="/application" rel="nofollow">
                                 <div
                                     className={`font-medium text-[18px]  lg:w-auto w-full py-[12.5px] px-[20px] text-center rounded-full text-white`}
                                     style={{backgroundColor: buttonColor}}>

@@ -430,6 +430,7 @@ const Application = () => {
                             href="/personal_privacy.pdf"
                             target="_blank"
                             className="underline"
+                            rel="nofollow"
                           >
                             Политикой оператора в отношении обработки
                             персональных данных.

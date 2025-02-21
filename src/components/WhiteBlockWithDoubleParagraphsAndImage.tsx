@@ -12,6 +12,7 @@ interface WhiteBlockWithDoubleParagraphsAndImageProps {
   margin: string;
   smallTitle: string;
   smallText: string;
+  badges?: { name: string, link: string }[];
   imageMargin?: string;
   widthImage: number;
   heightImage: number;
@@ -27,6 +28,7 @@ const WhiteBlockWithDoubleParagraphsAndImage: FC<
   margin,
   smallTitle,
   smallText,
+  badges,
   text,
   imageMargin,
   widthImage,
@@ -54,8 +56,7 @@ const WhiteBlockWithDoubleParagraphsAndImage: FC<
                     </p>
                   )}
                   {p2 && (
-                    <p className="text-[16px] lg:text-[18px] lg:max-w-[640px] lg:w-1/2">
-                      {p2}
+                    <p className="text-[16px] lg:text-[18px] lg:max-w-[640px] lg:w-1/2" dangerouslySetInnerHTML={{__html: p2}}>
                     </p>
                   )}
                 </div>
@@ -66,7 +67,9 @@ const WhiteBlockWithDoubleParagraphsAndImage: FC<
                     src={imagePath}
                     width={widthImage}
                     height={heightImage}
-                    className={`object-cover h-fit ${imageMargin && imageMargin}`}
+                    className={`object-cover h-fit ${
+                      imageMargin && imageMargin
+                    }`}
                     alt={title}
                   />
                 </div>
@@ -89,9 +92,7 @@ const WhiteBlockWithDoubleParagraphsAndImage: FC<
                     </h3>
                   )}
                   {smallText && (
-                    <p className="text-[16px] lg:text-[18px]">
-                      {smallText}
-                    </p>
+                    <p className="text-[16px] lg:text-[18px]">{smallText}</p>
                   )}
                   {!p1 && !p2 && (
                     <div className=" lg:hidden block lg:w-1/2">
@@ -104,10 +105,25 @@ const WhiteBlockWithDoubleParagraphsAndImage: FC<
                       />
                     </div>
                   )}
+                  {badges && (
+                    <div className="flex flex-wrap w-full mt-[15px]">
+                      {badges.map((badge, idx) => (
+                        <a key={idx} href={badge.link}>
+                          <p className="mb-[5px] me-[15px] border px-[20px] py-[10px] text-[18px] font-medium rounded-full text-black border-blue_main hover:bg-blue_main hover:text-white transition-all duration-100">
+                            {badge.name}
+                          </p>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                   <a
                     href="/application"
                     rel="nofollow"
-                    className={`${imagePath === '/resources/inforamtion_site_image.png' ? 'lg:block hidden' : 'block'} text-center px-[30px] py-[10px] lg:max-w-72 lg:w-fit w-full justify-center items-center  bg-blue_main rounded-full text-white mt-[20px]`}
+                    className={`${
+                      imagePath === "/resources/inforamtion_site_image.png"
+                        ? "lg:block hidden"
+                        : "block"
+                    } text-center px-[30px] py-[10px] lg:max-w-72 lg:w-fit w-full justify-center items-center  bg-blue_main rounded-full text-white mt-[10px]`}
                   >
                     <span className="text-[18px] font-medium">
                       Обсудить проект
