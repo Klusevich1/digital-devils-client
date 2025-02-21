@@ -28,7 +28,7 @@ h2 {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Manrope", sans-serif;
+  font-family: Manrope, sans-serif;
 }
 
 .custom_container {

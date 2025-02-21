@@ -7,16 +7,8 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
-        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-          rel="stylesheet"
-        /> */}
+        <link rel="preload" href="/styles/fonts.css" as="style" />
+        <link rel="stylesheet" href="/styles/fonts.css" />
         {isProduction && (
           <>
             <meta name="yandex-verification" content="8a71da99f472c773" />
@@ -74,19 +66,6 @@ export default function Document() {
             />
           </>
         )}
-        <Script
-          id="loadCSS"
-          async
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var link = document.createElement("link");
-              link.rel = "stylesheet";
-              link.href = "/styles/fonts.css";
-              document.head.appendChild(link);
-            `,
-          }}
-        />
       </Head>
       <body className="antialiased">
         <Main />
