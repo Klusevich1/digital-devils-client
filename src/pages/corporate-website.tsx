@@ -13,7 +13,7 @@ import Image from "next/image";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
-  { name: "Landing page", link: "/corporate-website" },
+  { name: "Корпоративный сайт", link: "/corporate-website" },
 ];
 
 const breadcrumbsSchema: ListItem[] = [
@@ -26,8 +26,8 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
-    name: "Landing page",
-    item: "https://digitaldevils.by/landing",
+    name: "Корпоративный сайт",
+    item: "https://digitaldevils.by/corporate-website",
   },
 ];
 
@@ -73,7 +73,7 @@ const corporateWebsite = () => {
       <SEO
         title="Разработка корпоративного сайта компании | Заказать создание корпоративного сайта"
         description="Разрабатываем корпоративные сайты, которые выделяют ваш бизнес среди конкурентов. Стильный дизайн, передовые технологии и адаптивность — ваши клиенты оценят каждый клик. Доверяйте создание корпоративного сайта своей компании экспертам и получите сайт, который работает на ваш успех!"
-        canonical="https://digitaldevils.by/landing"
+        canonical="https://digitaldevils.by/corporate-website"
         breadcrumbsSchema={breadcrumbsSchema}
       />
       <BasicLayout>
