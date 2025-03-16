@@ -85,7 +85,7 @@ const CookieModal = () => {
   return (
     <>
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 flex justify-end items-end z-50 transition-all ${
+        className={`fixed inset-0 bg-black text-black bg-opacity-50 flex justify-end items-end z-50 transition-all ${
           !isModalOpen ? "opacity-0 hidden" : "opacity-100 visible"
         }`}
       >
