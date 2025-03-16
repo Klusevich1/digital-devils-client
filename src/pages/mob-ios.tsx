@@ -17,6 +17,7 @@ const BREADCRUMB_PAGE_NAME = "IOS разработка";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
+  { name: "Разработка мобильных приложений", link: `/mob-apps` },
   { name: BREADCRUMB_PAGE_NAME, link: `/${PAGE_NAME}` },
 ];
 
@@ -30,6 +31,12 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
+    name: 'Разработка мобильных приложений',
+    item: `https://digitaldevils.by/mob-apps`,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
     name: BREADCRUMB_PAGE_NAME,
     item: `https://digitaldevils.by/${PAGE_NAME}`,
   },
@@ -61,7 +68,7 @@ const data: DataItem[] = [
       <p className="text-[18px] ">
         Сроки реализации проектов зависят от их сложности, функционала, дизайна
         и других особенностей приложения. В среднем на создание программного
-        продукта с нуля уходит от 2 до 4 месяцев. 
+        продукта с нуля уходит от 3 месяцев. 
       </p>
     ),
   },
@@ -78,7 +85,15 @@ const joomla = () => {
       />
       <BasicLayoutDark>
         <Breadcrumbs breadcrumbs={breadcrumbs} theme="dark" />
-        <MobileTitleBlock title={"Мобильная разработка IOS"} />
+        <MobileTitleBlock
+          title={
+            <>
+              <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
+                Мобильная разработка IOS
+              </h1>
+            </>
+          }
+        />
         <StandardMarginsLayout
           styles={`py-[50px] md:py-[60px] bg-white text-black `}
           children={

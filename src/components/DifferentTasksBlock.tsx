@@ -47,9 +47,9 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
               )}
             </div>
             <div
-              className={`grid lg:grid-cols-3 grid-cols-1 md:gap-[40px] gap-[20px] pt-[30px] ${
+              className={`grid lg:grid-cols-3 grid-cols-1 md:gap-[40px] gap-[20px] ${
                 smallText
-                  ? `border-t-[1px] ${
+                  ? `border-t-[1px] pt-[30px] ${
                       isDark ? "border-t-white" : "border-t-black"
                     } `
                   : ``

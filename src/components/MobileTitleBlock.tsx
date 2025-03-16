@@ -6,20 +6,14 @@ interface MobileTitleBlockProps {
   title: ReactNode;
 }
 
-const MobileTitleBlock: React.FC<MobileTitleBlockProps> = ({
-  title,
-}) => {
+const MobileTitleBlock: React.FC<MobileTitleBlockProps> = ({ title }) => {
   return (
     <StandardMarginsLayout
       styles="pb-[50px] md:pb-[60px]"
       children={
         <>
           <div className="flex flex-col">
-            <div className="w-full mb-[30px]">
-              <p className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
-                {title}
-              </p>
-            </div>
+            <div className="w-full mb-[30px]">{title}</div>
             <div className="flex flex-col lg:flex-row w-full items-center justify-between">
               <a
                 className="order-2 lg:order-1 flex transition-all lg:w-fit w-full mt-0"

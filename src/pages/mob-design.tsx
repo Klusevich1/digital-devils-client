@@ -17,6 +17,7 @@ const BREADCRUMB_PAGE_NAME = "Дизайн мобильных приложени
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
+  { name: "Разработка мобильных приложений", link: `/mob-apps` },
   { name: BREADCRUMB_PAGE_NAME, link: `/${PAGE_NAME}` },
 ];
 
@@ -30,6 +31,12 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
+    name: 'Разработка мобильных приложений',
+    item: `https://digitaldevils.by/mob-apps`,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
     name: BREADCRUMB_PAGE_NAME,
     item: `https://digitaldevils.by/${PAGE_NAME}`,
   },
@@ -78,7 +85,15 @@ const joomla = () => {
       />
       <BasicLayoutDark>
         <Breadcrumbs breadcrumbs={breadcrumbs} theme="dark" />
-        <MobileTitleBlock title={"Дизайн мобильных приложений"} />
+        <MobileTitleBlock
+          title={
+            <>
+              <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
+                Дизайн мобильных приложений
+              </h1>
+            </>
+          }
+        />
         <MobMediaBlock
           type="image"
           url1="/resources/mob-design1.png"

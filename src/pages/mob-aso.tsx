@@ -16,6 +16,7 @@ const BREADCRUMB_PAGE_NAME = "ASO продвижение";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
+  { name: "Разработка мобильных приложений", link: `/mob-apps` },
   { name: BREADCRUMB_PAGE_NAME, link: `/${PAGE_NAME}` },
 ];
 
@@ -29,6 +30,12 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
+    name: 'Разработка мобильных приложений',
+    item: `https://digitaldevils.by/mob-apps`,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
     name: BREADCRUMB_PAGE_NAME,
     item: `https://digitaldevils.by/${PAGE_NAME}`,
   },
@@ -78,7 +85,15 @@ const joomla = () => {
       />
       <BasicLayoutDark>
         <Breadcrumbs breadcrumbs={breadcrumbs} theme="dark" />
-        <MobileTitleBlock title={"Продвижение мобильных приложений"} />
+        <MobileTitleBlock
+          title={
+            <>
+              <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
+                Продвижение мобильных приложений
+              </h1>
+            </>
+          }
+        />
         <HalfImageBlock
           title="Комплексное продвижение приложений"
           smallTitle=""
@@ -194,9 +209,7 @@ const joomla = () => {
                 <div className="w-full block lg:hidden mt-[20px]">
                   <Image
                     src={"/resources/mob-aso2.png"}
-                    alt={
-                      "ASO"
-                    }
+                    alt={"ASO"}
                     className="w-full"
                     width={342}
                     height={252}
@@ -245,7 +258,7 @@ const joomla = () => {
                 " поставленных клиентом целей и задач",
                 " особенностей и отрасли бизнеса",
                 " объема работ",
-                " уровня конкуренции"
+                " уровня конкуренции",
               ].map((item, idx) => (
                 <li key={idx}>
                   <span className="text-custom_yellow text-[16px] font-medium">
@@ -263,7 +276,7 @@ const joomla = () => {
             { title: "Стоимость:", text: "от 700$" },
           ]}
         />
-        <MainBlockTenth data={data} isOnlyBottomPadding={false}/>
+        <MainBlockTenth data={data} isOnlyBottomPadding={false} />
       </BasicLayoutDark>
     </>
   );

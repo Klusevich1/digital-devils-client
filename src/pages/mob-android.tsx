@@ -15,6 +15,7 @@ const BREADCRUMB_PAGE_NAME = "Android разработка";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
+  { name: "Разработка мобильных приложений", link: `/mob-apps` },
   { name: BREADCRUMB_PAGE_NAME, link: `/${PAGE_NAME}` },
 ];
 
@@ -28,6 +29,12 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
+    name: 'Разработка мобильных приложений',
+    item: `https://digitaldevils.by/mob-apps`,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
     name: BREADCRUMB_PAGE_NAME,
     item: `https://digitaldevils.by/${PAGE_NAME}`,
   },
@@ -79,7 +86,15 @@ const joomla = () => {
       />
       <BasicLayoutDark>
         <Breadcrumbs breadcrumbs={breadcrumbs} theme="dark" />
-        <MobileTitleBlock title={"Мобильная разработка Android"} />
+        <MobileTitleBlock
+          title={
+            <>
+              <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
+                Мобильная разработка Android
+              </h1>
+            </>
+          }
+        />
         <StandardMarginsLayout
           styles={`py-[50px] lg:py-[60px] bg-white text-black`}
           children={
@@ -242,7 +257,7 @@ const joomla = () => {
           styles={`py-[50px] lg:py-[60px] bg-white text-black`}
           children={
             <div className="flex flex-col">
-              <h1 className="text-[32px] md:text-[42px] lg:text-[60px] mb-[30px] max-w-[1093px]">
+              <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px] max-w-[1093px]">
                 Из чего складывается стоимость Android разработки
               </h1>
               <p className="text-[20px] mb-[30px] lg:mb-[60px] lg:text-[22px] font-medium  max-w-[866px]">

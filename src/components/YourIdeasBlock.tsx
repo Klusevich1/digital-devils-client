@@ -17,7 +17,7 @@ type YourIdeasBlockProps = {
   bigTitle: string;
   smallText: string;
   paragraphs: Paragraph[];
-  isDark?: boolean
+  isDark?: boolean;
   isOnlyBottomPadding?: boolean;
 };
 
@@ -26,12 +26,16 @@ export const YourIdeasBlock: FC<YourIdeasBlockProps> = ({
   smallText,
   paragraphs,
   isDark = true,
-  isOnlyBottomPadding = true
+  isOnlyBottomPadding = true,
 }) => {
   return (
     <>
       <StandardMarginsLayout
-        styles={` ${isDark ? 'bg-black text-white' : 'bg-white text-black'} ${isOnlyBottomPadding ? 'pb-[50px] md:pb-[60px]' : 'py-[50px] md:py-[60px]'} `}
+        styles={` ${isDark ? "bg-black text-white" : "bg-white text-black"} ${
+          isOnlyBottomPadding
+            ? "pb-[50px] md:pb-[60px]"
+            : "py-[50px] md:py-[60px]"
+        } `}
         children={
           <>
             <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px]">
@@ -41,24 +45,41 @@ export const YourIdeasBlock: FC<YourIdeasBlockProps> = ({
               {paragraphs.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`flex lg:flex-row flex-col justify-between ${isDark ? 'pb-[30px] border-b-[1px]' : ''} border-b-white`}
+                  className={`flex lg:flex-row flex-col justify-between ${
+                    isDark ? "pb-[30px] border-b-[1px]" : ""
+                  } border-b-white`}
                 >
                   <p className="md:text-[28px] text-[24px] font-bold lg:mb-0 mb-[30px] mr-[15px] xlg:max-w-[303px] lg:max-w-[250px]">
                     {item.title}
                   </p>
                   <div className="xl:max-w-[75%] lg:max-w-[85%] flex lg:flex-row flex-col-reverse lg:gap-[40px] gap-[30px]">
-                    <div className={`flex flex-col justify-between md:gap-[20px] lg:max-w-[525px] ${!isDark ? 'lg:bg-black_5 lg:p-5' : ''}`}>
-                      <p className={`font-medium ${isDark ? 'md:text-[22px] text-[18px]' : 'md:text-[20px] text-[18px]'}`}>
+                    <div
+                      className={`flex flex-col justify-between md:gap-[20px] lg:max-w-[525px] ${
+                        !isDark ? "lg:bg-black_5 lg:p-5" : ""
+                      }`}
+                    >
+                      <p
+                        className={`font-medium ${
+                          isDark
+                            ? "md:text-[22px] text-[18px]"
+                            : "md:text-[20px] text-[18px]"
+                        }`}
+                      >
                         {item.text}
                       </p>
                       <div className="flex md:flex-row flex-col justify-between md:items-center">
-                        <div className="flex flex-row gap-[10px]">
+                        <div className="flex flex-row gap-[10px] mt-[20px] md:mt-0">
                           {item.badges.map((badge, idx) => (
-                            <a key={idx} href="#">
-                              <p className={`w-fit border p-[10px] text-[16px] font-medium rounded-full ${isDark ? 'text-white border-black_10 hover:bg-blue_main hover:text-white' : 'text-black border-blue_main hover:bg-blue_main hover:text-white'}  transition-all duration-100`}>
-                                {badge.name}
-                              </p>
-                            </a>  
+                            <p
+                              key={idx}
+                              className={`w-fit border p-[10px] text-[16px] font-medium rounded-full ${
+                                isDark
+                                  ? "text-white border-black_10"
+                                  : "text-black border-blue_main"
+                              }  transition-all duration-100`}
+                            >
+                              {badge.name}
+                            </p>
                           ))}
                         </div>
                         {item.link && (

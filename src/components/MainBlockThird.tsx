@@ -42,8 +42,13 @@ const MainBlockThird: React.FC = () => {
       description:
         "Не просто разрабатываем, а выполняем полный цикл работ: Backend, Frontend, Mobile App. Тестируем и отслеживаем все показатели: от конверсии и кликов до оплат и заказов. Экономим бюджет за счет параллельной разработки для iOS и Android.",
       badges: [
-        { name: "iOS приложения", link: "/ios-apps" },
-        { name: "Android приложения", link: "/android-apps" },
+        { name: "Разработка мобильных приложений", link: "/mob-apps" },
+        { name: "IOS разработка", link: "/mob-ios" },
+        { name: "Android разработка", link: "/mob-android" },
+        { name: "ASO продвижение", link: "/mob-aso" },
+        { name: "PWA разработка", link: "/mob-pwa" },
+        { name: "Дизайн мобильных приложений", link: "/mob-design" },
+        { name: "Разработка веб-приложений", link: "/mob-web" },
       ],
     },
     {

@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 import Image from "next/image";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 
@@ -16,16 +16,118 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
           <h2 className="mb-[30px] text-[32px] md:text-[42px] lg:text-[60px] font-bold">
             {title}
           </h2>
-          <div className="flex flex-col xl:flex-row justify-self-center md:gap-[40px] items-center  w-full ">
-            <div className="flex gap-[10px] md:gap-[40px] xl:gap-0 flex-col md:flex-row xl:flex-col justify-around w-full xl:max-w-[418px]">
-              <div className="w-full flex-col flex justify-center mb-[40px]">
-                <div className="w-full h-[500px] xl:max-w-[417px] xl:h-[545px] overflow-hidden inline-flex rounded-[40px]">
+          <div className="flex lg:flex-row flex-col justify-self-center gap-[20px] md:gap-[40px] items-center w-full ">
+            <div className="flex gap-[20px] md:gap-[40px] lg:flex-col flex-row justify-around w-full lg:max-w-[418px]">
+              <div className="w-full">
+                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full lg:max-w-[413px] lg:h-[450px] h-[320px]">
+                  <Image
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
+                    src="/resources/portfolio1.png"
+                    width={413}
+                    height={450}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  Keel Market LLP
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full lg:max-w-[413px] lg:h-[300px] h-[320px]">
+                  <Image
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
+                    src="/resources/case_giftstree.png"
+                    width={413}
+                    height={300}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  Giftstree
+                </p>
+              </div>
+            </div>
+            <div className="flex lg:flex-col sm:flex-row flex-col md:gap-[40px] gap-[20px] w-full">
+              <div className="w-full">
+                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full lg:max-w-[418px] h-[300px]">
+                  <Image
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
+                    src="/resources/portfolio4.png"
+                    width={418}
+                    height={300}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  Motion-дизайн
+                </p>
+              </div>
+              <div className="lg:hidden w-full">
+                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full lg:max-w-[418px] h-[300px]">
+                  <Image
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
+                    src="/resources/case_seo.png"
+                    width={418}
+                    height={300}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  SEO
+                </p>
+              </div>
+              <div className="w-full lg:block hidden">
+                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] max-w-full w-full h-[450px]">
+                  <Image
+                    className="object-cover duration-300 hover:scale-105"
+                    src="/resources/case_toptyre.png"
+                    width={415}
+                    height={450}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  TopTyre
+                </p>
+              </div>
+            </div>
+            <div className="flex lg:flex-col flex-row gap-[20px] md:gap-[40px] w-full">
+              <div className="w-full lg:block hidden">
+                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full max-w-[418px] h-[300px]">
+                  <Image
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
+                    src="/resources/case_seo.png"
+                    width={418}
+                    height={300}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  SEO
+                </p>
+              </div>
+              <div className="w-full lg:hidden">
+                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] max-w-full w-full h-[450px]">
+                  <Image
+                    className="object-cover duration-300 hover:scale-105"
+                    src="/resources/case_toptyre.png"
+                    width={415}
+                    height={450}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  TopTyre
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[450px] max-w-[417px] overflow-hidden inline-flex rounded-[40px]">
                   <video
                     loop
                     muted
                     playsInline
                     autoPlay
-                    className="w-full h-full duration-300 hover:scale-105 sm:rounded-[40px] shadow-lg object-cover"
+                    className="w-full h-full duration-300 scale-105 hover:scale-110 sm:rounded-[40px] shadow-lg object-cover"
                     onMouseEnter={(e) => {
                       if (!/Mobi|Android/i.test(navigator.userAgent)) {
                         e.currentTarget.play();
@@ -41,69 +143,8 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                     Ваш браузер не поддерживает видео.
                   </video>
                 </div>
-                <p className="mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
                   Motion-дизайн
-                </p>
-              </div>
-
-              <div className="w-full md:mb-0 mb-[40px]">
-                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full h-[500px] xl:max-w-[417px] xl:max-h-[371px]">
-                  <Image
-                    className="w-full h-full object-cover duration-300 hover:scale-105"
-                    src="/resources/portfolio6.png"
-                    width={417}
-                    height={371}
-                    alt={"Portfolio"}
-                  />
-                </div>
-                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
-                  Giftstree
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-[40px] md:gap-[55px] w-full">
-              <div className="flex gap-[40px]">
-                <div className="w-full">
-                  <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full xl:max-w-[417px] max-h-[371px]">
-                    <Image
-                      className="w-full h-full object-cover duration-300 hover:scale-105"
-                      src="/resources/portfolio1.png"
-                      width={400}
-                      height={350}
-                      alt={"Portfolio"}
-                    />
-                  </div>
-                  <p className="mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
-                    Keel Market LLP
-                  </p>
-                </div>
-                <div className="w-full">
-                  <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full xl:max-w-[417px] max-h-[371px]">
-                    <Image
-                      className="w-full h-full object-cover duration-300 hover:scale-105"
-                      src="/resources/portfolio5.png"
-                      width={400}
-                      height={350}
-                      alt={"Portfolio"}
-                    />
-                  </div>
-                  <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
-                    SEO
-                  </p>
-                </div>
-              </div>
-              <div className="xl:max-w-[870px]">
-                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] max-w-full w-full">
-                  <Image
-                    className="w-full h-full object-cover duration-300 hover:scale-105"
-                    src="/resources/slide1.png"
-                    width={830}
-                    height={516}
-                    alt={"Portfolio"}
-                  />
-                </div>
-                <p className=" mt-[20px] font-bold md:text-[28px] text-[20px] leading-[1]">
-                  TopTyre
                 </p>
               </div>
             </div>

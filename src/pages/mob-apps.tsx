@@ -81,8 +81,16 @@ const joomla = () => {
       />
       <BasicLayoutDark>
         <Breadcrumbs breadcrumbs={breadcrumbs} theme="dark" />
-        <MobileTitleBlock title="Разработка мобильных приложений" />
-        <MobMediaBlock type="video" urlVideo="/resources/mobapps.mp4"/>
+        <MobileTitleBlock
+          title={
+            <>
+              <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
+                Разработка мобильных приложений
+              </h1>
+            </>
+          }
+        />
+        <MobMediaBlock type="video" urlVideo="/resources/mobapps.mp4" />
         <DifferentTasksBlock
           bigTitle="Создаем цифровые продукты с нуля и до запуска"
           smallText="Разработка мобильных приложений от Digital Devils - это быстрое и точное решение бизнес-задач для любых сфер и направлений деятельности: финтеха, ритейла, фудтеха, логистики, страхования и многих других. "
@@ -261,7 +269,7 @@ const joomla = () => {
           }
         />
         <WideBlockWithImage
-          title="Сроки создания мобильных приложенийв"
+          title="Сроки создания мобильных приложений"
           text_1="Конкретные сроки реализации проектов зависят от технических требований к будущего ПО. Для типовых продуктов разработка может занимать от 2 месяцев, для сложных кастомных версий - от 4 до 6 месяцев."
           text_2="После успешного запуска мы готовы продолжить работу над приложением, чтобы оно оставалось надежным и функциональным. Улучшаем интерфейс, расширяем функционал, разрабатываем обновления в области безопасности в соответствии с меняющимися бизнес-задачами."
         />

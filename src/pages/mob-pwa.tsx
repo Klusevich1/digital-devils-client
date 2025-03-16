@@ -10,12 +10,15 @@ import CaseBlock from "@/components/CaseBlock";
 import BasicLayoutDark from "@/layouts/BasicLayoutDark";
 import MobileTitleBlock from "@/components/MobileTitleBlock";
 import { DifferentTasksBlock } from "@/components/DifferentTasksBlock";
+import Image from "next/image";
+import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 
 const PAGE_NAME = "mob-pwa";
 const BREADCRUMB_PAGE_NAME = "PWA разработка";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
+  { name: "Разработка мобильных приложений", link: `/mob-apps` },
   { name: BREADCRUMB_PAGE_NAME, link: `/${PAGE_NAME}` },
 ];
 
@@ -29,6 +32,12 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
+    name: 'Разработка мобильных приложений',
+    item: `https://digitaldevils.by/mob-apps`,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
     name: BREADCRUMB_PAGE_NAME,
     item: `https://digitaldevils.by/${PAGE_NAME}`,
   },
@@ -76,28 +85,69 @@ const joomla = () => {
       />
       <BasicLayoutDark>
         <Breadcrumbs breadcrumbs={breadcrumbs} theme="dark" />
-        <MobileTitleBlock title={"Мобильная версия веб-сайта"} />
-        <CaseBlock
-          bigTitle="Мы разрабатываем то, что нужно Вам"
-          smallTitle=""
-          text={
-            <div>
-              <h2 className="font-bold text-[24px] mb-[20px]">
-                Разработка мобильных версий лендингов, информационных и
-                новостных порталов, интернет-магазинов от студии Digital Devils
-              </h2>
-              <p className="text-[18px] font-medium">
-                Высокая скорость загрузки и уникальный функционал для носимых
-                устройств. Разрабатываем современные и функциональные ресурсы по
-                технологии адаптивного дизайна на основе уже существующих
-                сайтов.
-              </p>
-            </div>
+        <MobileTitleBlock
+          title={
+            <>
+              <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
+                Мобильная версия <br></br> веб-сайта
+              </h1>
+            </>
           }
-          imagePath="/resources/landing-case.png"
-          margin="py-[50px] md:py-[60px] bg-white text-black"
-          buttonText=""
-          isRevert={true}
+        />
+        <StandardMarginsLayout
+          styles={"py-[50px] md:py-[60px] bg-white text-black"}
+          children={
+            <>
+              <div
+                className={`flex md:flex-row-reverse flex-col gap-12 justify-between"
+                }`}
+              >
+                <div className="relative h-full max-w-[753px] min-w-[40%] hidden lg:block">
+                  <Image
+                    src={"/resources/mob-pwa_case.png"}
+                    width={525}
+                    height={400}
+                    className="object-cover"
+                    alt={"Мы разрабатываем то, что нужно Вам"}
+                  />
+                  <a
+                    href="/application"
+                    rel="nofollow"
+                    className="absolute md:bottom-6 bottom-3 md:left-6 left-3 px-[30px] py-[9px] lg:py-[10px] lg:px-[40px] w-fit mt-[20px] flex justify-center items-center  bg-blue_main rounded-full text-white"
+                  >
+                    <span className=" text-[22px] md:text-[24]">Кейс</span>
+                  </a>
+                </div>
+                <div className="flex flex-col lg:block items-center">
+                  <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px] w-full">
+                    Мы разрабатываем то, что нужно Вам
+                  </h2>
+                  <div className="lg:max-w-[500px] mb-[30px] lg:hidden block">
+                    <Image
+                      src={"/resources/mob-pwa_case.png"}
+                      width={341}
+                      height={353}
+                      className="object-cover"
+                      alt={"Мы разрабатываем то, что нужно Вам"}
+                    />
+                  </div>
+                  <div>
+                    <h2 className="font-bold text-[24px] mb-[20px]">
+                      Разработка мобильных версий лендингов, информационных и
+                      новостных порталов, интернет-магазинов от студии Digital
+                      Devils
+                    </h2>
+                    <p className="text-[18px] font-medium">
+                      Высокая скорость загрузки и уникальный функционал для
+                      носимых устройств. Разрабатываем современные и
+                      функциональные ресурсы по технологии адаптивного дизайна
+                      на основе уже существующих сайтов.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
         />
         <HalfImageBlock
           title="Мобильная версия сайта: основные преимущества"
@@ -201,7 +251,7 @@ const joomla = () => {
             </>
           }
         />
-        <MainBlockTenth data={data} isOnlyBottomPadding={true}/>
+        <MainBlockTenth data={data} isOnlyBottomPadding={true} />
       </BasicLayoutDark>
     </>
   );

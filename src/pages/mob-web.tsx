@@ -16,6 +16,7 @@ const BREADCRUMB_PAGE_NAME = "Разработка веб-приложений";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
+  { name: "Разработка мобильных приложений", link: `/mob-apps` },
   { name: BREADCRUMB_PAGE_NAME, link: `/${PAGE_NAME}` },
 ];
 
@@ -29,6 +30,12 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
+    name: 'Разработка мобильных приложений',
+    item: `https://digitaldevils.by/mob-apps`,
+  },
+  {
+    "@type": "ListItem",
+    position: 3,
     name: BREADCRUMB_PAGE_NAME,
     item: `https://digitaldevils.by/${PAGE_NAME}`,
   },
@@ -73,14 +80,22 @@ const joomla = () => {
   return (
     <>
       <SEO
-        title="Дизайн мобильных приложений | Разработка интерфейса | Цена на Digital Devils"
-        description="Разрабатываем дизайн мобильных приложений, которые выделяют ваш бизнес среди конкурентов. Стильный UX/UI, передовые технологии и адаптивность — ваши посетители оценят. Доверяйте разработку дизайна экспертам и получите проект, который работает на ваш успех!"
+        title="Разработка веб-приложений на заказ в Минске | Цена на Digital Devils"
+        description="Разрабатываем web-приложения, которые выделяют ваш бизнес среди конкурентов. Стильный дизайн, передовые технологии и адаптивность — ваши посетители оценят. Доверяйте разработку своего веб-приложения экспертам и получите проект, который работает на ваш успех!"
         canonical={`https://digitaldevils.by/${PAGE_NAME}`}
         breadcrumbsSchema={breadcrumbsSchema}
       />
       <BasicLayoutDark>
         <Breadcrumbs breadcrumbs={breadcrumbs} theme="dark" />
-        <MobileTitleBlock title={"Разработка веб-приложений"} />
+        <MobileTitleBlock
+          title={
+            <>
+              <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px]">
+                Разработка <br></br> веб-приложений
+              </h1>
+            </>
+          }
+        />
         <WideBlockWithImage
           title="Заказать разработку веб-приложений любой сложности"
           text_1="Создание web-приложения с нуля - сложная и многофакторная задача, решение которой вы можете доверить профессиональной команде Digital Devils. Сотрудничаем с коммерческими и некоммерческими организациями из разных сфер деятельности."
@@ -207,7 +222,7 @@ const joomla = () => {
             { title: "Стоимость:", text: "от 1000$" },
           ]}
         />
-        <MainBlockTenth data={data} isOnlyBottomPadding={false}/>
+        <MainBlockTenth data={data} isOnlyBottomPadding={false} />
       </BasicLayoutDark>
     </>
   );

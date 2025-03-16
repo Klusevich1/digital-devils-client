@@ -64,7 +64,7 @@ const Portfolio = () => {
     },
     {
       title: "Создание сайта для компании Giftstree",
-      imagePath: "/resources/portfolio6.png",
+      imagePath: "/resources/case_giftstree.png",
       link: "#",
       category: "Приложения",
       description:

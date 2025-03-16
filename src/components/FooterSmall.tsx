@@ -12,7 +12,7 @@ const FooterSmall: React.FC = () => {
           <FooterLogo />
           <div className="flex flex-col gap-[20px] sm:gap-2.5">
             <a href="tel:+375296342190">
-              <span className="text-[18px] lg:text-[28px] font-bold text-white">
+              <span className="text-[18px] lg:text-[22px] font-medium text-white">
                 +375 29 634 21 90
               </span>
             </a>
@@ -45,7 +45,7 @@ const FooterSmall: React.FC = () => {
           </div>
           <div>
             <a href="malito:info@digitaldevils.by">
-              <span className="text-[18px] lg:text-[28px] font-bold text-white">
+              <span className="text-[18px] lg:text-[22px] font-medium text-white">
                 info@digitaldevils.by
               </span>
             </a>
