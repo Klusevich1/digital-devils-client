@@ -134,7 +134,7 @@ const corporateWebsite = () => {
                   width={32}
                   height={32}
                 />
-                <div className="ms-[20px] max-w-[646px]">
+                <div className="ms-[20px] lg:max-w-[646px]">
                   <h2 className="font-medium text-[22px] mb-[5px]">
                     Информационное присутствие фирмы в интернете
                   </h2>
@@ -152,7 +152,7 @@ const corporateWebsite = () => {
                   width={32}
                   height={32}
                 />
-                <div className="ms-[20px] max-w-[646px]">
+                <div className="ms-[20px] lg:max-w-[646px]">
                   <h2 className="font-medium text-[22px] mb-[5px]">
                     Улучшение репутации и повышение узнаваемости бренда
                   </h2>
@@ -173,7 +173,7 @@ const corporateWebsite = () => {
                   width={32}
                   height={32}
                 />
-                <div className="ms-[20px] max-w-[646px]">
+                <div className="ms-[20px] lg:max-w-[646px]">
                   <h2 className="font-medium text-[22px] mb-[5px]">
                     Продажа товаров и услуг
                   </h2>

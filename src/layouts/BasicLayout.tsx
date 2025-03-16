@@ -10,7 +10,7 @@ interface BasicLayoutProps {
 const BasicLayout: React.FC<BasicLayoutProps> = ({ children }) => {
   return (
     <>
-      <Header />
+      <Header theme="light"/>
       <main className="">{children}</main>
       <Footer />
     </>

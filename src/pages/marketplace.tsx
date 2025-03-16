@@ -85,7 +85,7 @@ const marketplace = () => {
             <>
               <div className={`flex md:flex-row flex-col justify-between`}>
                 <div className="lg:block flex flex-col items-center lg:max-w-[638px] text-[18px]  lg:md:w-1/2">
-                  <h2 className="font-bold text-[32px] md:text-[60px] mb-[30px] w-full">
+                  <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px] w-full">
                     Создайте свой агрегатор
                   </h2>
                   <p className="text-[24px] xl:text-[28px] font-bold mb-[20px]">
@@ -152,7 +152,7 @@ const marketplace = () => {
                 className={`flex md:flex-row flex-col justify-between flex-wrap`}
               >
                 <div className="w-full  mb-[30px]">
-                  <h2 className="text-[32px] md:text-[60px] font-bold">
+                  <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold">
                     Будьте ближе к своим клиентам
                   </h2>
                 </div>

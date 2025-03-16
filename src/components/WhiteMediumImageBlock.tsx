@@ -34,7 +34,7 @@ export const WhiteMediumImageBlock: FC<DarkBigImageBlockProps> = ({
         children={
           <>
             {bigHeader && (
-              <h2 className="font-bold text-[32px] md:text-[60px] mb-[30px]">
+              <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">
                 {bigHeader}
               </h2>
             )}
@@ -43,8 +43,8 @@ export const WhiteMediumImageBlock: FC<DarkBigImageBlockProps> = ({
                 isRevert ? "md:flex-row-reverse" : "md:flex-row "
               }`}
             >
-              <div className="lg:block flex flex-col items-center lg:max-w-[751px] lg::w-7/12 text-[18px]">
-                <h2 className="w-full font-bold text-[32px] md:text-[60px] mb-[20px]">
+              <div className="lg:block flex flex-col items-center lg:max-w-[751px] lg:w-7/12 text-[18px]">
+                <h2 className="w-full font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[20px]">
                   {title}
                 </h2>
                 <div className=" lg:hidden block my-[30px] lg:w-5/12">

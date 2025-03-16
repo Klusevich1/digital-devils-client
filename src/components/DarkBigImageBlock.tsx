@@ -33,7 +33,7 @@ export const DarkBigImageBlock: FC<DarkBigImageBlockProps> = ({
         styles=" py-[50px] md:py-[60px] bg-black text-white"
         children={
           <div className="px-[22px] py-[30px] lg:px-0 lg:py-0 bg-[#2B2B2B] lg:bg-black rounded-[40px]">
-            <h2 className="font-bold text-[32px] md:text-[60px] mb-[30px]">
+            <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">
               {bigTitle}
             </h2>
             <div className="flex rounded-[40px] lg:px-[30px] xl:px-[80px] lg:py-[30px] md:flex-row flex-col gap-12 justify-around bg-[#2B2B2B]">

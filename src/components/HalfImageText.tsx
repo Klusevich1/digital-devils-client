@@ -15,17 +15,18 @@ interface HalfImageBlockProps {
     widthImage: number;
     heightImage: number;
     isImageCenter?: boolean;
+    isDark?: boolean;
 }
 
-const HalfImageText: React.FC<HalfImageBlockProps> = ({title, smallTitle, description, image, buttonText, smallImage, buttonColor, widthImage, heightImage, isRevert = false, isOnlyBottomPadding = true, isImageCenter = false}) => {
+const HalfImageText: React.FC<HalfImageBlockProps> = ({title, smallTitle, description, image, buttonText, smallImage, buttonColor, widthImage, heightImage, isRevert = false, isOnlyBottomPadding = true, isDark = false, isImageCenter = false}) => {
     return (
         <StandardMarginsLayout
-            styles={isOnlyBottomPadding ? "pb-[50px] md:pb-[60px]" : "py-[50px] md:py-[60px]"}
+            styles={`${isOnlyBottomPadding ? "pb-[50px] md:pb-[60px]" : "py-[50px] md:py-[60px]"} ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}
             children={
                 <div className="flex flex-col">
                     <div className={`flex flex-col  justify-between ${isRevert ? " lg:flex-row-reverse" : "lg:flex-row"}`}>
                         <div>
-                            <h1 className="mb-[30px] font-bold text-[32px] lg:max-w-[641px] lg:text-[59px] me-[20px]">{title}</h1>
+                            <h1 className="mb-[30px] font-bold text-[32px] lg:max-w-[641px] lg:text-[60px] me-[20px]">{title}</h1>
                             <div className={`hidden rounded-[40px] me-[20px]  ${isImageCenter ? " lg:flex justify-center w-full" : " lg:block"}`}>
                                 <Image src={image} alt={title} className="w-[99%]" width={widthImage} height={heightImage}
                                        style={{minWidth: widthImage / 2 + 100, maxWidth: widthImage, maxHeight: heightImage}}

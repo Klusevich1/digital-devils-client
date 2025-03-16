@@ -29,7 +29,7 @@ const MainBlockNinth: React.FC<MainBlockNinthProps> = ({ articles, title }) => {
 
     return (
         <div className="max-w-[1440px] mx-auto custom_container my-[50px] sm:my-[60px]">
-            <h2 className="sm:text-[60px] text-[32px] font-bold sm:mb-[40px] mb-[30px]">
+            <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold sm:mb-[40px] mb-[30px]">
                 {title}
             </h2>
             <div

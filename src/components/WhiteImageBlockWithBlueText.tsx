@@ -42,7 +42,7 @@ const WhiteImageBlockWithBlueText: FC<WhiteImageBlockWithBlueTextProps> = ({
                 />
               </div>
               <div className="lg:block flex flex-col items-center lg:max-w-[760px] lg:w-7/12 text-[18px]">
-                <h2 className="text-[30px] md:text-[60px] font-bold mb-[30px] w-full">
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px] w-full">
                   {title}
                 </h2>
                 <div className=" lg:hidden block my-[30px] lg:w-5/12">

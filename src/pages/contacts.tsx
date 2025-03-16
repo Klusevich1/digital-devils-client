@@ -41,7 +41,7 @@ const contacts = () => {
           styles="pb-[50px]"
           children={
             <div className="flex flex-col ">
-              <h1 className="sm:text-[60px] text-[32px] font-bold md:max-w-[400px] max-w-[230px] mb-[30px] leading-[1.2]">
+              <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold md:max-w-[400px] max-w-[230px] mb-[30px] leading-[1.2]">
                 Контакты Digital Devils
               </h1>
               <a href="tel:+375296342190">

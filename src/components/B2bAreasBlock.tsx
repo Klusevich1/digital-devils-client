@@ -42,7 +42,7 @@ const B2bAreasBlock: React.FC<B2bAreasBlockProps> = ({
         children={
           <>
             <div>
-              <h2 className="md:text-[60px] text-[32px] font-bold mb-[30px]">
+              <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px]">
                 {bigTitle}
               </h2>
               <div className="flex flex-col gap-[20px] mt-[30px]">
@@ -133,7 +133,7 @@ const B2bAreasBlock: React.FC<B2bAreasBlockProps> = ({
                       alt={paragraphTitle3}
                     />
                   </div>
-                  <div className="lg:max-w-[60%] max-w-max">
+                  <div className="lg:max-w-[60%] max-w-max w-full">
                     <p className="md:text-[32px] text-[24px] font-bold mb-[20px]">
                       {paragraphTitle3}
                     </p>

@@ -84,7 +84,7 @@ const MainBlockThird: React.FC = () => {
       styles="mt-[50px] sm:mt-[60px]"
       children={
         <>
-          <h2 className="text-[28px] lg:text-[48px] xl:text-[60px] mb-[30px] font-bold">
+          <h2 className="text-[32px] md:text-[42px] lg:text-[60px] mb-[30px] font-bold">
             Услуги по разработке и продвижению
           </h2>
           <ListLinks items={items} />

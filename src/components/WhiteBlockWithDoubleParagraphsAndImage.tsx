@@ -44,7 +44,7 @@ const WhiteBlockWithDoubleParagraphsAndImage: FC<
               className={`flex md:flex-row flex-col justify-between flex-wrap`}
             >
               <div className="w-full  mb-[30px]">
-                <h2 className="text-[32px] md:text-[60px] font-bold">
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold">
                   {title}
                 </h2>
               </div>

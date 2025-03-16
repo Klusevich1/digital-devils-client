@@ -14,13 +14,14 @@ interface BlockWithImageAndDropDownMenuProps {
     data: DataItem[]
     borderColor: string;
     margin?: string;
+    isDark?: boolean;
 }
 
-const BlockWithImageAndDropDownMenu: React.FC<BlockWithImageAndDropDownMenuProps> = ({title, firstBlock, data, borderColor, margin}) => {
+const BlockWithImageAndDropDownMenu: React.FC<BlockWithImageAndDropDownMenuProps> = ({title, firstBlock, data, borderColor, margin, isDark = false}) => {
     return (
-        <StandardMarginsLayout styles={`pb-0 lg:pb-[60px] pt-0 lg:pt-[60px] ${margin && margin} lg:bg-[#F7F7F7]`} children={
+        <StandardMarginsLayout styles={`md:pb-[60px] pb-[50px] lg:py-[60px] ${margin && margin} ${isDark ? " bg-black !text-white" : "lg:bg-[#F7F7F7]"}`} children={
             <>
-                <h2 className="text-[32px] md:text-[60px] mb-[30px] font-bold">{title}</h2>
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] mb-[30px] font-bold">{title}</h2>
                 <div className="flex flex-col lg:flex-row justify-between">
                     <div className="lg:max-w-[529px]">
                         {firstBlock}

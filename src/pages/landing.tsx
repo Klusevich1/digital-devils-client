@@ -92,7 +92,7 @@ const landing = () => {
                 className={`flex md:flex-row flex-col justify-between flex-wrap`}
               >
                 <div className="w-full  mb-[30px]">
-                  <h2 className="text-[32px] md:text-[60px] font-bold">
+                  <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold">
                     Уникальный дизайн и функционал
                   </h2>
                 </div>
@@ -339,7 +339,7 @@ const landing = () => {
             </p>
           }
           text2={
-            <ul className="text-[18px]">
+            <ul className="text-[18px] flex flex-col gap-[5px]">
               <li>
                 • Сайты - квизы - коротких лендингов, посетители которых
                 отвечают на вопросы и получают за это призы. Задача таких

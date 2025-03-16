@@ -10,7 +10,7 @@ const ServiceBlockFirst: React.FC = () => {
                     <p className="md:order-1 order-2 md:text-[22px] text-[16px]">
                         [ Мы помогаем нашим клиентам превзойти конкурентов - узнайте, как! ]
                     </p>
-                    <h1 className="md:order-2 order-1 xl:text-[60px] lg:text-[45px] text-[32px] font-bold mt-[20px] mb-[10px] md:mb-[30px]">
+                    <h1 className="md:order-2 order-1 text-[32px] md:text-[42px] lg:text-[60px] font-bold mt-[20px] mb-[10px] md:mb-[30px]">
                         Digital Devils - выбор тех, кто заботится о пользователях своего проекта
                     </h1>
                     <button className="order-3 flex transition-all md:m-0 mt-[20px]">

@@ -6,13 +6,18 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { LuMenu } from "react-icons/lu";
 import { useRouter } from "next/router";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  theme?: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ theme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [dopServiceIndex, setDopServiceIndex] = useState<number>(0);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [dopMobileServicesOpenIndex, setDopMobileServicesOpenIndex] = useState<number>(0);
+  const [dopMobileServicesOpenIndex, setDopMobileServicesOpenIndex] =
+    useState<number>(0);
   const router = useRouter();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -72,15 +77,13 @@ const Header: React.FC = () => {
     },
     {
       services: [
-        { name: "3 Корпоротивные сайты", href: "corporate-website" },
-        { name: "3 Интернет-магазин", href: "online-store" },
-        { name: "3 Landing page", href: "landing" },
-        { name: "3 B2B сайты", href: "b2b" },
-        { name: "3 Сайт-визитка", href: "card-website" },
-        { name: "3 Портал", href: "portal" },
-        { name: "3 Сайт-каталог", href: "website-catalog" },
-        { name: "3 Информационный сайт", href: "information-site" },
-        { name: "3 Маркетплейс", href: "marketplace" },
+        { name: "Разработка мобильных приложений", href: "mob-apps" },
+        { name: "IOS разработка", href: "mob-ios" },
+        { name: "Android разработка", href: "mob-android" },
+        { name: "ASO продвижение", href: "mob-aso" },
+        { name: "PWA разработка", href: "mob-pwa" },
+        { name: "Дизайн мобильных приложений", href: "mob-design" },
+        { name: "Разработка веб-приложений", href: "mob-web" },
       ],
     },
     {
@@ -131,12 +134,20 @@ const Header: React.FC = () => {
       setIsMobileServicesOpen(true);
     }
   };
-  
+
   return (
     <>
-      <header className={`fixed top-0 left-0 w-full z-50 ${isSticky ? 'bg-transparent' : 'bg-white'}`}>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 ${
+          isSticky
+            ? "bg-transparent"
+            : `${theme === "dark" ? "bg-black" : "bg-white"}`
+        } ${theme === "dark" ? "text-white" : "text-black"}`}
+      >
         <div
-          className={`transition-transform bg-white duration-300 ${
+          className={`transition-transform ${
+            theme === "dark" ? "bg-black" : "bg-white"
+          } duration-300 ${
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
           } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-end items-center hidden md:flex`}
         >
@@ -153,7 +164,13 @@ const Header: React.FC = () => {
               className="size-[28px]"
               alt="Instagram Logo"
             />
-            <span className="ms-[5px] text-black">instagram</span>
+            <span
+              className={`ms-[5px] ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
+            >
+              instagram
+            </span>
           </a>
           <a
             target="_blank"
@@ -168,23 +185,39 @@ const Header: React.FC = () => {
               className="size-[28px]"
               alt="Telegram Logo"
             />
-            <span className="ms-[5px] text-black">telegram</span>
+            <span
+              className={`ms-[5px] ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
+            >
+              telegram
+            </span>
           </a>
           <a href="tel:+375296342190">
-            <span className="ms-[60px] text-[16px] font- text-black">
+            <span
+              className={`ms-[60px] text-[16px] ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
+            >
               +375 29 634 21 90
             </span>
           </a>
         </div>
         <div
-          className={`shadow-md bg-white transition-all duration-300 py-[9px] ps-[10px] pe-[20px] md:py-[15px] md:px-[46px] border-t-black_10 border-t-[1px] flex items-center justify-between ${
+          className={`shadow-md ${
+            theme === "dark" ? "bg-black" : "bg-white"
+          } transition-all duration-300 py-[9px] ps-[10px] pe-[20px] md:py-[15px] md:px-[46px] ${
+            theme === "dark" ? "border-t-black_80" : "border-t-black_10"
+          } border-t-[1px] flex items-center justify-between ${
             isSticky && window.innerWidth > 768
-              ? "sticky w-full bg-white shadow-lg translate-y-[-48px]"
+              ? `sticky w-full ${
+                  theme === "dark" ? "bg-black" : "bg-white"
+                } shadow-lg translate-y-[-48px]`
               : "translate-y-0"
           }`}
         >
           <div className="services-dropdown mx-auto max-w-[1440px] w-full flex items-center justify-between ">
-            <HeaderLogo />
+            <HeaderLogo theme={theme ? theme : ""} />
             <nav className="hidden xlg:flex space-x-8 items-center">
               <div
                 className="relative"
@@ -201,13 +234,21 @@ const Header: React.FC = () => {
               >
                 <a
                   href="/services"
-                  className="flex items-center text-black font-medium transition-all duration-300 hover:text-blue-600"
+                  className={`flex items-center ${
+                    theme === "dark" ? "text-white" : "text-black"
+                  } font-medium transition-all duration-300 hover:text-blue-600`}
                 >
                   <LuMenu className="me-1" />
                   <span>Услуги</span>
                 </a>
                 <div
-                  className={`services-dropdown fixed left-0 top-[100%] w-screen shadow-lg bg-white transition-transform duration-500 border-t-black_10 border-t-[1px] ${
+                  className={`services-dropdown fixed left-0 top-[100%] w-screen shadow-lg ${
+                    theme === "dark" ? "bg-black" : "bg-white"
+                  } transition-transform duration-500 ${
+                    theme === "dark"
+                      ? "border-t-black_80"
+                      : "border-t-black_10"
+                  } border-t-[1px] ${
                     isServicesOpen
                       ? " opacity-100"
                       : " opacity-0 pointer-events-none"
@@ -217,9 +258,8 @@ const Header: React.FC = () => {
                     <div className="flex w-full dop-services-dropdown">
                       <ul className="min-w-[400px] space-y-2.5 w-1/3">
                         <li>
-                          <a
-                            href="/services"
-                            className="hover:text-blue-600 flex items-center duration-300"
+                          <p
+                            className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(1)}
                             onMouseOut={(e) => {
                               const relatedTarget =
@@ -236,13 +276,33 @@ const Header: React.FC = () => {
                               Веб-разработка
                             </span>
                             <GoArrowRight className="size-[24px]" />
-                          </a>
+                          </p>
                         </li>
                         <li>
-                          <a
-                            href="/services"
-                            className="hover:text-blue-600 flex items-center duration-300"
+                          <p
+                            className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(2)}
+                            onMouseOut={(e) => {
+                              const relatedTarget =
+                                e.relatedTarget as HTMLElement;
+                              if (
+                                !relatedTarget ||
+                                !relatedTarget.closest(".dop-services-dropdown")
+                              ) {
+                                setDopServiceIndex(0);
+                              }
+                            }}
+                          >
+                            <span className="text-[24px] font-medium me-1">
+                              CMS
+                            </span>
+                            <GoArrowRight className="size-[24px]" />
+                          </p>
+                        </li>
+                        <li>
+                          <p
+                            className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
+                            onMouseOver={() => setDopServiceIndex(3)}
                             onMouseOut={(e) => {
                                 const relatedTarget = e.relatedTarget as HTMLElement;
                                 if (!relatedTarget || !relatedTarget.closest(".dop-services-dropdown")) {
@@ -251,61 +311,40 @@ const Header: React.FC = () => {
                             }}
                           >
                             <span className="text-[24px] font-medium me-1">
-                              CMS
-                            </span>
-                            <GoArrowRight className="size-[24px]" />
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="/services"
-                            className="hover:text-blue-600 flex items-center duration-300"
-                            // onMouseOver={() => setDopServiceIndex(3)}
-                            // onMouseOut={(e) => {
-                            //     const relatedTarget = e.relatedTarget as HTMLElement;
-                            //     if (!relatedTarget || !relatedTarget.closest(".dop-services-dropdown")) {
-                            //         setDopServiceIndex(0);
-                            //     }
-                            // }}
-                          >
-                            <span className="text-[24px] font-medium me-1">
                               Мобильные приложения
                             </span>
                             <GoArrowRight className="size-[24px]" />
-                          </a>
+                          </p>
                         </li>
                         <li>
-                          <a
-                            href="/services"
+                          <p
                             className="hover:text-blue-600 flex items-center duration-300"
                           >
                             <span className="text-[24px] font-medium me-1">
                               Motion-дизайн
                             </span>
                             <GoArrowRight className="size-[24px]" />
-                          </a>
+                          </p>
                         </li>
                         <li>
-                          <a
-                            href="/services"
+                          <p
                             className="hover:text-blue-600 flex items-center duration-300"
                           >
                             <span className="text-[24px] font-medium me-1">
                               SEO
                             </span>
                             <GoArrowRight className="size-[24px]" />
-                          </a>
+                          </p>
                         </li>
                         <li>
-                          <a
-                            href="/services"
+                          <p
                             className="hover:text-blue-600 flex items-center duration-300"
                           >
                             <span className="text-[24px] font-medium me-1">
                               Дизайн
                             </span>
                             <GoArrowRight className="size-[24px]" />
-                          </a>
+                          </p>
                         </li>
                       </ul>
                       <ul className="w-full max-w-[300px]">
@@ -359,25 +398,33 @@ const Header: React.FC = () => {
 
               <a
                 href="/portfolio"
-                className="text-black font-medium transition-all duration-300 hover:text-blue-600"
+                className={`${
+                  theme === "dark" ? "text-white" : "text-dark"
+                } font-medium transition-all duration-300 hover:text-blue-600`}
               >
                 Портфолио
               </a>
               <a
                 href="/about"
-                className="text-black font-medium transition-all duration-300 hover:text-blue-600 whitespace-nowrap"
+                className={`${
+                  theme === "dark" ? "text-white" : "text-black"
+                } font-medium transition-all duration-300 hover:text-blue-600 whitespace-nowrap`}
               >
                 О нас
               </a>
               <a
                 href="/blog"
-                className="text-black font-medium transition-all duration-300 hover:text-blue-600"
+                className={`${
+                  theme === "dark" ? "text-white" : "text-black"
+                } font-medium transition-all duration-300 hover:text-blue-600`}
               >
                 Блог
               </a>
               <a
                 href="/contacts"
-                className="text-black font-medium transition-all duration-300 hover:text-blue-600"
+                className={`${
+                  theme === "dark" ? "text-white" : "text-black"
+                } font-medium transition-all duration-300 hover:text-blue-600`}
               >
                 Контакты
               </a>
@@ -385,45 +432,57 @@ const Header: React.FC = () => {
             <a
               href="/application"
               rel="nofollow"
-              className="hidden xlg:block bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[227px] text-white px-[39px] w-full text-[18px]  hover:bg-blue-700 mx-8 "
+              className="hidden xlg:block bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[227px] text-white px-[39px] w-full text-[18px]  hover:bg-blue-700"
             >
               Обсудить проект
             </a>
           </div>
           <button
-            className="xlg:hidden flex-col items-end flex text-gray-700 focus:outline-none"
+            className={`xlg:hidden flex-col items-end flex ${
+              theme === "dark" ? "text-white" : "text-gray-700"
+            } focus:outline-none`}
             onClick={toggleMenu}
           >
             <span
-              className={`block w-5 h-[1.6px] bg-gray-800 transition-transform duration-300 ${
+              className={`block w-5 h-[1.6px] ${
+                theme === "dark" ? "bg-white" : "bg-gray-800"
+              } transition-transform duration-300 ${
                 isMenuOpen ? "rotate-45 translate-y-1.5" : ""
               }`}
             ></span>
             <div className="flex mt-[5px] h-[1.6px] mb-[5px]">
               <span
-                className={`w-[6px] me-[2px] h-full bg-gray-800 transition-opacity duration-300 ${
+                className={`w-[6px] me-[2px] h-full ${
+                  theme === "dark" ? "bg-white" : "bg-gray-800"
+                } transition-opacity duration-300 ${
                   isMenuOpen ? "opacity-0" : "opacity-100"
                 } `}
               ></span>
               <span
-                className={`w-5 h-full bg-gray-800 transition-opacity duration-300 ${
+                className={`w-5 h-full ${
+                  theme === "dark" ? "bg-white" : "bg-gray-800"
+                } transition-opacity duration-300 ${
                   isMenuOpen ? "opacity-0" : "opacity-100"
                 }`}
               ></span>
             </div>
             <span
-              className={`block h-[2px] bg-gray-800 transition-transform duration-300 ${
+              className={`block h-[2px] ${
+                theme === "dark" ? "bg-white" : "bg-gray-800"
+              } transition-transform duration-300 ${
                 isMenuOpen ? "w-5 -rotate-45 -translate-y-1.5" : "w-7 "
               }`}
             ></span>
           </button>
           <div
-            className={`bg-white h-screen fixed top-0 left-0 w-full transform transition-transform duration-300 ease-in-out ${
+            className={`${
+              theme === "dark" ? "bg-black" : "bg-white"
+            } h-screen fixed top-0 left-0 w-full transform transition-transform duration-300 ease-in-out ${
               isMenuOpen ? "translate-x-0" : "-translate-x-full"
             } z-60`}
           >
             <div className="flex items-center justify-between py-[9px] ps-[10px] pe-[20px] md:py-[15px] md:px-[46px]">
-              <HeaderLogo />
+              <HeaderLogo theme={theme ? theme : ""} />
               <button
                 onClick={() => {
                   toggleMenu();
@@ -435,17 +494,23 @@ const Header: React.FC = () => {
                 className="text-gray-700 focus:outline-none"
               >
                 <span
-                  className={`block w-5 h-0.5 bg-gray-800 transition-transform duration-300 ${
+                  className={`block w-5 h-0.5 ${
+                    theme === "dark" ? "bg-white" : "bg-gray-800"
+                  } transition-transform duration-300 ${
                     isMenuOpen ? "rotate-45 translate-y-1.5" : ""
                   }`}
                 ></span>
                 <span
-                  className={`block w-5 h-0.5 bg-gray-800 transition-opacity duration-300 ${
+                  className={`block w-5 h-0.5 ${
+                    theme === "dark" ? "bg-white" : "bg-gray-800"
+                  } transition-opacity duration-300 ${
                     isMenuOpen ? "opacity-0" : "opacity-100"
                   } my-1`}
                 ></span>
                 <span
-                  className={`block w-5 h-0.5 bg-gray-800 transition-transform duration-300 ${
+                  className={`block w-5 h-0.5 ${
+                    theme === "dark" ? "bg-white" : "bg-gray-800"
+                  } transition-transform duration-300 ${
                     isMenuOpen ? "-rotate-45 -translate-y-1.5" : ""
                   }`}
                 ></span>
@@ -485,7 +550,13 @@ const Header: React.FC = () => {
                 </div>
                 <button
                   onClick={handleDropdowmBlock}
-                  className={`text-black font-medium transition-all duration-300 ${isMobileServicesOpen ? 'text-blue-600' : ''} text-[22px]`}
+                  className={`font-medium transition-all duration-300 ${
+                    isMobileServicesOpen
+                      ? "text-blue-600"
+                      : theme === "dark"
+                      ? "text-white"
+                      : "text-black"
+                  } text-[22px]`}
                 >
                   Услуги
                 </button>
@@ -494,9 +565,24 @@ const Header: React.FC = () => {
                 <ul className="text-[22px] font-medium ">
                   <li
                     className={`mb-[20px] flex items-center cursor-pointer duration-300
-                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
-                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
-                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 1 ? "hidden" : "block"}`}
+                        ${
+                          dopMobileServicesOpenIndex === 0
+                            ? "translate-x-[-29px]"
+                            : "translate-x-[0px]"
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0
+                            ? "translate-y-[-65px] text-blue_main"
+                            : `translate-y-0 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0 &&
+                          dopMobileServicesOpenIndex !== 1
+                            ? "hidden"
+                            : "block"
+                        }`}
                     onClick={() =>
                       dopMobileServicesOpenIndex === 1
                         ? setDopMobileServicesOpenIndex(0)
@@ -522,14 +608,29 @@ const Header: React.FC = () => {
                   </li>
                   <li
                     className={`mb-[20px] flex items-center cursor-pointer duration-300
-                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
-                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
-                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 2 ? "hidden" : "block"}`}
-
+                        ${
+                          dopMobileServicesOpenIndex === 0
+                            ? "translate-x-[-29px]"
+                            : "translate-x-[0px]"
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0
+                            ? "translate-y-[-65px] text-blue_main"
+                            : `translate-y-0 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0 &&
+                          dopMobileServicesOpenIndex !== 2
+                            ? "hidden"
+                            : "block"
+                        }`}
                     onClick={() =>
-                        dopMobileServicesOpenIndex === 2 ?
-                            setDopMobileServicesOpenIndex(0) :
-                            setDopMobileServicesOpenIndex(2)}
+                      dopMobileServicesOpenIndex === 2
+                        ? setDopMobileServicesOpenIndex(0)
+                        : setDopMobileServicesOpenIndex(2)
+                    }
                   >
                     <GoArrowLeft
                       onClick={() => setDopMobileServicesOpenIndex(0)}
@@ -550,13 +651,28 @@ const Header: React.FC = () => {
                   </li>
                   <li
                     className={`mb-[20px] flex items-center cursor-pointer duration-300
-                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
-                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
-                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 3 ? "hidden" : "block"}`}
-                    // onClick={() =>
-                    //     dopMobileServicesOpenIndex === 3 ?
-                    //         setDopMobileServicesOpenIndex(0) :
-                    //         setDopMobileServicesOpenIndex(3)}
+                        ${
+                          dopMobileServicesOpenIndex === 0
+                            ? "translate-x-[-29px]"
+                            : "translate-x-[0px]"
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0
+                            ? "translate-y-[-65px] text-blue_main"
+                            : `translate-y-0 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0 &&
+                          dopMobileServicesOpenIndex !== 3
+                            ? "hidden"
+                            : "block"
+                        }`}
+                    onClick={() =>
+                        dopMobileServicesOpenIndex === 3 ?
+                            setDopMobileServicesOpenIndex(0) :
+                            setDopMobileServicesOpenIndex(3)}
                   >
                     <GoArrowLeft
                       onClick={() => setDopMobileServicesOpenIndex(0)}
@@ -577,9 +693,24 @@ const Header: React.FC = () => {
                   </li>
                   <li
                     className={`mb-[20px] flex items-center cursor-pointer duration-300
-                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
-                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
-                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 4 ? "hidden" : "block"}`}
+                        ${
+                          dopMobileServicesOpenIndex === 0
+                            ? "translate-x-[-29px]"
+                            : "translate-x-[0px]"
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0
+                            ? "translate-y-[-65px] text-blue_main"
+                            : `translate-y-0 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0 &&
+                          dopMobileServicesOpenIndex !== 4
+                            ? "hidden"
+                            : "block"
+                        }`}
                     // onClick={() =>
                     //     dopMobileServicesOpenIndex === 4 ?
                     //         setDopMobileServicesOpenIndex(0) :
@@ -604,9 +735,24 @@ const Header: React.FC = () => {
                   </li>
                   <li
                     className={`mb-[20px] flex items-center cursor-pointer duration-300
-                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
-                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
-                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 5 ? "hidden" : "block"}`}
+                        ${
+                          dopMobileServicesOpenIndex === 0
+                            ? "translate-x-[-29px]"
+                            : "translate-x-[0px]"
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0
+                            ? "translate-y-[-65px] text-blue_main"
+                            : `translate-y-0 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0 &&
+                          dopMobileServicesOpenIndex !== 5
+                            ? "hidden"
+                            : "block"
+                        }`}
                     // onClick={() =>
                     //     dopMobileServicesOpenIndex === 5 ?
                     //         setDopMobileServicesOpenIndex(0) :
@@ -631,9 +777,24 @@ const Header: React.FC = () => {
                   </li>
                   <li
                     className={`mb-[20px] flex items-center cursor-pointer duration-300
-                        ${dopMobileServicesOpenIndex === 0 ? "translate-x-[-29px]" : "translate-x-[0px]"}
-                        ${dopMobileServicesOpenIndex !== 0 ? "translate-y-[-65px] text-blue_main" : "translate-y-0 text-black"}
-                        ${dopMobileServicesOpenIndex !== 0 && dopMobileServicesOpenIndex !== 6 ? "hidden" : "block"}`}
+                        ${
+                          dopMobileServicesOpenIndex === 0
+                            ? "translate-x-[-29px]"
+                            : "translate-x-[0px]"
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0
+                            ? "translate-y-[-65px] text-blue_main"
+                            : `translate-y-0 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0 &&
+                          dopMobileServicesOpenIndex !== 6
+                            ? "hidden"
+                            : "block"
+                        }`}
                     // onClick={() =>
                     //     dopMobileServicesOpenIndex === 6 ?
                     //         setDopMobileServicesOpenIndex(0) :
@@ -690,25 +851,33 @@ const Header: React.FC = () => {
                 >
                   <a
                     href="/portfolio"
-                    className="text-black font-medium transition-all duration-300 hover:text-blue-600 text-[22px]"
+                    className={`${
+                      theme === "dark" ? "text-white" : "text-black"
+                    } font-medium transition-all duration-300 hover:text-blue-600 text-[22px]`}
                   >
                     Портфолио
                   </a>
                   <a
                     href="/about"
-                    className="text-black font-medium transition-all duration-300 hover:text-blue-600 text-[22px]"
+                    className={`${
+                      theme === "dark" ? "text-white" : "text-black"
+                    } font-medium transition-all duration-300 hover:text-blue-600 text-[22px]`}
                   >
                     О нас
                   </a>
                   <a
                     href="/blog"
-                    className="text-black font-medium transition-all duration-300 hover:text-blue-600 text-[22px]"
+                    className={`${
+                      theme === "dark" ? "text-white" : "text-black"
+                    } font-medium transition-all duration-300 hover:text-blue-600 text-[22px]`}
                   >
                     Блог
                   </a>
                   <a
                     href="/contacts"
-                    className="text-black font-medium transition-all duration-300 hover:text-blue-600 text-[22px]"
+                    className={`${
+                      theme === "dark" ? "text-white" : "text-black"
+                    } font-medium transition-all duration-300 hover:text-blue-600 text-[22px]`}
                   >
                     Контакты
                   </a>
@@ -734,7 +903,10 @@ const Header: React.FC = () => {
                   Телефон: <a href="tel:+375296342190">+375 29 634 21 90</a>
                 </p>
                 <p className="mb-2.5">
-                  E-mail: <a href="malito:info@digitaldevils.by">info@digitaldevils.by</a>
+                  E-mail:{" "}
+                  <a href="malito:info@digitaldevils.by">
+                    info@digitaldevils.by
+                  </a>
                 </p>
                 <div className="flex">
                   <Image

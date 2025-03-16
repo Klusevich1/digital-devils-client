@@ -13,7 +13,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
       styles={margin ?? "pb-[50px] md:pb-[60px]"}
       children={
         <div className="w-full">
-          <h2 className="text-[32px] mb-[30px] lg:text-[60px] font-bold">
+          <h2 className="mb-[30px] text-[32px] md:text-[42px] lg:text-[60px] font-bold">
             {title}
           </h2>
           <div className="flex flex-col xl:flex-row justify-self-center md:gap-[40px] items-center  w-full ">

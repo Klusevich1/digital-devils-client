@@ -76,7 +76,7 @@ const ServicesBlockSecond: React.FC = () => {
       styles="h-auto mt-[50px] sm:mt-[60px] text-white bg-black sm:py-[60px] py-[50px] overflow-hidden transition-all duration-300"
       children={
         <>
-          <h2 className="w-full font-bold text-[32px] lg:text-[60px] mb-[30px]">
+          <h2 className="w-full font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">
             Услуги
           </h2>
 

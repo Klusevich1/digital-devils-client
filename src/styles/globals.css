@@ -7,13 +7,9 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fafafa;
-    --foreground: #171717;
-    /*--background: #0a0a0a;*/
-    /*--foreground: #ededed;*/
-  }
+[prefers-color-scheme="dark"] {
+  --background: #171717;
+  --foreground: #fafafa;
 }
 
 html {
@@ -28,8 +24,15 @@ h2 {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Manrope, sans-serif;
+  font-family: "Manrope", Arial, sans-serif;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    --background: #171717;
+    --foreground: #fafafa;
+  }
+} */
 
 .custom_container {
   padding-left: 20px;

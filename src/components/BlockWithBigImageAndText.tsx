@@ -35,7 +35,7 @@ const BlockWithBigImageAndText: FC<BlockWithBigImageAndTextProps> = ({
               }`}
             >
               <div className="lg:block flex flex-col items-center lg:max-w-[638px] text-[18px]  lg:md:w-6/12">
-                <h2 className=" lg:hidden  font-bold text-[32px] md:text-[60px] mb-[30px] w-full">
+                <h2 className=" lg:hidden  font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px] w-full">
                   {title}
                 </h2>
                 {text_1 && (

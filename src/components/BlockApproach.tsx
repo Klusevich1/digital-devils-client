@@ -72,7 +72,7 @@ const BlockApproach: React.FC<BlockApproachProps> = ({
       }
       children={
         <div className="flex flex-col w-full">
-          <h1 className="mb-[30px] font-bold text-[32px] lg:text-[60px]">
+          <h1 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
             {mainTitle}
           </h1>
           <div className="flex flex-col lg:flex-row justify-between">

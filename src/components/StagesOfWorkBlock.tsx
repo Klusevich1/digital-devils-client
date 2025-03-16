@@ -17,7 +17,7 @@ export const StagesOfWorkBlock: FC<{ title: string, text: ReactNode; data: CardD
             styles={margin}
             children={
             <>
-                <h2 className="font-bold text-[32px] md:text-[60px] mb-[30px]">{title}</h2>
+                <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">{title}</h2>
                 {text}
                 <CardGrid data={data} />
             </>
@@ -27,11 +27,11 @@ export const StagesOfWorkBlock: FC<{ title: string, text: ReactNode; data: CardD
 
 const CardGrid: React.FC<CardGridProps> = ({ data }) => {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center">
             {data.map((item, index) => (
                 <div
                     key={index}
-                    className={`drop-shadow-lg md:max-w-[413px] rounded-[30px] p-[20px] flex flex-col  ${--index % 2 ? "bg-white" : "bg-black text-white"}`}
+                    className={`drop-shadow-lg md:max-w-[413px] h-full rounded-[30px] p-[20px] flex flex-col  ${--index % 2 ? "bg-white" : "bg-black text-white"}`}
                 >
                     <div className="flex mb-[10px]">
                         {Array.from({ length: item.circles }).map((_, i) => (

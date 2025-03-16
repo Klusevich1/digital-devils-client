@@ -40,7 +40,7 @@ const ColorfulBlock: React.FC<ColorfulBlockProps> = ({
             <article className="py-[50px] md:py-[60px] text-white" style={{backgroundColor: BgColor}}>
                 <div className="w-full mx-auto max-w-[1440px] custom_container ">
 
-                    <h2 className="font-bold text-[32px] sm:text-[40px] lg:text-[60px] mb-[30px]">{bigTitle}</h2>
+                    <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">{bigTitle}</h2>
                     <div className="flex flex-col lg:flex-row justify-between">
                         <div className="md:block hidden min-w-[339px] w-full min-h-[250px] lg:max-w-[523px] lg:max-h-[272px] rounded-[40px] me-[20px] mb-[30px]">
                             <Image src={imagePath} alt={title} className="w-full" width={523} height={272}/>
