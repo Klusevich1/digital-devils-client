@@ -152,7 +152,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
               <div className="w-full">
                 <div className="overflow-hidden inline-flex rounded-[30px] w-full max-w-full max-h-[350px] ">
                   <Image
-                    className="w-full object-cover duration-300 hover:scale-105"
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
                     src="/resources/portfolio1.png"
                     width={340}
                     height={350}
@@ -193,7 +193,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
               <div className="w-full">
                 <div className="overflow-hidden inline-flex rounded-[30px] w-full max-w-full h-[350px]">
                   <Image
-                    className="w-full object-cover duration-300 hover:scale-105"
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
                     src="/resources/case_seo.png"
                     width={340}
                     height={350}
@@ -207,7 +207,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
               <div className="w-full">
                 <div className="max-w-full w-full overflow-hidden inline-flex rounded-[30px] max-h-[350px]">
                   <Image
-                    className="w-full object-cover duration-300 hover:scale-105"
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
                     src="/resources/case_toptyre.png"
                     width={340}
                     height={350}
@@ -221,7 +221,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
               <div className="w-full">
                 <div className="overflow-hidden inline-flex rounded-[30px] w-full max-h-[350px]">
                   <Image
-                    className="w-full object-cover duration-300 hover:scale-105"
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
                     src="/resources/case_giftstreesmall.png"
                     width={340}
                     height={350}
@@ -235,7 +235,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
               <div className="w-full">
                 <div className="overflow-hidden inline-flex rounded-[30px] w-full h-[350px]">
                   <Image
-                    className="w-full object-cover duration-300 hover:scale-105"
+                    className="w-full h-full object-cover duration-300 hover:scale-105"
                     src="/resources/portfolio4.png"
                     width={340}
                     height={350}
