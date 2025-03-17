@@ -17,7 +17,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
             {title}
           </h2>
           <div className="flex lg:flex-row flex-col justify-self-center gap-[20px] md:gap-[40px] items-center w-full ">
-            <div className="flex gap-[20px] md:gap-[40px] lg:flex-col flex-row justify-around w-full lg:max-w-[418px]">
+            <div className="sm:flex hidden gap-[20px] md:gap-[40px] lg:flex-col flex-row justify-around w-full lg:max-w-[418px]">
               <div className="w-full">
                 <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full lg:max-w-[413px] lg:h-[450px] h-[320px]">
                   <Image
@@ -47,7 +47,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                 </p>
               </div>
             </div>
-            <div className="flex lg:flex-col sm:flex-row flex-col md:gap-[40px] gap-[20px] w-full">
+            <div className="sm:flex hidden lg:flex-col flex-row md:gap-[40px] gap-[20px] w-full">
               <div className="w-full">
                 <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full lg:max-w-[418px] h-[300px]">
                   <Image
@@ -91,7 +91,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                 </p>
               </div>
             </div>
-            <div className="flex lg:flex-col flex-row gap-[20px] md:gap-[40px] w-full">
+            <div className="sm:flex hidden lg:flex-col flex-row gap-[20px] md:gap-[40px] w-full">
               <div className="w-full lg:block hidden">
                 <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] w-full max-w-[418px] h-[300px]">
                   <Image
@@ -107,9 +107,9 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                 </p>
               </div>
               <div className="w-full lg:hidden">
-                <div className="overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] max-w-full w-full h-[450px]">
+                <div className="max-w-full w-full overflow-hidden inline-flex md:rounded-[40px] rounded-[30px] h-[450px]">
                   <Image
-                    className="object-cover duration-300 hover:scale-105"
+                    className="h-full object-cover duration-300 hover:scale-105"
                     src="/resources/case_toptyre.png"
                     width={415}
                     height={450}
@@ -121,7 +121,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                 </p>
               </div>
               <div className="w-full">
-                <div className="w-full h-[450px] max-w-[417px] overflow-hidden inline-flex rounded-[40px]">
+                <div className="w-full h-[450px] overflow-hidden inline-flex rounded-[40px]">
                   <video
                     loop
                     muted
@@ -142,6 +142,105 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                     <source src="/resources/main2.mp4" type="video/mp4" />
                     Ваш браузер не поддерживает видео.
                   </video>
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  Motion-дизайн
+                </p>
+              </div>
+            </div>
+            <div className="sm:hidden flex flex-col gap-[40px] w-full">
+              <div className="w-full">
+                <div className="overflow-hidden inline-flex rounded-[30px] w-full max-w-full max-h-[350px] ">
+                  <Image
+                    className="w-full object-cover duration-300 hover:scale-105"
+                    src="/resources/portfolio1.png"
+                    width={340}
+                    height={350}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  Keel Market LLP
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="w-full h-[350px] overflow-hidden inline-flex rounded-[40px]">
+                  <video
+                    loop
+                    muted
+                    playsInline
+                    autoPlay
+                    className="w-full h-full duration-300 scale-105 hover:scale-110 sm:rounded-[40px] shadow-lg object-cover"
+                    onMouseEnter={(e) => {
+                      if (!/Mobi|Android/i.test(navigator.userAgent)) {
+                        e.currentTarget.play();
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!/Mobi|Android/i.test(navigator.userAgent)) {
+                        e.currentTarget.pause();
+                      }
+                    }}
+                  >
+                    <source src="/resources/main2.mp4" type="video/mp4" />
+                    Ваш браузер не поддерживает видео.
+                  </video>
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  Motion-дизайн
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="overflow-hidden inline-flex rounded-[30px] w-full max-w-full h-[350px]">
+                  <Image
+                    className="w-full object-cover duration-300 hover:scale-105"
+                    src="/resources/case_seo.png"
+                    width={340}
+                    height={350}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  SEO
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="max-w-full w-full overflow-hidden inline-flex rounded-[30px] max-h-[350px]">
+                  <Image
+                    className="w-full object-cover duration-300 hover:scale-105"
+                    src="/resources/case_toptyre.png"
+                    width={340}
+                    height={350}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  TopTyre
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="overflow-hidden inline-flex rounded-[30px] w-full max-h-[350px]">
+                  <Image
+                    className="w-full object-cover duration-300 hover:scale-105"
+                    src="/resources/case_giftstreesmall.png"
+                    width={340}
+                    height={350}
+                    alt={"Portfolio"}
+                  />
+                </div>
+                <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
+                  Giftstree
+                </p>
+              </div>
+              <div className="w-full">
+                <div className="overflow-hidden inline-flex rounded-[30px] w-full h-[350px]">
+                  <Image
+                    className="w-full object-cover duration-300 hover:scale-105"
+                    src="/resources/portfolio4.png"
+                    width={340}
+                    height={350}
+                    alt={"Portfolio"}
+                  />
                 </div>
                 <p className="mt-[10px] font-bold md:text-[28px] text-[20px] leading-[1]">
                   Motion-дизайн

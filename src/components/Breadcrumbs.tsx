@@ -21,7 +21,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
     <StandardMarginsLayout
       children={
         <nav
-          className={`text-gray-600 flex ${className} sm:my-[30px] my-[20px] ${
+          className={`text-gray-600 flex flex-wrap ${className} sm:my-[30px] my-[20px] ${
             theme === "dark" ? "bg-black" : "bg-white"
           }`}
         >
@@ -31,8 +31,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
               className={`flex items-center ${
                 index === 0 ||
                 (breadcrumbs.length === 3 && (index == 0 || index == 1))
-                  ? `${theme === "dark" ? "text-white" : "text-black"}`
-                  : "text-black_40"
+                  ? "text-black_40"
+                  : `${theme === "dark" ? "text-white" : "text-black"}`
               }`}
             >
               <a href={breadcrumb.link} className="hover:underline text-[14px]">
