@@ -107,9 +107,9 @@ const joomla = () => {
                 />
               </div>
               <div className="lg:max-w-[754px]">
-                <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px] leading-normal">
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px] leading-normal">
                   Мы разрабатываем то, что нужно Вам
-                </h1>
+                </h2>
                 <p className="text-[22px] font-bold mt-[30px] ">
                   Разработка приложений для iOS от компании Digital Devils -
                   комплексная услуга, популярная среди коммерческих организаций,
@@ -260,9 +260,9 @@ const joomla = () => {
                 />
               </div>
               <div className="lg:max-w-[754px]">
-                <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px]">
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px]">
                   Сколько стоит разработка мобильных приложений под iOS?
-                </h1>
+                </h2>
                 <p className="text-[22px] font-bold mt-[30px] ">
                   Планируйте расширение бизнеса или выход на новые рынки сбыта?
                   Вам нужно привлечь новых клиентов? Создадим для вас мобильное

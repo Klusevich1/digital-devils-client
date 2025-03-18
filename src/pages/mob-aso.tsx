@@ -119,9 +119,9 @@ const joomla = () => {
           children={
             <div className="flex flex-col lg:flex-row lg:space-x-[41px]">
               <div className="lg:max-w-[753px]">
-                <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px]">
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px]">
                   Мы разрабатываем то, что нужно Вам
-                </h1>
+                </h2>
                 <p className="text-[22px] font-bold mt-[30px] ">
                   Оптимизация и продвижение приложений и игр в Беларуси{" "}
                 </p>

@@ -72,9 +72,9 @@ const BlockApproach: React.FC<BlockApproachProps> = ({
       }
       children={
         <div className="flex flex-col w-full">
-          <h1 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+          <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
             {mainTitle}
-          </h1>
+          </h2>
           <div className="flex flex-col lg:flex-row justify-between">
             <div className="w-full lg:max-w-[640px]">
               <p className="text-[22px] font-bold mb-[10px]" dangerouslySetInnerHTML={{__html: leftBlock_p1}}></p>

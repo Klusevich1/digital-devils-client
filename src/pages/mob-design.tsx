@@ -211,9 +211,9 @@ const joomla = () => {
                 />
               </div>
               <div className="lg:max-w-[754px]">
-                <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px] leading-normal mb-[30px]">
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px] leading-normal mb-[30px]">
                   Почему выбирают нас?
-                </h1>
+                </h2>
                 <ul className="flex flex-col gap-[10px]">
                   {[
                     " Не используем скучные и шаблонные решения.",

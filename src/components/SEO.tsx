@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Head from "next/head";
 import { Article } from "@/types/AricleProps";
+import Script from "next/script";
 
 type SEOProps = {
   title: string;
@@ -36,7 +37,7 @@ const SEO: FC<SEOProps> = ({
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <link rel="icon" href="/favicon.ico" />
       <link rel="canonical" href={canonical} />
-      <script
+      <Script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -48,7 +49,7 @@ const SEO: FC<SEOProps> = ({
           }),
         }}
       />
-      <script
+      <Script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -60,7 +61,7 @@ const SEO: FC<SEOProps> = ({
         }}
       />
       {productSchema && (
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -84,7 +85,7 @@ const SEO: FC<SEOProps> = ({
         />
       )}
       {breadcrumbsSchema && (
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -96,7 +97,7 @@ const SEO: FC<SEOProps> = ({
         />
       )}
       {faqSchema && (
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -141,7 +142,7 @@ const SEO: FC<SEOProps> = ({
         />
       )}
       {article && (
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({

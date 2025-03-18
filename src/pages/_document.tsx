@@ -9,11 +9,31 @@ export default function Document() {
       <Head>
         <link rel="preload" href="/styles/fonts.css" as="style" />
         <link rel="stylesheet" href="/styles/fonts.css" />
+        <Script
+          id="yandex-rotor-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.YandexRotorSettings = {
+                WaiterEnabled: true,
+                IsLoaded: false, 
+                IsError: false,
+                FailOnTimeout: false,
+                NosRedirectsToMain: true
+              };
+
+              setTimeout(function() {
+                window.YandexRotorSettings.IsLoaded = true;
+              }, 5000);
+            `,
+          }}
+        />
         {isProduction && (
           <>
             <meta name="yandex-verification" content="8a71da99f472c773" />
-            <script
+            <Script
               type="text/javascript"
+              strategy="afterInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -49,12 +69,14 @@ export default function Document() {
               name="google-site-verification"
               content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
             />
-            <script
+            <Script
               async
+              strategy="beforeInteractive"
               src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
             />
-            <script
+            <Script
               async
+              strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
                 window.dataLayer = window.dataLayer || [];

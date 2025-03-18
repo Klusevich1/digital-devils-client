@@ -20,9 +20,9 @@ const WideBlockWithImage: React.FC<WideBlockWithImageProps> = ({
       styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-black"
       children={
         <>
-          <h1 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+          <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
             {title}
-          </h1>
+          </h2>
           <div className="flex flex-col md:flex-row justify-between gap-[20px]">
             <div className="md:max-w-[640px]">
               <p

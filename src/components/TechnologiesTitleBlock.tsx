@@ -22,9 +22,9 @@ const TechnologiesTitleBlock: React.FC<TechnologiesTitleBlockProps> = ({
                 <>
                     <div className="flex flex-col">
                         <div className="w-full mb-[30px]">
-                            <p className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[70px] lg:leading-[100px] xl:leading-[120px]">
+                            <h1 className="font-bold text-[40px] sm:text-[55px] md:text-[75px] lg:text-[90px] xl:text-[110px] leading-[55px] md:leading-[70px] lg:leading-[100px] xl:leading-[120px]">
                                 {title}
-                            </p>
+                            </h1>
                         </div>
                         <div className="flex flex-col lg:flex-row w-full items-center justify-between">
                             <a className="order-2 lg:order-1 flex transition-all lg:w-fit w-full mt-[20px] lg:mt-0" href="/application" rel="nofollow">

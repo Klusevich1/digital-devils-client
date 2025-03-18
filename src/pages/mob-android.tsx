@@ -257,9 +257,9 @@ const joomla = () => {
           styles={`py-[50px] lg:py-[60px] bg-white text-black`}
           children={
             <div className="flex flex-col">
-              <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px] max-w-[1093px]">
+              <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px] max-w-[1093px]">
                 Из чего складывается стоимость Android разработки
-              </h1>
+              </h2>
               <p className="text-[20px] mb-[30px] lg:mb-[60px] lg:text-[22px] font-medium  max-w-[866px]">
                 Основные факторы, влияющие на стоимость - сложность поставленной
                 задачи и сроки ее решения. Дополнительно учитываются такие

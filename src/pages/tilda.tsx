@@ -136,9 +136,9 @@ const tilda = () => {
             <>
               <div className="flex  flex-col xl:flex-row items-center justify-between">
                 <div className="bg-[#171717] xl:max-w-[528px] xl:translate-y-[16px] w-full text-white lg:p-[40px] px-[20px] py-[30px] flex flex-col rounded-[40px] xl:me-[39px]  mb-[30px]">
-                  <h1 className="text-[22px] md:text-[26px] lg:text-[32px] font-bold">
+                  <h2 className="text-[22px] md:text-[26px] lg:text-[32px] font-bold">
                     Работать с нами выгодно и приятно
-                  </h1>
+                  </h2>
                   <div className="flex space-x-3 items-center xl:justify-between mt-[25px] bg-[#242730] p-[20px]">
                     <p className="text-[24px] lg:text-[36px] font-bold">10+</p>
                     <p className="text-[16px] lg:text-[18px] font-medium">

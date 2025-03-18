@@ -110,9 +110,9 @@ const wordpress = () => {
           styles=" py-[50px] md:py-[60px]  bg-black text-white"
           children={
             <>
-              <h1 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
                 Преимущеcтва CMS Wordpress
-              </h1>
+              </h2>
               <div className="flex flex-col flex-wrap md:flex-row justify-between gap-[20px]">
                 {[
                   "Процесс создания <a href='https://digitaldevils.by/landing' class='no-underline text-blue_main'>лендингов</a>, <a href='https://digitaldevils.by/card-website' class='no-underline text-blue_main'>визиток</a>, <a href='https://digitaldevils.by/website-catalog' class='no-underline text-blue_main'>каталогов</a> и <a href='https://digitaldevils.by/online-store' class='no-underline text-blue_main'>магазинов</a> отработан до мелочей",
@@ -242,9 +242,9 @@ const wordpress = () => {
                   />
                 </div>
                 <div className="lg:max-w-[640px]">
-                  <h1 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                  <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
                     Поддержка 24/7
-                  </h1>
+                  </h2>
                   <div className="block lg:hidden mb-[30px] mx-auto rounded-[40px]">
                     <Image
                       src={"/resources/wordpress4.png"}
