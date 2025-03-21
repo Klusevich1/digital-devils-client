@@ -405,7 +405,8 @@ const Footer: React.FC = () => {
               type="submit"
               className={`submit-button ${
                 loading ? "loading" : ""
-              } mt-2 px-[39px] py-[12px] w-full md:w-[227px] text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white`}
+              } ${!agreeForMailing || !agreePolicy ? 'bg-gray-300' : 'bg-blue_main'} mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg  h-fit min-h-[50px] rounded-full text-white`}
+              disabled={!agreeForMailing || !agreePolicy}
             >
               {loading ? "Отправка..." : "Обсудить проект"}
             </button>
