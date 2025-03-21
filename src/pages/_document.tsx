@@ -9,25 +9,6 @@ export default function Document() {
       <Head>
         <link rel="preload" href="/styles/fonts.css" as="style" />
         <link rel="stylesheet" href="/styles/fonts.css" />
-        <Script
-          id="yandex-rotor-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.YandexRotorSettings = {
-                WaiterEnabled: true,
-                IsLoaded: false, 
-                IsError: false,
-                FailOnTimeout: false,
-                NosRedirectsToMain: true
-              };
-
-              setTimeout(function() {
-                window.YandexRotorSettings.IsLoaded = true;
-              }, 5000);
-            `,
-          }}
-        />
         {isProduction && (
           <>
             <meta name="yandex-verification" content="8a71da99f472c773" />
