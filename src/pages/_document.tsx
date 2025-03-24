@@ -14,7 +14,7 @@ export default function Document() {
             <meta name="yandex-verification" content="8a71da99f472c773" />
             <Script
               type="text/javascript"
-              strategy="afterInteractive"
+              strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
