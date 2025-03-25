@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
 
 export default function Document() {
   const isProduction = process.env.NODE_ENV === "production";
@@ -12,9 +11,8 @@ export default function Document() {
         {isProduction && (
           <>
             <meta name="yandex-verification" content="8a71da99f472c773" />
-            <Script
+            <script
               type="text/javascript"
-              strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
               (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -50,14 +48,12 @@ export default function Document() {
               name="google-site-verification"
               content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
             />
-            <Script
+            <script
               async
-              strategy="beforeInteractive"
               src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
             />
-            <Script
+            <script
               async
-              strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
                 __html: `
                 window.dataLayer = window.dataLayer || [];
