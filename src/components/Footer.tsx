@@ -117,7 +117,14 @@ const Footer: React.FC = () => {
       );
 
       if (!response.ok) {
+        setCongratulations(false);
         throw new Error(`Ошибка: ${response.statusText}`);
+      } else {
+        setCongratulations(true);
+
+        if (typeof window !== "undefined" && typeof window.ym === "function") {
+          window.ym(99204054, "reachGoal", "form");
+        }
       }
 
       reset({
