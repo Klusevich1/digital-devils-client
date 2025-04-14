@@ -97,7 +97,7 @@ export const YourIdeasBlock: FC<YourIdeasBlockProps> = ({
                         )}
                         <a
                           className="lg:hidden order-2 lg:order-1 flex transition-all lg:w-fit w-full md:mt-0 mt-[30px] md:max-w-[340px]"
-                          href="/application"
+                          href={item.link}
                           rel="nofollow"
                         >
                           <div
