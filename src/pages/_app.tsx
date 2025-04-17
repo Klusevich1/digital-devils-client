@@ -23,11 +23,37 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="preload" href="https://digitaldevils.by/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="https://digitaldevils.by/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="https://digitaldevils.by/fonts/xn7gYHE41ni1AdIRggexSg.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="video" href="https://digitaldevils.by/resources/main.mp4"></link>
-        <link rel="preload" as="video" href="https://digitaldevils.by/resources/main2.mp4"></link>
+        <link
+          rel="preload"
+          href="/fonts/xn7gYHE41ni1AdIRggOxSuXd.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/xn7gYHE41ni1AdIRggqxSuXd.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/xn7gYHE41ni1AdIRggexSg.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="video"
+          href="/resources/main.mp4"
+        ></link>
+        <link
+          rel="preload"
+          as="video"
+          href="/resources/main2.mp4"
+        ></link>
         <link
           rel="icon"
           type="image/png"

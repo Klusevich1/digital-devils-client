@@ -11,6 +11,23 @@ export default function Document() {
         {isProduction && (
           <>
             <meta name="yandex-verification" content="8a71da99f472c773" />
+          </>
+        )}
+
+        {isProduction && (
+          <>
+            <meta
+              name="google-site-verification"
+              content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
+            />
+          </>
+        )}
+      </Head>
+      <body className="antialiased">
+        <Main />
+        <NextScript />
+        {isProduction && (
+          <>
             <script
               type="text/javascript"
               dangerouslySetInnerHTML={{
@@ -39,15 +56,6 @@ export default function Document() {
                 />
               </div>
             </noscript>
-          </>
-        )}
-
-        {isProduction && (
-          <>
-            <meta
-              name="google-site-verification"
-              content="pixrXY-F4P5rROIojTM8avOQJLwfkHRsjbBG827jdSo"
-            />
             <script
               async
               src="https://www.googletagmanager.com/gtag/js?id=G-K8P2PGLXKZ"
@@ -65,10 +73,6 @@ export default function Document() {
             />
           </>
         )}
-      </Head>
-      <body className="antialiased">
-        <Main />
-        <NextScript />
       </body>
     </Html>
   );
