@@ -76,7 +76,6 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   reactStrictMode: true,
   
-  trailingSlash: true,
 };
 
 export default nextConfig;
