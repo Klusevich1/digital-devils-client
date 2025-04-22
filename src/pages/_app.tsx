@@ -2,24 +2,10 @@ import CookieModal from "@/components/CookieModal";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    (function (d, w: any, c) {
-      w.ChatraID = "7hpiLmZMrk7MiRGCG";
-      var s = d.createElement("script");
-      w[c] =
-        w[c] ||
-        function () {
-          (w[c].q = w[c].q || []).push(arguments);
-        };
-      s.async = true;
-      s.src = "https://call.chatra.io/chatra.js";
-      if (d.head) d.head.appendChild(s);
-    })(document, window, "Chatra");
-  }, []);
-
   return (
     <>
       <Head>
@@ -44,16 +30,8 @@ export default function App({ Component, pageProps }: AppProps) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <link
-          rel="preload"
-          as="video"
-          href="/resources/main.mp4"
-        ></link>
-        <link
-          rel="preload"
-          as="video"
-          href="/resources/main2.mp4"
-        ></link>
+        <link rel="preload" as="video" href="/resources/main.mp4"></link>
+        <link rel="preload" as="video" href="/resources/main2.mp4"></link>
         <link
           rel="icon"
           type="image/png"
@@ -70,6 +48,16 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <Script
+        id="chatra-script"
+        strategy="lazyOnload"
+        src="https://call.chatra.io/chatra.js"
+        onLoad={() => {
+          if (typeof window !== "undefined") {
+            (window as any).ChatraID = "7hpiLmZMrk7MiRGCG";
+          }
+        }}
+      />
       <Component {...pageProps} />
       <CookieModal />
     </>
