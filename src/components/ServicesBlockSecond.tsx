@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
@@ -51,6 +51,27 @@ const ServicesBlockSecond: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   useEffect(() => {
     const calculateMobile = () => {
       if (window.innerWidth < 1024) {
@@ -89,6 +110,7 @@ const ServicesBlockSecond: React.FC = () => {
               <div key={service.id} className="flex flex-col items-center">
                 {service.id === 4 ? (
                   <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted
@@ -96,6 +118,7 @@ const ServicesBlockSecond: React.FC = () => {
                     className="h-auto md:object-cover md:max-h-[339px] w-full max-h-auto mb-[15px] rounded-[30px]"
                     width={514}
                     height={339}
+                    preload="none"
                   >
                     <source
                       src={`/resources/${service.image}`}
@@ -182,6 +205,7 @@ const ServicesBlockSecond: React.FC = () => {
                 >
                   {selectedService.id === 4 ? (
                     <video
+                      ref={videoRef}
                       autoPlay
                       loop
                       muted
@@ -189,6 +213,7 @@ const ServicesBlockSecond: React.FC = () => {
                       className="h-auto object-cover md:max-h-[339px] w-full max-w-[514px] max-h-[250px] mb-[15px] rounded-[30px]"
                       width={514}
                       height={339}
+                      preload="none"
                     >
                       <source
                         src={`/resources/${selectedService.image}`}

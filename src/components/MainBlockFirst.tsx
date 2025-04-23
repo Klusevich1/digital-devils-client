@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SmallMainBlockCard from "@/components/SmallMainBlockCard";
 import { GoArrowUpRight } from "react-icons/go";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 
 const MainBlockFirst: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <>
@@ -53,18 +73,20 @@ const MainBlockFirst: React.FC = () => {
           </>
         }
       />
-      <div className="w-full mx-auto max-w-[1440px] sm:px-[45px] px-[0px]">
+      {/* <div className="w-full mx-auto max-w-[1440px] sm:px-[45px] px-[0px]">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
           className="rounded-[0px] sm:rounded-[40px] mt-[60px] w-full shadow-lg"
+          preload="none"
         >
           <source src="/resources/main.mp4" type="video/mp4" />
           Ваш браузер не поддерживает видео.
         </video>
-      </div>
+      </div> */}
     </>
   );
 };

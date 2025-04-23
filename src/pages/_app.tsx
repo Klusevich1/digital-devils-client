@@ -30,8 +30,6 @@ export default function App({ Component, pageProps }: AppProps) {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        <link rel="preload" as="video" href="/resources/main.mp4"></link>
-        <link rel="preload" as="video" href="/resources/main2.mp4"></link>
         <link
           rel="icon"
           type="image/png"
@@ -48,16 +46,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <Script
-        id="chatra-script"
-        strategy="lazyOnload"
-        src="https://call.chatra.io/chatra.js"
-        onLoad={() => {
-          if (typeof window !== "undefined") {
-            (window as any).ChatraID = "7hpiLmZMrk7MiRGCG";
-          }
-        }}
-      />
       <Component {...pageProps} />
       <CookieModal />
     </>

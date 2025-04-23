@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 
@@ -8,6 +8,26 @@ type OnlineStoreProps = {
 };
 
 const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <StandardMarginsLayout
       styles={margin ?? "pb-[50px] md:pb-[60px]"}
@@ -123,6 +143,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
               <div className="w-full">
                 <div className="w-full h-[450px] overflow-hidden inline-flex rounded-[40px]">
                   <video
+                    ref={videoRef}
                     loop
                     muted
                     playsInline
@@ -138,6 +159,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                         e.currentTarget.pause();
                       }
                     }}
+                    preload="none"
                   >
                     <source src="/resources/main2.mp4" type="video/mp4" />
                     Ваш браузер не поддерживает видео.
@@ -166,6 +188,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
               <div className="w-full">
                 <div className="w-full h-[350px] overflow-hidden inline-flex rounded-[40px]">
                   <video
+                    ref={videoRef}
                     loop
                     muted
                     playsInline
@@ -181,6 +204,7 @@ const HeaderLogo: FC<OnlineStoreProps> = ({ title, margin }) => {
                         e.currentTarget.pause();
                       }
                     }}
+                    preload="none"
                   >
                     <source src="/resources/main2.mp4" type="video/mp4" />
                     Ваш браузер не поддерживает видео.

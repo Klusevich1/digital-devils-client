@@ -1,6 +1,6 @@
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface MobMediaBlockProps {
   type: string;
@@ -27,6 +27,26 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
   url5,
   urlVideo,
 }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <>
       <StandardMarginsLayout
@@ -146,11 +166,13 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
               <>
                 <div className="w-full">
                   <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted
-                    playsInline 
+                    playsInline
                     className="rounded-[30px] sm:rounded-[40px] md:h-[440px] h-[300px] object-cover w-full shadow-lg"
+                    preload="none"
                   >
                     <source src={urlVideo} type="video/mp4" />
                     Ваш браузер не поддерживает видео.

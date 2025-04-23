@@ -163,12 +163,13 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               height={28}
               className="size-[28px]"
               alt="Instagram Logo"
-            />
+              priority={true}
+              />
             <span
               className={`ms-[5px] ${
                 theme === "dark" ? "text-white" : "text-black"
               }`}
-            >
+              >
               instagram
             </span>
           </a>
@@ -184,6 +185,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               height={28}
               className="size-[28px]"
               alt="Telegram Logo"
+              priority={true}
             />
             <span
               className={`ms-[5px] ${
