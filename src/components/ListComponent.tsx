@@ -43,14 +43,16 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
       {data.map((item, index) => (
         <div key={index} className="border-b py-[20px] flex flex-col">
           {/* Mobile version */}
-          <div
-            className="md:hidden flex items-center"
-            onClick={() => toggleText(index)}
-          >
-            <button className="min-w-[40px] min-h-[40px] size-[40px] flex items-center justify-center border-blue_20 border-[1px] rounded-full">
+          <div className="md:hidden flex items-center">
+            <button
+              className={`min-w-[40px] min-h-[40px] size-[40px] flex items-center justify-center border-black border-[1px] rounded-full duration-300 transform transition-all ${
+                activeIndexes.includes(index) ? "bg-blue_main text-white border-none" : ""
+              }`}
+              onClick={() => toggleText(index)}
+            >
               <GoArrowDown
                 className={`text-[24px] duration-300 transform transition-transform ${
-                  activeIndexes.includes(index) ? "rotate-180" : ""
+                  activeIndexes.includes(index) ? "-rotate-90 text-[28px]" : ""
                 }`}
               />
             </button>
@@ -61,8 +63,8 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
           <div className="hidden md:flex w-full gap-[40px] items-start">
             <div className="min-w-[100px] max-w-[185px] xl:w-1/5">
               <button
-                className={`w-12 h-12 mt-[12px] flex items-center justify-center border-[1px] border-gray-300 rounded-full duration-300 transform transition-all ${
-                  activeIndexes.includes(index) ? "bg-blue_main text-white" : ""
+                className={`w-12 h-12 mt-[12px] flex items-center justify-center border-[1px] border-black rounded-full duration-300 transform transition-all ${
+                  activeIndexes.includes(index) ? "bg-blue_main text-white border-none" : ""
                 }`}
                 onClick={() => toggleText(index)}
               >

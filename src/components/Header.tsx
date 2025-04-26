@@ -88,15 +88,13 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
     },
     {
       services: [
-        { name: "4 Корпоротивные сайты", href: "corporate-website" },
-        { name: "4 Интернет-магазин", href: "online-store" },
-        { name: "4 Landing page", href: "landing" },
-        { name: "4 B2B сайты", href: "b2b" },
-        { name: "4 Сайт-визитка", href: "card-website" },
-        { name: "4 Портал", href: "portal" },
-        { name: "4 Сайт-каталог", href: "website-catalog" },
-        { name: "4 Информационный сайт", href: "information-site" },
-        { name: "4 Маркетплейс", href: "marketplace" },
+        { name: "Продвижение сайтов", href: "seo" },
+        { name: "Продвижение сайтов в ТОП", href: "seo-top" },
+        { name: "Продвижение в Яндекс", href: "seo-yandex" },
+        { name: "Продвижение интернет-магазина", href: "seo-store" },
+        { name: "SEO аудит", href: "seo-audit" },
+        { name: "Продвижение в Google", href: "seo-google" },
+        { name: "Продвижение молодых сайтов", href: "seo-young" },
       ],
     },
     {
@@ -247,9 +245,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                   className={`services-dropdown fixed left-0 top-[100%] w-screen shadow-lg ${
                     theme === "dark" ? "bg-black" : "bg-white"
                   } transition-transform duration-500 ${
-                    theme === "dark"
-                      ? "border-t-black_80"
-                      : "border-t-black_10"
+                    theme === "dark" ? "border-t-black_80" : "border-t-black_10"
                   } border-t-[1px] ${
                     isServicesOpen
                       ? " opacity-100"
@@ -306,10 +302,14 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(3)}
                             onMouseOut={(e) => {
-                                const relatedTarget = e.relatedTarget as HTMLElement;
-                                if (!relatedTarget || !relatedTarget.closest(".dop-services-dropdown")) {
-                                    setDopServiceIndex(0);
-                                }
+                              const relatedTarget =
+                                e.relatedTarget as HTMLElement;
+                              if (
+                                !relatedTarget ||
+                                !relatedTarget.closest(".dop-services-dropdown")
+                              ) {
+                                setDopServiceIndex(0);
+                              }
                             }}
                           >
                             <span className="text-[24px] font-medium me-1">
@@ -320,17 +320,18 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                         </li>
                         <li>
                           <p
-                            className="hover:text-blue-600 flex items-center duration-300"
-                          >
-                            <span className="text-[24px] font-medium me-1">
-                              Motion-дизайн
-                            </span>
-                            <GoArrowRight className="size-[24px]" />
-                          </p>
-                        </li>
-                        <li>
-                          <p
-                            className="hover:text-blue-600 flex items-center duration-300"
+                            className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
+                            onMouseOver={() => setDopServiceIndex(4)}
+                            onMouseOut={(e) => {
+                              const relatedTarget =
+                                e.relatedTarget as HTMLElement;
+                              if (
+                                !relatedTarget ||
+                                !relatedTarget.closest(".dop-services-dropdown")
+                              ) {
+                                setDopServiceIndex(0);
+                              }
+                            }}
                           >
                             <span className="text-[24px] font-medium me-1">
                               SEO
@@ -339,9 +340,15 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                           </p>
                         </li>
                         <li>
-                          <p
-                            className="hover:text-blue-600 flex items-center duration-300"
-                          >
+                          <p className="hover:text-blue-600 flex items-center duration-300">
+                            <span className="text-[24px] font-medium me-1">
+                              Motion-дизайн
+                            </span>
+                            <GoArrowRight className="size-[24px]" />
+                          </p>
+                        </li>
+                        <li>
+                          <p className="hover:text-blue-600 flex items-center duration-300">
                             <span className="text-[24px] font-medium me-1">
                               Дизайн
                             </span>
@@ -672,9 +679,10 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             : "block"
                         }`}
                     onClick={() =>
-                        dopMobileServicesOpenIndex === 3 ?
-                            setDopMobileServicesOpenIndex(0) :
-                            setDopMobileServicesOpenIndex(3)}
+                      dopMobileServicesOpenIndex === 3
+                        ? setDopMobileServicesOpenIndex(0)
+                        : setDopMobileServicesOpenIndex(3)
+                    }
                   >
                     <GoArrowLeft
                       onClick={() => setDopMobileServicesOpenIndex(0)}
@@ -713,10 +721,11 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             ? "hidden"
                             : "block"
                         }`}
-                    // onClick={() =>
-                    //     dopMobileServicesOpenIndex === 4 ?
-                    //         setDopMobileServicesOpenIndex(0) :
-                    //         setDopMobileServicesOpenIndex(4)}
+                    onClick={() =>
+                      dopMobileServicesOpenIndex === 4
+                        ? setDopMobileServicesOpenIndex(0)
+                        : setDopMobileServicesOpenIndex(4)
+                    }
                   >
                     <GoArrowLeft
                       onClick={() => setDopMobileServicesOpenIndex(0)}
@@ -726,7 +735,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                           : "opacity-100"
                       }`}
                     />
-                    Motion-дизайн
+                    SEO
                     <GoArrowRight
                       className={`size-[22px] duration-500 ${
                         dopMobileServicesOpenIndex != 0
@@ -768,7 +777,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                           : "opacity-100"
                       }`}
                     />
-                    SEO
+                    Motion-дизайн
                     <GoArrowRight
                       className={`size-[22px] duration-500 ${
                         dopMobileServicesOpenIndex != 0

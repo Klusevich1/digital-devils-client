@@ -34,18 +34,20 @@ const HalfImageBlock: React.FC<HalfImageBlockProps> = ({title, smallTitle, descr
                         <div className={`lg:max-w-[640px] ${isRevert ? "" : "lg:ms-[30px]"}`}>
                             {smallTitle && <h2 className="font-bold text-[24px] lg:mb-[10px] mb-[20px]">{smallTitle}</h2>}
                             {!smallTitle && description}
-                            <div className="block lg:hidden mb-[10px]  rounded-[40px]">
+                            <div className="block lg:hidden mb-[20px] rounded-[40px]">
                                 <Image src={smallImage} alt={smallTitle} className="w-full" width={widthImage} height={heightImage}/>
                             </div>
                             {smallTitle && description}
-                            <a className="flex lg:w-auto w-full mt-[20px]"
-                               href="/application" rel="nofollow">
-                                <div
-                                    className={`font-medium text-[18px]  lg:w-auto w-full py-[12.5px] px-[20px] text-center rounded-full text-white`}
-                                    style={{backgroundColor: buttonColor}}>
-                                    {buttonText}
-                                </div>
-                            </a>
+                            {buttonText == "" ? <></> :
+                                <a className="flex lg:w-fit w-full mt-[20px]"
+                                   href="/application" rel="nofollow">
+                                    <div
+                                        className={`font-medium text-[18px] lg:w-fit w-full py-[12.5px] px-[20px] text-center rounded-full text-white`}
+                                        style={{backgroundColor: buttonColor}}>
+                                        {buttonText}
+                                    </div>
+                                </a>
+                            }
                         </div>
                     </div>
                 </div>

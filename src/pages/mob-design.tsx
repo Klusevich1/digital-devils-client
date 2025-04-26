@@ -103,7 +103,9 @@ const joomla = () => {
           url3="/resources/mob-design3.png"
           url3small="/resources/mob-design3small.png"
           url4="/resources/mob-design4.png"
+          url4small="/resources/mob-design4small.png"
           url5="/resources/mob-design5.png"
+          url5small="/resources/mob-design5small.png"
         />
         <DifferentTasksBlock
           bigTitle="Разные задачи - разный подход"

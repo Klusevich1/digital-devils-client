@@ -36,6 +36,7 @@ export default {
       },
       screens: {
         'xlg': '1080px',
+        'xs': '450px'
       },
     },
   },

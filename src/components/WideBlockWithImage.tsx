@@ -23,8 +23,8 @@ const WideBlockWithImage: React.FC<WideBlockWithImageProps> = ({
           <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
             {title}
           </h2>
-          <div className="flex flex-col md:flex-row justify-between gap-[20px]">
-            <div className="md:max-w-[640px]">
+          <div className="flex flex-col lg:flex-row justify-between md:gap-[20px] gap-[10px]">
+            <div className="lg:max-w-[640px]">
               <p
                 className="text-[22px] font-bold"
                 dangerouslySetInnerHTML={{ __html: text_1 }}
@@ -37,7 +37,7 @@ const WideBlockWithImage: React.FC<WideBlockWithImageProps> = ({
               )}
             </div>
             <p
-              className="text-[18px] font-medium  md:max-w-[640px]"
+              className="text-[18px] font-medium  lg:max-w-[640px]"
               dangerouslySetInnerHTML={{ __html: text_2 }}
             ></p>
           </div>

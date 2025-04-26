@@ -29,7 +29,7 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
-    name: 'Разработка мобильных приложений',
+    name: "Разработка мобильных приложений",
     item: `https://digitaldevils.by/mob-apps`,
   },
   {
@@ -103,9 +103,7 @@ const joomla = () => {
                 <div className="w-full block lg:hidden  mb-[20px]">
                   <Image
                     src={"/resources/android_4.png"}
-                    alt={
-                      "Сколько стоит разработка мобильных приложений под iOS?"
-                    }
+                    alt={"Как заказать разработку Android-приложения"}
                     className="w-full"
                     width={340}
                     height={413}
@@ -125,7 +123,7 @@ const joomla = () => {
               <div className="w-full lg:block hidden max-w-[753px] min-w-[400px]">
                 <Image
                   src={"/resources/android_3.png"}
-                  alt={"Сколько стоит разработка мобильных приложений под iOS?"}
+                  alt={"Как заказать разработку Android-приложения"}
                   width={753}
                   height={400}
                 />
@@ -161,7 +159,7 @@ const joomla = () => {
                   name: "MongoDB",
                 },
               ],
-              buttonText: "IOS разработка",
+              buttonText: "Android разработка",
               imagePath: "/resources/mob-apps-idea2.png",
             },
           ]}
@@ -174,7 +172,7 @@ const joomla = () => {
               <div className="w-full lg:block hidden max-w-[525px] min-w-[400px]">
                 <Image
                   src={"/resources/adnroid_1.png"}
-                  alt={"Сколько стоит разработка мобильных приложений под iOS?"}
+                  alt={"Как заказать разработку Android-приложения"}
                   width={525}
                   height={355}
                 />
@@ -191,9 +189,7 @@ const joomla = () => {
                 <div className="w-full block lg:hidden  mt-[20px]">
                   <Image
                     src={"/resources/adnroid_2.png"}
-                    alt={
-                      "Сколько стоит разработка мобильных приложений под iOS?"
-                    }
+                    alt={"Как заказать разработку Android-приложения"}
                     className="w-full"
                     width={342}
                     height={252}
@@ -206,12 +202,12 @@ const joomla = () => {
                   заказчиком.
                 </p>
                 <a
-                  className="flex lg:w-auto w-full mt-[20px]"
+                  className="flex lg:w-fit w-full mt-[20px]"
                   href="/application"
                   rel="nofollow"
                 >
                   <div
-                    className={`font-medium text-[18px]  lg:w-auto w-full py-[12.5px] px-[20px] text-center rounded-full text-white bg-blue_main`}
+                    className={`font-medium text-[18px]  lg:w-fit w-full py-[12.5px] px-[20px] text-center rounded-full text-white bg-blue_main`}
                   >
                     Обсудить проект
                   </div>

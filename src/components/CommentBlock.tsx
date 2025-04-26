@@ -8,14 +8,14 @@ import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 import { Navigation, Pagination } from "swiper/modules";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
-interface Review {
-  avatar: StaticImageData;
+export interface Review {
+  avatar: StaticImageData | string;
   name: string;
   jobTitle: string;
   reviewText: string;
 }
 
-const reviewsData = [
+const data = [
   {
     avatar: "/resources/avatar-example.png",
     name: "Олег Симаков",
@@ -39,12 +39,12 @@ const reviewsData = [
   },
 ];
 
-const CommentBlock: React.FC = () => {
+const CommentBlock: React.FC<{ reviewsData?: Review[], margin?: string }> = ({reviewsData = data, margin = 'mt-[50px] sm:mt-[60px]'}) => {
   const swiperComRef = useRef<any>(null);
 
   return (
     <StandardMarginsLayout
-      styles="mt-[50px] sm:mt-[60px] py-[50px] sm:py-[60px] bg-black text-white comment-block"
+      styles=" py-[50px] sm:py-[60px] bg-black text-white comment-block"
       children={
         <>
           <div className="relative w-full">
@@ -87,8 +87,8 @@ const CommentBlock: React.FC = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="max-w-[868px]">
-                      <p className="max-h-auto overflow-hidden cursor-pointer text-[18px] xl:text-[28px]">
+                    <div className="xl:max-w-[868px] w-full">
+                      <p className="max-h-auto overflow-hidden cursor-pointer text-[18px] xl:text-[22px]">
                         {review.reviewText}
                       </p>
                     </div>
@@ -100,7 +100,7 @@ const CommentBlock: React.FC = () => {
             {/* Кастомные точки */}
             <div className="custom-pagination relative bottom-[34px] z-20 flex lg:hidden justify-end items-center gap-2 mt-4"></div>
 
-            <div className="lg:flex hidden justify-end my-4 w-[160px]">
+            <div className="lg:flex hidden justify-end my-4 w-[160px] min-h-[40px]">
               <button
                 className="swiper-button-prev-comm me-3 bg-back rounded-full w-[70px]"
                 style={{ bottom: 0, top: "auto", width: 70, height: 70 }}

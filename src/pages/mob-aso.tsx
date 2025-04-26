@@ -30,7 +30,7 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
-    name: 'Разработка мобильных приложений',
+    name: "Разработка мобильных приложений",
     item: `https://digitaldevils.by/mob-apps`,
   },
   {
@@ -231,12 +231,12 @@ const joomla = () => {
                   ))}
                 </ul>
                 <a
-                  className="flex lg:w-auto w-full mt-[20px]"
+                  className="flex lg:w-fit w-full mt-[20px]"
                   href="/application"
                   rel="nofollow"
                 >
                   <div
-                    className={`font-medium text-[18px]  lg:w-auto w-full py-[12.5px] px-[20px] text-center rounded-full text-white bg-blue_main`}
+                    className={`font-medium text-[18px]  lg:w-fit w-full py-[12.5px] px-[20px] text-center rounded-full text-white bg-blue_main`}
                   >
                     Связаться с нами
                   </div>

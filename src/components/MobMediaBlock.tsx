@@ -11,7 +11,9 @@ interface MobMediaBlockProps {
   url3?: string;
   url3small?: string;
   url4?: string;
+  url4small?: string;
   url5?: string;
+  url5small?: string;
   urlVideo?: string;
 }
 
@@ -24,7 +26,9 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
   url3,
   url3small,
   url4,
+  url4small,
   url5,
+  url5small,
   urlVideo,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -61,7 +65,9 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
               url3 &&
               url3small &&
               url4 &&
-              url5 && (
+              url4small &&
+              url5 &&
+              url5small && (
                 <>
                   <div className="md:flex hidden flex-row justify-self-center lg:gap-[40px] gap-[20px]">
                     <div>
@@ -69,7 +75,7 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                         src={url1}
                         alt="Design1"
                         width={300}
-                        height={440}
+                        height={360}
                       />
                     </div>
                     <div className="flex flex-col lg:gap-[40px] gap-[20px]">
@@ -79,7 +85,7 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                             src={url2}
                             alt="Design2"
                             width={300}
-                            height={200}
+                            height={160}
                           />
                         </div>
                         <div>
@@ -87,7 +93,7 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                             src={url3}
                             alt="Design3"
                             width={187}
-                            height={200}
+                            height={160}
                           />
                         </div>
                       </div>
@@ -96,7 +102,7 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                           src={url4}
                           alt="Design4"
                           width={527}
-                          height={200}
+                          height={160}
                         />
                       </div>
                     </div>
@@ -105,7 +111,7 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                         src={url5}
                         alt="Design5"
                         width={414}
-                        height={440}
+                        height={360}
                       />
                     </div>
                   </div>
@@ -116,7 +122,7 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                           src={url1small}
                           alt="Design1"
                           width={160}
-                          height={220}
+                          height={160}
                           className="w-full"
                         />
                       </div>
@@ -125,7 +131,7 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                           src={url3small}
                           alt="Design3"
                           width={160}
-                          height={220}
+                          height={160}
                           className="w-full"
                         />
                       </div>
@@ -136,25 +142,25 @@ const MobMediaBlock: React.FC<MobMediaBlockProps> = ({
                           src={url2small}
                           alt="Design2"
                           width={340}
-                          height={180}
+                          height={160}
                           className="w-full"
                         />
                       </div>
                       <div>
                         <Image
-                          src={url4}
+                          src={url4small}
                           alt="Design4"
-                          width={527}
-                          height={200}
+                          width={339}
+                          height={160}
                           className="w-full"
                         />
                       </div>
                       <div>
                         <Image
-                          src={url5}
+                          src={url5small}
                           alt="Design5"
-                          width={414}
-                          height={440}
+                          width={340}
+                          height={260}
                           className="w-full"
                         />
                       </div>
