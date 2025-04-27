@@ -44,7 +44,7 @@ const CommentBlock: React.FC<{ reviewsData?: Review[], margin?: string }> = ({re
 
   return (
     <StandardMarginsLayout
-      styles=" py-[50px] sm:py-[60px] bg-black text-white comment-block"
+      styles={`${margin} py-[50px] md:py-[60px] bg-black text-white comment-block`}
       children={
         <>
           <div className="relative w-full">
