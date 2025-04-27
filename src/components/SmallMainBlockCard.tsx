@@ -4,37 +4,41 @@ interface SmallMainBlockCardProps {
   title: string;
   description: string;
   margin?: string;
+  needAnimation?: boolean;
 }
 
 const SmallMainBlockCard: React.FC<SmallMainBlockCardProps> = ({
   title,
   description,
   margin = "mb-[15px]",
+  needAnimation = true,
 }) => {
   const [displayedNumber, setDisplayedNumber] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-        }
-      },
-      { threshold: 0.5 } // Запускаем, когда 50% блока видно
-    );
+    if (needAnimation) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+          }
+        },
+        { threshold: 0.5 } // Запускаем, когда 50% блока видно
+      );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
       if (ref.current) {
-        observer.unobserve(ref.current);
+        observer.observe(ref.current);
       }
-    };
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    }
   }, [hasAnimated]);
 
   useEffect(() => {
@@ -70,8 +74,14 @@ const SmallMainBlockCard: React.FC<SmallMainBlockCardProps> = ({
       className={`flex flex-col max-w-full md:max-w-[300px] w-full ${margin}`}
     >
       <p className="text-[40px] md:leading-[1] leading-[1.3] md:text-6xl font-bold">
-        {formattedNumber}
-        {title.includes("%") && "%"}
+        {needAnimation ? (
+          <>
+            {formattedNumber}
+            {title.includes("%") && "%"}
+          </>
+        ) : (
+          title
+        )}
       </p>
       <span className="text-[18px]">{description}</span>
     </div>

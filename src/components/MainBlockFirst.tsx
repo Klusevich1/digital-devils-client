@@ -56,18 +56,22 @@ const MainBlockFirst: React.FC = () => {
               <SmallMainBlockCard
                 title="10 из 10"
                 description="наших проектов выполняются в оговорённый срок"
+                needAnimation={false}
               />
               <SmallMainBlockCard
                 title="5+"
                 description="лет разрабатываем успешные сайты для вашего бизнеса"
+                needAnimation={false}
               />
               <SmallMainBlockCard
                 title="100%"
                 description="уникальность - с нами вы не повторяете за конкурентами"
+                needAnimation={false}
               />
               <SmallMainBlockCard
                 title="ТОП 1"
                 description="сайты нашей разработки любят поисковые системы"
+                needAnimation={false}
               />
             </div>
           </>
