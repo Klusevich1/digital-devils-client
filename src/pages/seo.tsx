@@ -225,79 +225,171 @@ const marketplace = () => {
           }
         />
         <OurCaseBlock
-          title="Наш кейс"
-          miniTitle="Интернет-магазин автозапчастей в Москве - прорыв на конкурентном рынке"
-          text1="<span class='font-bold'>О проекте:</span> стояла амбициозная задача - вывести сайт в ТОП в условиях жесткой конкуренции. Начиная с нуля, мы провели комплексную работу: глубокий технический аудит выявил более сотни критических ошибок, которые мешали продвижению."
-          text2="<span class='font-bold'>Процесс:</span> внимание уделили разработке интеллектуальной системы фильтрации, позволяющей покупателям легко находить нужные детали по марке, модели и году выпуска автомобиля. Параллельно создавали экспертный контент - более 350 уникальных описаний категорий и 50 полезных статей для автовладельцев."
-          text3="<span class='font-bold'>Результат:</span> всего через 10 месяцев магазин получал 220 тысяч целевых посетителей ежемесячно, а сотни ключевых запросов прочно закрепились в ТОП-3 поисковой выдачи."
-          imageUrl="/resources/seo-case.png"
+          title="Наши кейсы"
+          cases={[
+            {
+              miniTitle:
+                "Интернет-магазин автозапчастей в Москве - прорыв на конкурентном рынке",
+              text1:
+                "<span class='font-bold'>О проекте:</span> стояла амбициозная задача - вывести сайт в ТОП в условиях жесткой конкуренции. Начиная с нуля, мы провели комплексную работу: глубокий технический аудит выявил более сотни критических ошибок, которые мешали продвижению.",
+              text2:
+                "<span class='font-bold'>Процесс:</span> внимание уделили разработке интеллектуальной системы фильтрации, позволяющей покупателям легко находить нужные детали по марке, модели и году выпуска автомобиля. Параллельно создавали экспертный контент - более 350 уникальных описаний категорий и 50 полезных статей для автовладельцев.",
+              text3:
+                "<span class='font-bold'>Результат:</span> всего через 10 месяцев магазин получал 220 тысяч целевых посетителей ежемесячно, а сотни ключевых запросов прочно закрепились в ТОП-3 поисковой выдачи.",
+
+              imageUrl: "/resources/seo-case_1.png",
+              numbers: (
+                <>
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-[10px] justify-between lg:flex lg:mb-[60px] mb-[30px] pt-[30px]">
+                    <SmallMainBlockCard
+                      title="+220 000"
+                      description="Увеличение поискового трафика"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+2400"
+                      description="Количество запросов в ТОП 10"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+50%"
+                      description="Улучшение конверсии"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+43%"
+                      description="Улучшение поведенческих факторов"
+                      margin="mb-0"
+                    />
+                  </div>
+                </>
+              ),
+              analiticsImg: "/resources/seo-numbers1.png",
+              analiticsImgSmall: "/resources/seo-numbers1small.png",
+            },
+            {
+              miniTitle: "Цветочный магазин - сезонный триумф",
+              text1:
+                "<span class='font-bold'>О проекте:</span> работая с интернет-магазином цветов при продвижении, мы столкнулись с устаревшей платформой и минимальным трафиком. Наш подход продвижения включал полный редизайн с акцентом на удобство пользователей и внедрение интерактивного конструктора букетов.",
+              text2:
+                "<span class='font-bold'>Процесс:</span> особое внимание уделили праздничному контенту, создав 14 тематических разделов для разных мероприятий. Процесс оформления заказа сократили до трех простых шагов, что повысило конверсию.",
+              text3:
+                "<span class='font-bold'>Результат:</span> через восемь месяцев кропотливой работы магазин демонстрировал тридцатикратный рост трафика при продвижении, а в предпраздничные дни обрабатывал до 120 заказов ежедневно.",
+
+              imageUrl: "/resources/seo-case_2.png",
+              numbers: (
+                <>
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-[10px] justify-between lg:flex lg:mb-[60px] mb-[30px] pt-[30px]">
+                    <SmallMainBlockCard
+                      title="+2900"
+                      description="Увеличение поискового трафика"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+432"
+                      description="Количество запросов в ТОП 10"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+69%"
+                      description="Улучшение конверсии"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+48%"
+                      description="Улучшение поведенческих факторов"
+                      margin="mb-0"
+                    />
+                  </div>
+                </>
+              ),
+              analiticsImg: "/resources/seo-young-numbers.png",
+              analiticsImgSmall: "/resources/seo-young-numberssmall.png",
+            },
+            {
+              miniTitle: "Автозапчасти в Минске - преодоление кризиса",
+              text1:
+                "<span class='font-bold'>О проекте:</span> у минского магазина автозапчастей была сложная ситуация в продвижении: низкая конверсия, проблемы с индексацией каталога и сильные конкуренты. Мы начали с полной переработки структуры, внедрив уникальную систему поиска по VIN-коду, что значительно упростило покупателям процесс выбора запчастей.",
+              text2:
+                "<span class='font-bold'>Процесс:</span> каждую карточку товара тщательно оптимизировали на сайте, что повысило кликабельность в результатах поиска на 70%. Дополнительный эффект дала программа лояльности, интегрированная в общую маркетинговую стратегию.",
+              text3:
+                "<span class='font-bold'>Результат:</span> итогом стала стабильная посещаемость на уровне 145 тысяч пользователей в месяц, при этом среднее время пребывания увеличилось более чем в два раза.",
+
+              imageUrl: "/resources/seo-case_3.png",
+              numbers: (
+                <>
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-[10px] justify-between lg:flex lg:mb-[60px] mb-[30px] pt-[30px]">
+                    <SmallMainBlockCard
+                      title="+145 000"
+                      description="Увеличение поискового трафика"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+1800"
+                      description="Количество запросов в ТОП 10"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+70%"
+                      description="Улучшение конверсии"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+32%"
+                      description="Улучшение поведенческих факторов"
+                      margin="mb-0"
+                    />
+                  </div>
+                </>
+              ),
+              analiticsImg: "/resources/seo-numbers-145.png",
+              analiticsImgSmall: "/resources/seo-numbers-145small.png",
+            },
+            {
+              miniTitle:
+                "Премиальный ремонт квартир в Минске - локальный успех нашего SEO",
+              text1:
+                "<span class='font-bold'>О проекте:</span> для компании по ремонту квартир в Минске мы разработали стратегию, учитывающую специфику локального бизнеса при продвижении сайта.",
+              text2:
+                "<span class='font-bold'>Процесс:</span> первым делом собрали детальную семантику - более 1200 релевантных запросов, отражающих потребности клиентов. Затем создали серию тематических посадочных сайтов, каждая из которых была посвящена конкретному виду ремонта и сопровождалась наглядными кейсами с фотографиями и видеоотчетами. Акцент сделали на мобильную версию, добившись рекордной скорости загрузки.",
+              text3:
+                "<span class='font-bold'>Результат:</span> через 2 года сайт стабильно привлекал 7,5 тысяч заинтересованных посетителей в месяц, при этом 65% трафика при продвижении приходилось на самые коммерчески выгодные запросы.",
+
+              imageUrl: "/resources/seo-case_4.png",
+              numbers: (
+                <>
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-[10px] justify-between lg:flex lg:mb-[60px] mb-[30px] pt-[30px]">
+                    <SmallMainBlockCard
+                      title="+7500"
+                      description="Увеличение поискового трафика"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+680"
+                      description="Количество запросов в ТОП 10"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+45%"
+                      description="Улучшение конверсии"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+67%"
+                      description="Улучшение поведенческих факторов"
+                      margin="mb-0"
+                    />
+                  </div>
+                </>
+              ),
+              analiticsImg: "/resources/seo-yandex-numbers.png",
+              analiticsImgSmall: "/resources/seo-yandex-numberssmall.png",
+            },
+          ]}
         />
         <StandardMarginsLayout
-          styles="pt-[30px] md:pb-[60px] pb-[50px]"
-          children={
-            <>
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-[10px] justify-between lg:flex lg:mb-[60px] mb-[30px]">
-                <SmallMainBlockCard
-                  title="+220 000"
-                  description="Увеличение поискового трафика"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="+2400"
-                  description="Количество запросов в ТОП 10"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="+50%"
-                  description="Улучшение конверсии"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="+43%"
-                  description="Улучшение поведенческих факторов"
-                  margin="mb-0"
-                />
-              </div>
-              <div className="sm:flex hidden lg:flex-row flex-col justify-between lg:gap-[41px] gap-[30px]">
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers1.png"}
-                    width={640}
-                    height={401}
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers2.png"}
-                    width={640}
-                    height={401}
-                    className="w-full"
-                  />
-                </div>
-              </div>
-              <div className="sm:hidden flex flex-col justify-between gap-[30px]">
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers1mobile.png"}
-                    width={640}
-                    height={401}
-                  />
-                </div>
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers2mobile.png"}
-                    width={640}
-                    height={401}
-                  />
-                </div>
-              </div>
-            </>
-          }
+          styles="md:pb-[60px] pb-[50px]"
+          children={<></>}
         />
         <WideBlockWithImage
           title="Что такое SEO и как работают поисковые системы? "

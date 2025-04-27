@@ -208,77 +208,43 @@ const marketplace = () => {
 
         <OurCaseBlock
           title="Наш кейс"
-          miniTitle="Продвижение сайта по ремонту квартир в Минске "
-          text1="С 0 до 7 500 переходов в месяц"
-          text2='Молодая компания по ремонту квартир не могла пробиться в верх выдачи, несмотря на качественные услуги. Мы разработали уникальную стратегию, сделав основной акцент на информационных запросах типа "как сделать ремонт" и "советы по ремонту". Создали более 120 подробных гайдов с пошаговыми инструкциями, которые стали привлекать целевую аудиторию на ранних стадиях принятия решения. Параллельно полностью переработали профиль в Google My Business, добавив портфолио работ и систему отзывов.'
-          imageUrl="/resources/seo-case.png"
-        />
-        <StandardMarginsLayout
-          styles="pt-[30px] pb-[50px] md:pb-[60px]"
-          children={
-            <>
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-[15px] justify-between lg:flex lg:mb-[60px] mb-[30px]">
-                <SmallMainBlockCard
-                  title="+7500"
-                  description="целевых переходов  в месяц"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="12%"
-                  description="конверсия в заявку"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="+40%"
-                  description="заказов по рекомендациям"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="3 месяца"
-                  description="срок окупаемости продвижения"
-                  margin="mb-0"
-                />
-              </div>
-              <div className="sm:flex hidden lg:flex-row flex-col justify-between lg:gap-[41px] gap-[30px]">
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-google-numbers.png"}
-                    width={640}
-                    height={401}
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers2.png"}
-                    width={640}
-                    height={401}
-                    className="w-full"
-                  />
-                </div>
-              </div>
-              <div className="sm:hidden flex flex-col justify-between gap-[30px]">
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-yandex-numberssmall.png"}
-                    width={640}
-                    height={401}
-                  />
-                </div>
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers2mobile.png"}
-                    width={640}
-                    height={401}
-                  />
-                </div>
-              </div>
-            </>
-          }
+          cases={[
+            {
+              miniTitle: "Продвижение сайта по ремонту квартир в Минске",
+              text1: "С 0 до 7 500 переходов в месяц",
+              text2:
+                'Молодая компания по ремонту квартир не могла пробиться в верх выдачи, несмотря на качественные услуги. Мы разработали уникальную стратегию, сделав основной акцент на информационных запросах типа "как сделать ремонт" и "советы по ремонту". Создали более 120 подробных гайдов с пошаговыми инструкциями, которые стали привлекать целевую аудиторию на ранних стадиях принятия решения. Параллельно полностью переработали профиль в Google My Business, добавив портфолио работ и систему отзывов.',
+              imageUrl: "/resources/seo-case.png",
+              numbers: (
+                <>
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-[15px] justify-between lg:flex lg:mb-[60px] mb-[30px] pt-[30px]">
+                    <SmallMainBlockCard
+                      title="+7500"
+                      description="целевых переходов  в месяц"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="12%"
+                      description="конверсия в заявку"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="+40%"
+                      description="заказов по рекомендациям"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="3"
+                      description="месяца срок окупаемости"
+                      margin="mb-0"
+                    />
+                  </div>
+                </>
+              ),
+              analiticsImg: '/resources/seo-google-numbers.png',
+              analiticsImgSmall: '/resources/seo-google-numberssmall.png'
+            },
+          ]}
         />
 
         <WideBlockWithImage
@@ -364,8 +330,8 @@ const marketplace = () => {
           bgColor_2={""}
           buttonBgColor_1={"#FAFAFA"}
           buttonBgColor_2={"#214BF6"}
-          smallTitle_1={"Lite"}
-          smallTitle_2={"Premium"}
+          smallTitle_1={"Лайт"}
+          smallTitle_2={"Премиум"}
           price_1={"350$"}
           price_2={"550$"}
           list_1={[

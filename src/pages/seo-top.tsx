@@ -299,8 +299,8 @@ const marketplace = () => {
           bgColor_2={""}
           buttonBgColor_1={"#FAFAFA"}
           buttonBgColor_2={"#214BF6"}
-          smallTitle_1={"Lite"}
-          smallTitle_2={"Premium"}
+          smallTitle_1={"Лайт"}
+          smallTitle_2={"Премиум"}
           price_1={"350$"}
           price_2={"550$"}
           min_h_ticket_list={180}
@@ -706,7 +706,63 @@ const marketplace = () => {
         />
 
         <StandardMarginsLayout
-          styles={`pb-[50px] md:pb-[60px] bg-white text-black`}
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-white bg-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Интеграция SEO с другими маркетинговыми каналами
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[22px] font-bold">
+                    Наиболее эффективные digital-стратегии рассматривают SEO не
+                    как изолированный инструмент, а как часть комплексного
+                    подхода:
+                  </p>
+                </div>
+                <div className="flex flex-col min-w-[40%]">
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Синергия с контекстной рекламой позволяет использовать
+                      данные о конверсиях из платных каналов для оптимизации
+                      SEO-стратегии. Ключевые слова для сайта, показывающие
+                      хорошую конверсию в рекламе, часто становятся
+                      приоритетными для органического продвижения сайта.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Взаимодействие с социальными сетями создает дополнительные
+                      сигналы доверия для поисковых систем. Активность в
+                      соцсетях может положительно влиять на ранжирование,
+                      особенно для молодых сайтов.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Email-маркетинг помогает "дожать" посетителей, пришедших
+                      из органического поиска, но не совершивших покупку с
+                      первого раза. Персонализированные письма с напоминанием о
+                      брошенной корзине могут значительно повысить конверсию.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+
+        <StandardMarginsLayout
+          styles={`pt-[50px] md:pt-[60px] bg-white text-black`}
           children={
             <div className={`flex flex-col gap-[30px]`}>
               <div>
@@ -761,62 +817,6 @@ const marketplace = () => {
                 </span>
               </div>
             </div>
-          }
-        />
-
-        <StandardMarginsLayout
-          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-white bg-black"
-          children={
-            <>
-              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
-                Интеграция SEO с другими маркетинговыми каналами
-              </h2>
-              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
-                <div className="lg:max-w-[640px]">
-                  <p className="text-[22px] font-bold">
-                    Наиболее эффективные digital-стратегии рассматривают SEO не
-                    как изолированный инструмент, а как часть комплексного
-                    подхода:
-                  </p>
-                </div>
-                <div className="flex flex-col min-w-[40%]">
-                  <div className="flex">
-                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
-                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
-                    </div>
-                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
-                      Синергия с контекстной рекламой позволяет использовать
-                      данные о конверсиях из платных каналов для оптимизации
-                      SEO-стратегии. Ключевые слова для сайта, показывающие
-                      хорошую конверсию в рекламе, часто становятся
-                      приоритетными для органического продвижения сайта.
-                    </p>
-                  </div>
-                  <div className="flex">
-                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
-                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
-                    </div>
-                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
-                      Взаимодействие с социальными сетями создает дополнительные
-                      сигналы доверия для поисковых систем. Активность в
-                      соцсетях может положительно влиять на ранжирование,
-                      особенно для молодых сайтов.
-                    </p>
-                  </div>
-                  <div className="flex">
-                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
-                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
-                    </div>
-                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
-                      Email-маркетинг помогает "дожать" посетителей, пришедших
-                      из органического поиска, но не совершивших покупку с
-                      первого раза. Персонализированные письма с напоминанием о
-                      брошенной корзине могут значительно повысить конверсию.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </>
           }
         />
 

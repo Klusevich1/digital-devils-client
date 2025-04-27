@@ -186,78 +186,45 @@ const marketplace = () => {
 
         <OurCaseBlock
           title="Наш кейс"
-          miniTitle="SEO-продвижение сайта по ремонту квартир"
-          text1='Молодая компания по ремонту не могла пробиться в ТОП из-за высокой конкуренции и отсутствия онлайн-присутствия. Мы разработали стратегию, сделав ставку на информационные запросы ("как сделать ремонт", "дизайн квартиры 2024") для сайта.'
-          text2="Создали 120 подробных гайдов с пошаговыми инструкциями, которые привлекли аудиторию на этапе принятия решения. Дополнительно оптимизировали Google My Business: добавили портфолио с 3D-визуализациями, внедрили систему отзывов и чат-бота для быстрых ответов для сайта при продвижении. Это позволило не только увеличить трафик, но и повысить доверие — 40% клиентов пришли по рекомендациям."
-          imageUrl="/resources/seo-case.png"
+          cases={[
+            {
+              miniTitle: "SEO-продвижение сайта по ремонту квартир",
+              text1:
+                'Молодая компания по ремонту не могла пробиться в ТОП из-за высокой конкуренции и отсутствия онлайн-присутствия. Мы разработали стратегию, сделав ставку на информационные запросы ("как сделать ремонт", "дизайн квартиры 2024") для сайта.',
+              text2:
+                "Создали 120 подробных гайдов с пошаговыми инструкциями, которые привлекли аудиторию на этапе принятия решения. Дополнительно оптимизировали Google My Business: добавили портфолио с 3D-визуализациями, внедрили систему отзывов и чат-бота для быстрых ответов для сайта при продвижении. Это позволило не только увеличить трафик, но и повысить доверие — 40% клиентов пришли по рекомендациям.",
+              imageUrl: "/resources/seo-case.png",
+              numbers: (
+                <>
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-[15px] justify-between lg:flex lg:mb-[60px] mb-[30px] pt-[30px]">
+                    <SmallMainBlockCard
+                      title="12%"
+                      description="конверсия в заявку"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="7500"
+                      description="целевых переходов  в месяц"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="40%"
+                      description="клиентов по рекомендациям"
+                      margin="mb-0"
+                    />
+                    <SmallMainBlockCard
+                      title="3"
+                      description="месяца срок окупаемости"
+                      margin="mb-0"
+                    />
+                  </div>
+                </>
+              ),
+              analiticsImg: "/resources/seo-yandex-numbers.png",
+              analiticsImgSmall: "/resources/seo-yandex-numberssmall.png",
+            },
+          ]}
           margin=""
-        />
-        <StandardMarginsLayout
-          styles="pt-[30px]"
-          children={
-            <>
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-[15px] justify-between lg:flex lg:mb-[60px] mb-[30px]">
-                <SmallMainBlockCard
-                  title="12%"
-                  description="конверсия в заявку"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="7500"
-                  description="целевых переходов  в месяц"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="40%"
-                  description="клиентов по рекомендациям"
-                  margin="mb-0"
-                />
-                <SmallMainBlockCard
-                  title="3"
-                  description="месяца срок окупаемости"
-                  margin="mb-0"
-                />
-              </div>
-              <div className="sm:flex hidden lg:flex-row flex-col justify-between lg:gap-[41px] gap-[30px]">
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-yandex-numbers.png"}
-                    width={640}
-                    height={401}
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers2.png"}
-                    width={640}
-                    height={401}
-                    className="w-full"
-                  />
-                </div>
-              </div>
-              <div className="sm:hidden flex flex-col justify-between gap-[30px]">
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-yandex-numberssmall.png"}
-                    width={640}
-                    height={401}
-                  />
-                </div>
-                <div>
-                  <Image
-                    alt="Numbers"
-                    src={"/resources/seo-numbers2mobile.png"}
-                    width={640}
-                    height={401}
-                  />
-                </div>
-              </div>
-            </>
-          }
         />
 
         <StandardMarginsLayout
