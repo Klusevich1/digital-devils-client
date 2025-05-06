@@ -43,7 +43,7 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
       {data.map((item, index) => (
         <div key={index} className="border-b py-[20px] flex flex-col">
           {/* Mobile version */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               className={`min-w-[40px] min-h-[40px] size-[40px] flex items-center justify-center border-black border-[1px] rounded-full duration-300 transform transition-all ${
                 activeIndexes.includes(index) ? "bg-blue_main text-white border-none" : ""
@@ -60,7 +60,7 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
           </div>
 
           {/* Desktop version */}
-          <div className="hidden md:flex w-full gap-[40px] items-start">
+          <div className="hidden lg:flex w-full gap-[40px] items-start">
             <div className="min-w-[100px] max-w-[185px] xl:w-1/5">
               <button
                 className={`w-12 h-12 mt-[12px] flex items-center justify-center border-[1px] border-black rounded-full duration-300 transform transition-all ${
@@ -99,7 +99,7 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
 
           {/* Mobile toggle for paragraphs */}
           <div
-            className={`w-full md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            className={`w-full lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
               activeIndexes.includes(index)
                 ? "mt-4 max-h-screen opacity-100"
                 : "max-h-0 opacity-0"

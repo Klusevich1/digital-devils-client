@@ -26,8 +26,8 @@ const HalfImageBlock: React.FC<HalfImageBlockProps> = ({title, smallTitle, descr
                 <div className="flex flex-col">
                     <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">{title}</h2>
                     <div className={`flex flex-col  justify-between ${isRevert ? " lg:flex-row-reverse" : "lg:flex-row"}`}>
-                       <div className={`hidden rounded-[40px] xl:min-w-[${widthImage}px] ${isImageCenter ? " lg:flex justify-center w-full" : " lg:block"}`}>
-                            <Image src={image} alt={smallTitle} className={`${!isRevert ? "" : "ms-[30px]"}`} width={widthImage} height={heightImage}
+                       <div className={`hidden h-full rounded-[40px] xl:min-w-[${widthImage}px] ${isImageCenter ? " lg:flex justify-center w-full" : " lg:block"}`}>
+                            <Image src={image} alt={smallTitle} className={`${!isRevert ? "" : "ms-[30px]"} `} width={widthImage} height={heightImage}
                                 style={{minWidth: widthImage / 2 + 100, maxWidth: widthImage, maxHeight: heightImage}}
                             />
                         </div>

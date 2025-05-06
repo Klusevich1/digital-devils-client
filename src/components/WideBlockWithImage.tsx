@@ -7,6 +7,7 @@ interface WideBlockWithImageProps {
   text_1: string;
   text_11?: string;
   text_2: string;
+  bg?: string
 }
 
 const WideBlockWithImage: React.FC<WideBlockWithImageProps> = ({
@@ -14,10 +15,11 @@ const WideBlockWithImage: React.FC<WideBlockWithImageProps> = ({
   text_1,
   text_11,
   text_2,
+  bg = 'bg-[%F5F5F5]'
 }) => {
   return (
     <StandardMarginsLayout
-      styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-black"
+      styles={`py-[50px] md:py-[60px] ${bg} text-black`}
       children={
         <>
           <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">

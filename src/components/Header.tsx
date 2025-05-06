@@ -99,15 +99,13 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
     },
     {
       services: [
-        { name: "5 Корпоротивные сайты", href: "corporate-website" },
-        { name: "5 Интернет-магазин", href: "online-store" },
-        { name: "5 Landing page", href: "landing" },
-        { name: "5 B2B сайты", href: "b2b" },
-        { name: "5 Сайт-визитка", href: "card-website" },
-        { name: "5 Портал", href: "portal" },
-        { name: "5 Сайт-каталог", href: "website-catalog" },
-        { name: "5 Информационный сайт", href: "information-site" },
-        { name: "5 Маркетплейс", href: "marketplace" },
+        { name: "Разработка дизайна", href: "design" },
+        { name: "Разработка логотипа", href: "design-logo" },
+        { name: "Редизайн", href: "redesign" },
+        { name: "Разработка фирменного стиля", href: "design-style" },
+        { name: "Графический дизайн", href: "graph-design" },
+        { name: "Motion-дизайн", href: "motion-design" },
+        { name: "Разработка брендбука", href: "brandbook" },
       ],
     },
     {
@@ -162,12 +160,12 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               className="size-[28px]"
               alt="Instagram Logo"
               priority={true}
-              />
+            />
             <span
               className={`ms-[5px] ${
                 theme === "dark" ? "text-white" : "text-black"
               }`}
-              >
+            >
               instagram
             </span>
           </a>
@@ -340,21 +338,34 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                           </p>
                         </li>
                         <li>
-                          <p className="hover:text-blue-600 flex items-center duration-300">
-                            <span className="text-[24px] font-medium me-1">
-                              Motion-дизайн
-                            </span>
-                            <GoArrowRight className="size-[24px]" />
-                          </p>
-                        </li>
-                        <li>
-                          <p className="hover:text-blue-600 flex items-center duration-300">
+                          <p
+                            className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
+                            onMouseOver={() => setDopServiceIndex(5)}
+                            onMouseOut={(e) => {
+                              const relatedTarget =
+                                e.relatedTarget as HTMLElement;
+                              if (
+                                !relatedTarget ||
+                                !relatedTarget.closest(".dop-services-dropdown")
+                              ) {
+                                setDopServiceIndex(0);
+                              }
+                            }}
+                          >
                             <span className="text-[24px] font-medium me-1">
                               Дизайн
                             </span>
                             <GoArrowRight className="size-[24px]" />
                           </p>
                         </li>
+                        {/* <li>
+                          <p className="hover:text-blue-600 flex items-center duration-300">
+                            <span className="text-[24px] font-medium me-1">
+                              Motion-дизайн
+                            </span>
+                            <GoArrowRight className="size-[24px]" />
+                          </p>
+                        </li> */}
                       </ul>
                       <ul className="w-full max-w-[300px]">
                         {DOP_SERVICES[dopServiceIndex].services.map(
@@ -764,52 +775,10 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             ? "hidden"
                             : "block"
                         }`}
-                    // onClick={() =>
-                    //     dopMobileServicesOpenIndex === 5 ?
-                    //         setDopMobileServicesOpenIndex(0) :
-                    //         setDopMobileServicesOpenIndex(5)}
-                  >
-                    <GoArrowLeft
-                      onClick={() => setDopMobileServicesOpenIndex(0)}
-                      className={`size-[22px] me-[5px] duration-500 ${
-                        !dopMobileServicesOpenIndex
-                          ? "opacity-0"
-                          : "opacity-100"
-                      }`}
-                    />
-                    Motion-дизайн
-                    <GoArrowRight
-                      className={`size-[22px] duration-500 ${
-                        dopMobileServicesOpenIndex != 0
-                          ? "opacity-0"
-                          : "opacity-100"
-                      }`}
-                    />
-                  </li>
-                  <li
-                    className={`mb-[20px] flex items-center cursor-pointer duration-300
-                        ${
-                          dopMobileServicesOpenIndex === 0
-                            ? "translate-x-[-29px]"
-                            : "translate-x-[0px]"
-                        }
-                        ${
-                          dopMobileServicesOpenIndex !== 0
-                            ? "translate-y-[-65px] text-blue_main"
-                            : `translate-y-0 ${
-                                theme === "dark" ? "text-white" : "text-black"
-                              }`
-                        }
-                        ${
-                          dopMobileServicesOpenIndex !== 0 &&
-                          dopMobileServicesOpenIndex !== 6
-                            ? "hidden"
-                            : "block"
-                        }`}
-                    // onClick={() =>
-                    //     dopMobileServicesOpenIndex === 6 ?
-                    //         setDopMobileServicesOpenIndex(0) :
-                    //         setDopMobileServicesOpenIndex(6)}
+                    onClick={() =>
+                        dopMobileServicesOpenIndex === 5 ?
+                            setDopMobileServicesOpenIndex(0) :
+                            setDopMobileServicesOpenIndex(5)}
                   >
                     <GoArrowLeft
                       onClick={() => setDopMobileServicesOpenIndex(0)}
@@ -828,6 +797,48 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                       }`}
                     />
                   </li>
+                  {/* <li
+                    className={`mb-[20px] flex items-center cursor-pointer duration-300
+                        ${
+                          dopMobileServicesOpenIndex === 0
+                            ? "translate-x-[-29px]"
+                            : "translate-x-[0px]"
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0
+                            ? "translate-y-[-65px] text-blue_main"
+                            : `translate-y-0 ${
+                                theme === "dark" ? "text-white" : "text-black"
+                              }`
+                        }
+                        ${
+                          dopMobileServicesOpenIndex !== 0 &&
+                          dopMobileServicesOpenIndex !== 5
+                            ? "hidden"
+                            : "block"
+                        }`}
+                    // onClick={() =>
+                    //     dopMobileServicesOpenIndex === 6 ?
+                    //         setDopMobileServicesOpenIndex(0) :
+                    //         setDopMobileServicesOpenIndex(6)}
+                  >
+                    <GoArrowLeft
+                      onClick={() => setDopMobileServicesOpenIndex(0)}
+                      className={`size-[22px] me-[5px] duration-500 ${
+                        !dopMobileServicesOpenIndex
+                          ? "opacity-0"
+                          : "opacity-100"
+                      }`}
+                    />
+                    Motion-дизайн
+                    <GoArrowRight
+                      className={`size-[22px] duration-500 ${
+                        dopMobileServicesOpenIndex != 0
+                          ? "opacity-0"
+                          : "opacity-100"
+                      }`}
+                    />
+                  </li> */}
 
                   {dopMobileServicesOpenIndex === 0 ? (
                     <></>
