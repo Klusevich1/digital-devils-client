@@ -34,7 +34,7 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
             <p className="text-[18px] font-medium" dangerouslySetInnerHTML={{__html: item.description}}>
             </p>
             <div className="flex mt-2 flex-wrap">
-              {item.id === 1 || item.id === 2 || item.id === 3 || item.id === 4
+              {item.id === 1 || item.id === 2 || item.id === 3 || item.id === 4 || item.id === 5
                 ? item.badges.map((badge, idx) => (
                     <a key={idx} href={badge.link}>
                       <p className="mb-[15px] me-[15px] border px-[20px] py-[10px] text-[18px] font-medium rounded-full text-black border-blue_main hover:bg-blue_main hover:text-white transition-all duration-100">

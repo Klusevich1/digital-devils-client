@@ -72,9 +72,13 @@ const MainBlockThird: React.FC = () => {
       description:
         "Каждому клиенту - свое эксклюзивное решение! Составляем макеты с учетом особенностей и специфики компании, ее стратегических целей и целевой аудитории. Всегда готовы обсудить новые идеи, подсказать оптимальные варианты реализации вашей digital-задачи.",
       badges: [
-        { name: "UX/UI", link: "/ux-ui" },
-        { name: "Исследования", link: "/researches" },
-        { name: "Продукты", link: "/products" },
+        { name: "Разработка дизайна", link: "/design" },
+        { name: "Разработка логотипа", link: "/design-logo" },
+        { name: "Редизайн", link: "/redesign" },
+        { name: "Разработка фирменного стиля", link: "/design-style" },
+        { name: "Графический дизайн", link: "/graph-design" },
+        { name: "Motion-дизайн", link: "/motion-design" },
+        { name: "Разработка брнедбука", link: "/brandbook" },
       ],
     },
     {
