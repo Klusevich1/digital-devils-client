@@ -16,6 +16,10 @@ import BlockWithListOfCurrentTechnologies from "@/components/BlockWithListOfCurr
 import { FaCircleChevronRight } from "react-icons/fa6";
 import OurApproachBlock from "@/components/OurApproachBlock";
 import MainBlockFive from "@/components/MainBlockFive";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -119,6 +123,69 @@ const marketplace = () => {
       <BasicLayout>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <SeoTitleBlock title="Разработка дизайна" />
+        <StandardMarginsLayout
+          styles="md:pb-[60px] pb-[50px]"
+          children={
+            <>
+              <div className="sm:flex hidden flex-row justify-self-center lg:gap-[40px] gap-[20px]">
+                <div>
+                  <Image
+                    src={"/resources/design_1.png"}
+                    alt="Design1"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={"/resources/design_2.png"}
+                    alt="Design2"
+                    width={640}
+                    height={300}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={"/resources/design_3.png"}
+                    alt="Design3"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+              </div>
+              <div className="sm:hidden block">
+                <Swiper
+                  modules={[Navigation]}
+                  navigation={true}
+                  slidesPerView={1.2}
+                  spaceBetween={20}
+                  loop={true}
+                  className="w-full mt-[20px] xl:mt-0"
+                >
+                  {[
+                    "/resources/design_1.png",
+                    "/resources/design_small_2.png",
+                    "/resources/design_3.png",
+                  ].map((slide, idx) => (
+                    <SwiperSlide key={idx}>
+                      <div className="p-2">
+                        <div className="">
+                          <Image
+                            src={slide}
+                            width={300}
+                            height={300}
+                            alt={`Design ${idx}`}
+                            className="w-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </>
+          }
+        />
         <BlockWithListOfCurrentTechnologies
           isOnlyBottomPadding={true}
           title="У нас современный подход"
