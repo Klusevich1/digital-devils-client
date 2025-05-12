@@ -148,7 +148,7 @@ const marketplace = () => {
                     className="w-full"
                     width={639}
                     height={245}
-                    alt=""
+                    alt="Наша работа 5"
                   />
                 </div>
                 <div className="flex flex-col w-full xl:max-w-[639px] rounded-[40px]">
@@ -165,7 +165,7 @@ const marketplace = () => {
                       className="w-full"
                       width={639}
                       height={245}
-                      alt=""
+                      alt="Наша работа 6"
                     />
                   </div>
                   <div className="md:hidden block w-full">
@@ -174,7 +174,7 @@ const marketplace = () => {
                       className="w-full"
                       width={639}
                       height={245}
-                      alt=""
+                      alt="Наша работа 6"
                     />
                   </div>
                 </div>
@@ -186,7 +186,7 @@ const marketplace = () => {
                     className="w-full"
                     width={639}
                     height={245}
-                    alt=""
+                    alt="Наша работа 7"
                   />
                 </div>
                 <div className="md:hidden block xl:mb-0 mb-[20px] me-0 xl:me-[20px]  w-full xl:max-w-[639px] rounded-[40px]">
@@ -195,7 +195,7 @@ const marketplace = () => {
                     className="w-full"
                     width={639}
                     height={245}
-                    alt=""
+                    alt="Наша работа 7"
                   />
                 </div>
                 <div className="md:block hidden xl:max-w-[639px]  rounded-[40px] w-full">
@@ -204,7 +204,7 @@ const marketplace = () => {
                     className="w-full"
                     width={639}
                     height={245}
-                    alt=""
+                    alt="Наша работа 8"
                   />
                 </div>
                 <div className="md:hidden block xl:max-w-[639px]  rounded-[40px] w-full">
@@ -213,7 +213,7 @@ const marketplace = () => {
                     className="w-full"
                     width={639}
                     height={245}
-                    alt=""
+                    alt="Наша работа 8"
                   />
                 </div>
               </div>

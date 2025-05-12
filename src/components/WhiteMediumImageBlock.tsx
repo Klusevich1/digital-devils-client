@@ -53,7 +53,7 @@ export const WhiteMediumImageBlock: FC<DarkBigImageBlockProps> = ({
                     width={544}
                     height={519}
                     className="object-cover h-fit"
-                    alt={title}
+                    alt="Medium Image"
                   />
                 </div>
                 {text}
@@ -82,7 +82,7 @@ export const WhiteMediumImageBlock: FC<DarkBigImageBlockProps> = ({
                   width={544}
                   height={519}
                   className="object-cover h-fit"
-                  alt={title}
+                  alt="Medium Image"
                 />
               </div>
             </div>

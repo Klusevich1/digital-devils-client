@@ -81,7 +81,7 @@ const marketplace = () => {
       <SEO
         title="SEO-продвижение интернет-магазинов в Минске | Поисковая оптимизация сайтов"
         description="Комплексное SEO-продвижение интернет-магазинов в Минске и Беларуси. Используем только передовые технологии и адаптивность — ваши посетители оценят. Доверяйте SEO-продвижение своего магазина экспертам и получите проект, который работает на ваш успех!"
-        canonical="https://digitaldevils.by/marketplace"
+        canonical="https://digitaldevils.by/seo-store"
         breadcrumbsSchema={breadcrumbsSchema}
       />
       <BasicLayout>

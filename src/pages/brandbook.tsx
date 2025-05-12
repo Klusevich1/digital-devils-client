@@ -72,7 +72,7 @@ const marketplace = () => {
       <SEO
         title="Разработка брендбука компании под ключ | Цена создания брендбука"
         description="Формируем подробный брендбук с правилами использования логотипа, цветовой гаммы, шрифтов и визуальных элементов. Это незаменимый инструмент для построения сильного, стабильного и узнаваемого бренда."
-        canonical="https://digitaldevils.by/brandook"
+        canonical="https://digitaldevils.by/brandbook"
         breadcrumbsSchema={breadcrumbsSchema}
       />
       <BasicLayout>

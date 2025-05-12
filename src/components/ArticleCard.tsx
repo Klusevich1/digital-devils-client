@@ -21,7 +21,7 @@ const ArticleCard: React.FC<ArticleProps> = ({ art }) => {
       <div>
         {/* <a href={`/blog/${art.slug}`} className={`${imageLoading ? 'opacity-0' : 'opacity-100'} transition-all`}> */}
           <Image
-            src={`/resources/${art.image}`}
+            src={`/resources${art.image}`}
             alt={art.title}
             width={440}
             height={270}

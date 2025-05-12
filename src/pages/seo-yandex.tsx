@@ -379,7 +379,7 @@ const marketplace = () => {
               <div className="flex flex-col lg:flex-row lg:space-x-[41px]">
                 <div className="w-full lg:block hidden max-w-[525px] min-w-[400px]">
                   <Image
-                    src={"/resources/seo_yandex_11,png"}
+                    src={"/resources/seo_yandex_11.png"}
                     className="w-full"
                     alt={
                       "Сколько стоит разработка мобильных приложений под iOS?"
@@ -391,7 +391,7 @@ const marketplace = () => {
                 <div className="lg:max-w-[754px]">
                   <div className="w-full block lg:hidden  mt-[20px]">
                     <Image
-                      src={"/resources/seo_yandex_small_11,png"}
+                      src={"/resources/seo_yandex_small_11.png"}
                       alt={
                         "Сколько стоит разработка мобильных приложений под iOS?"
                       }
@@ -437,7 +437,7 @@ const marketplace = () => {
               <div className="flex flex-col lg:flex-row lg:space-x-[41px]">
                 <div className="w-full lg:block hidden max-w-[525px] min-w-[400px]">
                   <Image
-                    src={"/resources/seo_yandex_10,png"}
+                    src={"/resources/seo_yandex_10.png"}
                     className="w-full"
                     alt={
                       "Сколько стоит разработка мобильных приложений под iOS?"
@@ -449,7 +449,7 @@ const marketplace = () => {
                 <div className="lg:max-w-[754px]">
                   <div className="w-full block lg:hidden  mt-[20px]">
                     <Image
-                      src={"/resources/seo_yandex_small_10,png"}
+                      src={"/resources/seo_yandex_small_10.png"}
                       alt={
                         "Сколько стоит разработка мобильных приложений под iOS?"
                       }
@@ -629,7 +629,7 @@ const marketplace = () => {
                 </p>
                 <div className="w-full block lg:hidden  mt-[20px]">
                   <Image
-                    src={"/resources/seo_yandex_small_5,png"}
+                    src={"/resources/seo_yandex_small_5.png"}
                     alt={
                       "Сколько стоит разработка мобильных приложений под iOS?"
                     }
@@ -646,7 +646,7 @@ const marketplace = () => {
               </div>
               <div className="w-full lg:block hidden max-w-[525px] min-w-[400px]">
                 <Image
-                  src={"/resources/seo_yandex_5,png"}
+                  src={"/resources/seo_yandex_5.png"}
                   className="w-full"
                   alt={"Сколько стоит разработка мобильных приложений под iOS?"}
                   width={359}
