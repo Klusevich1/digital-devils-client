@@ -147,6 +147,26 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
           } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-end items-center hidden md:flex`}
         >
+          <div
+            style={{
+              width: "150px",
+              height: "96px",
+              overflow: "hidden",
+              position: "relative",
+            }}
+          >
+            <iframe
+              style={{
+                width: "100%",
+                height: "100%",
+                border: "1px solid #e6e6e6",
+                borderRadius: "8px",
+                boxSizing: "border-box",
+              }}
+              className=""
+              src="https://yandex.ru/maps-reviews-widget/192647371670?size=s"
+            ></iframe>
+          </div>
           <a
             target="_blank"
             rel="nofollow"
@@ -776,9 +796,10 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             : "block"
                         }`}
                     onClick={() =>
-                        dopMobileServicesOpenIndex === 5 ?
-                            setDopMobileServicesOpenIndex(0) :
-                            setDopMobileServicesOpenIndex(5)}
+                      dopMobileServicesOpenIndex === 5
+                        ? setDopMobileServicesOpenIndex(0)
+                        : setDopMobileServicesOpenIndex(5)
+                    }
                   >
                     <GoArrowLeft
                       onClick={() => setDopMobileServicesOpenIndex(0)}

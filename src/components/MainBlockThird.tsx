@@ -8,7 +8,7 @@ const MainBlockThird: React.FC = () => {
       id: 1,
       title: "Веб-разработка",
       description:
-        "Web-сайты для частных лиц и крупных компаний. Создаем уникальные решения: <a href='https://digitaldevils.by/online-store' class='no-underline text-blue_main'>интернет-магазины</a>, <a href='https://digitaldevils.by/landing' class='no-underline text-blue_main'>Landing Page</a>, <a href='https://digitaldevils.by/card-website' class='no-underline text-blue_main'>сайты-визитки</a>, <a href='https://digitaldevils.by/portal' class='no-underline text-blue_main'>корпоративные порталы</a>, которые сделают бизнес прибыльным и эффективным. Никаких шаблонов, только индивидуальные решения, на 100% отвечающие вашим запросам.",
+        "Web-сайты для частных лиц и крупных компаний. Создаем уникальные решения: интернет-магазины, Landing Page, сайты-визитки, корпоративные порталы, которые сделают бизнес прибыльным и эффективным. Никаких шаблонов, только индивидуальные решения, на 100% отвечающие вашим запросам.",
       badges: [
         { name: "Корпоративные сайты", link: "/corporate-website" },
         { name: "Интернет-магазины", link: "/online-store" },
@@ -87,8 +87,7 @@ const MainBlockThird: React.FC = () => {
       description:
         "Гармонично сочетаем звук, графику, текст, умеем подавать любую информацию наглядно и понятно для аудитории. Используем инновационные технологии, разрушаем стереотипы и шаблоны, раздвигаем границы привычного с помощью креативных анимированных элементов и динамичных визуальных эффектов.",
       badges: [
-        { name: "Анимация", link: "/animation" },
-        { name: "Графика", link: "/graphics" },
+        { name: "Motion-дизайн", link: "/motion-design" },
       ],
     },
   ];

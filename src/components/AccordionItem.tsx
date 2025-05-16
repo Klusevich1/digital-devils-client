@@ -22,7 +22,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         className="flex justify-between items-center py-2 cursor-pointer"
         onClick={toggleAccordion}
       >
-        <h2 className="text-[18px] md:text-[22px] font-bold">{title}</h2>
+        <h3 className="text-[18px] md:text-[22px] font-bold">{title}</h3>
         <IoIosArrowDown
           className={`md:size-[32px] size-[24px] md:min-w-[32px] min-w-[24px] transform transition-transform ${
             isOpen ? "rotate-180" : ""
