@@ -147,7 +147,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
           } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-end items-center hidden md:flex`}
         >
-          <div
+          {/* <div
             style={{
               width: "150px",
               height: "96px",
@@ -166,7 +166,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               className=""
               src="https://yandex.ru/maps-reviews-widget/192647371670?size=s"
             ></iframe>
-          </div>
+          </div> */}
           <a
             target="_blank"
             rel="nofollow"

@@ -10,7 +10,15 @@ interface BasicLayoutProps {
 const BasicLayout: React.FC<BasicLayoutProps> = ({ children }) => {
   return (
     <>
-      <Header theme="light"/>
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NLZBTPDJ"
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
+      <Header theme="light" />
       <main className="">{children}</main>
       <Footer />
     </>
