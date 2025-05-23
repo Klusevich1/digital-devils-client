@@ -32,7 +32,7 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
-    name: 'Разработка мобильных приложений',
+    name: "Разработка мобильных приложений",
     item: `https://digitaldevils.by/mob-apps`,
   },
   {
@@ -133,9 +133,13 @@ const joomla = () => {
                   </div>
                   <div>
                     <h2 className="font-bold text-[24px] mb-[20px]">
-                      Разработка мобильных версий лендингов, информационных и
-                      новостных порталов, интернет-магазинов от студии Digital
-                      Devils
+                      Разработка мобильных версий{" "}
+                      <a href="/landing" className="text-blue_main">лендингов</a>,{" "}
+                      <a href="/information-site" className="text-blue_main">
+                        информационных и новостных порталов
+                      </a>
+                      , <a href="/online-store" className="text-blue_main">интернет-магазинов</a> от студии
+                      Digital Devils
                     </h2>
                     <p className="text-[18px] font-medium">
                       Высокая скорость загрузки и уникальный функционал для
@@ -206,16 +210,16 @@ const joomla = () => {
           text2={
             <ul className="flex flex-col gap-[5px]">
               {[
-                " Разработку адаптивного дизайна сайта.  Не требует создания отдельного интерфейса.",
+                " Разработку адаптивного <a href='/mob-design' class='text-blue_main'>дизайна сайта</a>. Не требует создания отдельного интерфейса.",
                 " Создание мобильной версии сайта. Если интерфейс и дизайн ресурса имеют сложную логику работы, без отдельной мобильной версии не обойтись.",
                 " Поддержку мобильных сайтов. Будем рады продолжить сотрудничество после успешной сдачи проекта.",
-                " Продвижение сайтов. Поможем оптимизировать ресурс, улучшить его конверсию и позицию в поисковых системах Google и Яндекс.",
+                " <a href='/seo' class='text-blue_main'>Продвижение сайтов</a>. Поможем оптимизировать ресурс, улучшить его конверсию и позицию в поисковых системах <a href='/seo-google' class='text-blue_main'>Google</a> и <a href='/seo-yandex' class='text-blue_main'>Яндекс</a>.",
               ].map((item, idx) => (
                 <li key={idx}>
                   <span className="text-custom_yellow text-[16px] font-medium">
                     /
                   </span>{" "}
-                  {item}
+                  <span dangerouslySetInnerHTML={{__html: item}}></span>
                 </li>
               ))}
             </ul>
@@ -243,7 +247,7 @@ const joomla = () => {
               <p className="font-medium text-[18px] mb-[20px]">
                 Стоимость услуг Digital Devils по созданию мобильной и
                 адаптивной версии сайта зависит от целого ряда факторов: тип
-                площадки (визитка, корпоративный портал, интернет-магазин и
+                площадки (<a href="/card-website" className="text-blue_main">визитка</a>, корпоративный портал, интернет-магазин и
                 др.), сложность реализации поставленных задач, особенности
                 дизайна и интерфейса и др. Итоговую цены рассчитываем
                 индивидуально с учетом бюджета клиента. 

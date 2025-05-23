@@ -77,8 +77,7 @@ const MainBlockThird: React.FC = () => {
         { name: "Редизайн", link: "/redesign" },
         { name: "Разработка фирменного стиля", link: "/design-style" },
         { name: "Графический дизайн", link: "/graph-design" },
-        { name: "Motion-дизайн", link: "/motion-design" },
-        { name: "Разработка брнедбука", link: "/brandbook" },
+        { name: "Разработка брендбука", link: "/brandbook" },
       ],
     },
     {

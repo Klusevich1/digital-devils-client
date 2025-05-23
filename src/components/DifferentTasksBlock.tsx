@@ -24,7 +24,7 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
   paragraphs,
   isDark = true,
   isOnlyBottomPadding = false,
-  maxwSmallText = 'max-w-[866px]'
+  maxwSmallText = "max-w-[866px]",
 }) => {
   return (
     <>
@@ -49,7 +49,9 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
               )}
             </div>
             <div
-              className={`grid ${paragraphs.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} grid-cols-1 md:gap-[40px] gap-[20px] ${
+              className={`grid ${
+                paragraphs.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+              } grid-cols-1 md:gap-[40px] gap-[20px] ${
                 smallText
                   ? `border-t-[1px] pt-[30px] ${
                       isDark ? "border-t-white" : "border-t-black"
@@ -60,13 +62,15 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
               {paragraphs.map((item, idx) => (
                 <div key={idx}>
                   {item.title && (
-                    <p className="text-[16px] font-medium md:mb-[20px] mb-[10px]">
-                      {item.title}
-                    </p>
+                    <p
+                      className="text-[16px] font-medium md:mb-[20px] mb-[10px]"
+                      dangerouslySetInnerHTML={{ __html: item.title }}
+                    ></p>
                   )}
-                  <span className="text-[22px] font-medium">
-                    {item.text}
-                  </span>
+                  <span
+                    className="text-[22px] font-medium"
+                    dangerouslySetInnerHTML={{ __html: item.text }}
+                  ></span>
                 </div>
               ))}
             </div>

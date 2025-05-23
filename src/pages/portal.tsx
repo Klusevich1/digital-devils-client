@@ -132,16 +132,16 @@ const portal = () => {
             <ul className="flex flex-col gap-[5px]">
               {[
                 " Сайты доступны с любых устройств: от ПК до мобильных гаджетов",
-                " Работаем со всеми популярными SMS: платными и бесплатными",
+                " Работаем со всеми популярными CMS: платными и бесплатными",
                 " Ведем разработку с глубокой кастомизацией и написанием отдельных новых модулей и подсистем",
-                " Используем индивидуальный дизайн, рассчитанный под конкретную ЦА",
+                " Используем <a href='/design' class='text-blue_main'>индивидуальный дизайн</a>, рассчитанный под конкретную ЦА",
                 " Продумываем безопасность и конфиденциальность пользовательской информации.",
               ].map((item, idx) => (
                 <li key={idx}>
                   <span className="text-custom_yellow text-[16px] font-medium">
                     /
                   </span>{" "}
-                  {item}
+                  <span dangerouslySetInnerHTML={{__html: item}}></span>
                 </li>
               ))}
             </ul>
@@ -186,7 +186,7 @@ const portal = () => {
           text={
             <>
               <p className="text-[18px] font-bold max-w-[867px]">
-                За прошедшие годы мы довели процесс <a href='https://digitaldevils.by/wordpress' className='no-underline text-blue_main'>создания продающих сайтов</a> до
+                За прошедшие годы мы довели процесс <a href='/landing' className='no-underline text-blue_main'>создания продающих сайтов</a> до
                 идеала.{" "}
               </p>
               <p className="text-[18px] font-bold max-w-[867px] mb-[20px]">

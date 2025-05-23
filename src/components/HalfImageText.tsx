@@ -48,9 +48,9 @@ const HalfImageText: React.FC<HalfImageBlockProps> = ({
             }`}
           >
             <div>
-              <h1 className="mb-[30px] font-bold text-[32px] lg:max-w-[641px] lg:text-[60px] me-[20px]">
+              <h2 className="mb-[30px] font-bold text-[32px] lg:max-w-[641px] lg:text-[60px] me-[20px]">
                 {title}
-              </h1>
+              </h2>
               <div
                 className={`hidden rounded-[40px] me-[20px]  ${
                   isImageCenter ? " lg:flex justify-center w-full" : " lg:block"

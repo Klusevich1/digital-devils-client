@@ -15,7 +15,7 @@ const WideBlockWithImage: React.FC<WideBlockWithImageProps> = ({
   text_1,
   text_11,
   text_2,
-  bg = 'bg-[%F5F5F5]'
+  bg = 'bg-[#F5F5F5]'
 }) => {
   return (
     <StandardMarginsLayout

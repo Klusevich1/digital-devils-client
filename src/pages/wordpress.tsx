@@ -120,7 +120,7 @@ const wordpress = () => {
                   "Простая и удобная панель управления, понятная даже для человека без опыта использования CMS",
                   "Выгодная цена реализации проектов любой сложности и формата под ключ",
                   "WordPress поддерживает различные типы медиа, включая изображения, видео, аудио контент",
-                  "SEO-оптимизация - сайты, созданные на этом движке отлично ранжируются в поисковых системах",
+                  "<a href='/seo' class='text-blue_main'>SEO-оптимизация</a> - сайты, созданные на этом движке отлично ранжируются в поисковых системах",
                 ].map((item, idx) => (
                   <div className="flex items-start lg:max-w-[413px]" key={idx}>
                     <Image
@@ -164,7 +164,7 @@ const wordpress = () => {
             {
               title: "Удобный и индивидуальный дизайн",
               description: [
-                "Знаем, как создать нешаблонный <a href='https://digitaldevils.by/information-site' class='no-underline text-blue_main'>информационный</a> или <a href='https://digitaldevils.by/corporate-website' class='no-underline text-blue_main'>корпоративный сайт</a>, <a href='https://digitaldevils.by/card-website' class='no-underline text-blue_main'>креативную визитку</a>. При создании дизайна ориентируемся на фирменный стиль и пожелания заказчика, актуальные тренды.",
+                "Знаем, как создать нешаблонный <a href='https://digitaldevils.by/information-site' class='no-underline text-blue_main'>информационный</a> или <a href='https://digitaldevils.by/corporate-website' class='no-underline text-blue_main'>корпоративный сайт</a>, <a href='https://digitaldevils.by/card-website' class='no-underline text-blue_main'>креативную визитку</a>. При <a href='/design' class='text-blue_main'>создании дизайна</a> ориентируемся на фирменный стиль и пожелания заказчика, актуальные тренды.",
               ],
             },
             {

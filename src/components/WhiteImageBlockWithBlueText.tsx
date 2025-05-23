@@ -59,9 +59,10 @@ const WhiteImageBlockWithBlueText: FC<WhiteImageBlockWithBlueTextProps> = ({
                     {h1}
                   </h2>
                 )}
-                <p className="text-[22px] text-blue_main font-bold mb-[20px] w-full">
-                  {blueText}
-                </p>
+                <p
+                  className="text-[22px] text-blue_main font-bold mb-[20px] w-full"
+                  dangerouslySetInnerHTML={{ __html: blueText }}
+                ></p>
                 {text}
               </div>
             </div>

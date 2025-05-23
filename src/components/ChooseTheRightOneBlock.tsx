@@ -32,7 +32,7 @@ export const ChooseTheRightOneBlock: FC<{
                       <span className="text-custom_yellow text-[18px] font-medium">
                         /
                       </span>{" "}
-                      {item}
+                      <span dangerouslySetInnerHTML={{__html: item}}></span>
                     </li>
                   ))}
                 </ul>

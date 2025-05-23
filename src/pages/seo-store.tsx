@@ -96,7 +96,7 @@ const marketplace = () => {
           description={
             <>
               <p className="font-medium text-[18px] mt-[20px] mb-[10px]">
-                Без SEO-продвижения ваш интернет-магазин — как супермаркет в
+                Без <a href="/seo" className="text-blue_main">SEO-продвижения</a> ваш интернет-магазин — как супермаркет в
                 глухом переулке: товары есть, а продаж нет.
               </p>
               <p className="font-medium text-[18px] mb-[10px]">
@@ -247,7 +247,7 @@ const marketplace = () => {
               <p className="text-[18px] mb-[30px] lg:text-[22px] font-medium  max-w-[866px]">
                 Цена зависит от масштабов, конкурентности ниши и выбранных
                 инструментов на сайте. Небольшой сайт с узкой аудиторией
-                потребует меньше вложений, чем крупный маркетплейс.
+                потребует меньше вложений, чем <a href="/marketplace" className="text-blue_main">крупный маркетплейс</a>.
               </p>
               <div className="border-t-[1px] border-black  pt-[30px]">
                 <p className="text-[16px] font-medium">

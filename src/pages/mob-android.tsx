@@ -182,7 +182,7 @@ const joomla = () => {
                   Как заказать разработку Android-приложения
                 </h2>
                 <p className="text-[22px] font-bold mt-[30px] ">
-                  Создание приложения для платформы Android начинается с
+                  <a href="/mob-apps" className="text-blue_main">Создание приложения</a> для платформы Android начинается с
                   составления технического задания. Наш менеджер обсуждает с
                   заказчиком нюансы и тонкости будущего проекта.
                 </p>
@@ -227,7 +227,7 @@ const joomla = () => {
             <ul className="flex flex-col gap-[5px]">
               {[
                 " Анализируют аналогичные предложения конкурентов",
-                " Готовят макет дизайна и функционала",
+                " Готовят <a href='/mob-design' class='text-blue_main'>макет дизайна</a> и функционала",
                 " Программируют клиентскую и сервисную часть",
                 " Выполняют тестирование и отладку",
                 " Публикуют приложение в каталоге Google Play",
@@ -236,7 +236,7 @@ const joomla = () => {
                   <span className="text-custom_yellow text-[16px] font-medium">
                     /
                   </span>{" "}
-                  {item}
+                  <span dangerouslySetInnerHTML={{__html: item}}></span>
                 </li>
               ))}
             </ul>

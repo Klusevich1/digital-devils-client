@@ -103,7 +103,7 @@ const marketplace = () => {
                   Мы продвигаем сайты именно так как нужно
                 </h2>
                 <p className="text-[22px] font-bold mt-[30px] ">
-                  Продвижение сайтов в ТОП Google в Беларуси
+                  <a href="/seo-top" className="text-blue_main">Продвижение сайтов в ТОП</a> Google в Беларуси
                 </p>
                 <div className="w-full block lg:hidden  mt-[20px]">
                   <Image
@@ -143,9 +143,9 @@ const marketplace = () => {
           styles={`py-[50px] md:py-[60px] bg-white text-black `}
           children={
             <div className="flex flex-col">
-              <h1 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px]">
+              <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px]">
                 Преимущества продвижения сайта в Google
-              </h1>
+              </h2>
               <div className="flex flex-col xl:flex-row items-start justify-between mt-[50px] md:mt-[60px]">
                 <div className="text-[22px] font-bold rounded-[30px] bg-[#F1F2F4] px-[40px] pt-[36px] pb-[30px] xl:max-w-[640px] lg:me-[20px]">
                   <h2 className="text-[28px] lg:text-[32px] font-bold">
@@ -192,7 +192,7 @@ const marketplace = () => {
           paragraphs={[
             {
               title: "Ваш сайт никто не находит в Google",
-              text: "Проводим глубокий аудит, выявляем слабые места, подбираем ключевые запросы, делаем качественное SEO и выводим сайт в ТОП.",
+              text: "<a href='/seo-audit' class='text-blue_main'>Проводим глубокий аудит</a>, выявляем слабые места, подбираем ключевые запросы, делаем качественное SEO и выводим сайт в ТОП.",
             },
             {
               title: "Есть трафик, но мало заявок",
@@ -275,7 +275,7 @@ const marketplace = () => {
                 <div className="flex flex-col lg:block items-center">
                   <div>
                     <h2 className="font-bold text-[22px] mb-[20px]">
-                      Цена на продвижение сайта в ТОП Google формируется
+                      Цена на <a href="/seo" className="text-blue_main">продвижение сайта</a> в ТОП Google формируется
                       индивидуально для каждого проекта и зависит от нескольких
                       ключевых факторов: масштабов бизнеса, уровня конкуренции в
                       нише и набора маркетинговых инструментов, которые будут

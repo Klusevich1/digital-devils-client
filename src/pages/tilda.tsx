@@ -270,9 +270,9 @@ const tilda = () => {
                   />
                 </div>
                 <div className="lg:max-w-[640px]">
-                  <h1 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                  <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
                     Разработка под ключ
-                  </h1>
+                  </h2>
                   <div className="block lg:hidden mb-[30px] mx-auto rounded-[40px]">
                     <Image
                       src="/resources/tilda_4_small.png"

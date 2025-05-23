@@ -479,19 +479,19 @@ const Footer: React.FC = () => {
               </a>
             </li>
             <li>
-              {/* <a className="no-underline" href="/"> */}
-              WEB-дизайн
-              {/* </a> */}
+              <a className="no-underline" href="/design">
+                WEB-дизайн
+              </a>
             </li>
             <li>
-              {/* <a className="no-underline" href="/"> */}
-              SEO продвижение
-              {/* </a> */}
+              <a className="no-underline" href="/seo">
+                SEO продвижение
+              </a>
             </li>
             <li>
-              {/* <a className="no-underline" href="/"> */}
-              Мобильная разработка
-              {/* </a> */}
+              <a className="no-underline" href="/mob-apps">
+                Мобильная разработка
+              </a>
             </li>
             <li>
               <a

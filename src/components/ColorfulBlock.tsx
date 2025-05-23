@@ -65,13 +65,13 @@ const ColorfulBlock: React.FC<ColorfulBlockProps> = ({
               />
             </div>
             <div className="flex flex-col lg:max-w-[641px]">
-              <h1
+              <h2
                 className={`text-[22px] lg:text-[32px] font-bold mb-[20px] lg:mb-[30px] ${
                   title == "" ? "hidden" : "block"
                 }`}
               >
                 {title}
-              </h1>
+              </h2>
               <div
                 className={`flex flex-col sm:flex-row justify-between mb-[20px     ] lg:mb-[30px] ${
                   showText ? "block" : "hidden"

@@ -42,7 +42,7 @@ const CardGrid: React.FC<CardGridProps> = ({ data }) => {
                         ))}
                     </div>
                     <h2 className="font-bold text-[22px] md:text-[24px]">{item.title}</h2>
-                    <p className="mt-[10px] text-[18px]">{item.text}</p>
+                    <p className="mt-[10px] text-[18px]" dangerouslySetInnerHTML={{__html: item.text}}></p>
                 </div>
             ))}
         </div>

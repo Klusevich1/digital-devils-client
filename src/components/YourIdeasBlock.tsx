@@ -49,9 +49,10 @@ export const YourIdeasBlock: FC<YourIdeasBlockProps> = ({
                     isDark ? "pb-[30px] border-b-[1px]" : ""
                   } border-b-white`}
                 >
-                  <p className="md:text-[28px] text-[24px] font-bold lg:mb-0 mb-[30px] mr-[15px] xlg:max-w-[303px] lg:max-w-[250px]">
-                    {item.title}
-                  </p>
+                  <p
+                    className="md:text-[28px] text-[24px] font-bold lg:mb-0 mb-[30px] mr-[15px] xlg:max-w-[303px] lg:max-w-[250px]"
+                    dangerouslySetInnerHTML={{ __html: item.title }}
+                  ></p>
                   <div className="xl:max-w-[75%] lg:max-w-[85%] flex lg:flex-row flex-col-reverse lg:gap-[40px] gap-[30px]">
                     <div
                       className={`flex flex-col justify-between md:gap-[20px] lg:max-w-[525px] ${

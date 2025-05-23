@@ -66,9 +66,9 @@ const TicketSeoBlock: React.FC<ColorfulBlockProps> = ({
       }
       children={
         <div className="flex flex-col w-full">
-          <h1 className="text-[32px] md:text-[48px] lg:text-[60px] font-bold mb-[30px] w-full">
+          <h2 className="text-[32px] md:text-[48px] lg:text-[60px] font-bold mb-[30px] w-full">
             {title}
-          </h1>
+          </h2>
           <div className="flex lg:flex-row flex-col justify-between">
             <div className="flex flex-col lg:max-w-[413px] w-full lg:me-[20px]">
               <h2 className="text-[22px] lg:text-[24px] font-bold mb-[10px]">
