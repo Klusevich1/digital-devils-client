@@ -13,11 +13,11 @@ const MainBlockFourth: React.FC<MainBlockFourthProps> = ({
   title = "Хотите заказать разработку сайта под ключ?",
   description = "Вас бесплатно проконсультирует web-разработчик со стажем работы 5 лет",
   buttonText = "Бесплатная консультация",
-  margin="my-[50px] sm:my-[60px]"
+  margin = "my-[50px] sm:my-[60px]",
 }) => {
   return (
     <StandardMarginsLayout
-      styles={`text-white bg-black sm:py-[60px] py-[50px] ${margin}`}
+      styles={`text-white bg-black md:py-[60px] py-[50px] ${margin}`}
       children={
         <>
           <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[20px]">

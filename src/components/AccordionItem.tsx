@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -17,14 +18,18 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   };
 
   return (
-    <div className="bg-black_5 rounded-[25px] py-[20px] px-[15px] md:px-[20px] mb-[20px]">
+    <div className="">
       <div
-        className="flex justify-between items-center py-2 cursor-pointer"
+        className="flex justify-between items-center py-2 cursor-pointer pb-4 border-b-[1px] border-black"
         onClick={toggleAccordion}
       >
-        <h3 className="text-[18px] md:text-[22px] font-bold">{title}</h3>
-        <IoIosArrowDown
-          className={`md:size-[32px] size-[24px] md:min-w-[32px] min-w-[24px] transform transition-transform ${
+        <h3 className="w-full text-[16px] md:text-[22px] font-medium">{title}</h3>
+        <Image
+          src={"/resources/arrow-right.svg"}
+          width={20}
+          height={20}
+          alt="Arrow"
+          className={`size-[20px] min-w-[20px] transform transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
         />
@@ -35,7 +40,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           maxHeight: isOpen ? "600px" : "0",
         }}
       >
-        <div className="py-2 text-gray-700">{description}</div>
+        <div className="pt-5 text-[16px] font-medium text-black">{description}</div>
       </div>
     </div>
   );

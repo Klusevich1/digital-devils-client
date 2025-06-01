@@ -7,7 +7,7 @@ import Image from "next/image";
 const FooterSmall: React.FC = () => {
   return (
     <section className="flex flex-col justify-center items-center self-stretch bg-neutral-900 sm:px-[60px] px-[20px]">
-      <div className="w-[1320px] max-w-full flex flex-col sm:py-[60px] py-[40px] sm:gap-[60px] gap-[40px]">
+      <div className="w-[1320px] max-w-full flex flex-col md:py-[60px] py-[40px] sm:gap-[60px] gap-[40px]">
         <div className="flex justify-between gap-[20px] flex-wrap flex-col sm:flex-row ">
           <FooterLogo />
           <div className="flex flex-col gap-[20px] sm:gap-2.5">

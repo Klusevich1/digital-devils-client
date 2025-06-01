@@ -13,6 +13,9 @@ import OurTeamBlock from "@/components/OurTeamBlock";
 import BasicLayout from "@/layouts/BasicLayout";
 import SEO, { ListItem } from "@/components/SEO";
 import TextSeoBlock from "@/components/TextSeoBlock";
+import QuizBlock from "@/components/QuizBlock";
+import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
+import Image from "next/image";
 
 const Home: React.FC = () => {
   // const [articles, setArticles] = useState<Article[]>([]);
@@ -98,7 +101,7 @@ const Home: React.FC = () => {
     {
       title: "Какой срок создания нового сайта с нуля?",
       description: (
-        <p className="text-[18px] ">
+        <p>
           Срок изготовления несложного сайта по готовым шаблонам - от 2 дней.
           Этого времени достаточно для создания одностраничной продающей
           визитки, чтобы уже через 10-15 дней после публикации в интернете
@@ -112,11 +115,11 @@ const Home: React.FC = () => {
       title: "Кто будет работать над разработкой моего web – сайта?",
       description: (
         <>
-          <p className="text-[18px]">
+          <p>
             У нас трудится команда профессионалов, и каждый выполняет свои
             задачи:
           </p>
-          <ul className="text-[18px]">
+          <ul>
             <li>- Аккаунт-менеджер, выясняет цели и ожидания от сайта</li>
             <li>
               - SEO - специалист отвечает за оптимизацию, текстовое наполнение,
@@ -138,7 +141,7 @@ const Home: React.FC = () => {
       title:
         "Можете ли вы помочь если нет технического задания на создание сайта?",
       description: (
-        <p className="text-[18px] ">
+        <p>
           Мы предоставляем помощь в разработке ТЗ, включая сбор требований,
           формулирование спецификаций проекта.
         </p>
@@ -148,14 +151,14 @@ const Home: React.FC = () => {
       title: "Сколько стоит сделать сайт в Беларуси?",
       description: (
         <>
-          <p className="text-[18px] ">
+          <p>
             Единой цены на разработку веб-сайтов не существует. При расчете
             итоговой стоимости, мы учитываем множество факторов: сфера
             деятельности компании или предприятия, используемые платформы,
             сложность дизайна, техподдержки и дальнейшего обслуживания.
           </p>
           <br />
-          <p className="text-[18px] ">
+          <p>
             Напишите или позвоните нам, чтобы обсудить с менеджером варианты
             реализации вашего проекта под конкретные задачи и потребности
             бизнеса. Ориентируясь на полученную информации, мы сможем
@@ -224,7 +227,7 @@ const Home: React.FC = () => {
     {
       title: "Проводим тестирование",
       text: [
-        'Разработка сайтов выполняется с обязательным тестированием качества и удобства их интерфейсов, функциональности на каждой стадии работы.',
+        "Разработка сайтов выполняется с обязательным тестированием качества и удобства их интерфейсов, функциональности на каждой стадии работы.",
         "Готовый продукт проверяется более чем на 69 ключевых показателей. По результатам оценки составляются комплексные отчеты.",
       ],
     },
@@ -250,6 +253,17 @@ const Home: React.FC = () => {
     },
   ];
 
+  const listOptions = [
+    "Профессионально и творчески подходим к решению поставленных задач.",
+    "Знаем, как повысить вовлеченность и лояльность целевой аудитории.",
+    "Великолепно разбираемся в программировании, проектировании, веб-дизайне, компьютерной графике, SEO.",
+    "Не боимся трудностей, постоянно ставим новые амбициозные цели, совершенствуемся сами и совершенствуем наши рабочие процессы.",
+    "На отлично делаем свою работу и в каждый проект вкладываем чуточку больше, чем обещали.",
+    "Стремимся приносить пользу клиентам и гибко реагируем на замечания.",
+    "Готовы нести финансовую ответственность за несоблюдение сроков.",
+    "Стремимся к выстраиванию взаимовыгодных и долгосрочных отношений с предпринимателями и компаниями со всей страны.",
+  ];
+
   return (
     <>
       <SEO
@@ -261,13 +275,143 @@ const Home: React.FC = () => {
       />
       <BasicLayout>
         <MainBlockFirst />
-        <MainBlockSecond />
+        <QuizBlock />
+        <StandardMarginsLayout
+          styles="bg-black text-white mt-[50px] sm:mt-[60px] py-[50px] md:py-[60px]"
+          children={
+            <div className="flex lg:flex-row flex-col justify-between lg:gap-[40px] gap-[20px]">
+              <h2 className="lg:max-w-[753px] text-[28px] lg:text-[40px] font-bold">
+                Digital Devils - слаженная команда профессионалов, готовых
+                воплотить в реальность ваши идеи
+              </h2>
+              <p className="text-[16px] font-medium lg:max-w-[527px]">
+                Индивидуально подходим к созданию сайтов и работе над каждым
+                проектом. Внедряем актуальные IT решения, уделяем максимум
+                внимания дизайну и юзабилити. Грамотная SEO оптимизация уже на
+                этапе разработки.
+              </p>
+            </div>
+          }
+        />
+        {/* <MainBlockSecond /> */}
         <MainBlockThird />
         <MainBlockFourth />
         <MainBlockFive title={"Кейсы"} />
         <TextSeoBlock />
-        <OurTeamBlock />
+        {/* <OurTeamBlock /> */}
         <CommentBlock />
+        <StandardMarginsLayout
+          styles={`bg-white text-black py-[50px] md:py-[60px]`}
+          children={
+            <div className="flex flex-col">
+              <h2 className="lg:pb-[30px] mb-[30px] lg:border-b-[1px] border-black font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Наша команда
+              </h2>
+              <div className="flex flex-col lg:flex-row w-full justify-between">
+                <div className="w-full lg:max-w-[640px]">
+                  <p className="text-[16px] font-medium mb-[20px]">
+                    Связь с нами
+                  </p>
+                  <div className="flex flex-col gap-2">
+                    <p>
+                      <a
+                        target="_blank"
+                        rel="nofollow"
+                        href="https://t.me/devilsmanager"
+                        className="text-[22px] font-medium underline decoration-1"
+                      >
+                        Telegram
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        target="_blank"
+                        rel="nofollow"
+                        href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
+                        className="text-[22px] font-medium underline decoration-1"
+                      >
+                        Instagram
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        href="mailto:info@digitaldevils.by"
+                        className="text-[22px] font-medium"
+                      >
+                        info@digitaldevils.by
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="border-t-[1px] lg:border-t-[0] border-l-0 lg:border-l-[1px] border-black mt-[20px] lg:mt-[0] pt-[20px] lg:pt-[0] lg:ps-[20px] w-full lg:max-w-[660px]">
+                  <p className="text-[16px] font-medium mb-[20px]">Наш опыт</p>
+                  <div className="flex flex-col gap-[20px]">
+                    <p className="text-[24px] font-bold">
+                      Анализируем, проектируем, разрабатываем сайты, сервисы и
+                      мобильные приложения для бизнеса под любой бюджет
+                    </p>
+                    <div className="flex flex-row items-center sm:justify-end justify-start gap-[40px]">
+                      <div className="flex flex-row gap-1 items-center">
+                        <Image
+                          src="/resources/avatar_1.png"
+                          width={72}
+                          height={72}
+                          alt="Работник 1"
+                        />
+                        <Image
+                          src="/resources/avatar_2.png"
+                          width={72}
+                          height={72}
+                          alt="Работник 2"
+                        />
+                        <Image
+                          src="/resources/avatar_3.png"
+                          width={72}
+                          height={72}
+                          alt="Работник 3"
+                        />
+                        <Image
+                          src="/resources/avatar_4.png"
+                          width={72}
+                          height={72}
+                          alt="Работник 4"
+                          className="sm:block hidden"
+                        />
+                      </div>
+                      <p className="text-[24px] font-bold">+ 10</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        />
+        <StandardMarginsLayout
+          styles="bg-black text-white md:py-[60px] py-[50px]"
+          children={
+            <div className="flex lg:flex-row flex-col justify-between lg:gap-[40px] gap-[30px]">
+              <div className="lg:max-w-[640px] w-fit text-[22px] font-bold">
+                Digital Devils - это ваш надежный партнер, понимающий
+                потребности онлайн-бизнеса, имеющий опыт успешного
+                взаимодействия с сотнями клиентов и авторскими технологиями
+                создания и продвижения веб-ресурсов любой сложности и
+                функционалом: от простейших пром лендингов и визиток для
+                стартапов до полноценных интернет-магазинов и маркетплейсов
+                мирового масштаба.
+              </div>
+              <ul className="lg:max-w-[640px] flex flex-col">
+                {listOptions.map((opt, idx) => (
+                  <li
+                    key={idx}
+                    className={`${idx === 0 ? 'pb-4' : 'py-4'} text-[16px] font-medium border-b-[1px] border-white`}
+                  >
+                    {opt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          }
+        />
         <OurApproachBlock title="Наш подход к разработке" listData={listData} />
         {/* {loading ? (
           <p className="text-[24px] font-medium mt-[30px] custom_container max-w-[1440px] mx-auto animate-bounce">

@@ -24,7 +24,7 @@ const ServiceBlockFourth: React.FC = () => {
     ];
 
     return (
-        <StandardMarginsLayout styles="mt-[50px] sm:mt-[60px] py-[50px] bg-black text-white" children={
+        <StandardMarginsLayout styles="mt-[50px] md:mt-[60px] md:py-[60px] py-[50px] bg-black text-white" children={
             <>
                 <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] max-w-[1100px] ">Работаем со всеми современными
                     технологиями</h2>

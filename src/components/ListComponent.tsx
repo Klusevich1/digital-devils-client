@@ -41,7 +41,7 @@ const ListComponent: React.FC<ListComponentProps> = ({ data }) => {
   return (
     <div className="w-full">
       {data.map((item, index) => (
-        <div key={index} className="border-b py-[20px] flex flex-col">
+        <div key={index} className={`border-b border-black ${index === 0 ? 'pb-[20px]' : 'py-[20px]'} flex flex-col`}>
           {/* Mobile version */}
           <div className="lg:hidden flex items-center">
             <button

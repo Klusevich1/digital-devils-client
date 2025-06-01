@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import SmallMainBlockCard from "@/components/SmallMainBlockCard";
 import { GoArrowUpRight } from "react-icons/go";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
+import SmoothScrollLink from "./SmoothScollLink";
 
 const MainBlockFirst: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -28,7 +29,7 @@ const MainBlockFirst: React.FC = () => {
   return (
     <>
       <StandardMarginsLayout
-        styles="mt-[20px] sm:mt-[30px] mb-[60px]"
+        styles="mt-[20px] sm:mt-[30px] sm:mb-[60px] mb-[50px]"
         children={
           <>
             <h1 className="font-bold text-[40px] md:text-[50px] lg:text-[75px] xl:text-[90px]">
@@ -36,22 +37,20 @@ const MainBlockFirst: React.FC = () => {
               <span className="text-blue_main ">современных сайтов</span> любой
               сложности
             </h1>
-            <p className="text-[24px] mt-[30px]">
-              Реализуем проекты под ключ с учетом потребностей и пожеланий
-              клиента
+            <p className="text-[24px] font-bold mt-[20px]">
+              Скидка 10% на разработку при заказе в течение 14 дней
             </p>
-            <a
-              className="order-3 flex transition-all mt-[30px] mb-[40px]"
-              href="/application"
-              rel="nofollow"
+            <SmoothScrollLink
+              className="order-3 flex transition-all mt-[20px] mb-[40px]"
+              href="#quiz"
             >
               <div className="lg:w-[319px] w-[301px] lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
-                Бесплатная консультация
+                Получить скидку
               </div>
               <div className="ms-[-10px] lg:text-[28px] text-[24px] lg:size-[60px] size-[50px] flex justify-center items-center  bg-blue_main rounded-full text-white">
                 <GoArrowUpRight />
               </div>
-            </a>
+            </SmoothScrollLink>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] justify-between lg:flex">
               <SmallMainBlockCard
                 title="10 из 10"
@@ -72,6 +71,7 @@ const MainBlockFirst: React.FC = () => {
                 title="ТОП 1"
                 description="сайты нашей разработки любят поисковые системы"
                 needAnimation={false}
+                margin=""
               />
             </div>
           </>

@@ -421,7 +421,7 @@ const Footer: React.FC = () => {
             </button>
           </form>
         </div>
-        <div className="w-full max-w-full flex flex-col sm:py-[60px] py-[40px] sm:gap-[60px] gap-[40px] custom_container">
+        <div className="w-full max-w-full flex flex-col md:py-[60px] py-[50px] sm:gap-[60px] gap-[40px] custom_container">
           <div className="flex justify-between gap-[20px] flex-wrap flex-col sm:flex-row ">
             <FooterLogo />
             <div className="flex flex-col gap-[20px] sm:gap-2.5">

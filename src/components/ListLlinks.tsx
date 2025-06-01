@@ -22,22 +22,22 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`lg:grid flex flex-col lg:grid-cols-[3fr,5fr] border-b py-4 ${
+          className={`lg:grid flex flex-col lg:grid-cols-[3fr,7fr] border-b border-black_80 py-4 ${
             index === 0 ? "border-t" : ""
           }`}
         >
-          <h3 className="max-w-fit mb-[10px] w-full text-[24px] md:text-[32px] font-bold">
+          <h3 className="max-w-[300px] mb-[10px] w-full text-[24px] md:text-[28px] font-bold">
             {item.title}
           </h3>
 
-          <div className="max-w-[800px] w-full">
-            <p className="text-[18px] font-medium" dangerouslySetInnerHTML={{__html: item.description}}>
+          <div className="w-full">
+            <p className="text-[16px] font-medium" dangerouslySetInnerHTML={{__html: item.description}}>
             </p>
             <div className="flex mt-2 flex-wrap">
               {item.id === 1 || item.id === 2 || item.id === 3 || item.id === 4 || item.id === 5 || item.id === 6
                 ? item.badges.map((badge, idx) => (
                     <a key={idx} href={badge.link}>
-                      <p className="mb-[15px] me-[15px] border px-[20px] py-[10px] text-[18px] font-medium rounded-full text-black border-blue_main hover:bg-blue_main hover:text-white transition-all duration-100">
+                      <p className="mb-[15px] me-[15px] border px-[20px] py-[10px] text-[16px] font-medium rounded-full text-black border-blue_main hover:bg-blue_main hover:text-white transition-all duration-100">
                         {badge.name}
                       </p>
                     </a>
@@ -45,7 +45,7 @@ const ListLinks: React.FC<MainBlockThirdProps> = ({ items }) => {
                 : item.badges.map((badge, idx) => (
                     <p
                       key={idx}
-                      className="mb-[15px] me-[15px] border px-[20px] py-[10px] text-[18px] font-medium rounded-full text-black border-blue_main"
+                      className="mb-[15px] me-[15px] border px-[20px] py-[10px] text-[16px] font-medium rounded-full text-black border-blue_main"
                     >
                       {badge.name}
                     </p>

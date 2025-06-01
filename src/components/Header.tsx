@@ -145,7 +145,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
             theme === "dark" ? "bg-black" : "bg-white"
           } duration-300 ${
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
-          } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-end items-center hidden md:flex`}
+          } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-between items-center hidden md:flex`}
         >
           {/* <div
             style={{
@@ -167,59 +167,70 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               src="https://yandex.ru/maps-reviews-widget/192647371670?size=s"
             ></iframe>
           </div> */}
-          <a
-            target="_blank"
-            rel="nofollow"
-            href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
-            className="flex items-center outline-none"
-          >
+          <div className="flex flex-row gap-2">
             <Image
-              src="/resources/inst.svg"
-              width={28}
-              height={28}
-              className="size-[28px]"
-              alt="Instagram Logo"
-              priority={true}
+              src={"/resources/arrow-right.svg"}
+              width={20}
+              height={20}
+              alt="Arrow"
             />
-            <span
-              className={`ms-[5px] ${
-                theme === "dark" ? "text-white" : "text-black"
-              }`}
+            <p className="text-[16px] font-medium">Игуменский тракт 20</p>
+          </div>
+          <div className="flex flex-row items-center">
+            <a
+              target="_blank"
+              rel="nofollow"
+              href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
+              className="flex items-center outline-none"
             >
-              instagram
-            </span>
-          </a>
-          <a
-            target="_blank"
-            rel="nofollow"
-            href="https://t.me/devilsmanager"
-            className="flex items-center ms-[20px] outline-none"
-          >
-            <Image
-              src="/resources/tg.svg"
-              width={28}
-              height={28}
-              className="size-[28px]"
-              alt="Telegram Logo"
-              priority={true}
-            />
-            <span
-              className={`ms-[5px] ${
-                theme === "dark" ? "text-white" : "text-black"
-              }`}
+              <Image
+                src="/resources/inst.svg"
+                width={28}
+                height={28}
+                className="size-[28px]"
+                alt="Instagram Logo"
+                priority={true}
+              />
+              <span
+                className={`ms-[5px] ${
+                  theme === "dark" ? "text-white" : "text-black"
+                }`}
+              >
+                instagram
+              </span>
+            </a>
+            <a
+              target="_blank"
+              rel="nofollow"
+              href="https://t.me/devilsmanager"
+              className="flex items-center ms-[20px] outline-none"
             >
-              telegram
-            </span>
-          </a>
-          <a href="tel:+375296342190">
-            <span
-              className={`ms-[60px] text-[16px] ${
-                theme === "dark" ? "text-white" : "text-black"
-              }`}
-            >
-              +375 29 634 21 90
-            </span>
-          </a>
+              <Image
+                src="/resources/tg.svg"
+                width={28}
+                height={28}
+                className="size-[28px]"
+                alt="Telegram Logo"
+                priority={true}
+              />
+              <span
+                className={`ms-[5px] ${
+                  theme === "dark" ? "text-white" : "text-black"
+                }`}
+              >
+                telegram
+              </span>
+            </a>
+            <a href="tel:+375296342190">
+              <span
+                className={`ms-[60px] text-[16px] ${
+                  theme === "dark" ? "text-white" : "text-black"
+                }`}
+              >
+                +375 29 634 21 90
+              </span>
+            </a>
+          </div>
         </div>
         <div
           className={`shadow-md ${
@@ -234,7 +245,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               : "translate-y-0"
           }`}
         >
-          <div className="services-dropdown mx-auto max-w-[1440px] w-full flex items-center justify-between ">
+          <div className="services-dropdown custom_container max-w-[1440px] mx-auto w-full flex items-center justify-between ">
             <HeaderLogo theme={theme ? theme : ""} />
             <nav className="hidden xlg:flex space-x-8 items-center">
               <div

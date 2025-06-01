@@ -9,6 +9,17 @@ const services = [
     title: "Веб-разработка",
     image: "Services_new_1.png",
     description_title: "Работаем со всеми новыми технологиями!",
+    badges: [
+      { name: "Корпоративные сайты", link: "/corporate-website" },
+      { name: "Интернет-магазины", link: "/online-store" },
+      { name: "Landing page", link: "/landing" },
+      { name: "B2B сайты", link: "/b2b" },
+      { name: "Портал", link: "/portal" },
+      { name: "Сайт-визитка", link: "/card-website" },
+      { name: "Сайт-каталог", link: "/website-catalog" },
+      { name: "Информационный сайт", link: "/information-site" },
+      { name: "Маркетплейс", link: "/marketplace" },
+    ],
     description:
       "Создаем профессиональные веб-сайты, идеально соответствующие задачам вашего бизнеса. Мы применяем передовые технологии и актуальные стандарты, чтобы обеспечить надежность, безопасность и масштабируемость вашего онлайн-ресурса. Наши сайты сочетают стильный дизайн с высокой функциональностью и адаптируются под любое устройство, чтобы обеспечить комфортный пользовательский опыт.",
   },
@@ -17,6 +28,15 @@ const services = [
     title: "Мобильные приложения",
     image: "Services_new_2.png",
     description_title: "Воплотим дизайн приложения в реальность!",
+    badges: [
+      { name: "Разработка мобильных приложений", link: "/mob-apps" },
+      { name: "IOS разработка", link: "/mob-ios" },
+      { name: "Android разработка", link: "/mob-android" },
+      { name: "ASO продвижение", link: "/mob-aso" },
+      { name: "PWA разработка", link: "/mob-pwa" },
+      { name: "Дизайн мобильных приложений", link: "/mob-design" },
+      { name: "Разработка веб-приложений", link: "/mob-web" },
+    ],
     description:
       "Стильное, оптимальное и безопасное приложение, которое мы сделаем для ваших клиентов, станет для них полезной привычкой, а для вас - источником постоянного роста доходов. Оно будет надёжным местом для хранения конфиденциальной информации, комплексным инструментом рекламы и маркетинга.",
   },
@@ -25,6 +45,14 @@ const services = [
     title: "Дизайн",
     image: "Services_new_3.png",
     description_title: "Открыты для креативных проектов!",
+    badges: [
+      { name: "Разработка дизайна", link: "/design" },
+      { name: "Разработка логотипа", link: "/design-logo" },
+      { name: "Редизайн", link: "/redesign" },
+      { name: "Разработка фирменного стиля", link: "/design-style" },
+      { name: "Графический дизайн", link: "/graph-design" },
+      { name: "Разработка брендбука", link: "/brandbook" },
+    ],
     description:
       "Элегантное внешнее оформление наших продуктов мотивирует пользователя купить товар или услугу. Бренд становится максимально привлекательным. Вы отрываетесь от конкурентов, повышаете уровень своего делового рейтинга и притягиваете больше внимания клиентов.",
   },
@@ -33,6 +61,7 @@ const services = [
     title: "Motion-дизайн",
     image: "freecompressvid.mp4",
     description_title: "Создаем визуальную историю!",
+    badges: [{ name: "Motion-дизайн", link: "/motion-design" }],
     description:
       "Мы оживляем ваш бренд с помощью захватывающих визуальных историй, которые выделяются и запоминаются. Наши моушен-анимации — это искусство сочетания динамичной графики, выразительного звука и убедительных текстов. Такой контент не просто привлекает внимание, но и передает вашу идею максимально точно. Каждый проект мы создаем с учетом ваших задач и целей, превращая идеи в уникальные видеорешения, которые усиливают влияние вашего бренда.",
   },
@@ -41,6 +70,15 @@ const services = [
     title: "SEO",
     image: "Services_new_5.png",
     description_title: "Поможем занять первые позиции в поиске!",
+    badges: [
+      { name: "Продвижение сайтов", link: "/seo" },
+      { name: "Продвижение сайтов в ТОП", link: "/seo-top" },
+      { name: "Продвижение в Яндекс", link: "/seo-yandex" },
+      { name: "Продвижение интернет-магазина", link: "/seo-store" },
+      { name: "SEO аудит", link: "/seo-audit" },
+      { name: "Продвижение в Google", link: "/seo-google" },
+      { name: "Продвижение молодых сайтов", link: "/seo-young" },
+    ],
     description:
       "Наши сайты созданы так, чтобы быть фаворитами поисковых систем. Мы обеспечиваем полный контроль над мета-тегами, автоматическую генерацию robots.txt и sitemap.xml, исключаем дубли страниц и предлагаем удобную настройку страницы 404. Это гарантирует эффективную индексацию и улучшает видимость вашего ресурса в поисковых результатах.",
   },
@@ -94,10 +132,10 @@ const ServicesBlockSecond: React.FC = () => {
 
   return (
     <StandardMarginsLayout
-      styles="h-auto mt-[50px] sm:mt-[60px] text-white bg-black sm:py-[60px] py-[50px] overflow-hidden transition-all duration-300"
+      styles="h-auto mt-[50px] sm:mt-[60px] text-white bg-black md:py-[60px] py-[50px] overflow-hidden transition-all duration-300"
       children={
         <>
-          <h2 className="w-full font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">
+          <h2 className="lg:hidden block w-full font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">
             Услуги
           </h2>
 
@@ -136,9 +174,18 @@ const ServicesBlockSecond: React.FC = () => {
                     unoptimized
                   />
                 )}
-                <h3 className="w-full text-custom_yellow text-[18px] font-bold mb-[10px]">
+                {/* <h3 className="w-full text-custom_yellow text-[18px] font-bold mb-[10px]">
                   {service.description_title}
-                </h3>
+                </h3> */}
+                <div className="flex mt-2 flex-wrap justify-start w-full">
+                  {service.badges.map((badge, idx) => (
+                    <a key={idx} href={badge.link}>
+                      <p className="mb-[15px] me-[15px] border px-[20px] py-[10px] text-[16px] font-medium rounded-full text-white border-white hover:bg-blue_main hover:text-white transition-all duration-100">
+                        {badge.name}
+                      </p>
+                    </a>
+                  ))}
+                </div>
                 <h2 className="text-[24px] font-bold text-white w-full mb-[10px]">
                   {service.title}
                 </h2>
@@ -155,6 +202,9 @@ const ServicesBlockSecond: React.FC = () => {
           >
             {/* Левая колонка с заголовками */}
             <div className="lg:w-[40%]">
+              <h2 className="w-full font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[30px]">
+                Услуги
+              </h2>
               <ul className="flex flex-col relative">
                 {services.map((service) => (
                   <li
@@ -232,9 +282,18 @@ const ServicesBlockSecond: React.FC = () => {
                       unoptimized
                     />
                   )}
-                  <h2 className="w-full text-custom_yellow text-[22px] font-medium mb-[10px]">
+                  {/* <h2 className="w-full text-custom_yellow text-[22px] font-medium mb-[10px]">
                     {selectedService.description_title}
-                  </h2>
+                  </h2> */}
+                  <div className="flex mt-2 flex-wrap w-full justify-start mb-[10px]">
+                    {selectedService.badges.map((badge, idx) => (
+                      <a key={idx} href={badge.link}>
+                        <p className="mb-[15px] me-[15px] border px-[20px] py-[10px] text-[16px] font-medium rounded-full text-white border-white hover:bg-blue_main hover:text-white transition-all duration-100">
+                          {badge.name}
+                        </p>
+                      </a>
+                    ))}
+                  </div>
                   <p className="font-medium text-gray-300">
                     {selectedService.description}
                   </p>

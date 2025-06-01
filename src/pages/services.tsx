@@ -102,7 +102,7 @@ const Services = () => {
         <ServicesBlockSecond />
         <OurApproachBlock title="Наш подход" listData={listData}/>
         <ServiceBlockFourth />
-        <MainBlockFive />
+        <MainBlockFive margin="py-[50px] md:py-[60px]"/>
       </BasicLayout>
     </>
   );

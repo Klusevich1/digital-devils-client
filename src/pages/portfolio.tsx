@@ -108,7 +108,7 @@ const Portfolio = () => {
       <BasicLayout>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
         <StandardMarginsLayout
-          styles="sm:pb-[60px] pb-[50px]"
+          styles="md:pb-[60px] pb-[50px]"
           children={<Tabs title="Портфолио" arr={tabs} />}
         />
       </BasicLayout>
