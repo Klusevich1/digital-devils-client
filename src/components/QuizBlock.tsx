@@ -109,7 +109,9 @@ const QuizBlock = () => {
   };
 
   const onSubmit = async (data: FormData) => {
+    if (loading || isDataSend) return;
     setLoading(true);
+
     const payload = {
       name: data.name,
       phone: data.phone,
@@ -134,9 +136,15 @@ const QuizBlock = () => {
         throw new Error(`Ошибка: ${response.statusText}`);
       } else {
         setCongratulations(true);
+        if (typeof window !== "undefined") {
+          if (!window.__formSubmitPushed) {
+            window.__formSubmitPushed = true;
+            window.dataLayer?.push({ event: "form_submit" });
+          }
 
-        if (typeof window !== "undefined" && typeof window.ym === "function") {
-          window.ym(99204054, "reachGoal", "form");
+          if (typeof window.ym === "function") {
+            window.ym(99204054, "reachGoal", "form");
+          }
         }
       }
 

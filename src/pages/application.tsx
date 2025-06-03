@@ -60,7 +60,8 @@ const Application = () => {
     reset,
     setError,
     clearErrors,
-    formState: { errors },
+    trigger,
+    formState: { errors, isValid, isSubmitted },
     watch,
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -95,7 +96,15 @@ const Application = () => {
     setSelectedFile(null); // Удаляем файл из состояния
   };
 
+  const handleClickSubmit = async () => {
+    const isValidForm = await trigger();
+    if (isValidForm && agreePolicy) {
+      handleSubmit(onSubmit)();
+    }
+  };
+
   const onSubmit = async (data: FormData) => {
+    if (loading) return;
     setLoading(true);
 
     const formData = new FormData();
@@ -130,8 +139,15 @@ const Application = () => {
         throw new Error(`Ошибка: ${response.statusText}`);
       } else {
         setCongratulations(true);
-        if (typeof window !== "undefined" && typeof window.ym === "function") {
-          window.ym(99204054, "reachGoal", "form");
+        if (typeof window !== "undefined") {
+          if (!window.__formSubmitPushed) {
+            window.__formSubmitPushed = true;
+            window.dataLayer?.push({ event: "form_submit" });
+          }
+
+          if (typeof window.ym === "function") {
+            window.ym(99204054, "reachGoal", "form");
+          }
         }
       }
 
@@ -211,7 +227,7 @@ const Application = () => {
 
                 <form
                   className="flex flex-col md:gap-[30px] gap-[20px] font-medium min-w-[240px] lg:w-[641px] max-w-none w-full md:max-w-full"
-                  onSubmit={handleSubmit(onSubmit)}
+                  onSubmit={(e) => e.preventDefault()}
                 >
                   <div className="md:grid flex flex-col md:grid-cols-2 gap-4">
                     <div className="relative lg:max-w-[300px] w-full">
@@ -460,11 +476,14 @@ const Application = () => {
                     </div>
                   </div>
                   <button
-                    type="submit"
-                    className={`submit-button ${
-                      loading ? "loading" : ""
-                    } ${!agreeForMailing || !agreePolicy ? 'bg-gray-300' : 'bg-blue_main'} mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg  h-fit min-h-[50px] rounded-full text-white`}
-                    disabled={!agreeForMailing || !agreePolicy}
+                    type="button"
+                    onClick={handleClickSubmit}
+                    className={`submit-button ${loading ? "loading" : ""} ${
+                      !agreePolicy || !agreeForMailing
+                        ? "bg-gray-300 cursor-not-allowed"
+                        : "bg-blue_main"
+                    } mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg  h-fit min-h-[50px] rounded-full text-white`}
+                    disabled={loading}
                   >
                     {loading ? "Отправка..." : "Обсудить проект"}
                   </button>

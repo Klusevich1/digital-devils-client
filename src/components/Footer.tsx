@@ -87,7 +87,9 @@ const Footer: React.FC = () => {
   };
 
   const onSubmit = async (data: FormData) => {
+    if (loading) return;
     setLoading(true);
+    
     const formData = new FormData();
 
     formData.append("name", data.name || "");
@@ -122,8 +124,15 @@ const Footer: React.FC = () => {
       } else {
         setCongratulations(true);
 
-        if (typeof window !== "undefined" && typeof window.ym === "function") {
-          window.ym(99204054, "reachGoal", "form");
+        if (typeof window !== "undefined") {
+          if (!window.__formSubmitPushed) {
+            window.__formSubmitPushed = true;
+            window.dataLayer?.push({ event: "form_submit" });
+          }
+
+          if (typeof window.ym === "function") {
+            window.ym(99204054, "reachGoal", "form");
+          }
         }
       }
 
