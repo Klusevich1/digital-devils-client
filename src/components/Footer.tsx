@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
   const onSubmit = async (data: FormData) => {
     if (loading) return;
     setLoading(true);
-    
+
     const formData = new FormData();
 
     formData.append("name", data.name || "");
@@ -149,6 +149,9 @@ const Footer: React.FC = () => {
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
       setCongratulations(false);
+      if (typeof window !== "undefined") {
+        window.__formSubmitPushed = false;
+      }
     } finally {
       setIsDataSend(true);
       setLoading(false);

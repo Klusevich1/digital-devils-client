@@ -154,10 +154,12 @@ const QuizBlock = () => {
         phone: "",
       });
       setValue("phone", "");
-      setCongratulations(true);
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
       setCongratulations(false);
+      if (typeof window !== "undefined") {
+        window.__formSubmitPushed = false;
+      }
     } finally {
       setIsDataSend(true);
       setLoading(false);

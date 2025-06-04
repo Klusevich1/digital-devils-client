@@ -163,6 +163,9 @@ const Application = () => {
     } catch (error) {
       console.error("Ошибка при отправке данных:", error);
       setCongratulations(false);
+      if (typeof window !== "undefined") {
+        window.__formSubmitPushed = false;
+      }
     } finally {
       setTimeout(() => {
         setIsDataSend(true);
