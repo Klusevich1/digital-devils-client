@@ -543,6 +543,7 @@ const Footer: React.FC = () => {
         <SuccessSubmitModal
           congratulations={congratulations}
           isDataSend={isDataSend}
+          setIsDataSend={setIsDataSend}
         />
       )}
     </>

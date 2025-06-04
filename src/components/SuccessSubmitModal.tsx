@@ -6,17 +6,26 @@ import { RxCross2 } from "react-icons/rx";
 interface SuccessSubmitModalProps {
   congratulations: boolean;
   isDataSend: boolean;
+  setIsDataSend: (isDataSend: boolean) => void;
+  setAnswers?: (answers: { [key: number]: string }) => void;
+  setActiveQuestion?: (activeQuestion: number) => void
 }
 
 const SuccessSubmitModal: React.FC<SuccessSubmitModalProps> = ({
   congratulations,
   isDataSend,
+  setIsDataSend,
+  setAnswers,
+  setActiveQuestion
 }) => {
   const router = useRouter();
 
   const closeModal = () => {
     document.body.style.overflow = "auto";
-    router.reload();
+    setIsDataSend(false);
+    setAnswers && setAnswers({})
+    setActiveQuestion && setActiveQuestion(1)
+    // router.reload();
   };
 
   return (

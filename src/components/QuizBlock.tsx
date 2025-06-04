@@ -363,6 +363,9 @@ const QuizBlock = () => {
         <SuccessSubmitModal
           congratulations={congratulations}
           isDataSend={isDataSend}
+          setIsDataSend={setIsDataSend}
+          setAnswers={setAnswers}
+          setActiveQuestion={setActiveQuestion}
         />
       )}
     </>

@@ -493,6 +493,7 @@ const Application = () => {
                 <SuccessSubmitModal
                   congratulations={congratulations}
                   isDataSend={isDataSend}
+                  setIsDataSend={setIsDataSend}
                 />
               )}
             </>
