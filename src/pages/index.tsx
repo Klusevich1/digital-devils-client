@@ -350,35 +350,45 @@ const Home: React.FC = () => {
                       Анализируем, проектируем, разрабатываем сайты, сервисы и
                       мобильные приложения для бизнеса под любой бюджет
                     </p>
-                    <div className="flex flex-row items-center sm:justify-end justify-start gap-[40px]">
+                    <div className="flex flex-row items-center sm:justify-end justify-start sm:gap-[40px] gap-[25px]">
                       <div className="flex flex-row gap-1 items-center">
+                        <Image
+                          src="/resources/avatar_4.png"
+                          width={72}
+                          height={72}
+                          alt="Работник 4"
+                          className="sm:w-[72px] w-[62px]"
+                          />
                         <Image
                           src="/resources/avatar_1.png"
                           width={72}
                           height={72}
                           alt="Работник 1"
+                          className="sm:block hidden"
                         />
                         <Image
                           src="/resources/avatar_2.png"
                           width={72}
                           height={72}
                           alt="Работник 2"
-                        />
+                          className="sm:w-[72px] w-[62px]"
+                          />
                         <Image
                           src="/resources/avatar_3.png"
                           width={72}
                           height={72}
                           alt="Работник 3"
-                        />
+                          className="sm:w-[72px] w-[62px]"
+                          />
                         <Image
-                          src="/resources/avatar_4.png"
+                          src="/resources/avatar_5.png"
                           width={72}
                           height={72}
                           alt="Работник 4"
-                          className="sm:block hidden"
+                          className="sm:w-[72px] w-[62px]"
                         />
                       </div>
-                      <p className="text-[24px] font-bold">+ 10</p>
+                      <p className="text-[24px] font-bold">+ 11</p>
                     </div>
                   </div>
                 </div>
@@ -403,7 +413,9 @@ const Home: React.FC = () => {
                 {listOptions.map((opt, idx) => (
                   <li
                     key={idx}
-                    className={`${idx === 0 ? 'pb-4' : 'py-4'} text-[16px] font-medium border-b-[1px] border-white`}
+                    className={`${
+                      idx === 0 ? "pb-4" : "py-4"
+                    } text-[16px] font-medium border-b-[1px] border-white`}
                   >
                     {opt}
                   </li>
