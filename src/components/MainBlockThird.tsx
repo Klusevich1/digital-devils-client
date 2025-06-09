@@ -10,14 +10,14 @@ const MainBlockThird: React.FC = () => {
       description:
         "Web-сайты для частных лиц и крупных компаний. Создаем уникальные решения: интернет-магазины, Landing Page, сайты-визитки, корпоративные порталы, которые сделают бизнес прибыльным и эффективным. Никаких шаблонов, только индивидуальные решения, на 100% отвечающие вашим запросам.",
       badges: [
-        { name: "Корпоративные сайты", link: "/corporate-website" },
+        { name: "B2B сайты", link: "/b2b" },
         { name: "Интернет-магазины", link: "/online-store" },
         { name: "Landing page", link: "/landing" },
-        { name: "B2B сайты", link: "/b2b" },
-        { name: "Портал", link: "/portal" },
         { name: "Сайт-визитка", link: "/card-website" },
-        { name: "Сайт-каталог", link: "/website-catalog" },
+        { name: "Корпоративные сайты", link: "/corporate-website" },
+        { name: "Портал", link: "/portal" },
         { name: "Информационный сайт", link: "/information-site" },
+        { name: "Сайт-каталог", link: "/website-catalog" },
         { name: "Маркетплейс", link: "/marketplace" },
       ],
     },

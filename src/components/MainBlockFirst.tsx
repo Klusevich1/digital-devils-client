@@ -52,7 +52,7 @@ const MainBlockFirst: React.FC = () => {
                 {/* <div className="lg:w-[319px] w-[301px] lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
                 Получить скидку
               </div> */}
-                <div className="relative w-[140px] h-[140px] flex items-center justify-center">
+                <div className="relative w-[150px] h-[150px] flex items-center justify-center">
                   {/* Вращающийся текст */}
                   <svg
                     className="w-full h-full animate-spin-slow"
@@ -66,12 +66,12 @@ const MainBlockFirst: React.FC = () => {
                     </defs>
                     <text
                       fill="#000"
-                      fontSize="18"
+                      fontSize="14"
                       fontFamily="sans-serif"
                       letterSpacing="1px"
                     >
                       <textPath xlinkHref="#circlePath" startOffset="0%">
-                        хочу скидку хочу скидку хочу скидку
+                        ХОЧУ СКИДКУ ХОЧУ СКИДКУ ХОЧУ СКИДКУ
                       </textPath>
                     </text>
                   </svg>
