@@ -145,7 +145,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
             theme === "dark" ? "bg-black" : "bg-white"
           } duration-300 ${
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
-          } mx-auto max-w-[1440px] w-full py-[10px] px-[61px] justify-between items-center hidden md:flex`}
+          } mx-auto max-w-[1440px] w-full py-[10px] px-[45px] 2xl:px-[60px] justify-between items-center hidden md:flex`}
         >
           {/* <div
             style={{
@@ -235,7 +235,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
         <div
           className={`shadow-md ${
             theme === "dark" ? "bg-black" : "bg-white"
-          } transition-all duration-300 py-[9px] ps-[10px] pe-[20px] md:py-[15px] md:px-[46px] ${
+          } transition-all duration-300 py-[9px] ps-[10px] pe-[20px] md:py-[15px] md:px-[45px] 2xl:px-[60px] ${
             theme === "dark" ? "border-t-black_80" : "border-t-black_10"
           } border-t-[1px] flex items-center justify-between ${
             isSticky && window.innerWidth > 768
@@ -245,7 +245,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               : "translate-y-0"
           }`}
         >
-          <div className="services-dropdown custom_container max-w-[1440px] mx-auto w-full flex items-center justify-between ">
+          <div className="services-dropdown 2xl:max-w-[1320px] max-w-[1350px] mx-auto w-full flex items-center justify-between ">
             <HeaderLogo theme={theme ? theme : ""} />
             <nav className="hidden xlg:flex space-x-8 items-center">
               <div

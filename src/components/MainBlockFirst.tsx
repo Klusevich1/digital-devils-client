@@ -37,20 +37,52 @@ const MainBlockFirst: React.FC = () => {
               <span className="text-blue_main ">современных сайтов</span> любой
               сложности
             </h1>
-            <p className="text-[24px] font-bold mt-[20px]">
-              Скидка 10% на разработку при заказе в течение 14 дней
-            </p>
-            <SmoothScrollLink
-              className="order-3 flex transition-all mt-[20px] mb-[40px]"
-              href="#quiz"
-            >
-              <div className="lg:w-[319px] w-[301px] lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
+            <div className="flex md:flex-row flex-col md:items-center md:gap-9 mb-[10px]">
+              <p className="max-w-[666px] md:text-[24px] text-[18px] font-bold md:mt-0 mt-[20px]">
+                Узнайте стоимость своего будущего сайта <br className="sm:block hidden"/>
+                <span className="border-b-[1px] border-black">
+                  за 60 секунд и забронируйте скидку 10%
+                </span>{" "}
+                на разработку
+              </p>
+              <SmoothScrollLink
+                className="w-fit order-3 flex transition-all"
+                href="#quiz"
+              >
+                {/* <div className="lg:w-[319px] w-[301px] lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
                 Получить скидку
-              </div>
-              <div className="ms-[-10px] lg:text-[28px] text-[24px] lg:size-[60px] size-[50px] flex justify-center items-center  bg-blue_main rounded-full text-white">
-                <GoArrowUpRight />
-              </div>
-            </SmoothScrollLink>
+              </div> */}
+                <div className="relative w-[140px] h-[140px] flex items-center justify-center">
+                  {/* Вращающийся текст */}
+                  <svg
+                    className="w-full h-full animate-spin-slow"
+                    viewBox="0 0 200 200"
+                  >
+                    <defs>
+                      <path
+                        id="circlePath"
+                        d="M100,100 m-55,0 a55,55 0 1,1 110,0 a55,55 0 1,1 -110,0"
+                      />
+                    </defs>
+                    <text
+                      fill="#000"
+                      fontSize="18"
+                      fontFamily="sans-serif"
+                      letterSpacing="1px"
+                    >
+                      <textPath xlinkHref="#circlePath" startOffset="0%">
+                        хочу скидку хочу скидку хочу скидку
+                      </textPath>
+                    </text>
+                  </svg>
+
+                  {/* Кнопка в центре */}
+                  <div className="absolute z-10 w-[50px] h-[50px] flex items-center justify-center bg-blue-600 text-white rounded-full text-xl">
+                    <GoArrowUpRight />
+                  </div>
+                </div>
+              </SmoothScrollLink>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] justify-between lg:flex">
               <SmallMainBlockCard
                 title="10 из 10"

@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
 
         custom_yellow: "#FAD171",
-        customGray: '#222222',
+        customGray: "#222222",
         black: "#171717",
         white: "#FAFAFA",
         back: "#2B2B2B",
@@ -35,8 +35,11 @@ export default {
         blue_10: "#345CFF1A",
       },
       screens: {
-        'xlg': '1080px',
-        'xs': '450px'
+        xlg: "1080px",
+        xs: "450px",
+      },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
       },
     },
   },

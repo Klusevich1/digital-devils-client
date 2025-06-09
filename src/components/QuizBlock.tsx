@@ -174,14 +174,14 @@ const QuizBlock = () => {
           <div id="quiz">
             <div className="flex flex-col gap-3 mb-[30px]">
               <h3 className="md:text-[40px] text-[28px] font-bold">
-                Скидка 10% на разработку при заказе в течение 14 дней
+                Забронируйте скидку 10% на разработку сайта
               </h3>
               <p className="max-w-[639px] text-[18px] font-medium">
                 Ответьте на 5 простых вопросов — и получите персональную скидку
-                10% на сайт, если закажете в течение 2 недель.
+                10% на разработку своего будущего сайта.
               </p>
             </div>
-            <div className="flex flex-col gap-[30px] md:p-[30px] md:bg-[#fff] min-h-[455px] rounded-[40px]">
+            <div className="flex flex-col gap-[30px] md:p-[30px] p-[20px] min-h-[455px] rounded-[40px] border border-black_80">
               <div className="flex flex-col gap-4">
                 <p className="md:text-[22px] text-[18px] font-bold">
                   Вопрос {activeQuestion} из {questions.length}
