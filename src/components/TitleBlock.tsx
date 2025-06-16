@@ -8,7 +8,7 @@ type TitleBlockProps = {
   title: string;
   description: string;
   imagePath: string | StaticImageData;
-  hasQuiz: boolean;
+  hasQuiz?: boolean;
 };
 
 export const TitleBlock: FC<TitleBlockProps> = ({
