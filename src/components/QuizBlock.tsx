@@ -7,50 +7,13 @@ import { IMaskInput } from "react-imask";
 import { z } from "zod";
 import SuccessSubmitModal from "./SuccessSubmitModal";
 
-const questions = [
-  {
-    title: "Какой тип сайта вам нужен?",
-    options: [
-      "Лендинг / одностраничный сайт",
-      "Корпоративный сайт",
-      "Интернет-магазин",
-      "Сложный портал / SaaS",
-      "Ещё не определился",
-    ],
-  },
-  {
-    title: "Какие задачи вы хотите решить с помощью сайта?",
-    options: [
-      "Увеличить поток клиентов / заявок",
-      "Автоматизировать процессы / CRM",
-      "Сделать продающий сайт для рекламы",
-      "Просто “чтобы был сайт” / визитка",
-    ],
-  },
-  {
-    title: "Когда вы планируете запуск?",
-    options: [
-      "Уже готовы начать",
-      "В ближайшие 2 недели",
-      "В течение месяца",
-      "Через 1–2 месяца",
-      "Пока собираю информацию",
-    ],
-  },
-  {
-    title: "У вас есть техническое задание, структура или дизайн?",
-    options: [
-      "Есть ТЗ или прототип",
-      "Есть структура",
-      "Есть только идея",
-      "Нужна помощь с нуля",
-    ],
-  },
-  {
-    title: "Где вам удобнее его получить?",
-    options: ["Telegram", "Viber", "WhatsApp", "Звонок"],
-  },
-];
+interface QuizBlockProps {
+  quizQuestions: { title: string; options: string[]; textField?: string }[];
+  page: string;
+  title: string;
+  description?: string;
+  padding: string;
+}
 
 const formSchema = z.object({
   name: z
@@ -66,15 +29,21 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const QuizBlock = () => {
+const QuizBlock: React.FC<QuizBlockProps> = ({
+  quizQuestions,
+  page,
+  title,
+  description,
+  padding,
+}) => {
   const [activeQuestion, setActiveQuestion] = useState<number>(1);
-  const [answers, setAnswers] = useState<{ [key: number]: string }>({});
+  const [answers, setAnswers] = useState<{ [key: string]: string }>({});
 
   const [congratulations, setCongratulations] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [isDataSend, setIsDataSend] = useState<boolean>(false);
 
-  const current = questions[activeQuestion - 1];
+  const current = quizQuestions[activeQuestion - 1];
 
   const {
     register,
@@ -97,13 +66,18 @@ const QuizBlock = () => {
   const phoneValue = watch("phone");
 
   const handleAnswer = (value: string) => {
-    setAnswers({ ...answers, [activeQuestion]: value });
+    const isLastOption = current.options[current.options.length - 1] === value;
+    setAnswers((prev) => ({
+      ...prev,
+      [activeQuestion]: value,
+      ...(isLastOption ? {} : { [`custom_${activeQuestion}`]: "" }),
+    }));
   };
 
   const toggleQuestion = (type: "prev" | "next") => {
     if (type === "prev" && activeQuestion > 1) {
       setActiveQuestion(activeQuestion - 1);
-    } else if (type === "next" && activeQuestion < questions.length) {
+    } else if (type === "next" && activeQuestion < quizQuestions.length) {
       setActiveQuestion(activeQuestion + 1);
     }
   };
@@ -112,11 +86,25 @@ const QuizBlock = () => {
     if (loading || isDataSend) return;
     setLoading(true);
 
+    const finalAnswers = { ...answers };
+
+    Object.keys(answers).forEach((key) => {
+      if (key.startsWith("custom_")) {
+        const baseKey = key.replace("custom_", "");
+        const customValue = answers[key]?.trim();
+        if (customValue) {
+          finalAnswers[baseKey] = `${finalAnswers[baseKey]} (${customValue})`;
+        }
+        delete finalAnswers[key];
+      }
+    });
+
     const payload = {
       name: data.name,
       phone: data.phone,
       fromQuiz: true,
-      answers,
+      answers: finalAnswers,
+      page: page,
     };
 
     try {
@@ -169,22 +157,21 @@ const QuizBlock = () => {
   return (
     <>
       <StandardMarginsLayout
-        styles="mt-[50px] sm:mt-[60px]"
+        styles={`${padding}`}
         children={
           <div id="quiz">
             <div className="flex flex-col gap-3 mb-[30px]">
-              <h3 className="md:text-[40px] text-[28px] font-bold">
-                Забронируйте скидку 10% на разработку сайта
-              </h3>
-              <p className="max-w-[639px] text-[18px] font-medium">
-                Ответьте на 5 простых вопросов — и получите персональную скидку
-                10% на разработку своего будущего сайта.
-              </p>
+              <h3 className="md:text-[40px] text-[28px] font-bold">{title}</h3>
+              {description && (
+                <p className="max-w-[639px] text-[18px] font-medium">
+                  {description}
+                </p>
+              )}
             </div>
-            <div className="flex flex-col gap-[30px] md:p-[30px] p-[20px] min-h-[455px] rounded-[40px] border border-black_80">
+            <div className="flex flex-col gap-[30px] md:p-[30px] p-[20px] min-h-[417px] rounded-[40px] border border-black_80">
               <div className="flex flex-col gap-4">
                 <p className="md:text-[22px] text-[18px] font-bold">
-                  Вопрос {activeQuestion} из {questions.length}
+                  Вопрос {activeQuestion} из {quizQuestions.length}
                 </p>
                 <div className="flex flex-row items-center gap-4">
                   {Array.from({ length: 5 }, (_, i) => (
@@ -197,10 +184,14 @@ const QuizBlock = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex lg:flex-row flex-col items-end flex-1 justify-between xl:gap-[121px] lg:gap-[60px] gap-[30px]">
+              <div className="flex lg:flex-row flex-col items-start flex-1 justify-between xl:gap-[121px] lg:gap-[60px] gap-[30px]">
                 <div className="lg:hidden block w-full">
                   <Image
-                    src={"/resources/quizimg_small.png"}
+                    src={
+                      page === "Главная"
+                        ? "/resources/quizimg_small.png"
+                        : "/resources/quizimg-landing_small.png"
+                    }
                     width={532}
                     height={282}
                     alt="Quiz"
@@ -209,7 +200,7 @@ const QuizBlock = () => {
                 </div>
                 <div className="flex flex-col justify-between h-full w-full">
                   <div>
-                    {activeQuestion === questions.length && (
+                    {activeQuestion === quizQuestions.length && (
                       <p className="text-[28px] font-bold">Расчет готов!</p>
                     )}
                     <p className="md:text-[28px] text-[24px] font-bold mb-[20px]">
@@ -217,42 +208,69 @@ const QuizBlock = () => {
                     </p>
                     <div
                       className={`flex flex-col gap-3 ${
-                        activeQuestion === questions.length ? "" : "mb-8"
+                        activeQuestion === quizQuestions.length ? "" : "mb-8"
                       }`}
                     >
-                      {current.options.map((option, i) => (
-                        <div key={i} className="flex items-center">
-                          <input
-                            type="radio"
-                            id={`option-${activeQuestion}-${i}`}
-                            name={`quiz-${activeQuestion}`}
-                            className="hidden peer"
-                            checked={answers[activeQuestion] === option}
-                            onChange={() => handleAnswer(option)}
-                          />
-                          <label
-                            htmlFor={`option-${activeQuestion}-${i}`}
-                            className="flex items-center gap-2 cursor-pointer text-[16px] font-medium peer-checked:font-bold transition-all duration-200"
-                          >
-                            <div className="w-4 h-4 relative">
-                              <Image
-                                src={
-                                  answers[activeQuestion] === option
-                                    ? "/resources/radio_checked.svg"
-                                    : "/resources/radio.svg"
-                                }
-                                alt="radio"
-                                layout="fill"
-                                objectFit="contain"
+                      {current.options.map((option, i) => {
+                        const isLastOption = i === current.options.length - 1;
+                        const isSelected = answers[activeQuestion] === option;
+
+                        return (
+                          <div key={i} className="flex flex-col gap-2">
+                            <div className="flex items-center">
+                              <input
+                                type="radio"
+                                id={`option-${activeQuestion}-${i}`}
+                                name={`quiz-${activeQuestion}`}
+                                className="hidden peer"
+                                checked={isSelected}
+                                onChange={() => handleAnswer(option)}
                               />
+                              <label
+                                htmlFor={`option-${activeQuestion}-${i}`}
+                                className="flex items-center gap-2 cursor-pointer text-[16px] font-medium peer-checked:font-bold transition-all duration-200"
+                              >
+                                <div className="w-4 h-4 relative">
+                                  <Image
+                                    src={
+                                      isSelected
+                                        ? "/resources/radio_checked.svg"
+                                        : "/resources/radio.svg"
+                                    }
+                                    alt="radio"
+                                    layout="fill"
+                                    objectFit="contain"
+                                  />
+                                </div>
+                                {option}
+                              </label>
                             </div>
-                            {option}
-                          </label>
-                        </div>
-                      ))}
+
+                            {current.textField &&
+                              isLastOption &&
+                              isSelected && (
+                                <input
+                                  type="text"
+                                  value={
+                                    answers[`custom_${activeQuestion}`] || ""
+                                  }
+                                  onChange={(e) =>
+                                    setAnswers({
+                                      ...answers,
+                                      [`custom_${activeQuestion}`]:
+                                        e.target.value,
+                                    })
+                                  }
+                                  placeholder={current.textField}
+                                  className="h-[43px] mt-1 block w-full max-w-[500px] p-2 border-b border-black_80 bg-transparent outline-none rounded-none focus:border-b-2 focus:border-black transition-all"
+                                />
+                              )}
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
-                  {activeQuestion === questions.length ? (
+                  {activeQuestion === quizQuestions.length ? (
                     <form onSubmit={handleSubmit(onSubmit)}>
                       <div className="flex md:flex-row flex-col justify-between gap-[20px] mb-5">
                         <div className="relative lg:max-w-[300px] w-full">
@@ -350,7 +368,11 @@ const QuizBlock = () => {
                 </div>
                 <div className="lg:block hidden min-w-[400px] max-w-[532px] w-full">
                   <Image
-                    src={"/resources/quizimg.png"}
+                    src={
+                      page === "Главная"
+                        ? "/resources/quizimg.png"
+                        : "/resources/quizimg-landing.png"
+                    }
                     width={532}
                     height={282}
                     alt="Quiz"
