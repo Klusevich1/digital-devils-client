@@ -222,26 +222,14 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                                 type="radio"
                                 id={`option-${activeQuestion}-${i}`}
                                 name={`quiz-${activeQuestion}`}
-                                className="hidden peer"
+                                className="appearance-none rounded-full border border-gray-400 checked:border-[5px] checked:border-black cursor-pointer w-4 h-4"
                                 checked={isSelected}
                                 onChange={() => handleAnswer(option)}
                               />
                               <label
                                 htmlFor={`option-${activeQuestion}-${i}`}
-                                className="flex items-center gap-2 cursor-pointer text-[16px] font-medium peer-checked:font-bold transition-all duration-200"
+                                className="ml-2 cursor-pointer text-[16px] font-medium peer-checked:font-bold transition-all duration-200"
                               >
-                                <div className="w-4 h-4 relative">
-                                  <Image
-                                    src={
-                                      isSelected
-                                        ? "/resources/radio_checked.svg"
-                                        : "/resources/radio.svg"
-                                    }
-                                    alt="radio"
-                                    layout="fill"
-                                    objectFit="contain"
-                                  />
-                                </div>
                                 {option}
                               </label>
                             </div>
