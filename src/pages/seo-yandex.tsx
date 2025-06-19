@@ -126,7 +126,7 @@ const marketplace = () => {
                 </div>
               </div>
               <div className="flex flex-col xl:flex-row items-start justify-between mt-[50px] md:mt-[60px]">
-                <div className="text-[22px] font-bold rounded-[30px] bg-[#F1F2F4] px-[40px] pt-[36px] pb-[30px] xl:max-w-[640px] lg:me-[20px]">
+                <div className="text-[22px] font-bold rounded-[30px] bg-[#F1F2F4] sm:px-[40px] sm:pt-[36px] sm:pb-[30px] px-[20px] py-[30px] xl:max-w-[640px] lg:me-[20px]">
                   <h2 className="text-[28px] lg:text-[32px] font-bold">
                     Яндекс — быстрый поиск в интернете
                   </h2>
@@ -138,7 +138,7 @@ const marketplace = () => {
                     Продвижение сайта здесь дает мгновенный отклик: клиенты
                     находят вас уже через несколько недель после старта работ.
                   </p>
-                  <div className="w-full flex justify-end">
+                  <div className="w-full flex justify-end mt-[10px]">
                     <Image
                       src={"/resources/yandex.png"}
                       alt={"Яндекс"}
@@ -616,6 +616,40 @@ const marketplace = () => {
                       или продвигать новые материалы.
                     </p>
                   </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Медиа-компании могут использовать Новости для
+                      распространения контента и охвата широкой аудитории, что
+                      позволяет быстро и эффективно передавать важную информацию
+                      или продвигать новые материалы.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Регулярные изменения и обновления алгоритмов требуют
+                      постоянного мониторинга и своевременной корректировки
+                      стратегий SEO продвижения сайта, что может быть вызовом
+                      для бизнесов, которые не следят за новинками в SEO.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Для визуально ориентированных отраслей, таких как
+                      архитектура или дизайн, использование видео- и
+                      фото-контента на платформах типа YouTube или Pinterest
+                      также может оказаться более эффективным, чем традиционные
+                      методы SEO.
+                    </p>
+                  </div>
                 </div>
               </div>
             </>
@@ -712,6 +746,30 @@ const marketplace = () => {
                       позволяет улучшать персонализацию выдачи, расширяя
                       потенциальную аудиторию сайтов и повышая конверсию за счет
                       более релевантных предложений.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Не стоит забывать о Вертикалях – специализированных
+                      сервисах, таких как Маркет и Недвижимость, которые
+                      позволяют компаниям более точно таргетировать аудиторию и
+                      предоставлять пользователям информацию, соответствующую их
+                      интересам.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Поисковик также учитывает локальные особенности регионов,
+                      что позволяет бизнесам более эффективно адаптировать свои
+                      предложения и кампании в зависимости от географии
+                      пользователей, что невозможно для единой глобальной
+                      стратегии SEO.
                     </p>
                   </div>
                 </div>

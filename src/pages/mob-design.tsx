@@ -31,7 +31,7 @@ const breadcrumbsSchema: ListItem[] = [
   {
     "@type": "ListItem",
     position: 2,
-    name: 'Разработка мобильных приложений',
+    name: "Разработка мобильных приложений",
     item: `https://digitaldevils.by/mob-apps`,
   },
   {
@@ -133,7 +133,7 @@ const joomla = () => {
           paragraphs={[
             {
               title: "Дизайн мобильных приложений",
-              text: "Создаем уникальные и удобные интерфейсы для мобильных приложений, ориентируясь на последние тенденции UI/UX-дизайна. Разрабатываем стиль, повышающий вовлеченность пользователей и удобство взаимодействия с вашим продуктом.Улучшаем навигацию, визуальную привлекательность и адаптацию под различные платформы.",
+              text: "Опыт, профессиональные знания и навыки позволяют нам разрабатывать дизайн для типовых и нестандартных мобильных интерфейсов. В работе используем инновационные технологии, современные инструменты: Figma, Principle и Affinity Design. По итогу вы получаете продуманный до мелочей дизайн для вашего цифрового продукта, который соответствует брендбуку, канонам UX/UI, гайдлайнам ОС, рыночным трендам, запросам целевой аудитории.",
               badges: [],
               buttonText: "Дизайн мобильных приложений",
               imagePath: "/resources/mob-apps-idea5.png",
@@ -228,7 +228,7 @@ const joomla = () => {
                       <span className="text-custom_yellow text-[18px] font-medium">
                         /
                       </span>{" "}
-                      <span dangerouslySetInnerHTML={{__html: item}}></span>
+                      <span dangerouslySetInnerHTML={{ __html: item }}></span>
                     </li>
                   ))}
                 </ul>
@@ -247,7 +247,34 @@ const joomla = () => {
             </div>
           }
         />
-        <MainBlockTenth data={data} />
+        <HalfImageBlock
+          title="Как дизайн мобильного приложения влияет на бизнес?"
+          smallTitle=""
+          isOnlyBottomPadding={false}
+          description={
+            <>
+              <p className="font-bold text-[24px] mb-[10px]">
+                Красивая графика, интересная анимация, практичное оформление
+                иконок, модные кнопки - все это напрямую связано с
+                эргономичностью ПО.
+              </p>
+              <p className="font-medium text-[18px] mb-[20px]">
+                Современный дизайн мотивирует пользователя на изучение
+                приложения, совершение им целевых действий. Как итог: повышается
+                лояльность аудитории, растет конверсия, программный продукт
+                используется чаще. 
+              </p>
+            </>
+          }
+          isDark={true}
+          buttonColor="#345CFF"
+          buttonText="Обсудить проект"
+          image={"/resources/ios_5.png"}
+          smallImage={"/resources/ios_6.png"}
+          widthImage={639}
+          heightImage={340}
+        />
+        <MainBlockTenth data={data} isOnlyBottomPadding={false} />
       </BasicLayoutDark>
     </>
   );

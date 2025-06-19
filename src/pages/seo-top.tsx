@@ -396,6 +396,69 @@ const marketplace = () => {
         />
 
         <StandardMarginsLayout
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-white bg-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Критерии выбора SEO подрядчика
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[22px] font-bold">
+                    Если вы решили доверить SEO продвижение профессионалам,
+                    обратите внимание на несколько ключевых факторов для сайта.
+                  </p>
+                </div>
+                <div className="flex flex-col min-w-[40%]">
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Прозрачность методик работы — хорошие специалисты всегда
+                      могут объяснить, за что именно вы платите. Остерегайтесь
+                      тех, кто говорит исключительно о "секретных технологиях"
+                      или гарантирует мгновенный результат.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Глубина аналитики перед началом работ — серьезные
+                      подрядчики всегда проводят предварительный аудит и изучают
+                      конкурентов, прежде чем предлагать стратегию.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Реалистичные прогнозы — профессиональные SEO никогда не
+                      обещают попадание в ТОП за неделю или месяц в
+                      высококонкурентной нише. Хороший результат для сайта
+                      требует времени.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Комплексный подход — лучшие агентства рассматривают SEO
+                      как часть общей маркетинговой стратегии, а не как
+                      изолированную услугу.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+
+        <StandardMarginsLayout
           styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-black"
           children={
             <>
@@ -591,7 +654,7 @@ const marketplace = () => {
         />
 
         <StandardMarginsLayout
-          styles={`bg-white text-black pb-[50px] md:pb-[60px]`}
+          styles={`bg-white text-black`}
           children={
             <div className="flex flex-col lg:flex-row lg:space-x-[41px]">
               <div className="w-full lg:block hidden max-w-[527px] min-w-[400px]">
@@ -672,6 +735,27 @@ const marketplace = () => {
           }
         />
 
+        <DifferentTasksBlock
+          bigTitle="Когда стоит обратиться к профессионалам"
+          smallText="Хотя основы SEO можно освоить самостоятельно, есть ситуации, когда помощь специалистов окупается многократно:"
+          paragraphs={[
+            {
+              title: "",
+              text: "Высококонкурентные ниши для сайта требуют глубокой экспертизы и доступа к профессиональным инструментам анализа. Попытка сэкономить на SEO продвижении в таких условиях часто приводит к потере времени и ресурсов.",
+            },
+            {
+              title: "",
+              text: "Комплексные интернет-магазины с тысячами товарных позиций нуждаются в системном подходе к структуре и внутренней перелинковке, который сложно реализовать без опыта для сайта.",
+            },
+            {
+              title: "",
+              text: "Быстрый результат необходим при запуске новых проектов или выходе на новые рынки для сайта. Профессиональные агентства могут ускорить процесс выхода в ТОП за счет проверенных методик.",
+            },
+          ]}
+          isDark={false}
+          maxwSmallText="max-w-[950px]"
+        />
+
         <MainBlockFourth
           title="Eсть идеи для проекта?"
           description={
@@ -712,6 +796,51 @@ const marketplace = () => {
                 </p>
               </div>
             </div>
+          }
+        />
+
+        <StandardMarginsLayout
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Основные стратегии вывода сайта в ТОП
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[18px] font-bold mb-[10px]">
+                    Современное SEO — это комплексный процесс, включающий
+                    несколько ключевых направлений работы для сайта.
+                  </p>
+                  <p className="text-[16px] font-medium">
+                    Техническая оптимизация создает фундамент для успешного SEO
+                    продвижения сайта. Скорость загрузки страниц, корректная
+                    работа на мобильных устройствах, правильная структура сайта
+                    — без этих базовых элементов все остальные усилия будут
+                    малоэффективными.
+                  </p>
+                </div>
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[16px] font-medium mb-[10px]">
+                    Работа с контентом подразумевает создание полезных,
+                    уникальных материалов, отвечающих на запросы целевой
+                    аудитории. Важно не просто вписывать ключевые слова для
+                    сайта, а действительно решать проблемы пользователей.
+                  </p>
+                  <p className="text-[16px] font-medium mb-[10px]">
+                    Ссылочное продвижение помогает увеличить авторитетность
+                    сайта в глазах систем. Качественные входящие ссылки с
+                    тематических ресурсов остаются важным ранжирующим фактором.
+                  </p>
+                  <p className="text-[16px] font-medium">
+                    Локальное SEO критически важно для проектов с физическими
+                    точками присутствия. Оптимизация Google My Business, работа
+                    с отзывами и геозависимыми запросами значительно повышает
+                    видимость в конкретном регионе.
+                  </p>
+                </div>
+              </div>
+            </>
           }
         />
 
@@ -771,6 +900,48 @@ const marketplace = () => {
           }
         />
 
+        <StandardMarginsLayout
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Практические рекомендации по самостоятельному продвижению
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[18px] font-bold mb-[10px]">
+                     Для проектов с ограниченным бюджетом возможно постепенное
+                    самостоятельное  SEO продвижение.
+                  </p>
+                  <p className="text-[16px] font-medium">
+                    Начните с технического аудита с помощью таких инструментов
+                    как Google Search Console и Яндекс.Вебмастер. Устраните
+                    критические ошибки индексации и проблемы с мобильной
+                    адаптацией.
+                  </p>
+                </div>
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[16px] font-medium mb-[10px]">
+                    Создайте качественный контент, отвечающий на реальные
+                    вопросы вашей целевой аудитории. Используйте сервисы подбора
+                    ключевых слов для сайта, но не забывайте о естественности и
+                    полезности материалов.
+                  </p>
+                  <p className="text-[16px] font-medium mb-[10px]">
+                    Развивайте локальное цитирование — упоминания компании на
+                    авторитетных площадках в вашем регионе. Это особенно важно
+                    для проектов с оффлайн-присутствием.
+                  </p>
+                  <p className="text-[16px] font-medium">
+                    Постепенно наращивайте ссылочную массу через гостевые посты
+                    в блогах, участие в отраслевых каталогах и другие белые
+                    методы.
+                  </p>
+                </div>
+              </div>
+            </>
+          }
+        />
         <StandardMarginsLayout
           styles={`pt-[50px] md:pt-[60px] bg-white text-black`}
           children={

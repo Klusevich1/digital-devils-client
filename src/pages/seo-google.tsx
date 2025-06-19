@@ -14,6 +14,7 @@ import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 import CommentBlock from "@/components/CommentBlock";
 import HalfImageBlock from "@/components/HalfImageBlock";
 import TicketSeoBlock from "@/components/TicketSeoBlock";
+import { FaCircleChevronRight } from "react-icons/fa6";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -103,7 +104,10 @@ const marketplace = () => {
                   Мы продвигаем сайты именно так как нужно
                 </h2>
                 <p className="text-[22px] font-bold mt-[30px] ">
-                  <a href="/seo-top" className="text-blue_main">Продвижение сайтов в ТОП</a> Google в Беларуси
+                  <a href="/seo-top" className="text-blue_main">
+                    Продвижение сайтов в ТОП
+                  </a>{" "}
+                  Google в Беларуси
                 </p>
                 <div className="w-full block lg:hidden  mt-[20px]">
                   <Image
@@ -146,8 +150,8 @@ const marketplace = () => {
               <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold lg:leading-[75px]">
                 Преимущества продвижения сайта в Google
               </h2>
-              <div className="flex flex-col xl:flex-row items-start justify-between mt-[50px] md:mt-[60px]">
-                <div className="text-[22px] font-bold rounded-[30px] bg-[#F1F2F4] px-[40px] pt-[36px] pb-[30px] xl:max-w-[640px] lg:me-[20px]">
+              <div className="flex flex-col xl:flex-row items-start justify-between mt-[30px]">
+                <div className="text-[22px] font-bold rounded-[30px] bg-[#F1F2F4] sm:px-[40px] sm:pt-[36px] sm:pb-[30px] px-[20px] py-[30px] xl:max-w-[640px] lg:me-[20px]">
                   <h2 className="text-[28px] lg:text-[32px] font-bold">
                     Что такое Google?
                   </h2>
@@ -157,7 +161,7 @@ const marketplace = () => {
                     появляется в десятке, вы теряете огромную долю рынка, даже
                     если уже тратите бюджет на рекламу.
                   </p>
-                  <div className="w-full flex justify-end">
+                  <div className="w-full flex justify-end mt-[10px]">
                     <Image
                       src={"/resources/google_logo.png"}
                       alt={"Google"}
@@ -241,8 +245,8 @@ const marketplace = () => {
                   </div>
                 </>
               ),
-              analiticsImg: '/resources/seo-google-numbers.png',
-              analiticsImgSmall: '/resources/seo-google-numberssmall.png'
+              analiticsImg: "/resources/seo-google-numbers.png",
+              analiticsImgSmall: "/resources/seo-google-numberssmall.png",
             },
           ]}
         />
@@ -275,11 +279,14 @@ const marketplace = () => {
                 <div className="flex flex-col lg:block items-center">
                   <div>
                     <h2 className="font-bold text-[22px] mb-[20px]">
-                      Цена на <a href="/seo" className="text-blue_main">продвижение сайта</a> в ТОП Google формируется
-                      индивидуально для каждого проекта и зависит от нескольких
-                      ключевых факторов: масштабов бизнеса, уровня конкуренции в
-                      нише и набора маркетинговых инструментов, которые будут
-                      использоваться.
+                      Цена на{" "}
+                      <a href="/seo" className="text-blue_main">
+                        продвижение сайта
+                      </a>{" "}
+                      в ТОП Google формируется индивидуально для каждого проекта
+                      и зависит от нескольких ключевых факторов: масштабов
+                      бизнеса, уровня конкуренции в нише и набора маркетинговых
+                      инструментов, которые будут использоваться.
                     </h2>
                     <div className="w-full max-w-full mb-[30px] lg:hidden block">
                       <Image
@@ -596,6 +603,81 @@ const marketplace = () => {
           }
         />
 
+        <StandardMarginsLayout
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-white bg-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Почему клиенты выбирают нас
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[22px] font-medium">
+                    Digital Devils отличается глубоким индивидуальным подходом к
+                    каждому проекту.
+                  </p>
+                </div>
+                <div className="flex flex-col min-w-[40%]">
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Мы не используем шаблонные решения, а разрабатываем
+                      стратегии, учитывающие все особенности бизнеса и рыночной
+                      ниши. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Мы гарантируем полную прозрачность работы. Наши клиенты
+                      видят все этапы продвижения и могут в любой момент
+                      получить подробный отчет о проделанной работе и
+                      достигнутых результатах. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Наша работа оценивается по конкретным бизнес-показателям.
+                      Мы ориентируемся не на абстрактные параметры, а на
+                      реальный рост дохода и количества клиентов.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Клиенты получают круглосуточную поддержку и оперативные
+                      ответы на все вопросы. Мы понимаем, что в
+                      digital-маркетинге важна оперативность, и всегда готовы
+                      оперативно реагировать на любые изменения. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Если вы готовы увеличить продажи через Google, оставьте
+                      заявку, и мы подготовим персональный план продвижения,
+                      учитывающий все особенности бизнеса и рыночной ситуации.
+                      Наши специалисты свяжутся с вами в ближайшее время для
+                      обсуждения деталей сотрудничества.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+
         <DifferentTasksBlock
           bigTitle="Наш подход к продвижению"
           smallText="Мы начинаем с глубокого анализа бизнеса, конкурентов и целевой аудитории. Это позволяет точно определить потребности клиентов и найти оптимальные пути их удовлетворения через сайт."
@@ -615,7 +697,7 @@ const marketplace = () => {
           ]}
           isDark={false}
           maxwSmallText="max-w-[642px]"
-          isOnlyBottomPadding={true}
+          isOnlyBottomPadding={false}
         />
 
         <StandardMarginsLayout

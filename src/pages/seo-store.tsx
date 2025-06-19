@@ -96,8 +96,12 @@ const marketplace = () => {
           description={
             <>
               <p className="font-medium text-[18px] mt-[20px] mb-[10px]">
-                Без <a href="/seo" className="text-blue_main">SEO-продвижения</a> ваш интернет-магазин — как супермаркет в
-                глухом переулке: товары есть, а продаж нет.
+                Без{" "}
+                <a href="/seo" className="text-blue_main">
+                  SEO-продвижения
+                </a>{" "}
+                ваш интернет-магазин — как супермаркет в глухом переулке: товары
+                есть, а продаж нет.
               </p>
               <p className="font-medium text-[18px] mb-[10px]">
                 Продвижение — это не просто "чтобы были заказы". Это система:
@@ -247,7 +251,11 @@ const marketplace = () => {
               <p className="text-[18px] mb-[30px] lg:text-[22px] font-medium  max-w-[866px]">
                 Цена зависит от масштабов, конкурентности ниши и выбранных
                 инструментов на сайте. Небольшой сайт с узкой аудиторией
-                потребует меньше вложений, чем <a href="/marketplace" className="text-blue_main">крупный маркетплейс</a>.
+                потребует меньше вложений, чем{" "}
+                <a href="/marketplace" className="text-blue_main">
+                  крупный маркетплейс
+                </a>
+                .
               </p>
               <div className="border-t-[1px] border-black  pt-[30px]">
                 <p className="text-[16px] font-medium">
@@ -658,7 +666,7 @@ const marketplace = () => {
               </h2>
               <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
                 <div className="lg:max-w-[640px]">
-                  <p className="text-[22px] font-bold">
+                  <p className="text-[22px] font-medium">
                     Фундаментальной основой успешного продвижения становится
                     качественная техническая составляющая.
                   </p>
@@ -760,7 +768,76 @@ const marketplace = () => {
         />
 
         <StandardMarginsLayout
-          styles={`bg-white text-black pb-[50px] md:pb-[60px]`}
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-white bg-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Анализ эффективности стратегии
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[22px] font-medium">
+                    Оценка результатов поискового продвижения интернет-магазина
+                    требует комплексного подхода.
+                  </p>
+                </div>
+                <div className="flex flex-col min-w-[40%]">
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Мониторинг позиций по ключевикам показывает прогресс в
+                      борьбе за видимость.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Анализ динамики органического прироста отражает увеличение
+                      потенциальной аудитории магазина.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Конверсионные показатели демонстрируют реальное влияние
+                      оптимизации на продажи
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Изучение глубины просмотров и процента отказов помогает
+                      совершенствовать пользовательский опыт. Важно понимать,
+                      что для получения объективной картины необходимо проводить
+                      оценку не ранее чем через 3-4 месяца после начала работ.
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Важно понимать, что для получения объективной картины
+                      необходимо проводить оценку не ранее чем через 3-4 месяца
+                      после начала работ.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+
+        <StandardMarginsLayout
+          styles={`bg-white text-black py-[50px] md:py-[60px]`}
           children={
             <div className="flex flex-col lg:flex-row lg:space-x-[41px]">
               <div className="lg:max-w-[754px]">
