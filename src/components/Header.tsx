@@ -203,7 +203,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               target="_blank"
               rel="nofollow"
               href="https://t.me/devilsmanager"
-              className="flex items-center ms-[20px] outline-none"
+              className="flex items-center ms-[40px] outline-none"
             >
               <Image
                 src="/resources/tg.svg"
@@ -221,9 +221,10 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 telegram
               </span>
             </a>
+            <p className="ms-[40px]">ежедневно: 9:00 - 18:00</p>
             <a href="tel:+375296342190">
               <span
-                className={`ms-[60px] text-[16px] ${
+                className={`ms-[40px] text-[16px] ${
                   theme === "dark" ? "text-white" : "text-black"
                 }`}
               >

@@ -541,6 +541,10 @@ const Footer: React.FC = () => {
             Щучин.
           </p>
         </div>
+        <div className="w-full max-w-full text-[14px] font-medium text-white pb-[60px] custom_container">
+          ООО «Цифровая Волна» УНП 193881479 Зарегистрировано МинГорИсполкомом
+          Адес: 220065, г. Минск, улица Братская, д. 11, помещение 380
+        </div>
       </section>
       {isDataSend && (
         <SuccessSubmitModal
