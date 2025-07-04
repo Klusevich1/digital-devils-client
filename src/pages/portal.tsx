@@ -10,6 +10,7 @@ import React from "react";
 import { DarkBigImageBlock } from "@/components/DarkBigImageBlock";
 import { WhiteMediumImageBlock } from "@/components/WhiteMediumImageBlock";
 import WhiteBlockWithDoubleParagraphsAndImage from "@/components/WhiteBlockWithDoubleParagraphsAndImage";
+import QuizBlock from "@/components/QuizBlock";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -30,6 +31,51 @@ const breadcrumbsSchema: ListItem[] = [
     item: "https://digitaldevils.by/portal",
   },
 ];
+
+const quizQuestions = [
+  {
+    title: "Какой тип портала вы планируете создать?",
+    options: [
+      "Информационный портал / СМИ",
+      "Образовательная платформа",
+      "Внутрикорпоративный портал",
+      "Социальный / комьюнити-портал",
+      "Другое (опишите)",
+    ],
+    textField: "Опишите задачу",
+  },
+  {
+    title: "Планируете ли регистрацию и личные кабинеты?",
+    options: [
+      "Да, нужна авторизация и роли пользователей",
+      "Только админка, пользователи не нужны",
+      "Пока не решили — хотим обсудить",
+    ],
+  },
+  {
+    title: "У вас уже есть структура и контент?",
+    options: [
+      "Да, всё проработано",
+      "Есть черновик структуры",
+      "Нужна помощь в проектировании",
+      "Пока только идея",
+    ],
+  },
+  {
+    title: "Когда вы хотите запустить портал?",
+    options: [
+      "Срочно (до 30 дней)",
+      "1–2 месяца",
+      "2–4 месяца",
+      "Пока только собираю информацию",
+    ],
+  },
+  {
+    title: "Где вам удобнее его получить?",
+    options: ["Telegram", "Viber", "WhatsApp", "Звонок"],
+  },
+];
+
 const portal = () => {
   const data: DataItem[] = [
     {
@@ -79,6 +125,15 @@ const portal = () => {
           title="Разработка портала"
           description="Услуги по созданию интернет-порталов под ключ. Мы разрабатываем функциональные и привлекательные сайты с учетом потребностей клиентов. Подбираем программные и дизайнерские решения в соответствии со спецификой и масштабом бизнеса. "
           imagePath="/resources/portal-title.png"
+          hasQuiz={true}
+          adText="Разработка продающего портала"
+        />
+        <QuizBlock
+          quizQuestions={quizQuestions}
+          page="Портал"
+          title="Забронируйте скидку 10% на разработку сайта"
+          description="Ответьте на 5 простых вопросов — и получите персональную скидку 10% на разработку своего будущего сайта."
+          padding="mb-[50px] sm:mb-[60px]"
         />
         <DarkBigImageBlock
           bigTitle="Электронный портал для вашего бизнеса"
@@ -118,7 +173,7 @@ const portal = () => {
                     <span className="text-custom_yellow text-[16px] font-medium">
                       /
                     </span>
-                    <span dangerouslySetInnerHTML={{__html: item}}></span>
+                    <span dangerouslySetInnerHTML={{ __html: item }}></span>
                   </li>
                 ))}
               </ul>
@@ -141,7 +196,7 @@ const portal = () => {
                   <span className="text-custom_yellow text-[16px] font-medium">
                     /
                   </span>{" "}
-                  <span dangerouslySetInnerHTML={{__html: item}}></span>
+                  <span dangerouslySetInnerHTML={{ __html: item }}></span>
                 </li>
               ))}
             </ul>
@@ -186,8 +241,11 @@ const portal = () => {
           text={
             <>
               <p className="text-[18px] font-bold max-w-[867px]">
-                За прошедшие годы мы довели процесс <a href='/landing' className='no-underline text-blue_main'>создания продающих сайтов</a> до
-                идеала.{" "}
+                За прошедшие годы мы довели процесс{" "}
+                <a href="/landing" className="no-underline text-blue_main">
+                  создания продающих сайтов
+                </a>{" "}
+                до идеала.{" "}
               </p>
               <p className="text-[18px] font-bold max-w-[867px] mb-[20px]">
                 Дизайнеры, программисты, специалисты по рекламе и маркетингу

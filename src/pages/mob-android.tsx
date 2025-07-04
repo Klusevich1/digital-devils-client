@@ -207,7 +207,7 @@ const joomla = () => {
                   rel="nofollow"
                 >
                   <div
-                    className={`font-medium text-[18px]  lg:w-fit w-full py-[12.5px] px-[20px] text-center rounded-full text-white bg-blue_main`}
+                    className={`font-medium text-[16px]  lg:w-fit w-full py-[12.5px] px-[20px] text-center rounded-full text-white bg-blue_main`}
                   >
                     Обсудить проект
                   </div>

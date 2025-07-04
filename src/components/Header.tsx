@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import HeaderLogo from "@/components/HeaderLogo";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
@@ -10,6 +10,80 @@ interface HeaderProps {
   theme?: string;
 }
 
+const DOP_SERVICES = [
+  { services: [] },
+  {
+    services: [
+      { name: "Корпоративные сайты", href: "corporate-website" },
+      { name: "Интернет-магазин", href: "online-store" },
+      { name: "Landing page", href: "landing" },
+      { name: "B2B сайты", href: "b2b" },
+      { name: "Сайт-визитка", href: "card-website" },
+      { name: "Портал", href: "portal" },
+      { name: "Сайт-каталог", href: "website-catalog" },
+      { name: "Информационный сайт", href: "information-site" },
+      { name: "Маркетплейс", href: "marketplace" },
+    ],
+  },
+  {
+    services: [
+      { name: "Tilda", href: "tilda" },
+      { name: "Wordpress", href: "wordpress" },
+      { name: "Joomla", href: "joomla" },
+      { name: "1C Битрикс", href: "bitrix" },
+      { name: "Django", href: "django" },
+      { name: "Opencart", href: "opencart" },
+      { name: "Laravel", href: "laravel" },
+    ],
+  },
+  {
+    services: [
+      { name: "Разработка мобильных приложений", href: "mob-apps" },
+      { name: "IOS разработка", href: "mob-ios" },
+      { name: "Android разработка", href: "mob-android" },
+      { name: "ASO продвижение", href: "mob-aso" },
+      { name: "PWA разработка", href: "mob-pwa" },
+      { name: "Дизайн мобильных приложений", href: "mob-design" },
+      { name: "Разработка веб-приложений", href: "mob-web" },
+    ],
+  },
+  {
+    services: [
+      { name: "Продвижение сайтов", href: "seo" },
+      { name: "Продвижение сайтов в ТОП", href: "seo-top" },
+      { name: "Продвижение в Яндекс", href: "seo-yandex" },
+      { name: "Продвижение интернет-магазина", href: "seo-store" },
+      { name: "SEO аудит", href: "seo-audit" },
+      { name: "Продвижение в Google", href: "seo-google" },
+      { name: "Продвижение молодых сайтов", href: "seo-young" },
+    ],
+  },
+  {
+    services: [
+      { name: "Разработка дизайна", href: "design" },
+      { name: "Разработка логотипа", href: "design-logo" },
+      { name: "Редизайн", href: "redesign" },
+      { name: "Разработка фирменного стиля", href: "design-style" },
+      { name: "Графический дизайн", href: "graph-design" },
+      { name: "Motion-дизайн", href: "motion-design" },
+      { name: "Разработка брендбука", href: "brandbook" },
+    ],
+  },
+  {
+    services: [
+      { name: "6 Корпоративные сайты", href: "corporate-website" },
+      { name: "6 Интернет-магазин", href: "online-store" },
+      { name: "6 Landing page", href: "landing" },
+      { name: "6 B2B сайты", href: "b2b" },
+      { name: "6 Сайт-визитка", href: "card-website" },
+      { name: "6 Портал", href: "portal" },
+      { name: "6 Сайт-каталог", href: "website-catalog" },
+      { name: "6 Информационный сайт", href: "information-site" },
+      { name: "6 Маркетплейс", href: "marketplace" },
+    ],
+  },
+];
+
 const Header: React.FC<HeaderProps> = ({ theme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -18,9 +92,16 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [dopMobileServicesOpenIndex, setDopMobileServicesOpenIndex] =
     useState<number>(0);
+  const [activeModal, setActiveModal] = useState<null | "address" | "phone">(
+    null
+  );
+
   const router = useRouter();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeModal = () => setActiveModal(null);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -49,79 +130,25 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
     };
   }, []);
 
-  const DOP_SERVICES = [
-    { services: [] },
-    {
-      services: [
-        { name: "Корпоротивные сайты", href: "corporate-website" },
-        { name: "Интернет-магазин", href: "online-store" },
-        { name: "Landing page", href: "landing" },
-        { name: "B2B сайты", href: "b2b" },
-        { name: "Сайт-визитка", href: "card-website" },
-        { name: "Портал", href: "portal" },
-        { name: "Сайт-каталог", href: "website-catalog" },
-        { name: "Информационный сайт", href: "information-site" },
-        { name: "Маркетплейс", href: "marketplace" },
-      ],
-    },
-    {
-      services: [
-        { name: "Tilda", href: "tilda" },
-        { name: "Wordpress", href: "wordpress" },
-        { name: "Joomla", href: "joomla" },
-        { name: "1C Битрикс", href: "bitrix" },
-        { name: "Django", href: "django" },
-        { name: "Opencart", href: "opencart" },
-        { name: "Laravel", href: "laravel" },
-      ],
-    },
-    {
-      services: [
-        { name: "Разработка мобильных приложений", href: "mob-apps" },
-        { name: "IOS разработка", href: "mob-ios" },
-        { name: "Android разработка", href: "mob-android" },
-        { name: "ASO продвижение", href: "mob-aso" },
-        { name: "PWA разработка", href: "mob-pwa" },
-        { name: "Дизайн мобильных приложений", href: "mob-design" },
-        { name: "Разработка веб-приложений", href: "mob-web" },
-      ],
-    },
-    {
-      services: [
-        { name: "Продвижение сайтов", href: "seo" },
-        { name: "Продвижение сайтов в ТОП", href: "seo-top" },
-        { name: "Продвижение в Яндекс", href: "seo-yandex" },
-        { name: "Продвижение интернет-магазина", href: "seo-store" },
-        { name: "SEO аудит", href: "seo-audit" },
-        { name: "Продвижение в Google", href: "seo-google" },
-        { name: "Продвижение молодых сайтов", href: "seo-young" },
-      ],
-    },
-    {
-      services: [
-        { name: "Разработка дизайна", href: "design" },
-        { name: "Разработка логотипа", href: "design-logo" },
-        { name: "Редизайн", href: "redesign" },
-        { name: "Разработка фирменного стиля", href: "design-style" },
-        { name: "Графический дизайн", href: "graph-design" },
-        { name: "Motion-дизайн", href: "motion-design" },
-        { name: "Разработка брендбука", href: "brandbook" },
-      ],
-    },
-    {
-      services: [
-        { name: "6 Корпоротивные сайты", href: "corporate-website" },
-        { name: "6 Интернет-магазин", href: "online-store" },
-        { name: "6 Landing page", href: "landing" },
-        { name: "6 B2B сайты", href: "b2b" },
-        { name: "6 Сайт-визитка", href: "card-website" },
-        { name: "6 Портал", href: "portal" },
-        { name: "6 Сайт-каталог", href: "website-catalog" },
-        { name: "6 Информационный сайт", href: "information-site" },
-        { name: "6 Маркетплейс", href: "marketplace" },
-      ],
-    },
-  ];
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        setActiveModal(null);
+      }
+    };
+
+    const handleScroll = () => {
+      setActiveModal(null);
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleDropdowmBlock = () => {
     if (isMobileServicesOpen) {
@@ -167,12 +194,18 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               src="https://yandex.ru/maps-reviews-widget/192647371670?size=s"
             ></iframe>
           </div> */}
-          <div className="flex flex-row gap-2">
+          <div
+            className="flex flex-row gap-2 cursor-pointer"
+            onClick={() => setActiveModal("address")}
+          >
             <Image
               src={"/resources/arrow-right.svg"}
               width={20}
               height={20}
               alt="Arrow"
+              className={`${
+                activeModal === "address" ? "rotate-180" : ""
+              } transition-all duration-150`}
             />
             <p className="text-[16px] font-medium">Игуменский тракт 20</p>
           </div>
@@ -222,21 +255,36 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               </span>
             </a>
             <p className="ms-[40px]">ежедневно: 9:00 - 18:00</p>
-            <a href="tel:+375296342190">
-              <span
+            <div
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveModal("phone");
+              }}
+              className="flex flex-row gap-2 cursor-pointer"
+            >
+              <p
                 className={`ms-[40px] text-[16px] ${
                   theme === "dark" ? "text-white" : "text-black"
                 }`}
               >
                 +375 29 634 21 90
-              </span>
-            </a>
+              </p>
+              <Image
+                src={"/resources/arrow-right.svg"}
+                width={20}
+                height={20}
+                alt="Arrow"
+                className={`${
+                  activeModal === "phone" ? "rotate-180" : ""
+                } transition-all duration-150`}
+              />
+            </div>
           </div>
         </div>
         <div
           className={`shadow-md ${
             theme === "dark" ? "bg-black" : "bg-white"
-          } transition-all duration-300 py-[9px] ps-[10px] pe-[20px] md:py-[15px] md:px-[45px] 2xl:px-[60px] ${
+          } transition-all duration-300 py-[9px] ps-[10px] pe-[20px] md:py-[10px] md:px-[45px] 2xl:px-[60px] ${
             theme === "dark" ? "border-t-black_80" : "border-t-black_10"
           } border-t-[1px] flex items-center justify-between ${
             isSticky && window.innerWidth > 768
@@ -484,7 +532,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
             <a
               href="/application"
               rel="nofollow"
-              className="hidden xlg:block bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[227px] text-white px-[39px] w-full text-[18px]  hover:bg-blue-700"
+              className="hidden xlg:block bg-blue_main min-h-[50px] py-3 text-center rounded-full max-w-[204px] text-white px-[36px] w-full text-[16px]  hover:bg-blue-700"
             >
               Обсудить проект
             </a>
@@ -942,7 +990,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
             <a
               href="/application"
               rel="nofollow"
-              className={`bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[279px] text-white px-[65px] w-full text-[18px]  hover:bg-blue-700 mx-8 duration-500 
+              className={`bg-blue_main min-h-[50px] py-3.5 text-center rounded-full max-w-[227px] text-white px-[39px] w-full text-[18px]  hover:bg-blue-700 mx-8 duration-500 
                                 ${
                                   isMobileServicesOpen
                                     ? "hidden opacity-0"
@@ -984,12 +1032,26 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
           </div>
         </div>
       </header>
+      <div className="max-w-[1440px] mx-auto md:px-[45px] w-full h-full">
+        {activeModal === "address" && (
+          <div ref={modalRef} className="fixed top-[50px] left-[max(calc(50%-720px+60px),45px)] z-[150] bg-white flex flex-col gap-2 py-3 px-4 rounded-[16px] shadow-[0_0px_5px_rgba(0,0,0,0.1)] text-[16px] font-medium">
+            <p>Минск, Игуменский тракт 20</p>
+            <p>Москва, проезд Полесский, 16, стр 2</p>
+          </div>
+        )}
+        {activeModal === "phone" && (
+          <div ref={modalRef} className="fixed top-[50px] right-[max(calc(50%-720px+60px),45px)] z-[150] bg-white flex flex-col gap-2 py-3 px-4 rounded-[16px] shadow-[0_0px_5px_rgba(0,0,0,0.1)] text-[16px] font-medium">
+            <a href="tel:+375296342190">+375 29 634 21 90</a>
+            <a href="tel:+79362839903">+7 936 283 99 03</a>
+          </div>
+        )}
+      </div>
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-40 ${
           isServicesOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       ></div>
-      <div className="block h-[59px] md:h-[139px]  w-full"></div>
+      <div className="block h-[59px] md:h-[119px]  w-full"></div>
     </>
   );
 };

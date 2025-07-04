@@ -426,7 +426,7 @@ const Footer: React.FC = () => {
                 !agreeForMailing || !agreePolicy
                   ? "bg-gray-300"
                   : "bg-blue_main"
-              } mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg  h-fit min-h-[50px] rounded-full text-white`}
+              } mt-2 px-[36px] py-[12px] md:w-[204px] w-full text-center text-[16px]  h-fit min-h-[50px] rounded-full text-white`}
               disabled={!agreeForMailing || !agreePolicy}
             >
               {loading ? "Отправка..." : "Обсудить проект"}
@@ -479,7 +479,7 @@ const Footer: React.FC = () => {
             <a
               href="/application"
               rel="nofollow"
-              className="mt-2 px-[39px] py-[12px] md:w-[227px] w-full max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white"
+              className="mt-2 px-[36px] py-[12px] md:w-[204px] w-full max-w-full text-center text-[16px] bg-blue_main h-fit min-h-[50px] rounded-full text-white"
             >
               Обсудить проект
             </a>

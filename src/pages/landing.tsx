@@ -131,11 +131,13 @@ const landing = () => {
           description="Созднание одностраничных сайтов с нешаблонным дизайном и эффективными маркетинговыми решениями для высокой конверсии, целевой лидогенерации и роста продаж"
           imagePath="/resources/landing_title.png"
           hasQuiz={true}
+          adText="Разработка продающего лендинга"
         />
         <QuizBlock
           quizQuestions={quizQuestions}
           page="Landing"
-          title="При прохождении квиза хостинг в подарок на 3 месяца"
+          title="Забронируйте скидку 10% на разработку сайта"
+          description="Ответьте на 5 простых вопросов — и получите персональную скидку 10% на разработку своего будущего сайта."
           padding="mb-[50px] sm:mb-[60px]"
         />
         <StandardMarginsLayout

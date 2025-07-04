@@ -65,7 +65,7 @@ const ThirdMobileAppsBlock: FC<ThirdMobileAppsBlockProps> = ({
                         : "block"
                     } text-center px-[20px] py-[12px] lg:max-w-72 lg:w-fit w-full justify-center items-center  bg-blue_main rounded-full text-white`}
                   >
-                    <span className="text-[18px] font-medium">
+                    <span className="text-[16px] font-medium">
                       Обсудить проект
                     </span>
                   </a>

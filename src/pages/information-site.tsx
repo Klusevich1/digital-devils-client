@@ -227,7 +227,7 @@ const informationSite = () => {
                 rel="nofollow"
                 className="lg:hidden px-[30px] py-[10px] lg:max-w-72 lg:w-fit w-full flex justify-center items-center  bg-blue_main rounded-full text-white mt-[20px]"
               >
-                <span className="text-[18px] font-medium">Обсудить проект</span>
+                <span className="text-[16px] font-medium">Обсудить проект</span>
               </a>
             </div>
           }

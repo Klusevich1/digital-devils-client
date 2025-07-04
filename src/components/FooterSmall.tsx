@@ -53,7 +53,7 @@ const FooterSmall: React.FC = () => {
           <a
             href="/application"
             rel="nofollow"
-            className="mt-2 px-5 py-3.5 max-w-full text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white w-[227px]"
+            className="mt-2 px-[36px] py-3.5 text-center text-lg bg-blue_main h-fit min-h-[50px] rounded-full text-white max-w-[204px] w-full"
           >
             Обсудить проект
           </a>

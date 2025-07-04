@@ -13,6 +13,7 @@ import { WhiteMediumImageBlock } from "@/components/WhiteMediumImageBlock";
 import CaseBlock from "@/components/CaseBlock";
 import WhiteImageBlockWithBlueText from "@/components/WhiteImageBlockWithBlueText";
 import WhiteBlockWithDoubleParagraphsAndImage from "@/components/WhiteBlockWithDoubleParagraphsAndImage";
+import QuizBlock from "@/components/QuizBlock";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -31,6 +32,51 @@ const breadcrumbsSchema: ListItem[] = [
     position: 2,
     name: "Интернет-магазин",
     item: "https://digitaldevils.by/online-store",
+  },
+];
+
+const quizQuestions = [
+  {
+    title: "Что точно должно быть в вашем магазине?",
+    options: [
+      "Корзина и заказ",
+      "Онлайн-оплата",
+      "Фильтры по товарам",
+      "Акции, промокоды",
+      "Что-то особенное (опишите)",
+    ],
+    textField: "Опишите задачу",
+  },
+  {
+    title: "Объём каталога:",
+    options: [
+      "До 100 товаров",
+      "100-1000",
+      "1000+",
+      "Регулярно обновляемый ассортимент",
+    ],
+  },
+  {
+    title: "Нужна ли вам помощь с SEO-продвижением после запуска сайта?",
+    options: [
+      "Да, интересует полный цикл (от разработки до продвижения)",
+      "Возможно, позже",
+      "Нет, этим займутся другие специалисты",
+      "Пока не знаем, хотим услышать рекомендации",
+    ],
+  },
+  {
+    title: "Этап проекта:",
+    options: [
+      "Уже готовим контент / структуру",
+      "Есть только идея",
+      "Хотим запустить в течение месяца",
+      "Пока изучаю предложения",
+    ],
+  },
+  {
+    title: "Где вам удобнее его получить?",
+    options: ["Telegram", "Viber", "WhatsApp", "Звонок"],
   },
 ];
 
@@ -115,6 +161,15 @@ const OnlineStore = () => {
           title="Разработка интернет-магазина"
           description="Создание интернет-магазинов под ключ - это то, в чем мы особенно сильны. Продумываем, погружаемся и разрабатываем онлайн-магазины, которые легко продвигаются и приносят бизнесу реальную прибыль"
           imagePath="/resources/online_store_title_2.png"
+          hasQuiz={true}
+          adText="Разработка продающего сайта"
+        />
+        <QuizBlock
+          quizQuestions={quizQuestions}
+          page="Интернет-магазин"
+          title="Забронируйте скидку 10% на разработку сайта"
+          description="Ответьте на 5 простых вопросов — и получите персональную скидку 10% на разработку своего будущего сайта."
+          padding="mb-[50px] sm:mb-[60px]"
         />
         <DarkBigImageBlock
           bigTitle="Только эффективные решения"
@@ -131,7 +186,12 @@ const OnlineStore = () => {
           text={
             <>
               <div className="flex items-start">
-                <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
+                <Image
+                  src="/resources/arrow_custom.svg"
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
                 <p className="text-[18px] ms-[20px] font-medium">
                   Индивидуальные решения, уникальные макеты и прототипы,
                   продуманное меню и юзабилити - ключевые принципы, лежащие в
@@ -139,7 +199,12 @@ const OnlineStore = () => {
                 </p>
               </div>
               <div className="flex items-start">
-                <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
+                <Image
+                  src="/resources/arrow_custom.svg"
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
                 <p className="text-[18px] ms-[20px] font-medium">
                   {" "}
                   Мы не просто оказываем услуги по разработке интернет
@@ -149,7 +214,12 @@ const OnlineStore = () => {
                 </p>
               </div>
               <div className="flex items-start">
-                <Image src="/resources/arrow_custom.svg" alt={"arrow"} width={32} height={32} />
+                <Image
+                  src="/resources/arrow_custom.svg"
+                  alt={"arrow"}
+                  width={32}
+                  height={32}
+                />
                 <p className="text-[18px] ms-[20px] font-medium">
                   Внедряем передовые технологии и дополнительные наборы
                   интерфейсов под ваши задачи. Настроим меню и карточки товаров,
@@ -229,7 +299,10 @@ const OnlineStore = () => {
           }
           smallText=""
           smallTitle="Управление сайтом"
-          badges={[{ name: "1C-Битрикс", link: 'https://digitaldevils.by/bitrix' }, { name: "Tilda", link: 'https://digitaldevils.by/tilda' }]}
+          badges={[
+            { name: "1C-Битрикс", link: "https://digitaldevils.by/bitrix" },
+            { name: "Tilda", link: "https://digitaldevils.by/tilda" },
+          ]}
           margin="pb-[50px] md:pb-[60px]"
           imagePath="/resources/online_store_fast_tech.png"
           isRevert={false}
@@ -302,8 +375,9 @@ const OnlineStore = () => {
                   <span className="text-custom_yellow text-[16px] font-medium">
                     /
                   </span>{" "}
-                  Изменение фирменных цветов, <a href='/brandbook'>брендбука</a>, <a href="/design-logo">логотипа</a>,
-                  позиционирование бренда;
+                  Изменение фирменных цветов, <a href="/brandbook">брендбука</a>
+                  , <a href="/design-logo">логотипа</a>, позиционирование
+                  бренда;
                 </li>
                 <li className="text-[16px] font-medium">
                   <span className="text-custom_yellow text-[16px] font-medium">

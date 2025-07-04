@@ -9,6 +9,7 @@ type TitleBlockProps = {
   description: string;
   imagePath: string | StaticImageData;
   hasQuiz?: boolean;
+  adText?: string;
 };
 
 export const TitleBlock: FC<TitleBlockProps> = ({
@@ -16,11 +17,12 @@ export const TitleBlock: FC<TitleBlockProps> = ({
   description,
   imagePath,
   hasQuiz = false,
+  adText = "",
 }) => {
   return (
     <>
       <StandardMarginsLayout
-        styles={`${hasQuiz ? 'pb-[20px]' : 'pb-[50px]'} md:pb-[60px]`}
+        styles={`${hasQuiz ? "pb-[20px]" : "pb-[50px]"} md:pb-[60px]`}
         children={
           <>
             <div className="lg:flex lg:justify-between">
@@ -38,14 +40,23 @@ export const TitleBlock: FC<TitleBlockProps> = ({
                     alt={title}
                   />
                 </div>
-                <p className={`md:text-[18px] text-[16px] lg:max-w-[640px] max-w-max ${hasQuiz ? '' : 'md:mb-[30px] mb-[20px]'}`}>
+                <p
+                  className={`md:text-[18px] text-[16px] lg:max-w-[640px] max-w-max ${
+                    hasQuiz ? "" : "md:mb-[30px] mb-[20px]"
+                  }`}
+                >
                   {description}
                 </p>
                 {hasQuiz ? (
                   <div className="w-full flex sm:flex-row flex-col sm:items-center xl:gap-[70px] md:justify-start justify-between">
                     <p className="lg:max-w-[422px] sm:max-w-full max-w-[320px] sm:text-[24px] text-[18px] font-bold sm:mt-0 mt-[20px]">
-                      Разработка продающего лендинга{" "}
-                      <br className="xl:block hidden" />+ {" "}
+                      {adText}{" "}
+                      {title === "Разработка маркетплейса" ? (
+                        <></>
+                      ) : (
+                        <br className="xl:block hidden" />
+                      )}{" "}
+                      +{" "}
                       <span className="border-b-[1px] border-black">
                         хостинг в подарок на 3 месяца!
                       </span>{" "}

@@ -125,7 +125,7 @@ const WhiteBlockWithDoubleParagraphsAndImage: FC<
                         : "block"
                     } text-center px-[30px] py-[10px] lg:max-w-72 lg:w-fit w-full justify-center items-center  bg-blue_main rounded-full text-white mt-[10px]`}
                   >
-                    <span className="text-[18px] font-medium">
+                    <span className="text-[16px] font-medium">
                       Обсудить проект
                     </span>
                   </a>

@@ -485,7 +485,7 @@ const Application = () => {
                       !agreePolicy || !agreeForMailing
                         ? "bg-gray-300 cursor-not-allowed"
                         : "bg-blue_main"
-                    } mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-lg  h-fit min-h-[50px] rounded-full text-white`}
+                    } mt-2 px-[39px] py-[12px] md:w-[227px] w-full text-center text-[16px] h-fit min-h-[50px] rounded-full text-white`}
                     disabled={loading}
                   >
                     {loading ? "Отправка..." : "Обсудить проект"}

@@ -174,7 +174,7 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                   Вопрос {activeQuestion} из {quizQuestions.length}
                 </p>
                 <div className="flex flex-row items-center gap-4">
-                  {Array.from({ length: 5 }, (_, i) => (
+                  {Array.from({ length: quizQuestions.length }, (_, i) => (
                     <div
                       key={i}
                       className={`md:w-[80px] w-[28px] md:h-[6px] h-[4px] rounded-full transition-all duration-200 ${
@@ -190,7 +190,15 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                     src={
                       page === "Главная"
                         ? "/resources/quizimg_small.png"
-                        : "/resources/quizimg-landing_small.png"
+                        : page === "Landing"
+                        ? "/resources/quizimg-landing_small.png"
+                        : page === "Интернет-магазин"
+                        ? "/resources/quizimg-store_small.png"
+                        : page === "Корпоративный сайт"
+                        ? "/resources/quizimg-corporate_small.png"
+                        : page === "Маркетплейс"
+                        ? "/resources/quizimg-marketplace_small.png"
+                        : "/resources/quizimg-portal_small.png"
                     }
                     width={532}
                     height={282}
@@ -359,7 +367,15 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                     src={
                       page === "Главная"
                         ? "/resources/quizimg.png"
-                        : "/resources/quizimg-landing.png"
+                        : page === "Landing"
+                        ? "/resources/quizimg-landing.png"
+                        : page === "Интернет-магазин"
+                        ? "/resources/quizimg-store.png"
+                        : page === "Корпоративный сайт"
+                        ? "/resources/quizimg-corporate.png"
+                        : page === "Маркетплейс"
+                        ? "/resources/quizimg-marketplace.png"
+                        : "/resources/quizimg-portal.png"
                     }
                     width={532}
                     height={282}
