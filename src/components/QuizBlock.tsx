@@ -230,7 +230,7 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                                 type="radio"
                                 id={`option-${activeQuestion}-${i}`}
                                 name={`quiz-${activeQuestion}`}
-                                className="appearance-none rounded-full border border-gray-400 checked:border-[5px] checked:border-black cursor-pointer w-4 h-4"
+                                className="appearance-none rounded-full border border-gray-400 checked:border-[5px] checked:border-black transition-all duration-100 cursor-pointer w-4 h-4"
                                 checked={isSelected}
                                 onChange={() => handleAnswer(option)}
                               />
