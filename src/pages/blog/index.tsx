@@ -7,6 +7,7 @@ import Image from "next/image";
 import NotFound from "../404";
 import { useRouter } from "next/router";
 import SEO, { ListItem } from "@/components/SEO";
+import { GetServerSideProps } from "next";
 
 interface BlogProps {
   initialArticles: Article[];
@@ -266,7 +267,7 @@ const Blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const limit = 12;
     const response = await fetch(
