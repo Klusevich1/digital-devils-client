@@ -239,3 +239,58 @@ body {
 .custom-checkbox.color-black:checked + label::before {
   background-image: url("/resources/checked-black.svg");
 }
+
+
+/* Для статей */
+div.article-content .article-part {
+  width: 60%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+@media(max-width: 1024px) {
+  div.article-content .article-part {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+div.article-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div.article-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+div.article-content h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+div.article-content h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+div.article-content p {
+  font-size: 16px;
+  font-weight: medium;
+  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
+}
+div.article-content ol {
+  list-style: decimal;
+  padding-left: 40px;
+}
+div.article-content ol p {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+} 
+div.article-content ul {
+  list-style: square;
+  padding-left: 40px;
+}

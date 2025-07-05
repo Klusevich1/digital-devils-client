@@ -227,7 +227,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               <span
                 className={`ms-[5px] ${
                   theme === "dark" ? "text-white" : "text-black"
-                }`}
+                } font-medium`}
               >
                 instagram
               </span>
@@ -249,12 +249,12 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               <span
                 className={`ms-[5px] ${
                   theme === "dark" ? "text-white" : "text-black"
-                }`}
+                } font-medium`}
               >
                 telegram
               </span>
             </a>
-            <p className="ms-[40px]">ежедневно: 9:00 - 18:00</p>
+            <p className="ms-[40px] font-medium">ежедневно: 9:00 - 18:00</p>
             <div
               onClick={(e) => {
                 e.preventDefault();
@@ -265,7 +265,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               <p
                 className={`ms-[40px] text-[16px] ${
                   theme === "dark" ? "text-white" : "text-black"
-                }`}
+                } font-medium`}
               >
                 +375 29 634 21 90
               </p>

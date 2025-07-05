@@ -85,6 +85,8 @@ const Blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
     },
   ];
 
+  console.log(articles)
+
   return (
     <>
       <SEO
@@ -162,7 +164,7 @@ const Blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
             ) : (
               articles.map((art, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <ArticleCard art={art} />
+                  <ArticleCard art={art} maxW="max-w-[640px]"/>
                 </div>
               ))
             )}
@@ -279,7 +281,7 @@ export async function getStaticProps() {
     return {
       props: {
         initialArticles: data.articles,
-        totalPages: Math.ceil(data.total / limit), // Общее количество страниц
+        totalPages: Math.ceil(data.total / limit),
         limit,
       },
     };

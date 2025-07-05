@@ -38,7 +38,7 @@ const MainBlockNinth: React.FC<MainBlockNinthProps> = ({ articles, title }) => {
             >
                 {visibleArticles.map((art, index) => (
                     <div key={index} className=" flex flex-col items-center">
-                        <ArticleCard art={art} />
+                        <ArticleCard art={art} maxW={index === 0 ? 'max-w-[640px]' : 'max-w-[300px]'}/>
                     </div>
                 ))}
             </div>

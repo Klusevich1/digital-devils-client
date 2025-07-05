@@ -1,5 +1,4 @@
 export interface Paragraph {
-  title: string;
+  id: string;
   text: string;
-  link?: string;
 }

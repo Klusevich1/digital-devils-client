@@ -5,8 +5,10 @@ export interface Article {
   id: number;
   slug: string;
   image: string;
+  seoTitle: string;
+  seoDescription: string;
   title: string;
-  description: string;
+  content: string;
   type: string;
   date: string;
   readingTime: string;

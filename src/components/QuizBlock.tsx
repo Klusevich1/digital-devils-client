@@ -159,18 +159,20 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
       <StandardMarginsLayout
         styles={`${padding}`}
         children={
-          <div id="quiz">
+          <div id="quiz" className="w-full">
             <div className="flex flex-col gap-3 mb-[30px]">
-              <h3 className="md:text-[40px] text-[28px] font-bold">{title}</h3>
+              <h3 className="md:!text-[40px] !text-[28px] font-bold !m-0">
+                {title}
+              </h3>
               {description && (
-                <p className="max-w-[639px] text-[18px] font-medium">
+                <p className="max-w-[639px] !text-[18px] font-medium !m-0">
                   {description}
                 </p>
               )}
             </div>
             <div className="flex flex-col gap-[30px] md:p-[30px] p-[20px] min-h-[417px] rounded-[40px] border border-black_80">
               <div className="flex flex-col gap-4">
-                <p className="md:text-[22px] text-[18px] font-bold">
+                <p className="md:!text-[22px] !text-[18px] font-bold !m-0">
                   Вопрос {activeQuestion} из {quizQuestions.length}
                 </p>
                 <div className="flex flex-row items-center gap-4">
@@ -198,7 +200,9 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                         ? "/resources/quizimg-corporate_small.png"
                         : page === "Маркетплейс"
                         ? "/resources/quizimg-marketplace_small.png"
-                        : "/resources/quizimg-portal_small.png"
+                        : page === "Портал"
+                        ? "/resources/quizimg-portal_small.png"
+                        : "/resources/quizimg_small.png"
                     }
                     width={532}
                     height={282}
@@ -211,7 +215,7 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                     {activeQuestion === quizQuestions.length && (
                       <p className="text-[28px] font-bold">Расчет готов!</p>
                     )}
-                    <p className="md:text-[28px] text-[24px] font-bold mb-[20px]">
+                    <p className="md:!text-[28px] !text-[24px] font-bold !mb-[20px] !mx-0">
                       {current.title}
                     </p>
                     <div
@@ -375,7 +379,9 @@ const QuizBlock: React.FC<QuizBlockProps> = ({
                         ? "/resources/quizimg-corporate.png"
                         : page === "Маркетплейс"
                         ? "/resources/quizimg-marketplace.png"
-                        : "/resources/quizimg-portal.png"
+                        : page === "Портал"
+                        ? "/resources/quizimg-portal.png"
+                        : "/resources/quizimg.png"
                     }
                     width={532}
                     height={282}

@@ -20,10 +20,10 @@ const MainBlockFourth: React.FC<MainBlockFourthProps> = ({
       styles={`text-white bg-black md:py-[60px] py-[50px] ${margin}`}
       children={
         <>
-          <h2 className="font-bold text-[32px] md:text-[42px] lg:text-[60px] mb-[20px]">
+          <h2 className={`font-bold !mt-0 ${description ? '!text-[32px] md:!text-[42px] lg:!text-[60px] !mb-[20px]' : '!text-[32px] md:!text-[40px] !mb-[25px]'}`}>
             {title}
           </h2>
-          <p className="text-[18px] max-w-[764px] md:text-[24px] mb-[20px]">
+          <p className="!text-[18px] max-w-[764px] md:!text-[24px] !mb-[20px] !mx-0">
             {description}
           </p>
           <a
@@ -31,7 +31,7 @@ const MainBlockFourth: React.FC<MainBlockFourthProps> = ({
             href="/application"
             rel="nofollow"
           >
-            <div className="lg:w-[319px] w-[301px] lg:text-[22px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
+            <div className="lg:w-[301px] w-[301px] text-[18px] lg:py-[15px] py-[12px] text-center bg-blue_main rounded-full text-white">
               {buttonText}
             </div>
             <div className="ms-[-10px] lg:text-[28px] text-[24px] lg:size-[60px] size-[50px] flex justify-center items-center  bg-blue_main rounded-full text-white">
