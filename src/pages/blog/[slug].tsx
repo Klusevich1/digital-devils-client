@@ -141,9 +141,9 @@ const ArticlePage: React.FC<ArticlePageProps> = ({
                       {article.readingTime}
                     </span>
                   </div>
-                  <p className="md:text-[40px] text-[32px] font-bold my-[20px]">
+                  <h1 className="md:text-[40px] text-[32px] font-bold my-[20px]">
                     {article.title}
-                  </p>
+                  </h1>
                   <div className="flex flex-row items-center gap-[20px]">
                     {article.author?.image ? (
                       <Image
