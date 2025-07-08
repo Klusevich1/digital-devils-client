@@ -7,7 +7,10 @@ interface ArticleProps {
   maxW?: string;
 }
 
-const ArticleCard: React.FC<ArticleProps> = ({ art, maxW = 'max-w-[300pxpx]' }) => {
+const ArticleCard: React.FC<ArticleProps> = ({
+  art,
+  maxW = "max-w-[300pxpx]",
+}) => {
   const [imageLoading, setImageLoading] = useState<boolean>(true);
   const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 
@@ -48,9 +51,9 @@ const ArticleCard: React.FC<ArticleProps> = ({ art, maxW = 'max-w-[300pxpx]' }) 
         <span className="w-fit px-[10px] py-[6px] border-blue_main rounded-[14px] border-[1px] text-[14px]">
           {art.type}
         </span>
-        {/* <a href={`/blog/${art.slug}`}> */}
-        <p className="lg:text-[18px] text-[18px] font-bold">{art.title}</p>
-        {/* </a> */}
+        <a href={`/blog/${art.slug}`}>
+          <p className="lg:text-[18px] text-[18px] font-bold">{art.title}</p>
+        </a>
         <div className="flex flex-row gap-[20px]">
           <span className="text-[#7C7C7C] text-[14px] font-medium">
             {art.date}

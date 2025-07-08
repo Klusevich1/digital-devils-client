@@ -86,8 +86,6 @@ const Blog: React.FC<BlogProps> = ({ initialArticles, totalPages, limit }) => {
     },
   ];
 
-  console.log(articles)
-
   return (
     <>
       <SEO
