@@ -365,14 +365,14 @@ const marketplace = () => {
         <CommentBlock
           reviewsData={[
             {
-              avatar: "/resources/avatar_4.png",
+              avatar: "/resources/avatar_21.png",
               name: "Ирина Борисова",
               jobTitle: "SEO-специалист «MediCare»",
               reviewText:
                 "Сайт попал под фильтр – трафик упал в 10 раз. Разобрали ошибки, пересобрали семантику, перезапустили SEO продвижение нашего молодого сайта. Через 3 месяца не только вышли из санкций, но и обогнали конкурентов",
             },
             {
-              avatar: "/resources/avatar_3.png",
+              avatar: "/resources/avatar_22.png",
               name: "Дмитрий Петров",
               jobTitle: "Маркетолог «EcoTech»",
               reviewText:

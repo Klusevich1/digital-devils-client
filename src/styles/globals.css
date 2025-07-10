@@ -243,7 +243,7 @@ body {
 
 /* Для статей */
 div.article-content .article-part {
-  width: 60%;
+  width: 70%;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -294,3 +294,11 @@ div.article-content ul {
   list-style: square;
   padding-left: 40px;
 }
+
+@media(min-width: 1024px) {
+  .margin_style {
+    margin-bottom: 15px;
+  }
+}
+
+

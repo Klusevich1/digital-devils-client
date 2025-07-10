@@ -255,11 +255,12 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               </span>
             </a>
             <p className="ms-[40px] font-medium">ежедневно: 9:00 - 18:00</p>
-            <div
-              onClick={(e) => {
-                e.preventDefault();
-                setActiveModal("phone");
-              }}
+            <a
+              // onClick={(e) => {
+              //   e.preventDefault();
+              //   setActiveModal("phone");
+              // }}
+              href="tel:+375296342190"
               className="flex flex-row gap-2 cursor-pointer"
             >
               <p
@@ -269,7 +270,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               >
                 +375 29 634 21 90
               </p>
-              <Image
+              {/* <Image
                 src={"/resources/arrow-right.svg"}
                 width={20}
                 height={20}
@@ -277,8 +278,33 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 className={`${
                   activeModal === "phone" ? "rotate-180" : ""
                 } transition-all duration-150`}
-              />
-            </div>
+              /> */}
+            </a>
+            <a
+              // onClick={(e) => {
+              //   e.preventDefault();
+              //   setActiveModal("phone");
+              // }}
+              href="tel:+79362839903"
+              className="flex flex-row gap-2 cursor-pointer"
+            >
+              <p
+                className={`ms-[40px] text-[16px] ${
+                  theme === "dark" ? "text-white" : "text-black"
+                } font-medium`}
+              >
+                +7 936 283 99 03
+              </p>
+              {/* <Image
+                src={"/resources/arrow-right.svg"}
+                width={20}
+                height={20}
+                alt="Arrow"
+                className={`${
+                  activeModal === "phone" ? "rotate-180" : ""
+                } transition-all duration-150`}
+              /> */}
+            </a>
           </div>
         </div>
         <div
@@ -333,7 +359,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                   <div className="max-w-[1440px] mx-auto md:px-[46px] py-[30px] justify-around flex">
                     <div className="flex w-full dop-services-dropdown">
                       <ul className="min-w-[400px] space-y-2.5 w-1/3">
-                        <li>
+                        <li className="w-fit">
                           <p
                             className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(1)}
@@ -354,7 +380,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             <GoArrowRight className="size-[24px]" />
                           </p>
                         </li>
-                        <li>
+                        <li className="w-fit">
                           <p
                             className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(2)}
@@ -375,7 +401,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             <GoArrowRight className="size-[24px]" />
                           </p>
                         </li>
-                        <li>
+                        <li className="w-fit">
                           <p
                             className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(3)}
@@ -396,7 +422,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             <GoArrowRight className="size-[24px]" />
                           </p>
                         </li>
-                        <li>
+                        <li className="w-fit">
                           <p
                             className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(4)}
@@ -417,7 +443,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                             <GoArrowRight className="size-[24px]" />
                           </p>
                         </li>
-                        <li>
+                        <li className="w-fit">
                           <p
                             className="hover:text-blue-600 flex items-center duration-300 cursor-pointer"
                             onMouseOver={() => setDopServiceIndex(5)}
@@ -1034,17 +1060,23 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
       </header>
       <div className="max-w-[1440px] mx-auto md:px-[45px] w-full h-full">
         {activeModal === "address" && (
-          <div ref={modalRef} className="fixed top-[50px] left-[max(calc(50%-720px+60px),45px)] z-[150] bg-white flex flex-col gap-2 py-3 px-4 rounded-[16px] shadow-[0_0px_5px_rgba(0,0,0,0.1)] text-[16px] font-medium">
+          <div
+            ref={modalRef}
+            className="fixed top-[50px] left-[max(calc(50%-720px+60px),45px)] z-[150] bg-white flex flex-col gap-2 py-3 px-4 rounded-[16px] shadow-[0_0px_5px_rgba(0,0,0,0.1)] text-[16px] font-medium"
+          >
             <p>Минск, Игуменский тракт 20</p>
             <p>Москва, проезд Полесский, 16, стр 2</p>
           </div>
         )}
-        {activeModal === "phone" && (
-          <div ref={modalRef} className="fixed top-[50px] right-[max(calc(50%-720px+60px),45px)] z-[150] bg-white flex flex-col gap-2 py-3 px-4 rounded-[16px] shadow-[0_0px_5px_rgba(0,0,0,0.1)] text-[16px] font-medium">
+        {/* {activeModal === "phone" && (
+          <div
+            ref={modalRef}
+            className="fixed top-[50px] right-[max(calc(50%-720px+60px),45px)] z-[150] bg-white flex flex-col gap-2 py-3 px-4 rounded-[16px] shadow-[0_0px_5px_rgba(0,0,0,0.1)] text-[16px] font-medium"
+          >
             <a href="tel:+375296342190">+375 29 634 21 90</a>
-            <a href="tel:+79362839903">+7 936 283 99 03</a>
+            <a href="tel:+79362839903"></a>
           </div>
-        )}
+        )} */}
       </div>
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-40 ${

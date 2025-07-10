@@ -22,22 +22,26 @@ const article = {
         >
       </p>
     </div>
-    <div class="article-part custom_container" id='tzd-definition' >
+     <div class="article-part custom_container" id='tzd-definition'>
       <h2>
         <span style="font-size: 32px"
           >Что такое техническое задание?&nbsp;</span
         >
       </h2>
-      <p>
-        <span style="font-size: 16px"
-          >Техническое задание (ТЗ) &ndash; официальный документ, в котором
-          прописываются все требования к проекту, перечисляются характеристики
-          готового продукта. Чем четче и подробнее перечислены и расписаны
-          пункты ТЗ, тем лучше участники процесса понимают, что им делать.
-          Главная задача любого техзадания &ndash; удостовериться, что клиент и
-          исполнитель поняли друг друга.&nbsp;</span
-        >
-      </p>
+      <div class="flex lg:flex-row flex-col gap-5 margin_style">
+        <img src="/resources/articles/tzd1.png" width="413" height="264" alt="Article img" class="lg:block hidden max-w-[413px] w-full">
+        <img src="/resources/articles/tzd1_small.png" width="413" height="264" alt="Article img" class="lg:hidden block max-w-[413px] w-full">
+        <p>
+          <span style="font-size: 16px"
+            >Техническое задание (ТЗ) &ndash; официальный документ, в котором
+            прописываются все требования к проекту, перечисляются характеристики
+            готового продукта. Чем четче и подробнее перечислены и расписаны
+            пункты ТЗ, тем лучше участники процесса понимают, что им делать.
+            Главная задача любого техзадания &ndash; удостовериться, что клиент
+            и исполнитель поняли друг друга.&nbsp;</span
+          >
+        </p>
+      </div>
       <p>
         <span style="font-size: 16px"
           ><em
@@ -187,29 +191,35 @@ const article = {
           >Кто должен составлять техническое задание?&nbsp;</span
         >
       </h2>
-      <p>
-        <span style="font-size: 16px"
-          >На самом деле, здесь нет какой-то устоявшейся практики &ndash;
-          задание может представить клиент, подготовить разработчик или же оно
-          составляется совместными усилиями представителями заинтересованных
-          сторон.</span
-        >&nbsp;
-      </p>
-      <h3>
-          <strong
-            ><span style="font-size: 24px">1. ТЗ делает заказчик.</span
-            >&nbsp;</strong
-          >
-      </h3>
-      <p>
-        <span style="font-size: 16px"
-          >Идеальная ситуация, когда потенциальный клиент обращается в студию
-          разработки с подробным ТЗ. В этом случае исполнители точно знают, что,
-          как и с использованием каких инструментов они должны выполнить.
-          Соответственно могут сразу назвать сроки, рассчитать стоимость
-          работ.&nbsp;</span
-        >
-      </p>
+      <div class='flex lg:flex-row flex-col gap-5 margin_style'>
+        <img src="/resources/articles/tzd2.png" width="413" height="275" alt="Article img" class="lg:block hidden max-w-[413px] w-full">
+        <img src="/resources/articles/tzd2_small.png" width="413" height="275" alt="Article img" class="lg:hidden block max-w-max w-full">
+        <div>
+          <p>
+            <span style="font-size: 16px"
+              >На самом деле, здесь нет какой-то устоявшейся практики &ndash;
+              задание может представить клиент, подготовить разработчик или же оно
+              составляется совместными усилиями представителями заинтересованных
+              сторон.</span
+            >&nbsp;
+          </p>
+          <h3>
+              <strong
+                ><span style="font-size: 24px">1. ТЗ делает заказчик.</span
+                >&nbsp;</strong
+              >
+          </h3>
+          <p>
+            <span style="font-size: 16px"
+              >Идеальная ситуация, когда потенциальный клиент обращается в студию
+              разработки с подробным ТЗ. В этом случае исполнители точно знают, что,
+              как и с использованием каких инструментов они должны выполнить.
+              Соответственно могут сразу назвать сроки, рассчитать стоимость
+              работ.&nbsp;</span
+            >
+          </p>
+        </div>
+      </div>
       <p>
         <span style="font-size: 16px"
           >Но все же чаще всего, у заказчиков нет ТЗ или же оно звучит, как
@@ -755,14 +765,18 @@ const article = {
       <h2>
         <span style="font-size: 32px">Типичные ошибки при составлении ТЗ</span>
       </h2>
-      <p>
-        Итак, пока все выглядит круто и логично. Определили и зафиксировали
-        требования к будущему продукту на бумаге &ndash; передали разработчикам
-        &ndash; через определенное время получили идеальный сайт, который начал
-        работать с первых минут после запуска. Но реальность может быть
-        жестокой. Даже наличие техзадания не гарантирует превосходный результат,
-        если при составлении документа допущены ошибки.&nbsp;
-      </p>
+      <div class='flex lg:flex-row flex-col gap-5 margin_style'>
+        <img src="/resources/articles/tzd3.png" width="300" height="296" alt="Article img" class="lg:block hidden max-w-[300px] w-full">
+        <img src="/resources/articles/tzd3_small.png" width="300" height="296" alt="Article img" class="lg:hidden block max-w-max w-full">
+        <p>
+          Итак, пока все выглядит круто и логично. Определили и зафиксировали
+          требования к будущему продукту на бумаге &ndash; передали разработчикам
+          &ndash; через определенное время получили идеальный сайт, который начал
+          работать с первых минут после запуска. Но реальность может быть
+          жестокой. Даже наличие техзадания не гарантирует превосходный результат,
+          если при составлении документа допущены ошибки.&nbsp;
+        </p>
+      </div>
       <h3>
         <span style="font-size: 24px"
           >Какие проблемы встречаются чаще всего?</span
@@ -851,7 +865,7 @@ const article = {
   type: "Дизайн",
   date: "03 июл 2025",
   readingTime: "10 мин",
-  author: {image: "/resources/avatar_2.png", name: "Елизавета", position: "UX/UI дизайнер"},
+  author: {image: "/resources/avatar_3.png", name: "Егор", position: "Frontend-разработчик"},
   paragraphs: [
     { id: "tzd-definition", text: "Что такое техническое задание?" },
     { id: "tzd-why", text: "Зачем нужно ТЗ при создании сайта?" },

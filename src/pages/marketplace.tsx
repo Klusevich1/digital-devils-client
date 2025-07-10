@@ -11,6 +11,7 @@ import React from "react";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 import Image from "next/image";
 import QuizBlock from "@/components/QuizBlock";
+import PricingPlansBlock from "@/components/PricingPlansBlock";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -289,6 +290,58 @@ const marketplace = () => {
               </div>
             </>
           }
+        />
+
+        <PricingPlansBlock
+          title="Цены на создание маркетплейса"
+          plans={[
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Шаблон WordPress + WooCommerce (multi vendor)",
+                "Базовая настройка страниц",
+                "Минимальная адаптация",
+              ],
+              smallTitle: "Базовый",
+              secondSmallTitle: "",
+              price: "6000 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#FAFAFA",
+              buttonBgColor: "#214BF6",
+              bgColor: "#FAFAFA",
+              list: [
+                "WordPress + мультивендор плагины",
+                "Индивидуальный дизайн",
+                "Базовое SEO",
+                "Управление продавцами",
+              ],
+              smallTitle: "Стандартный",
+              secondSmallTitle: "",
+              price: "9500 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Чистый код (React/Next.js + Nest.js)",
+                "Уникальный UX/UI",
+                "Продвинутая SEO-оптимизация",
+                "Высокая скорость",
+              ],
+              smallTitle: "Премиум",
+              secondSmallTitle: "",
+              price: "14000 BYN",
+            },
+          ]}
+          min_h_ticket_list={180}
+          isOnlyBottomPadding={true}
         />
 
         <DarkBigImageBlock

@@ -166,7 +166,7 @@ const TicketSeoBlock: React.FC<ColorfulBlockProps> = ({
               </div>
             </div>
             <div className="flex flex-col max-w-full lg:max-w-[414px] w-full lg:mt-0 mt-[30px]">
-              <div className="px-[26px] pt-[31px] rounded-t-[40px] border-b-0 border-[1px] border-black">
+              <div className="px-[26px] pt-[31px] rounded-t-[40px] border-b-0 border-[1.5px] border-black">
                 <h3
                   className={`text-[18px] font-bold ${
                     description_2 != "" ? "mb-0" : "mb-[8px]"
@@ -195,16 +195,16 @@ const TicketSeoBlock: React.FC<ColorfulBlockProps> = ({
                 <div className="border-t-[1.5px] border-dashed before:absolute before:top-[-3px] border-black before:content-none w-full relative bottom-[-19px]" />
                 <div className="flex h-[40px] w-full flex-row items-center translate-y-[-1px]">
                   <div className="inline-block overflow-hidden ">
-                    <div className="min-h-[40px] min-w-[40px] border-[1px] border-black bg-white relative left-[-20px]  rounded-full z-30"></div>
+                    <div className="min-h-[40px] min-w-[40px] border-[1.5px] border-black bg-white relative left-[-20px]  rounded-full z-30"></div>
                   </div>
                   <div className="w-full flex" />
                   <div className="inline-block overflow-hidden ms-[1px]">
-                    <div className="min-h-[40px] min-w-[40px] border-[1px] border-black bg-white relative right-[-13px] rounded-full z-30"></div>
+                    <div className="min-h-[40px] min-w-[40px] border-[1.5px] border-black bg-white relative right-[-13px] rounded-full z-30"></div>
                   </div>
                 </div>
               </div>
 
-              <div className="px-[26px] mt-[-1px] pb-[31px] rounded-b-[40px] border-t-0 border-[1px] border-black">
+              <div className="px-[26px] mt-[-1px] pb-[31px] rounded-b-[40px] border-t-0 border-[1.5px] border-black">
                 {list_2 && list_2.length > 0 ? (
                   <div
                     className="flex flex-col"

@@ -14,6 +14,7 @@ import CaseBlock from "@/components/CaseBlock";
 import WhiteImageBlockWithBlueText from "@/components/WhiteImageBlockWithBlueText";
 import WhiteBlockWithDoubleParagraphsAndImage from "@/components/WhiteBlockWithDoubleParagraphsAndImage";
 import QuizBlock from "@/components/QuizBlock";
+import PricingPlansBlock from "@/components/PricingPlansBlock";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -307,6 +308,59 @@ const OnlineStore = () => {
           imagePath="/resources/online_store_fast_tech.png"
           isRevert={false}
         />
+
+        <PricingPlansBlock
+          title="Цены на создание интернет-магазина"
+          plans={[
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Готовый шаблон WordPress",
+                "Базовая настройка WooCommerce",
+                "Минимальная адаптация",
+              ],
+              smallTitle: "Базовый",
+              secondSmallTitle: "",
+              price: "3000 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#FAFAFA",
+              buttonBgColor: "#214BF6",
+              bgColor: "#FAFAFA",
+              list: [
+                "Индивидуальный дизайн",
+                "WordPress + WooCommerce",
+                "Базовое SEO",
+                "Настройка панели управления",
+              ],
+              smallTitle: "Стандартный",
+              secondSmallTitle: "",
+              price: "6500 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Чистый код (React/Next.js + Express/Nest.js)",
+                "Уникальный UX/UI",
+                "Полная оптимизация SEO",
+                "Быстрая загрузка",
+              ],
+              smallTitle: "Премиум",
+              secondSmallTitle: "",
+              price: "9000 BYN",
+            },
+          ]}
+          min_h_ticket_list={180}
+          isOnlyBottomPadding={true}
+        />
+
         <ChooseTheRightOneBlock
           title="Цены на создание интернет-магазина"
           text1={

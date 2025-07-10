@@ -12,6 +12,8 @@ import React from "react";
 import CaseBlock from "@/components/CaseBlock";
 import Image from "next/image";
 import QuizBlock from "@/components/QuizBlock";
+import PricingPlansBlock from "@/components/PricingPlansBlock";
+import { FaCircleChevronRight } from "react-icons/fa6";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -390,47 +392,113 @@ const landing = () => {
           imagePath="/resources/online_store_white_block_2.png"
           isRevert={true}
         />
-        <ChooseTheRightOneBlock
-          title="Разработка продающих Landing Page"
-          text1={
-            <p className="text-[18px] mb-[20px] font-bold">
-              При разработке Landing Page используем новейшие инструменты
-              маркетинга и рекламы для привлечения новых посетителей. В нашем
-              арсенале более 90 методов продвижения. В зависимости от
-              особенностей и масштаба бизнеса заказчика
-            </p>
-          }
-          text2={
-            <ul className="text-[18px] flex flex-col gap-[5px]">
-              <li>
-                • Сайты - квизы - коротких лендингов, посетители которых
-                отвечают на вопросы и получают за это призы. Задача таких
-                одностраничников - получение контактных данных потенциальных
-                клиентов и информации об их интересах.
-              </li>
-              <li>
-                • Мультилендинги - автоматически подстраиваются под
-                пользовательские запросы и предлагают покупателям то, что им
-                интересно. Эти сайты актуальны для компаний с большим
-                количеством товаров и услуг.
-              </li>
-              <li>
-                • Лид-магниты - продают не конкретную компанию, а лишь
-                определенную услугу, предназначенную для конкретной ЦА.
-              </li>
-            </ul>
-          }
-          slash={[
-            "Конверсия в заявку на наших сайтах от 5%",
-            "Скорость загрузки 0,001 сек",
-            "Первые клиенты уже через 24 часа после запуск",
+
+        <PricingPlansBlock
+          title="Цены на создание Landing Page"
+          plans={[
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Готовый шаблон WordPress/Tilda",
+                "Базовая настройка",
+                "Одностраничный лендинг",
+              ],
+              smallTitle: "Базовый",
+              secondSmallTitle: "",
+              price: "1000 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#FAFAFA",
+              buttonBgColor: "#214BF6",
+              bgColor: "#FAFAFA",
+              list: [
+                "Готовый шаблон WordPress/Tilda",
+                "Индивидуальный дизайн",
+                "Базовое SEO",
+                "Простая админка для редактирования",
+              ],
+              smallTitle: "Стандартный",
+              secondSmallTitle: "",
+              price: "1600 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Чистый код (React/Next.js + Nest.js)",
+                "Уникальный UX/UI",
+                "Полная оптимизация SEO",
+                "Быстрая загрузка",
+              ],
+              smallTitle: "Премиум",
+              secondSmallTitle: "",
+              price: "2500 BYN",
+            },
           ]}
-          card="Создадим одностраничный сайт на основе готоых шалонов за 2 дня. Для разработки уникального решения потребуется от 7 дней."
-          data={[
-            { title: "Длительность:", text: "от 5 дней" },
-            { title: "Стоимость:", text: "от 400$" },
-          ]}
+          min_h_ticket_list={180}
+          isOnlyBottomPadding={true}
         />
+
+        <StandardMarginsLayout
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-white bg-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Разработка продающих Landing Page
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[22px] font-bold">
+                    При разработке Landing Page используем новейшие инструменты
+                    маркетинга и рекламы для привлечения новых посетителей. В
+                    нашем арсенале более 90 методов продвижения. В зависимости
+                    от особенностей и масштаба бизнеса заказчика
+                  </p>
+                </div>
+                <div className="flex flex-col min-w-[40%]">
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Сайты - квизы - коротких лендингов, посетители которых
+                      отвечают на вопросы и получают за это призы. Задача таких
+                      одностраничников - получение контактных данных
+                      потенциальных клиентов и информации об их интересах. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Мультилендинги - автоматически подстраиваются под
+                      пользовательские запросы и предлагают покупателям то, что
+                      им интересно. Эти сайты актуальны для компаний с большим
+                      количеством товаров и услуг. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[20px] mt-1 min-h-[20px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="md:text-[18px] text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Лид-магниты - продают не конкретную компанию, а лишь
+                      определенную услугу, предназначенную для конкретной ЦА.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+
         <WhiteMediumImageBlock
           title="Быстрые технологии"
           text={

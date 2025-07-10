@@ -71,8 +71,10 @@ const SEO: FC<SEOProps> = ({
               offers: {
                 "@type": "Offer",
                 url: "https://digitaldevils.by",
+                availability: 'http://schema.org/InStock',
                 priceCurrency: "BYN",
                 price: "69",
+                priceValidUntil: '2025-12-31'
               },
               aggregateRating: {
                 "@type": "AggregateRating",

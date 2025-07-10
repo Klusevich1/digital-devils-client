@@ -11,6 +11,8 @@ import { DarkBigImageBlock } from "@/components/DarkBigImageBlock";
 import React from "react";
 import Image from "next/image";
 import QuizBlock from "@/components/QuizBlock";
+import PricingPlansBlock from "@/components/PricingPlansBlock";
+import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -255,31 +257,88 @@ const corporateWebsite = () => {
           imagePath="/resources/corporate_white.png"
           isRevert={false}
         />
-        <ChooseTheRightOneBlock
-          title="Индивидуальный подход к работе с каждым заказчиком"
-          text1={
-            <p className="text-[22px] mb-[20px] font-bold">
-              Уникальный дизайн в 25 раз увеличивает привлекательность ресурса
-              для потенциальных клиентов и поисковых систем.
-            </p>
-          }
-          text2={
-            <p className="text-[18px]">
-              По вашей заявке подготовим привлекательные и продающие макеты
-              страниц будущего корпоративного портала. Учтем все пожелания и
-              требования заказчика. Нам важен каждый заказчик, независимо от
-              того идет речь о небольшом цветочном магазине или крупной
-              производственной компании, чья продукция поставляется во все
-              регионы страны!
-            </p>
-          }
-          slash={[]}
-          card="Получить консультацию и предварительный расчет цены корпоративного сайта для вашей компании можно по телефону или через форму обратной связи."
-          data={[
-            { title: "Длительность:", text: "от 1 месяца" },
-            { title: "Стоимость:", text: "от 2000$" },
+
+        <PricingPlansBlock
+          title="Цены на создание корпоративного сайта"
+          plans={[
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Готовый шаблон WordPress/Tilda",
+                "Базовая настройка страниц",
+                "Минимальная адаптация",
+              ],
+              smallTitle: "Базовый",
+              secondSmallTitle: "",
+              price: "1800 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#FAFAFA",
+              buttonBgColor: "#214BF6",
+              bgColor: "#FAFAFA",
+              list: [
+                "Готовый шаблон WordPress/Tilda",
+                "Индивидуальный дизайн",
+                "Базовое SEO",
+                "Административная панель",
+              ],
+              smallTitle: "Стандартный",
+              secondSmallTitle: "",
+              price: "3000 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Чистый код (React/Next.js + Nest.js)",
+                "Уникальный UX/UI",
+                "Оптимизация SEO",
+                "Оптимизированная панель управления",
+              ],
+              smallTitle: "Премиум",
+              secondSmallTitle: "",
+              price: "4800 BYN",
+            },
           ]}
+          min_h_ticket_list={180}
+          isOnlyBottomPadding={true}
         />
+
+        <StandardMarginsLayout
+          styles=" py-[50px] md:py-[60px] bg-[#F5F5F5] text-white bg-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Индивидуальный подход к работе с каждым заказчиком
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[22px] font-bold">
+                    Уникальный дизайн в 25 раз увеличивает привлекательность
+                    ресурса для потенциальных клиентов и поисковых систем.
+                  </p>
+                </div>
+                <div className="flex flex-col min-w-[40%] max-w-[641px]">
+                  <p className="w-full text-[18px] font-medium">
+                    По вашей заявке подготовим привлекательные и продающие
+                    макеты страниц будущего корпоративного портала. Учтем все
+                    пожелания и требования заказчика. Нам важен каждый заказчик,
+                    независимо от того идет речь о небольшом цветочном магазине
+                    или крупной производственной компании, чья продукция
+                    поставляется во все регионы страны!
+                  </p>
+                </div>
+              </div>
+            </>
+          }
+        />
+
         <StagesOfWorkBlock
           title="Этапы разработки корпоративного сайта"
           data={[

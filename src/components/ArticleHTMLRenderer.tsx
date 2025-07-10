@@ -6,6 +6,7 @@ import parse, {
 import { useEffect, useMemo, useState } from "react";
 import QuizBlock from "@/components/QuizBlock";
 import MainBlockFourth from "./MainBlockFourth";
+import Image from "next/image";
 
 const quizQuestions = [
   {
@@ -62,6 +63,26 @@ const ArticleHTMLRenderer: React.FC<Props> = ({ html, page }) => {
     replace: (domNode) => {
       if (domNode instanceof Element) {
         const className = domNode.attribs?.class;
+
+        if (domNode.name === "img") {
+          const src = domNode.attribs?.src;
+          const alt = domNode.attribs?.alt || "";
+          const width = parseInt(domNode.attribs?.width) || 800;
+          const height = parseInt(domNode.attribs?.height) || 600;
+
+          return (
+            <div className={`${src.includes('small') ? 'lg:hidden block' : 'lg:block hidden'} lg:min-w-[50%] w-full`}>
+              <Image
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                layout="responsive"
+                objectFit="contain"
+              />
+            </div>
+          );
+        }
 
         // Вставка викторины
         if (domNode.name === "div" && className === "quiz-block") {

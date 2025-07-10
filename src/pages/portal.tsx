@@ -11,6 +11,7 @@ import { DarkBigImageBlock } from "@/components/DarkBigImageBlock";
 import { WhiteMediumImageBlock } from "@/components/WhiteMediumImageBlock";
 import WhiteBlockWithDoubleParagraphsAndImage from "@/components/WhiteBlockWithDoubleParagraphsAndImage";
 import QuizBlock from "@/components/QuizBlock";
+import PricingPlansBlock from "@/components/PricingPlansBlock";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -180,7 +181,60 @@ const portal = () => {
             </>
           }
         />
-        <ChooseTheRightOneBlock
+
+        <PricingPlansBlock
+          title="Цены на создание портала"
+          plans={[
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "WordPress + шаблон",
+                "Базовая настройка разделов и контента",
+                "Минимальная адаптация",
+              ],
+              smallTitle: "Базовый",
+              secondSmallTitle: "",
+              price: "4500 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#FAFAFA",
+              buttonBgColor: "#214BF6",
+              bgColor: "#FAFAFA",
+              list: [
+                "WordPress",
+                "Индивидуальный дизайн",
+                "Базовое SEO",
+                "Расширенная админка",
+              ],
+              smallTitle: "Стандартный",
+              secondSmallTitle: "",
+              price: "7500 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Чистая разработка (React/Next.js + Nest.js)",
+                "Уникальный UX/UI",
+                "Продвинутая SEO-оптимизация",
+                "Оптимизация производительности",
+              ],
+              smallTitle: "Премиум",
+              secondSmallTitle: "",
+              price: "11000 BYN",
+            },
+          ]}
+          min_h_ticket_list={180}
+          isOnlyBottomPadding={true}
+        />
+
+        {/* <ChooseTheRightOneBlock
           title="Преимущества нашей разработки"
           text1={<></>}
           text2={
@@ -207,7 +261,7 @@ const portal = () => {
             { title: "Длительность:", text: "от 2 месяцев" },
             { title: "Стоимость:", text: "от 4000$" },
           ]}
-        />
+        /> */}
         <StagesOfWorkBlock
           title="Этапы разработки электронного портала"
           data={[
@@ -237,7 +291,7 @@ const portal = () => {
               circles: 5,
             },
           ]}
-          margin="py-[50px] md:py-[60px]"
+          margin="pb-[50px] md:pb-[60px]"
           text={
             <>
               <p className="text-[18px] font-bold max-w-[867px]">

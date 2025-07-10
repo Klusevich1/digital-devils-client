@@ -15,7 +15,7 @@ const ArticleList: React.FC<ArticleListProps> = ({ paragraphAnchors }) => {
     }
   };
   return (
-    <div className="max-w-[1440px] custom_container lg:w-[60%] w-full py-[30px]">
+    <div className="max-w-[1440px] custom_container lg:w-[70%] w-full py-[30px]">
       <ul className="flex flex-col gap-[10px]">
         {paragraphAnchors.map((par, index) => (
           <li className="text-[18px] text-blue_90" key={index}>
