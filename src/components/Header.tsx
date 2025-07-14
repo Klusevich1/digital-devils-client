@@ -207,9 +207,33 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 activeModal === "address" ? "rotate-180" : ""
               } transition-all duration-150`}
             />
-            <p className="text-[16px] font-medium">Игуменский тракт 20</p>
+            <p className="text-[16px] font-medium">
+              Минск, Игуменский тракт 20
+            </p>
           </div>
           <div className="flex flex-row items-center">
+            <a
+              target="_blank"
+              rel="nofollow"
+              href="https://wa.me/375296342190"
+              className="flex items-center outline-none"
+            >
+              <Image
+                src="/resources/whatsapp.svg"
+                width={28}
+                height={28}
+                className="size-[28px]"
+                alt="Whatsapp Logo"
+                priority={true}
+              />
+              <span
+                className={`ms-[5px] ${
+                  theme === "dark" ? "text-white" : "text-black"
+                } font-medium`}
+              >
+                whatsapp
+              </span>
+            </a>
             <a
               target="_blank"
               rel="nofollow"
@@ -236,7 +260,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               target="_blank"
               rel="nofollow"
               href="https://t.me/devilsmanager"
-              className="flex items-center ms-[40px] outline-none"
+              className="flex items-center ms-[28px] outline-none"
             >
               <Image
                 src="/resources/tg.svg"
@@ -254,7 +278,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 telegram
               </span>
             </a>
-            <p className="ms-[40px] font-medium">ежедневно: 9:00 - 18:00</p>
+            <p className="ms-[28px] font-medium">ежедневно: 9:00 - 18:00</p>
             <a
               // onClick={(e) => {
               //   e.preventDefault();
@@ -264,7 +288,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               className="flex flex-row gap-2 cursor-pointer"
             >
               <p
-                className={`ms-[40px] text-[16px] ${
+                className={`ms-[28px] text-[16px] ${
                   theme === "dark" ? "text-white" : "text-black"
                 } font-medium`}
               >
@@ -289,7 +313,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               className="flex flex-row gap-2 cursor-pointer"
             >
               <p
-                className={`ms-[40px] text-[16px] ${
+                className={`ms-[28px] text-[16px] ${
                   theme === "dark" ? "text-white" : "text-black"
                 } font-medium`}
               >
