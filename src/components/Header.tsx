@@ -172,7 +172,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
             theme === "dark" ? "bg-black" : "bg-white"
           } duration-300 ${
             isSticky ? "translate-y-[-48px]" : "translate-y-0"
-          } mx-auto max-w-[1440px] w-full py-[10px] px-[45px] 2xl:px-[60px] justify-between items-center hidden md:flex`}
+          } mx-auto max-w-[1440px] w-full py-[10px] px-[45px] 2xl:px-[60px] justify-between items-center hidden xlg:flex`}
         >
           {/* <div
             style={{
@@ -207,7 +207,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 activeModal === "address" ? "rotate-180" : ""
               } transition-all duration-150`}
             />
-            <p className="text-[16px] font-medium">
+            <p className="lg:text-[16px] text-[14px] font-medium">
               Минск, Игуменский тракт 20
             </p>
           </div>
@@ -222,63 +222,44 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                 src="/resources/whatsapp.svg"
                 width={28}
                 height={28}
-                className="size-[28px]"
+                className="lg:size-[28px] size-[24px]"
                 alt="Whatsapp Logo"
                 priority={true}
               />
-              <span
-                className={`ms-[5px] ${
-                  theme === "dark" ? "text-white" : "text-black"
-                } font-medium`}
-              >
-                whatsapp
-              </span>
             </a>
             <a
               target="_blank"
               rel="nofollow"
               href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
-              className="flex items-center outline-none"
+              className="flex items-center lg:ms-[14px] ms-2 outline-none"
             >
               <Image
                 src="/resources/inst.svg"
                 width={28}
                 height={28}
-                className="size-[28px]"
+                className="lg:size-[28px] size-[24px]"
                 alt="Instagram Logo"
                 priority={true}
               />
-              <span
-                className={`ms-[5px] ${
-                  theme === "dark" ? "text-white" : "text-black"
-                } font-medium`}
-              >
-                instagram
-              </span>
             </a>
             <a
               target="_blank"
               rel="nofollow"
               href="https://t.me/devilsmanager"
-              className="flex items-center ms-[28px] outline-none"
+              className="flex items-center lg:ms-[14px] ms-2 outline-none"
             >
               <Image
                 src="/resources/tg.svg"
                 width={28}
                 height={28}
-                className="size-[28px]"
+                className="lg:size-[28px] size-[24px]"
                 alt="Telegram Logo"
                 priority={true}
               />
-              <span
-                className={`ms-[5px] ${
-                  theme === "dark" ? "text-white" : "text-black"
-                } font-medium`}
-              >
-                telegram
-              </span>
             </a>
-            <p className="ms-[28px] font-medium">ежедневно: 9:00 - 18:00</p>
+            <p className="lg:ms-[28px] ms-[14px] lg:text-[16px] text-[14px] font-medium">
+              ежедневно: 9:00 - 18:00
+            </p>
             <a
               // onClick={(e) => {
               //   e.preventDefault();
@@ -288,7 +269,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               className="flex flex-row gap-2 cursor-pointer"
             >
               <p
-                className={`ms-[28px] text-[16px] ${
+                className={`lg:ms-[28px] ms-[14px] lg:text-[16px] text-[14px] ${
                   theme === "dark" ? "text-white" : "text-black"
                 } font-medium`}
               >
@@ -313,7 +294,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
               className="flex flex-row gap-2 cursor-pointer"
             >
               <p
-                className={`ms-[28px] text-[16px] ${
+                className={`lg:ms-[28px] ms-[14px] lg:text-[16px] text-[14px] ${
                   theme === "dark" ? "text-white" : "text-black"
                 } font-medium`}
               >
@@ -525,20 +506,51 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                           </a>
                         </p>
                         <div className="flex">
-                          <Image
-                            src="/resources/inst.svg"
-                            width={28}
-                            height={28}
-                            className="size-[28px] me-2.5"
-                            alt="Instagram Logo"
-                          />
-                          <Image
-                            src="/resources/tg.svg"
-                            width={28}
-                            height={28}
-                            className="size-[28px]"
-                            alt="Telegram Logo"
-                          />
+                          <a
+                            target="_blank"
+                            rel="nofollow"
+                            href="https://wa.me/375296342190"
+                            className="outline-none"
+                          >
+                            <Image
+                              src="/resources/whatsapp.svg"
+                              width={28}
+                              height={28}
+                              className="size-[28px] me-2.5"
+                              alt="Whatsapp Logo"
+                              priority={true}
+                            />
+                          </a>
+                          <a
+                            target="_blank"
+                            rel="nofollow"
+                            href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
+                            className="outline-none"
+                          >
+                            <Image
+                              src="/resources/inst.svg"
+                              width={28}
+                              height={28}
+                              className="size-[28px] me-2.5"
+                              alt="Instagram Logo"
+                              priority={true}
+                            />
+                          </a>
+                          <a
+                            target="_blank"
+                            rel="nofollow"
+                            href="https://t.me/devilsmanager"
+                            className="outline-none"
+                          >
+                            <Image
+                              src="/resources/tg.svg"
+                              width={28}
+                              height={28}
+                              className="size-[28px]"
+                              alt="Telegram Logo"
+                              priority={true}
+                            />
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -1062,20 +1074,51 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
                   </a>
                 </p>
                 <div className="flex">
-                  <Image
-                    src="/resources/inst.svg"
-                    width={28}
-                    height={28}
-                    className="size-[28px] me-2.5"
-                    alt="Instagram Logo"
-                  />
-                  <Image
-                    src="/resources/tg.svg"
-                    width={28}
-                    height={28}
-                    className="size-[28px]"
-                    alt="Telegram Logo"
-                  />
+                  <a
+                    target="_blank"
+                    rel="nofollow"
+                    href="https://wa.me/375296342190"
+                    className="outline-none"
+                  >
+                    <Image
+                      src="/resources/whatsapp.svg"
+                      width={28}
+                      height={28}
+                      className="size-[28px] me-2.5"
+                      alt="Whatsapp Logo"
+                      priority={true}
+                    />
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="nofollow"
+                    href="https://www.instagram.com/digital_devils_official?igsh=azB2MTQ2bWlzaXd6"
+                    className="outline-none"
+                  >
+                    <Image
+                      src="/resources/inst.svg"
+                      width={28}
+                      height={28}
+                      className="size-[28px] me-2.5"
+                      alt="Instagram Logo"
+                      priority={true}
+                    />
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="nofollow"
+                    href="https://t.me/devilsmanager"
+                    className="outline-none"
+                  >
+                    <Image
+                      src="/resources/tg.svg"
+                      width={28}
+                      height={28}
+                      className="size-[28px] me-2.5"
+                      alt="Telegram Logo"
+                      priority={true}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -1107,7 +1150,7 @@ const Header: React.FC<HeaderProps> = ({ theme }) => {
           isServicesOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       ></div>
-      <div className="block h-[59px] md:h-[119px]  w-full"></div>
+      <div className="block h-[59px] xlg:h-[119px]  w-full"></div>
     </>
   );
 };

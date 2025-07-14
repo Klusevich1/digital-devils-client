@@ -43,6 +43,7 @@ const PricingPlansBlock: React.FC<PricingPlansBlockProps> = ({
             {plans.map((plan, idx) => (
               <div
                 className={`relative max-w-full lg:max-w-[414px] w-full h-full lg:mt-0 mt-[30px] overflow-hidden`}
+                key={idx}
               >
                 <div
                   className={`relative z-10 flex flex-col w-full h-full rounded-[40px] ${
