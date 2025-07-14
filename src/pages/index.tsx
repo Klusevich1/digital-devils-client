@@ -17,6 +17,7 @@ import QuizBlock from "@/components/QuizBlock";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
 import Image from "next/image";
 import { GetServerSideProps } from "next";
+import PricingPlansBlock from "@/components/PricingPlansBlock";
 
 const data: DataItem[] = [
   {
@@ -325,8 +326,57 @@ const Home: React.FC<{ articles: Article[] }> = ({ articles }) => {
         <TextSeoBlock />
         {/* <OurTeamBlock /> */}
         <CommentBlock />
+        <PricingPlansBlock
+          title="Сколько стоит разработка сайта"
+          plans={[
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Быстрое создание лендинга на WordPress или Tilda.",
+                "Готовые шаблоны или индивидуальный дизайн под ключ.",
+                "Полностью готов к запуску рекламы и продвижения.",
+              ],
+              smallTitle: "Лендинг",
+              secondSmallTitle: "",
+              price: "1000 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#FAFAFA",
+              buttonBgColor: "#214BF6",
+              bgColor: "#FAFAFA",
+              list: [
+                "Разработка корпоративных сайтов на WordPress или других CMS.",
+                "Готовые шаблоны дизайна или создание уникального интерфейса",
+                "Лёгкое масштабирование и расширение под бизнес-задачи.",
+              ],
+              smallTitle: "Корпоративный сайт",
+              secondSmallTitle: "",
+              price: "1800 BYN",
+            },
+            {
+              buttonText: "Связаться с нами",
+              buttonColor: "#214BF6",
+              buttonBgColor: "#FAFAFA",
+              bgColor: "",
+              list: [
+                "Интернет-магазины на WordPress (WooCommerce) и других CMS.",
+                "Готовые решения с возможностью индивидуальной доработки",
+                "Интеграция с CRM, платёжными системами и учётом товаров.",
+              ],
+              smallTitle: "Интернет-магазин",
+              secondSmallTitle: "",
+              price: "3000 BYN",
+            },
+          ]}
+          min_h_ticket_list={180}
+          isOnlyBottomPadding={false}
+        />
         <StandardMarginsLayout
-          styles={`bg-white text-black py-[50px] md:py-[60px]`}
+          styles={`bg-white text-black pb-[50px] md:pb-[60px]`}
           children={
             <div className="flex flex-col">
               <h2 className="lg:pb-[30px] mb-[30px] lg:border-b-[1px] border-black font-bold text-[32px] md:text-[42px] lg:text-[60px]">
