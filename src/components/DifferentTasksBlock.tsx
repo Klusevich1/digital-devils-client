@@ -16,6 +16,7 @@ type DifferentTasksBlockProps = {
   isDark?: boolean;
   isOnlyBottomPadding?: boolean;
   maxwSmallText?: string;
+  hasLine?: boolean;
 };
 
 export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
@@ -25,6 +26,7 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
   isDark = true,
   isOnlyBottomPadding = false,
   maxwSmallText = "max-w-[866px]",
+  hasLine = true,
 }) => {
   return (
     <>
@@ -43,7 +45,7 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
                 {bigTitle}
               </h2>
               {smallText && (
-                <p className={`text-[22px] font-medium ${maxwSmallText}`}>
+                <p className={`text-[22px] ${hasLine ? 'font-medium' : 'font-bold'} ${maxwSmallText}`}>
                   {smallText}
                 </p>
               )}
@@ -52,7 +54,7 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
               className={`grid ${
                 paragraphs.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
               } grid-cols-1 md:gap-[40px] gap-[20px] ${
-                smallText
+                smallText && hasLine
                   ? `border-t-[1px] pt-[30px] ${
                       isDark ? "border-t-white" : "border-t-black"
                     } `
@@ -63,12 +65,12 @@ export const DifferentTasksBlock: FC<DifferentTasksBlockProps> = ({
                 <div key={idx}>
                   {item.title && (
                     <p
-                      className="text-[16px] font-medium md:mb-[20px] mb-[10px]"
+                      className={`${hasLine ? 'text-[16px]' : 'text-[22px]'}  font-medium md:mb-[20px] mb-[10px]`}
                       dangerouslySetInnerHTML={{ __html: item.title }}
                     ></p>
                   )}
                   <span
-                    className="text-[22px] font-medium"
+                    className={`${hasLine ? 'text-[22px]' : 'text-[16px]'} font-medium`}
                     dangerouslySetInnerHTML={{ __html: item.text }}
                   ></span>
                 </div>
