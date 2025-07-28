@@ -532,7 +532,7 @@ const landing = () => {
             { name: "Typescript" },
             { name: "Express/Nest.js" },
           ]}
-          margin="py-[50px] md:py-[60px]"
+          margin="pt-[50px] md:pt-[60px]"
           imagePath="/resources/landing_black_1.png"
           isRevert={true}
         />
