@@ -101,7 +101,7 @@ const AccordionItem: React.FC<{
       >
         {description.map((text, idx) => (
           <div
-            className="text-[16px] md:text-[18px]"
+            className="text-[16px] md:text-[18px] flex flex-col gap-[10px]"
             dangerouslySetInnerHTML={{ __html: text }}
             key={idx}
           ></div>
