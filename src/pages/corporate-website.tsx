@@ -13,6 +13,8 @@ import Image from "next/image";
 import QuizBlock from "@/components/QuizBlock";
 import PricingPlansBlock from "@/components/PricingPlansBlock";
 import StandardMarginsLayout from "@/layouts/StandardMarginsLayout";
+import { FaCircleChevronRight } from "react-icons/fa6";
+import WideBlockWithImage from "@/components/WideBlockWithImage";
 
 const breadcrumbs = [
   { name: "Главная", link: "/" },
@@ -409,6 +411,159 @@ const corporateWebsite = () => {
           margin="py-[50px] md:py-[60px]"
         />
 
+        <StandardMarginsLayout
+          styles={`pb-[50px] md:pb-[60px] bg-white text-black`}
+          children={
+            <div className={`flex flex-col gap-[30px]`}>
+              <div>
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px]">
+                  Корпоративный сайт – “лицо” вашей компании в интернете
+                </h2>
+                <p className="text-[18px] font-medium max-w-[911px]">
+                  Корпоративный сайт – рабочий маркетинговый инструмент,
+                  способствующий повышению конкурентоспособности, узнаваемости и
+                  развитию любого бизнеса. Команда специалистов Digital Devils
+                  готова разработать новый портал с нуля, доработать, провести
+                  оптимизацию и вывести в ТОП поисковой выдачи уже существующий
+                  ресурс для компаний из самых разных сфер и направлений
+                  деятельности:
+                </p>
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[10px] lg:mt-[20px] mt-[10px]">
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">
+                      Производственные и торговые предприятия
+                    </p>
+                    <p className="text-[16px] font-medium">
+                      Заказчик получает интернет-магазин с онлайн-витриной,
+                      каталогом реализуемых товаров, приемом и оплатой товаров.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">
+                      Организации из сферы услуг
+                    </p>
+                    <p className="text-[16px] font-medium">
+                      Обучение, консалтинг и т.д. – визитка с расширенным
+                      функционалом для размещения полезного контента,
+                      привлечения трафика и увеличения объемов онлайн-продаж. 
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">
+                      Стартапы и небольшие бренды
+                    </p>
+                    <p className="text-[16px] font-medium">
+                      Продуманный до мелочей сайт позволяет создать нужный
+                      имидж, упрощает выход на рынок, способствует привлечению
+                      клиентов.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">
+                      Крупные холдинги и корпорации
+                    </p>
+                    <p className="text-[16px] font-medium">
+                      Даже гигантам отрасли нужен собственный корпоративный
+                      портал для комплексного представления всех продуктов,
+                      услуг и видов деятельности в виртуальном пространстве.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`grid lg:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[20px] border-t-[1px] pt-[30px] border-t-black`}
+              >
+                <span className="text-[16px] font-medium">
+                  Корпоративный сайт позволяет бизнесу любого масштаба решать
+                  широкий спектр задач: привлечение внимания целевой аудитории,
+                  продвижение бренда, выстраивать сотрудничество с новыми
+                  партнерами, оптимизировать бизнес-процессы. Его функционал
+                  формируется исходя из конкретных потребностей и целей
+                  заказчика. 
+                </span>
+                <span className="text-[16px] font-medium">
+                  Его функционал формируется исходя из конкретных потребностей и
+                  целей заказчика. 
+                </span>
+              </div>
+            </div>
+          }
+        />
+
+        <StandardMarginsLayout
+          styles="py-[50px] md:py-[60px] mb-[50px] md:mb-[60px] bg-[#F5F5F5] text-black"
+          children={
+            <>
+              <h2 className="mb-[30px] font-bold text-[32px] md:text-[42px] lg:text-[60px]">
+                Возможности корпоративных сайтов
+              </h2>
+              <div className="flex flex-col lg:flex-row justify-between gap-[20px]">
+                <div className="lg:max-w-[640px]">
+                  <p className="text-[22px] font-medium">
+                    Эксперты агентства Digital Devils способны разработать
+                    корпоративный ресурс, который сможет привлечь и удержать
+                    внимание посетителей, будет работать над увеличением
+                    количества продаж, повышением лояльности потенциальных
+                    клиентов. 
+                  </p>
+                </div>
+                <div className="flex flex-col min-w-[40%]">
+                  <div className="flex">
+                    <p className="text-[22px] font-medium mb-[15px]">
+                      Созданные нами сайты:
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Могут создать правильный имидж. Солидные компании и
+                      крупные компании имеют корпоративные ресурсы, которые
+                      повышают степень доверия к ним со стороны партнеров и
+                      покупателей. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Грамотно представляют информацию. Подготовленные
+                      профессионалами продающие тексты описаний товаров, новости
+                      и интересные статьи о фирме повышают узнаваемость бренда,
+                      облегчают работу с сайтом. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px] me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Становятся успешным каналом продаж. Помимо информации о
+                      компании и ее деятельности на площадке можно разместить
+                      базовый каталог и корзину заказов, после чего количество
+                      онлайн-продаж резко пойдет вверх. 
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <div className="flex min-w-[24px] mt-1 min-h-[24px]  me-[10px]">
+                      <FaCircleChevronRight className="!w-[20px] !h-[20px]" />
+                    </div>
+                    <p className="text-[16px] md:text-[18px] mb-[10px] font-medium  lg:max-w-[640px]">
+                      Упрощают работу сотрудников. Интеграции с разнообразными
+                      сервисами и сторонними системами, реализованные в процессе
+                      разработки, призваны упростить коммуникации внутри
+                      коллектива, автоматизировать различные операции, сократить
+                      сроки их выполнения. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          }
+        />
+
         <WhiteMediumImageBlock
           bigHeader="Используем инновационные технологии и собственные разработки"
           title=""
@@ -471,6 +626,75 @@ const corporateWebsite = () => {
           margin="pb-[50px] md:pb-[60px]"
           imagePath="/resources/corporate_website_image.png"
           isRevert={true}
+        />
+
+        <StandardMarginsLayout
+          styles={` bg-white text-black`}
+          children={
+            <div className={`flex flex-col gap-[30px]`}>
+              <div>
+                <h2 className="text-[32px] md:text-[42px] lg:text-[60px] font-bold mb-[30px]">
+                  Преимущества корпоративных сайтов от Digital Devils
+                </h2>
+                <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-[40px] gap-[10px] lg:mt-[20px] mt-[10px]">
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">Адаптивность</p>
+                    <p className="text-[16px] font-medium">
+                      Наши корпоративные сайты отлично работают и выглядят на
+                      любых устройствах: стиль, производительность, скорость
+                      загрузки страниц, функции остаются неизменными на ПК,
+                      смартфонах, планшетах. 
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">Агрегация трафика</p>
+                    <p className="text-[16px] font-medium">
+                      Если вам нужно быстро и эффективно увеличить количество
+                      покупателей, привлечь внимание целевой аудитории, запуск
+                      корпоративного портала поможет в этом. 
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">
+                      Максимальная комплектация
+                    </p>
+                    <p className="text-[16px] font-medium">
+                      Мы знаем, как реализовать на корпоративном портале все
+                      актуальные функции, сделать сайт любой сложности: от
+                      простейшего landing page с несколькими основными разделами
+                      до масштабного портала с огромным количеством страниц. 
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-[10px]">
+                    <p className="text-[22px] font-medium">Удобство</p>
+                    <p className="text-[16px] font-medium">
+                      Редактирование контента не требует специальных навыков.
+                      Например, в будущем вы можете сами написать и добавить
+                      текст на нужную страницу, подгрузить новые фото, оставить
+                      нужные сведения и обновить устаревшие данные. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`grid lg:grid-cols-2 grid-cols-1 md:gap-[40px] gap-[20px] border-t-[1px] pt-[30px] border-t-black`}
+              >
+                <span className="text-[16px] font-medium">
+                  Быстрый корпоративный сайт с понятной для пользователей
+                  навигацией открывает новые возможности для взаимодействия с
+                  клиентами, автоматизации бизнес-процесс за счет интеграции с
+                  современными CRM (например, Битрикс 24), платежными сервисами
+                  и системами учета. 
+                </span>
+              </div>
+            </div>
+          }
+        />
+        <WideBlockWithImage
+          title="Суммарный опыт нашей IT-команды в digital-маркетинге превышает 100 лет"
+          text_1="Мы не передаем проекты подрядчикам или фрилансерам."
+          text_2="Самостоятельно выполняем полный цикл работает: от подготовки шаблонов и прототипов, подбора оптимальных функций, полей и макетов до гарантийного и постгарантийного сопровождения и технической помощи. Готовы нести ответственность по договору об оказании услуг. Чтобы получить консультацию – звоните, наши менеджеры готовы ответить на все ваши вопросы."
+          bg="bg-white"
         />
 
         <MainBlockFive title="Наши проекты" />
